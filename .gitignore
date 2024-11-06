@@ -1,0 +1,10 @@
+.vc/
+*.pch
+*.pdb
+*.ipch
+*.obj
+*.db
+*.pchast
+*.vsidx
+*.opendb
+*CV.db

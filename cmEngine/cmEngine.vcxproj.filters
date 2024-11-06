@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="99. Headers">
+      <UniqueIdentifier>{16a821a0-c4f6-4ba2-b873-b91da5cecb41}</UniqueIdentifier>
+      <Extensions>.h</Extensions>
+    </Filter>
+    <Filter Include="01. Application">
+      <UniqueIdentifier>{0500183a-ff53-40c6-9eb0-6809fd37c004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. Utiles">
+      <UniqueIdentifier>{ac410b82-6cce-42c3-9b61-a2a0a2fc37cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Develop Tools">
+      <UniqueIdentifier>{db854c86-b81d-4203-9601-1c3becb8a1e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Develop Tools\Debugger">
+      <UniqueIdentifier>{7e2cf402-9886-4a53-9416-32d73fe990da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Develop Tools\Logger">
+      <UniqueIdentifier>{bce551ab-0dfa-450f-aded-781e23270d31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Develop Tools\Debugger\GUI">
+      <UniqueIdentifier>{558eb57c-7b55-4931-ae18-dfedf64f5ef2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Develop Tools\Logger\GUI">
+      <UniqueIdentifier>{8136b1d6-b32b-41de-8918-fe55bfb2d4ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Develop Tools\Console">
+      <UniqueIdentifier>{08448b22-dfdc-4067-94ad-247b60bf1004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Develop Tools\Console\GUI">
+      <UniqueIdentifier>{96d2ae36-3466-474e-8e4d-f805c750c24f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Develop Tools\Console\Command">
+      <UniqueIdentifier>{b64d3b4b-f0a4-4290-a0f9-78fb411b3d9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Windows">
+      <UniqueIdentifier>{c9beee48-891d-49a4-a910-b289ab2978b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Windows\Structs">
+      <UniqueIdentifier>{46c654cb-c402-441b-b7a6-5cbc6db606e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Windows\Manager">
+      <UniqueIdentifier>{7876cc91-a290-4d8a-be2f-eb5a01338531}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Timer">
+      <UniqueIdentifier>{94ec8797-7ab3-4425-bfbe-bc60b52945be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer">
+      <UniqueIdentifier>{907557ff-b3d7-4805-8add-d531627f6411}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\01. Core">
+      <UniqueIdentifier>{fbabd8e2-14e9-4cb3-91ff-a12a08f60e6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\02. Device">
+      <UniqueIdentifier>{5bf9ac49-7dcb-4559-8ddb-ccd796fe0056}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06. Resource">
+      <UniqueIdentifier>{baf428ad-91d6-4ff5-8c0a-6a0277008c5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Engine">
+      <UniqueIdentifier>{1bc1ef22-88fa-421e-9403-385d58be5d2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Engine\GUI">
+      <UniqueIdentifier>{ef3f15a9-5774-4e5e-90dd-9b8c2897b47e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06. Resource\Shader">
+      <UniqueIdentifier>{cf6ba35c-59f5-4483-a930-e8a2ba17aeec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06. Resource\Shader\CommonShader">
+      <UniqueIdentifier>{4314ae77-f525-4473-879e-3cbfcbcd7db5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07. Scene">
+      <UniqueIdentifier>{ad7f8453-6d19-4d3e-8f89-616cc868244e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="08. GameObject">
+      <UniqueIdentifier>{188b1e91-89dd-4429-ad7a-455226257f0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="09. Component">
+      <UniqueIdentifier>{9d29ae04-af3f-4e29-8994-095f55173af4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="09. Component\Transform">
+      <UniqueIdentifier>{fcfa6cc6-1105-45fd-920e-6e637f1191c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\03. Pipeline">
+      <UniqueIdentifier>{acc18251-7ed3-4f83-9331-1dc5bcf51802}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="09. Component\MeshRenderer">
+      <UniqueIdentifier>{8caa1ee2-562b-4bf5-a1da-fa3def3c42d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="09. Component\Script">
+      <UniqueIdentifier>{e5fe200b-a2b9-436b-95a2-726352de6241}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06. Resource\Mesh">
+      <UniqueIdentifier>{31c0acfa-3542-4566-850e-ebb0252d6503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\03. Pipeline\01. Pipeline">
+      <UniqueIdentifier>{2247907f-9d56-48bf-b94c-21da94b24f1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\03. Pipeline\02. Geometry">
+      <UniqueIdentifier>{b2f609e5-f45c-4993-a5a0-65c00a695981}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\03. Pipeline\03. InputAssembler">
+      <UniqueIdentifier>{880d886c-be42-4c66-bd19-c9e4faad1fbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\03. Pipeline\04. VertexShader">
+      <UniqueIdentifier>{60561e42-568a-479e-a13a-f42c0559c710}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\03. Pipeline\04. VertexShader\VertexData">
+      <UniqueIdentifier>{9382f2ca-e8d5-4052-955b-a27b06dc378f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\03. Pipeline\05. PixelShader">
+      <UniqueIdentifier>{4593ec88-2a36-4dee-ba26-03ffa0c80a58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\04. GraphisResource">
+      <UniqueIdentifier>{437acd10-0278-4b6a-bf96-16d09a16d352}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\04. GraphisResource\ConstantBuffer">
+      <UniqueIdentifier>{f1679155-b863-4eac-b072-3ce4e763b91a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\99. Helper">
+      <UniqueIdentifier>{1fbea9bd-0966-4143-a04b-4b6e16c496b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\05. GUI">
+      <UniqueIdentifier>{a37ff62f-e688-4353-9caf-e970df78d927}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\05. GUI\ThirdParty">
+      <UniqueIdentifier>{8015412a-1485-48b4-bcf5-d74e816a7be5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\05. GUI\ThirdParty\FileDlg">
+      <UniqueIdentifier>{5462e55e-f84e-4126-a5dd-59c764df4439}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\05. GUI\GUIHelper">
+      <UniqueIdentifier>{3a5d5d4e-f10c-484e-b7fe-299df00e93a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Renderer\04. GraphisResource\InputLayout">
+      <UniqueIdentifier>{daa9be06-cf1b-49ce-91ef-6ef3eb3bb15a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. Utiles\TypeID">
+      <UniqueIdentifier>{d994e033-96e3-44b7-9b12-2c20fe1ae980}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineInc.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="cmWindow.h">
+      <Filter>03. Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsStruct.h">
+      <Filter>03. Windows\Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="cmAssert.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="cmApplication.h">
+      <Filter>01. Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Macro.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="cmRenderer.h">
+      <Filter>05. Renderer\01. Core</Filter>
+    </ClInclude>
+    <ClInclude Include="cmGraphicsDevice.h">
+      <Filter>05. Renderer\02. Device</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>05. Renderer\05. GUI\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_dx11.h">
+      <Filter>05. Renderer\05. GUI\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_win32.h">
+      <Filter>05. Renderer\05. GUI\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>05. Renderer\05. GUI\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="UComPtr.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>05. Renderer\05. GUI\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_truetype.h">
+      <Filter>05. Renderer\05. GUI\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_rectpack.h">
+      <Filter>05. Renderer\05. GUI\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_textedit.h">
+      <Filter>05. Renderer\05. GUI\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="imguiInc.h">
+      <Filter>05. Renderer\05. GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineModules.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="cmColors.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="cmGUIRenderer.h">
+      <Filter>05. Renderer\05. GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="cmGUI.h">
+      <Filter>05. Renderer\05. GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="cmConsole.h">
+      <Filter>97. Develop Tools\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="cmConsoleGUI.h">
+      <Filter>97. Develop Tools\Console\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="cmCommonCommand.h">
+      <Filter>97. Develop Tools\Console\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="FileDialog.h">
+      <Filter>05. Renderer\05. GUI\ThirdParty\FileDlg</Filter>
+    </ClInclude>
+    <ClInclude Include="Enums.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGuiHelper.h">
+      <Filter>05. Renderer\05. GUI\GUIHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="cmLogger.h">
+      <Filter>97. Develop Tools\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="cmLogData.h">
+      <Filter>97. Develop Tools\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="cmTimer.h">
+      <Filter>04. Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="cmLoggerGUI.h">
+      <Filter>97. Develop Tools\Logger\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="cmAlgorithm.h">
+      <Filter>98. Utiles</Filter>
+    </ClInclude>
+    <ClInclude Include="cmStaticTextBuffer.h">
+      <Filter>98. Utiles</Filter>
+    </ClInclude>
+    <ClInclude Include="cmConsoleData.h">
+      <Filter>97. Develop Tools\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="cmICommand.h">
+      <Filter>97. Develop Tools\Console\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="cmHelper.h">
+      <Filter>98. Utiles</Filter>
+    </ClInclude>
+    <ClInclude Include="cmDebugGUI.h">
+      <Filter>97. Develop Tools\Debugger\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="cmWindowsManager.h">
+      <Filter>03. Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="cmMenuGUI.h">
+      <Filter>02. Engine\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="cmPopupGUI.h">
+      <Filter>02. Engine\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="cmEngine.h">
+      <Filter>02. Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="cmGeometryHelper.h">
+      <Filter>05. Renderer\03. Pipeline\02. Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="cmVertexData.h">
+      <Filter>05. Renderer\03. Pipeline\04. VertexShader\VertexData</Filter>
+    </ClInclude>
+    <ClInclude Include="cmGeometry.h">
+      <Filter>05. Renderer\03. Pipeline\02. Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="cmShader.h">
+      <Filter>06. Resource\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="cmVertexShader.h">
+      <Filter>06. Resource\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="cmPixelShader.h">
+      <Filter>06. Resource\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="cmGraphicsHelper.h">
+      <Filter>05. Renderer\99. Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="cmVertexBuffer.h">
+      <Filter>05. Renderer\03. Pipeline\03. InputAssembler</Filter>
+    </ClInclude>
+    <ClInclude Include="cmIndexBuffer.h">
+      <Filter>05. Renderer\03. Pipeline\03. InputAssembler</Filter>
+    </ClInclude>
+    <ClInclude Include="cmViewport.h">
+      <Filter>05. Renderer\02. Device</Filter>
+    </ClInclude>
+    <ClInclude Include="cmRenderTargetView.h">
+      <Filter>05. Renderer\02. Device</Filter>
+    </ClInclude>
+    <ClInclude Include="cmResourceManager.h">
+      <Filter>06. Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="cmConstantBuffer.h">
+      <Filter>05. Renderer\04. GraphisResource\ConstantBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="cmConstantBufferData.h">
+      <Filter>05. Renderer\04. GraphisResource\ConstantBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="cmGameObject.h">
+      <Filter>08. GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="cmComponent.h">
+      <Filter>09. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="cmScript.h">
+      <Filter>09. Component\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="cmTransform.h">
+      <Filter>09. Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="cmSceneManager.h">
+      <Filter>07. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="cmScene.h">
+      <Filter>07. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="cmMeshRenderer.h">
+      <Filter>09. Component\MeshRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="cmMesh.h">
+      <Filter>06. Resource\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="cmPipelineData.h">
+      <Filter>05. Renderer\03. Pipeline\01. Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="cmPipeline.h">
+      <Filter>05. Renderer\03. Pipeline\01. Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="cmGraphicsResourceManager.h">
+      <Filter>05. Renderer\04. GraphisResource</Filter>
+    </ClInclude>
+    <ClInclude Include="cmConstantBufferBase.h">
+      <Filter>05. Renderer\04. GraphisResource\ConstantBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="cmInputLayout.h">
+      <Filter>05. Renderer\04. GraphisResource\InputLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="cmInputLayoutBase.h">
+      <Filter>05. Renderer\04. GraphisResource\InputLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="cmType.h">
+      <Filter>98. Utiles\TypeID</Filter>
+    </ClInclude>
+    <ClInclude Include="cmComponentID.h">
+      <Filter>98. Utiles\TypeID</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>99. Headers</Filter>
+    </ClCompile>
+    <ClCompile Include="cmWindow.cpp">
+      <Filter>03. Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsStruct.cpp">
+      <Filter>03. Windows\Structs</Filter>
+    </ClCompile>
+    <ClCompile Include="cmAssert.cpp">
+      <Filter>99. Headers</Filter>
+    </ClCompile>
+    <ClCompile Include="cmApplication.cpp">
+      <Filter>01. Application</Filter>
+    </ClCompile>
+    <ClCompile Include="cmRenderer.cpp">
+      <Filter>05. Renderer\01. Core</Filter>
+    </ClCompile>
+    <ClCompile Include="cmGraphicsDevice.cpp">
+      <Filter>05. Renderer\02. Device</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>05. Renderer\05. GUI\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>05. Renderer\05. GUI\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_dx11.cpp">
+      <Filter>05. Renderer\05. GUI\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_win32.cpp">
+      <Filter>05. Renderer\05. GUI\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_tables.cpp">
+      <Filter>05. Renderer\05. GUI\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>05. Renderer\05. GUI\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="UComPtr.cpp">
+      <Filter>99. Headers</Filter>
+    </ClCompile>
+    <ClCompile Include="cmColors.cpp">
+      <Filter>99. Headers</Filter>
+    </ClCompile>
+    <ClCompile Include="cmGUIRenderer.cpp">
+      <Filter>05. Renderer\05. GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="cmGUI.cpp">
+      <Filter>05. Renderer\05. GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="cmConsole.cpp">
+      <Filter>97. Develop Tools\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="cmConsoleGUI.cpp">
+      <Filter>97. Develop Tools\Console\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="cmCommonCommand.cpp">
+      <Filter>97. Develop Tools\Console\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="FileDialog.cpp">
+      <Filter>05. Renderer\05. GUI\ThirdParty\FileDlg</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGuiHelper.cpp">
+      <Filter>05. Renderer\05. GUI\GUIHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="cmLogger.cpp">
+      <Filter>97. Develop Tools\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="cmLogData.cpp">
+      <Filter>97. Develop Tools\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="cmTimer.cpp">
+      <Filter>04. Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="cmLoggerGUI.cpp">
+      <Filter>97. Develop Tools\Logger\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="cmAlgorithm.cpp">
+      <Filter>98. Utiles</Filter>
+    </ClCompile>
+    <ClCompile Include="cmStaticTextBuffer.cpp">
+      <Filter>98. Utiles</Filter>
+    </ClCompile>
+    <ClCompile Include="cmConsoleData.cpp">
+      <Filter>97. Develop Tools\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="cmICommand.cpp">
+      <Filter>97. Develop Tools\Console\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="cmHelper.cpp">
+      <Filter>98. Utiles</Filter>
+    </ClCompile>
+    <ClCompile Include="cmDebugGUI.cpp">
+      <Filter>97. Develop Tools\Debugger\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="cmWindowsManager.cpp">
+      <Filter>03. Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="cmMenuGUI.cpp">
+      <Filter>02. Engine\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="cmPopupGUI.cpp">
+      <Filter>02. Engine\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="cmEngine.cpp">
+      <Filter>02. Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="cmGeometryHelper.cpp">
+      <Filter>05. Renderer\03. Pipeline\02. Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="cmVertexData.cpp">
+      <Filter>05. Renderer\03. Pipeline\04. VertexShader\VertexData</Filter>
+    </ClCompile>
+    <ClCompile Include="cmGeometry.cpp">
+      <Filter>05. Renderer\03. Pipeline\02. Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="cmShader.cpp">
+      <Filter>06. Resource\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="cmVertexShader.cpp">
+      <Filter>06. Resource\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="cmPixelShader.cpp">
+      <Filter>06. Resource\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="cmGraphicsHelper.cpp">
+      <Filter>05. Renderer\99. Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="cmIndexBuffer.cpp">
+      <Filter>05. Renderer\03. Pipeline\03. InputAssembler</Filter>
+    </ClCompile>
+    <ClCompile Include="cmVertexBuffer.cpp">
+      <Filter>05. Renderer\03. Pipeline\03. InputAssembler</Filter>
+    </ClCompile>
+    <ClCompile Include="cmRenderTargetView.cpp">
+      <Filter>05. Renderer\02. Device</Filter>
+    </ClCompile>
+    <ClCompile Include="cmViewport.cpp">
+      <Filter>05. Renderer\02. Device</Filter>
+    </ClCompile>
+    <ClCompile Include="cmResourceManager.cpp">
+      <Filter>06. Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="cmConstantBuffer.cpp">
+      <Filter>05. Renderer\04. GraphisResource\ConstantBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="cmConstantBufferData.cpp">
+      <Filter>05. Renderer\04. GraphisResource\ConstantBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="cmGameObject.cpp">
+      <Filter>08. GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="cmComponent.cpp">
+      <Filter>09. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="cmScript.cpp">
+      <Filter>09. Component\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="cmTransform.cpp">
+      <Filter>09. Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="cmSceneManager.cpp">
+      <Filter>07. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="cmScene.cpp">
+      <Filter>07. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="cmMeshRenderer.cpp">
+      <Filter>09. Component\MeshRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="cmMesh.cpp">
+      <Filter>06. Resource\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="cmPipeline.cpp">
+      <Filter>05. Renderer\03. Pipeline\01. Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="cmPipelineData.cpp">
+      <Filter>05. Renderer\03. Pipeline\01. Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="cmGraphicsResourceManager.cpp">
+      <Filter>05. Renderer\04. GraphisResource</Filter>
+    </ClCompile>
+    <ClCompile Include="cmConstantBufferBase.cpp">
+      <Filter>05. Renderer\04. GraphisResource\ConstantBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="cmInputLayout.cpp">
+      <Filter>05. Renderer\04. GraphisResource\InputLayout</Filter>
+    </ClCompile>
+    <ClCompile Include="cmInputLayoutBase.cpp">
+      <Filter>05. Renderer\04. GraphisResource\InputLayout</Filter>
+    </ClCompile>
+    <ClCompile Include="cmType.cpp">
+      <Filter>98. Utiles\TypeID</Filter>
+    </ClCompile>
+    <ClCompile Include="cmComponentID.cpp">
+      <Filter>98. Utiles\TypeID</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\CommonResource\Shader\1. SimpleColorShader.hlsli">
+      <Filter>06. Resource\Shader\CommonShader</Filter>
+    </None>
+  </ItemGroup>
+</Project>

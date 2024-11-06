@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\</FILEPATH>
+      <FILENAME>cmConsole.h</FILENAME>
+      <LINE>28</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>반환 값이 무시되었습니다. 'std::_Tree_const_iterator&lt;std::_Tree_val&lt;std::_Tree_simple_types&lt;std::pair&lt;std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt; const ,std::unique_ptr&lt;cmICommand,std::default_delete&lt;cmICommand&gt; &gt; &gt; &gt; &gt; &gt;::=='.</DESCRIPTION>
+    <FUNCTION>cmConsole::AddCommand</FUNCTION>
+    <DECORATED>??$AddCommand@UcmExitCmd@@@cmConsole@@QEAAXXZ</DECORATED>
+    <FUNCLINE>23</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\</FILEPATH>
+      <FILENAME>cmConsole.h</FILENAME>
+      <LINE>28</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>반환 값이 무시되었습니다. 'std::_Tree_const_iterator&lt;std::_Tree_val&lt;std::_Tree_simple_types&lt;std::pair&lt;std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt; const ,std::unique_ptr&lt;cmICommand,std::default_delete&lt;cmICommand&gt; &gt; &gt; &gt; &gt; &gt;::=='.</DESCRIPTION>
+    <FUNCTION>cmConsole::AddCommand</FUNCTION>
+    <DECORATED>??$AddCommand@UcmClearColorCmd@@@cmConsole@@QEAAXXZ</DECORATED>
+    <FUNCLINE>23</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\</FILEPATH>
+      <FILENAME>cmConsole.h</FILENAME>
+      <LINE>28</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>반환 값이 무시되었습니다. 'std::_Tree_const_iterator&lt;std::_Tree_val&lt;std::_Tree_simple_types&lt;std::pair&lt;std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt; const ,std::unique_ptr&lt;cmICommand,std::default_delete&lt;cmICommand&gt; &gt; &gt; &gt; &gt; &gt;::=='.</DESCRIPTION>
+    <FUNCTION>cmConsole::AddCommand</FUNCTION>
+    <DECORATED>??$AddCommand@UcmHelpCmd@@@cmConsole@@QEAAXXZ</DECORATED>
+    <FUNCLINE>23</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\</FILEPATH>
+      <FILENAME>cmConsole.h</FILENAME>
+      <LINE>28</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>반환 값이 무시되었습니다. 'std::_Tree_const_iterator&lt;std::_Tree_val&lt;std::_Tree_simple_types&lt;std::pair&lt;std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt; const ,std::unique_ptr&lt;cmICommand,std::default_delete&lt;cmICommand&gt; &gt; &gt; &gt; &gt; &gt;::=='.</DESCRIPTION>
+    <FUNCTION>cmConsole::AddCommand</FUNCTION>
+    <DECORATED>??$AddCommand@UcmSayCmd@@@cmConsole@@QEAAXXZ</DECORATED>
+    <FUNCLINE>23</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\</FILEPATH>
+      <FILENAME>cmConsole.h</FILENAME>
+      <LINE>28</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>반환 값이 무시되었습니다. 'std::_Tree_const_iterator&lt;std::_Tree_val&lt;std::_Tree_simple_types&lt;std::pair&lt;std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt; const ,std::unique_ptr&lt;cmICommand,std::default_delete&lt;cmICommand&gt; &gt; &gt; &gt; &gt; &gt;::=='.</DESCRIPTION>
+    <FUNCTION>cmConsole::AddCommand</FUNCTION>
+    <DECORATED>??$AddCommand@UcmClearCmd@@@cmConsole@@QEAAXXZ</DECORATED>
+    <FUNCLINE>23</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\</FILEPATH>
+      <FILENAME>cmConsole.h</FILENAME>
+      <LINE>28</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>반환 값이 무시되었습니다. 'std::_Tree_const_iterator&lt;std::_Tree_val&lt;std::_Tree_simple_types&lt;std::pair&lt;std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt; const ,std::unique_ptr&lt;cmICommand,std::default_delete&lt;cmICommand&gt; &gt; &gt; &gt; &gt; &gt;::=='.</DESCRIPTION>
+    <FUNCTION>cmConsole::AddCommand</FUNCTION>
+    <DECORATED>??$AddCommand@UcmResizeScreenCmd@@@cmConsole@@QEAAXXZ</DECORATED>
+    <FUNCLINE>23</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>
