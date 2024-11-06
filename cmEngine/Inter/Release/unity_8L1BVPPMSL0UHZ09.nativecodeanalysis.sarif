@@ -1,0 +1,4614 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C28182",
+          "message": {
+            "text": "NULL 포인터를 역참조하고 있습니다. 'window->RootWindowForNav'에 'parent_window'과(와) 동일한 NULL 값이 포함되어 있습니다. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 7244,
+                  "startColumn": 12,
+                  "endLine": 7244,
+                  "endColumn": 51
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::UpdateWindowParentAndRootLinks",
+                  "decoratedName": "?UpdateWindowParentAndRootLinks@ImGui@@YAXPEAUImGuiWindow@@H0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 7232,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 7233,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 7234,
+                            "startColumn": 65
+                          }
+                        },
+                        "message": {
+                          "text": "'parent_window'은(는) NULL일 수 있습니다. (이 분기 건너뛰기)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 7240,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 7242,
+                            "startColumn": 60
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 7244,
+                            "startColumn": 49
+                          }
+                        },
+                        "message": {
+                          "text": "이 루프 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 7247,
+                            "startColumn": 34
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 7244,
+                            "startColumn": 49
+                          }
+                        },
+                        "message": {
+                          "text": "이 루프 시작, ('<분기 조건>' 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 7244,
+                            "startColumn": 49
+                          }
+                        },
+                        "message": {
+                          "text": "'parent_window'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "NULL 포인터 'window->Viewport'을(를) 역참조하고 있습니다. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 16241,
+                  "startColumn": 13,
+                  "endLine": 16241,
+                  "endColumn": 74
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::WindowSelectViewport",
+                  "decoratedName": "?WindowSelectViewport@ImGui@@YAXPEAUImGuiWindow@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16116,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16117,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16118,
+                            "startColumn": 48
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16121,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16122,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16127,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16130,
+                            "startColumn": 71
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16136,
+                            "startColumn": 73
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16151,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16152,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16164,
+                            "startColumn": 53
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16171,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16176,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16180,
+                            "startColumn": 44
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16184,
+                            "startColumn": 77
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16194,
+                            "startColumn": 14
+                          }
+                        },
+                        "message": {
+                          "text": "'window->Viewport'은(는) NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16195,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16200,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 시작, ('window->Viewport==0' 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16201,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16205,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 시작, ('!lock_viewport' 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16207,
+                            "startColumn": 19
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('flags'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16219,
+                            "startColumn": 144
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16237,
+                            "startColumn": 65
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 시작, ('<분기 조건>' 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16241,
+                            "startColumn": 56
+                          }
+                        },
+                        "message": {
+                          "text": "'window->Viewport'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "NULL 포인터 'window'을(를) 역참조하고 있습니다. 이 오류가 발생할 수 있는 이전 위치는 줄 16117을(를) 참조하십시오."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 16246,
+                  "startColumn": 5,
+                  "endLine": 16246,
+                  "endColumn": 56
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::WindowSelectViewport",
+                  "decoratedName": "?WindowSelectViewport@ImGui@@YAXPEAUImGuiWindow@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16116,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16117,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16118,
+                            "startColumn": 48
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16121,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16122,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16127,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16130,
+                            "startColumn": 71
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16136,
+                            "startColumn": 73
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16151,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16152,
+                            "startColumn": 32
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16164,
+                            "startColumn": 53
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16171,
+                            "startColumn": 31
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16176,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('flags'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16180,
+                            "startColumn": 44
+                          }
+                        },
+                        "message": {
+                          "text": "'window'은(는) 'ImGui::GetWindowAlwaysWantOwnViewport'(줄 1257에서 선언됨)에 대한 In/Out 인수입니다."
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16180,
+                            "startColumn": 44
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16184,
+                            "startColumn": 77
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16194,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16195,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16200,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 시작, ('window->Viewport==0' 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16201,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "'window'은(는) 'ImGui::UpdateTryMergeWindowIntoHostViewport'(줄 1255에서 선언됨)에 대한 In/Out 인수입니다."
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16201,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 시작, ('<분기 조건>' 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16202,
+                            "startColumn": 30
+                          }
+                        },
+                        "message": {
+                          "text": "'window'은(는) 'ImGui::AddUpdateViewport'(줄 1249에서 선언됨)에 대한 In/Out 인수입니다."
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16205,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 시작, ('!lock_viewport' 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16207,
+                            "startColumn": 19
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('flags'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16219,
+                            "startColumn": 144
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16237,
+                            "startColumn": 65
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 시작, ('<분기 조건>' 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16241,
+                            "startColumn": 56
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16246,
+                            "startColumn": 27
+                          }
+                        },
+                        "message": {
+                          "text": "'window'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "NULL 포인터 'node'을(를) 역참조하고 있습니다. 이 오류가 발생할 수 있는 이전 위치는 줄 17226을(를) 참조하십시오."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 17315,
+                  "startColumn": 9,
+                  "endLine": 17315,
+                  "endColumn": 40
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::DockContextProcessDock",
+                  "decoratedName": "?DockContextProcessDock@ImGui@@YAXPEAUImGuiContext@@PEAUImGuiDockRequest@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17191,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17192,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17194,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17195,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17196,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17197,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17200,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17203,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17204,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17205,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17217,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17219,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17223,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17225,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17226,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17227,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17228,
+                            "startColumn": 43
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17236,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17237,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17248,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17250,
+                            "startColumn": 14
+                          }
+                        },
+                        "message": {
+                          "text": "'node'은(는) NULL일 수 있습니다. (이 분기 건너뛰기)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17315,
+                            "startColumn": 38
+                          }
+                        },
+                        "message": {
+                          "text": "'node'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "NULL 포인터 'node->TabBar'을(를) 역참조하고 있습니다. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 17546,
+                  "startColumn": 13,
+                  "endLine": 17546,
+                  "endColumn": 81
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::DockNodeAddWindow",
+                  "decoratedName": "?DockNodeAddWindow@ImGui@@YAXPEAUImGuiDockNode@@PEAUImGuiWindow@@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17505,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17505,
+                            "startColumn": 38
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17506,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17513,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17518,
+                            "startColumn": 61
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17521,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17522,
+                            "startColumn": 34
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17523,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17524,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17525,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17526,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17530,
+                            "startColumn": 34
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17541,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17543,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "'node->TabBar'은(는) NULL일 수 있습니다. (이 분기 시작)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17545,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17546,
+                            "startColumn": 41
+                          }
+                        },
+                        "message": {
+                          "text": "'node->TabBar'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28182",
+          "message": {
+            "text": "NULL 포인터를 역참조하고 있습니다. 'node'에 'info->CentralNode'과(와) 동일한 NULL 값이 포함되어 있습니다. 이 오류가 발생할 수 있는 이전 위치는 줄 17719을(를) 참조하십시오."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 17733,
+                  "startColumn": 9,
+                  "endLine": 17733,
+                  "endColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "DockNodeFindInfo",
+                  "decoratedName": "?DockNodeFindInfo@@YAXPEAUImGuiDockNode@@PEAUImGuiDockNodeTreeInfo@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17719,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17725,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17729,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17731,
+                            "startColumn": 41
+                          }
+                        },
+                        "message": {
+                          "text": "'node'은(는) NULL일 수 있습니다. (이 분기 건너뛰기)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17733,
+                            "startColumn": 27
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('node->ChildNodes[0]'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17733,
+                            "startColumn": 27
+                          }
+                        },
+                        "message": {
+                          "text": "'node'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "NULL 포인터 'node'을(를) 역참조하고 있습니다. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 20111,
+                  "startColumn": 9,
+                  "endLine": 20111,
+                  "endColumn": 33
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::BeginDocked",
+                  "decoratedName": "?BeginDocked@ImGui@@YAXPEAUImGuiWindow@@PEA_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20062,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20065,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20067,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20068,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20079,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20080,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20081,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20082,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20090,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20091,
+                            "startColumn": 14
+                          }
+                        },
+                        "message": {
+                          "text": "'node'은(는) NULL일 수 있습니다. (이 분기 건너뛰기)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20093,
+                            "startColumn": 29
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('window->DockId!=0&&node==0'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20111,
+                            "startColumn": 30
+                          }
+                        },
+                        "message": {
+                          "text": "'node'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28182",
+          "message": {
+            "text": "NULL 포인터를 역참조하고 있습니다. 'window->DockNode'에 'node'과(와) 동일한 NULL 값이 포함되어 있습니다. 이 오류가 발생할 수 있는 이전 위치는 줄 20111을(를) 참조하십시오."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 20182,
+                  "startColumn": 18,
+                  "endLine": 20182,
+                  "endColumn": 50
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::BeginDocked",
+                  "decoratedName": "?BeginDocked@ImGui@@YAXPEAUImGuiWindow@@PEA_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20062,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20065,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20067,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20068,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20079,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20080,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20081,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20082,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20090,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20091,
+                            "startColumn": 14
+                          }
+                        },
+                        "message": {
+                          "text": "'node'은(는) NULL일 수 있습니다. (이 분기 건너뛰기)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20093,
+                            "startColumn": 29
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('window->DockId!=0&&node==0'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20111,
+                            "startColumn": 30
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20123,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20128,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('node->HostWindow==0'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20141,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20144,
+                            "startColumn": 65
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20151,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20152,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20153,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20154,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20155,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20156,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20157,
+                            "startColumn": 27
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('node->MergedFlags'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20161,
+                            "startColumn": 29
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('node->VisibleWindow==window'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20166,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20167,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20168,
+                            "startColumn": 32
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20171,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20175,
+                            "startColumn": 22
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20178,
+                            "startColumn": 71
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20182,
+                            "startColumn": 18
+                          }
+                        },
+                        "message": {
+                          "text": "'node'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26819",
+          "message": {
+            "text": "스위치 레이블 간에 주석 처리되지 않은 fallthrough입니다(es.78)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imstb_truetype.h"
+                },
+                "region": {
+                  "startLine": 2148,
+                  "startColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "stbtt__run_charstring",
+                  "decoratedName": "?stbtt__run_charstring@@YAHPEBUstbtt_fontinfo@@HPEAUstbtt__csctx@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "'pTexture'이(가) '0'일 수 있습니다.  이 경우 'ID3D11Device::CreateShaderResourceView' 함수의 사양과 일치하지 않습니다. 이 오류가 발생할 수 있는 이전 위치는 줄 0을(를) 참조하십시오."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                },
+                "region": {
+                  "startLine": 368,
+                  "startColumn": 9,
+                  "endLine": 368,
+                  "endColumn": 73
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui_ImplDX11_CreateFontsTexture",
+                  "decoratedName": "?ImGui_ImplDX11_CreateFontsTexture@@YAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 333,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 334,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 335,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 336,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 336,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 337,
+                            "startColumn": 33
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 341,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 342,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 343,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 344,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 345,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 346,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 347,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 348,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 349,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 350,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 351,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 353,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 354,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 355,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 356,
+                            "startColumn": 33
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 357,
+                            "startColumn": 38
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 358,
+                            "startColumn": 40
+                          }
+                        },
+                        "message": {
+                          "text": "'pTexture'은(는) NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 362,
+                            "startColumn": 41
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 363,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 364,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 365,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 366,
+                            "startColumn": 37
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 367,
+                            "startColumn": 43
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+                          },
+                          "region": {
+                            "startLine": 368,
+                            "startColumn": 49
+                          }
+                        },
+                        "message": {
+                          "text": "'pTexture'은(는) NULL(이)면 안 됩니다. 이는 'ID3D11Device::CreateShaderResourceView'의 SAL 주석과 일치하지 않습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "NULL 포인터 'state'을(를) 역참조하고 있습니다. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                },
+                "region": {
+                  "startLine": 4653,
+                  "startColumn": 9,
+                  "endLine": 4653,
+                  "endColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::InputTextEx",
+                  "decoratedName": "?InputTextEx@ImGui@@YA_NPEBD0PEADHAEBUImVec2@@HP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4403,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4404,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4411,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4412,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4413,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4415,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4416,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4418,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4420,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4421,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4422,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4423,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4425,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4426,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4428,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4429,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4430,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4431,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4475,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4476,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4482,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4483,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4485,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4489,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4491,
+                            "startColumn": 34
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4493,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4494,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4495,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4496,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4497,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4500,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4502,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4503,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4504,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4505,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4506,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4508,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4510,
+                            "startColumn": 16
+                          }
+                        },
+                        "message": {
+                          "text": "'state'은(는) NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4511,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4512,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4513,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4514,
+                            "startColumn": 64
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4577,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4578,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4585,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 시작, ('g.ActiveId==id' 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4589,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4590,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4590,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4591,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4590,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4590,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4591,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4590,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4592,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('user_clicked'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4594,
+                            "startColumn": 35
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4595,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4601,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('is_multiline'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4607,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('is_osx'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4611,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('is_multiline&&state!=0'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4616,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 시작, ('g.ActiveId==id&&state==0' 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4617,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4620,
+                            "startColumn": 63
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4624,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4625,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4626,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4627,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4630,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4631,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4634,
+                            "startColumn": 21
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('<분기 조건>'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4650,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 시작, ('g.ActiveId==id' 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 4653,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "'state'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "NULL 포인터 'window'을(를) 역참조하고 있습니다. 이 오류가 발생할 수 있는 이전 위치는 줄 8616을(를) 참조하십시오."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                },
+                "region": {
+                  "startLine": 8651,
+                  "startColumn": 5,
+                  "endLine": 8651,
+                  "endColumn": 70
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::EndMenuBar",
+                  "decoratedName": "?EndMenuBar@ImGui@@YAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 8615,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 8616,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 8618,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 8621,
+                            "startColumn": 109
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 8624,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 8625,
+                            "startColumn": 49
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 8627,
+                            "startColumn": 129
+                          }
+                        },
+                        "message": {
+                          "text": "'window'은(는) NULL일 수 있습니다. (이 분기 건너뛰기)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 8649,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 8650,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+                          },
+                          "region": {
+                            "startLine": 8651,
+                            "startColumn": 32
+                          }
+                        },
+                        "message": {
+                          "text": "'window'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.41.34120.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui.cpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "fad20c7626b5bfbca1ca25fdfb8765ec4cfebac850bd32d73b525aace71e5161"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imstb_truetype.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "941a95c9f36771aab45062e977596785aa9cfaa508a523f6c34ace84b5916780"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_impl_dx11.cpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "44b6387a50fb38fe4f5088d208fefbf798911dec3913e8364eec52248c9f46b1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmEngine/imgui/imgui_widgets.cpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "fdac093caa2697ce3055661089dda906f134e949c7246c9964ac0a79ad47a869"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/inter/release/unity_8l1bvppmsl0uhz09.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "14ba1fc1ff77b40d47a18ade1ed4e45b82b9047c1f8149bfac3c5c397d81be96"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imgui.h"
+          },
+          "hashes": {
+            "sha-256": "1a67a5cf6f31c21bf545582258e17cad9472995e4bc1db7bc61079254b897196"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imconfig.h"
+          },
+          "hashes": {
+            "sha-256": "ab7cab963a542ac9dda100e7189e1f18b28f45aa696b8ba6bd931ac932863d30"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imgui_internal.h"
+          },
+          "hashes": {
+            "sha-256": "0adc1da7fca413b5d0feb8c9158dac0b417eadf592ddf02e05b40caf0c655406"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imgui_draw.cpp"
+          },
+          "hashes": {
+            "sha-256": "a651d45b43f57e3bc50a47a03e78c52b9e0253b0dbe9727ea0f56aa62b59d655"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imstb_rectpack.h"
+          },
+          "hashes": {
+            "sha-256": "bb53504995e983d54b1ae06ea727f0b39647e5e205b4bf7da01343953974951c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imgui_impl_dx11.h"
+          },
+          "hashes": {
+            "sha-256": "e95c690ca3e16201fd2377a80f1fa343f3c29f0108791d844dda8e19fbe0cdc1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imgui_impl_win32.cpp"
+          },
+          "hashes": {
+            "sha-256": "b498e82632f8e53a88eb7fa9208426061b8adef4e7e1018a52880b525f491d17"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imgui_impl_win32.h"
+          },
+          "hashes": {
+            "sha-256": "43a370ddff798a091613eb9bd1828f6d7c16bbbbcae296b4588db7f4c532d721"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imgui_tables.cpp"
+          },
+          "hashes": {
+            "sha-256": "876f2bec81b35ccd402300cc9f169a028feb22227bcf305d0fc70a1c508f48ae"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imstb_textedit.h"
+          },
+          "hashes": {
+            "sha-256": "d9deebe52c76276c42ca030e4ab92ea145552d2aa7e92fd7dea27ffc64eb7166"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.41.34120:TargetPlatformVersion=10.0.22621.0:VcpkgTriplet=x86-windows-static
+x86-windows-static-md
+x64-windows-static
+x64-windows-static-md:
+Debug|x64|C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\|

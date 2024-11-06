@@ -1,0 +1,76 @@
+﻿  cmAlgorithm.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmAlgorithm.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmAssert.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmAssert.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmConsoleGUI.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmConsoleGUI.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmConsole.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmConsole.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmCommonCommand.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmCommonCommand.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmDebugger.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmDebugger.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmEngine.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmEngine.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmGraphicsBuffer.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmGraphicsBuffer.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmGraphicsDevice.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmGraphicsDevice.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmGraphicsResource.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmGraphicsResource.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmGUIRenderer.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmGUIRenderer.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmGUI.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmGUI.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmLogger.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmLogger.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmLoggerGUI.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmLoggerGUI.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmLogData.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmLogData.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmResourceManager.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmResourceManager.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmTimer.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmTimer.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmRenderer.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmRenderer.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmStaticTextBuffer.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmStaticTextBuffer.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmWindow.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmWindow.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  컴파일하고 있습니다...
+  cmWindowsManager.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmWindowsManager.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  cmApplication.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\cmApplication.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  Colors.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\Colors.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  FileDialog.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\FileDialog.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  ImGuiHelper.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\ImGuiHelper.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  imgui.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\imgui\imgui.cpp(2138,10): error C2006: '#include': "FILENAME" 또는 <FILENAME>이 필요합니다.
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\imgui\imgui.cpp(2912,9): warning C4005: 'va_copy': 매크로 재정의
+      C:\Users\ajw01\source\repos\cmEngine\cmEngine\imgui\imgui.cpp(2910,9):
+      'va_copy'의 이전 정의를 참조하십시오.
+  
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\imgui\imgui.cpp(22786,1): error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "pch.h"'을(를) 소스에 추가하시겠습니까?
+  imgui_draw.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\imgui\imgui_draw.cpp(124,10): error C2006: '#include': "FILENAME" 또는 <FILENAME>이 필요합니다.
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\imgui\imgui_draw.cpp(148,10): error C2006: '#include': "FILENAME" 또는 <FILENAME>이 필요합니다.
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\imgui\imgui_draw.cpp(4694,1): error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "pch.h"'을(를) 소스에 추가하시겠습니까?
+  imgui_impl_dx11.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\imgui\imgui_impl_dx11.cpp(752,1): error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "pch.h"'을(를) 소스에 추가하시겠습니까?
+  imgui_impl_win32.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\imgui\imgui_impl_win32.cpp(1393,1): error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "pch.h"'을(를) 소스에 추가하시겠습니까?
+  imgui_tables.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\imgui\imgui_tables.cpp(4467,1): error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "pch.h"'을(를) 소스에 추가하시겠습니까?
+  imgui_widgets.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\imgui\imgui_widgets.cpp(10432,1): error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "pch.h"'을(를) 소스에 추가하시겠습니까?
+  pch.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\pch.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  UComPtr.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\UComPtr.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
+  WindowsStruct.cpp
+C:\Users\ajw01\source\repos\cmEngine\cmEngine\WindowsStruct.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'x64\Release\cmEngine.pch': No such file or directory
