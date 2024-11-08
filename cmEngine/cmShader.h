@@ -38,6 +38,12 @@ public:
 		mConstantBuffers = inConstantBuffers;
 	}
 
+	const std::vector<cmConstantBufferBase*>& GetConstantBuffers() const
+	{
+		return mConstantBuffers;
+	}
+
+
 private:
 	UComPtr<ID3DBlob> mBlob = nullptr;
 	std::vector<cmConstantBufferBase*> mConstantBuffers = {};

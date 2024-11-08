@@ -10,8 +10,11 @@
     <Filter Include="02. Dummies">
       <UniqueIdentifier>{fa2c1d72-2bc1-4fad-bf63-ce1c45525948}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Scrpits">
+    <Filter Include="03. Script">
       <UniqueIdentifier>{6c7df4ef-fb66-4150-8fb3-6a437df82f2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. GUI">
+      <UniqueIdentifier>{1310b8de-eafe-4e5f-9243-5b46f870d1bc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -28,7 +31,13 @@
       <Filter>02. Dummies</Filter>
     </ClCompile>
     <ClCompile Include="DummyScript.cpp">
-      <Filter>03. Scrpits</Filter>
+      <Filter>03. Script</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraScript.cpp">
+      <Filter>03. Script</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraGUI.cpp">
+      <Filter>04. GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -42,7 +51,13 @@
       <Filter>02. Dummies</Filter>
     </ClInclude>
     <ClInclude Include="DummyScript.h">
-      <Filter>03. Scrpits</Filter>
+      <Filter>03. Script</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraScript.h">
+      <Filter>03. Script</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraGUI.h">
+      <Filter>04. GUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

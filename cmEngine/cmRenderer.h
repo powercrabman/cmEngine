@@ -8,6 +8,7 @@ class cmRenderTargetView;
 class cmPipeline;
 class cmMeshRenderer;
 class cmGraphicsResourceManager;
+class cmGameObject;
 
 class cmRenderer
 {
@@ -23,8 +24,10 @@ public:
 
 	void OnResize(const ScreenSize& inScreenSize);
 
-	void RegisterMeshRenderer(cmMeshRenderer* inMeshRenderer);
-	void UnregisterMeshRenderer(cmMeshRenderer* inMeshRenderer);
+	void RegistGameObject(cmGameObject* inGameObject);
+	void UnregistGameObject(cmGameObject* inGameObject);
+
+	cmViewport* GetViewport() const { return mViewport.get(); }
 
 private:
 	void Initialize(cmWindow* inMainWindow);
@@ -47,11 +50,11 @@ private:
 	std::unique_ptr<cmPipeline> mPipeline = nullptr;
 
 	//Mesh Renderer
-	struct MeshRendererData
+	struct GameObjectData
 	{
 		uint64 Index = 0;
-		cmMeshRenderer* MeshRenderer = nullptr;
+		cmGameObject* GameObject = nullptr;
 	};
-	std::unordered_map<uint64, MeshRendererData> mMeshRendererRepo = {};
-	std::vector<cmMeshRenderer*> mRenderList = {};
+	std::unordered_map<uint64, GameObjectData> mRenderRepo = {};
+	std::vector<cmGameObject*> mRenderList = {};
 };

@@ -12,10 +12,6 @@ void Demo::Initialize()
 	sm->ChangeScene<DummyScene>();
 }
 
-void Demo::Update()
-{
-}
-
 void Demo::CleanUp()
 {
 }

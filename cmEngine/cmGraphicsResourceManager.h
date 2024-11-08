@@ -9,27 +9,27 @@ public:
 	virtual ~cmGraphicsResourceManager();
 
 #pragma region Constant Buffer
+
 	template<typename ConstantBufferData>
 	cmConstantBuffer<ConstantBufferData>* CreateConstantBuffer()
 	{
 		using Ty = ConstantBufferData;
 		static_assert(std::is_base_of<cmConstantBufferDataBase, Ty>::value, "Ty must derived by ConstantBufferDataBase");
-		auto iter = mCBufferRepo.find(TYPE_ID(Ty));
 
-		if (iter != mCBufferRepo.end())
+		uint32 idx = (uint32)Ty::ConstantBufferType;
+
+		if (mCBufferRepo[(uint32)ConstantBufferData::ConstantBufferType])
 		{
-			ASSERT(false, "Already exist constant buffer.");
-			LOG_WARN("Already exist constant buffer.");
-
-			return static_cast<cmConstantBuffer<Ty>*>(iter->second.get());
+			ASSERT(false, "Already Exist Constant Buffer.");
+			LOG_WARN("Already Exist Constant Buffer.");
+			return static_cast<cmConstantBuffer<Ty>*>(mCBufferRepo[idx].get());
 		}
 
 		std::unique_ptr<cmConstantBuffer<Ty>> inst = std::make_unique<cmConstantBuffer<Ty>>();
 		inst->Create();
-		cmConstantBuffer<Ty>* ptr = inst.get();
-		mCBufferRepo[TYPE_ID(Ty)] = std::move(inst);
-
-		return ptr;
+		cmConstantBuffer<Ty>* retVal = inst.get();
+		mCBufferRepo[idx] = std::move(inst);
+		return retVal;
 	}
 
 	template<typename ConstantBufferData>
@@ -37,18 +37,19 @@ public:
 	{
 		using Ty = ConstantBufferData;
 		static_assert(std::is_base_of<cmConstantBufferDataBase, Ty>::value, "Ty must derived by ConstantBufferDataBase");
-		auto iter = mCBufferRepo.find(TYPE_ID(Ty));
 
-		if (iter == mCBufferRepo.end())
+		const std::unique_ptr<cmConstantBufferBase>& inst = mCBufferRepo[(uint32)Ty::ConstantBufferType];
+
+		if (inst)
 		{
-			ASSERT(false, "do not exist constant buffer.");
-			LOG_WARN("do not exist constant buffer.");
-
+			return static_cast<cmConstantBuffer<Ty>*>(inst.get());
+		}
+		else
+		{
 			return nullptr;
 		}
-
-		return static_cast<cmConstantBuffer<Ty>*>(iter->second.get());
 	}
+
 #pragma endregion
 
 #pragma region InputLayout
@@ -130,7 +131,7 @@ public:
 private:
 	cmGraphicsResourceManager();
 
-	std::unordered_map<cmTypeID, std::unique_ptr<cmConstantBufferBase>> mCBufferRepo = {};
+	std::array<std::unique_ptr<cmConstantBufferBase>, (uint32)eConstantBufferType::Count> mCBufferRepo = {};
 	std::unordered_map<cmTypeID, std::unique_ptr<cmInputLayoutBase>> mInputLayoutRepo = {};
 	std::unordered_map<std::string, std::unique_ptr<cmGeometry>> mGeometryRepo = {};
 };

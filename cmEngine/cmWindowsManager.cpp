@@ -38,6 +38,20 @@ LRESULT CoreProc(HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam)
 		return 0;
 	}
 
+	case WM_SETFOCUS:
+	{
+		Engine->GetWindowsManager()->GetMainWindow()->SetFocus(true);
+		LOG_DEBUG("Main Window Activate");
+		return 0;
+	}
+
+	case WM_KILLFOCUS:
+	{
+		Engine->GetWindowsManager()->GetMainWindow()->SetFocus(false);
+		LOG_DEBUG("Main Window No Activate");
+		return 0;
+	}
+
 	default:
 		return DefWindowProc(hwnd, uMsg, wParam, lParam);
 	}

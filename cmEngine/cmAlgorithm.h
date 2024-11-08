@@ -49,18 +49,15 @@ namespace cmRandom
 	inline float Getfloat(float min = 0.0, float max = 1.0)
 	{
 		std::uniform_real_distribution<> dist(min, max);
-		return dist(gen);
+		return static_cast<float>(dist(gen));
 	}
 
 	inline float GetNormal(float mean = 0.0, float stddev = 1.0)
 	{
 		std::normal_distribution<> dist(mean, stddev);
-		return dist(gen);
+		return static_cast<float>(dist(gen));
 	}
 }
-
-
-
 
 
 namespace cmArray

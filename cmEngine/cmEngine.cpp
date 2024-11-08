@@ -14,18 +14,21 @@
 #include "cmMesh.h"
 #include "cmGameObject.h"
 #include "cmTransform.h"
+#include "cmKeyboard.h"
+#include "cmCamera.h"
 
 cmEngine::~cmEngine() = default;
 cmEngine::cmEngine()
 {
 	//엔진 모듈 생성
-	mWindowsManager  = std::unique_ptr<cmWindowsManager>(new cmWindowsManager);
-	mRenderer        = std::unique_ptr<cmRenderer>(new cmRenderer);
-	mConsole         = std::unique_ptr<cmConsole>(new cmConsole);
-	mLogger          = std::unique_ptr<cmLogger>(new cmLogger);
-	mTimer           = std::unique_ptr<cmTimer>(new cmTimer);
+	mWindowsManager = std::unique_ptr<cmWindowsManager>(new cmWindowsManager);
+	mRenderer = std::unique_ptr<cmRenderer>(new cmRenderer);
+	mConsole = std::unique_ptr<cmConsole>(new cmConsole);
+	mLogger = std::unique_ptr<cmLogger>(new cmLogger);
+	mTimer = std::unique_ptr<cmTimer>(new cmTimer);
 	mResourceManager = std::unique_ptr<cmResourceManager>(new cmResourceManager);
-	mSceneManager    = std::unique_ptr<cmSceneManager>(new cmSceneManager);
+	mSceneManager = std::unique_ptr<cmSceneManager>(new cmSceneManager);
+	mKeyboard = std::unique_ptr<cmKeyboard>(new cmKeyboard);
 }
 
 void cmEngine::Initialize() const
@@ -37,9 +40,12 @@ void cmEngine::Initialize() const
 
 	// 윈도우 매니저 초기화
 	mWindowsManager->Initialize();
+
+	// Input 초기화
+	mKeyboard->Initialize();
 }
 
-void cmEngine::FinalInitialize() 
+void cmEngine::FinalInitialize()
 {
 	// 렌더러 초기화
 	cmWindow* mainWin = mWindowsManager->GetMainWindow();
@@ -69,6 +75,23 @@ void cmEngine::LoadCommonResources() const
 	auto* r = GetResourceManager();
 	auto* g = GetRenderer()->GetGraphicsResourceManager();
 
+#pragma region Constant Buffer
+
+	{
+		auto* cb = g->CreateConstantBuffer<cmCBTransform>();
+		cb->Create();
+	}
+
+	{
+		auto* cb = g->CreateConstantBuffer<cmCBCamera>();
+		cb->Create();
+	}
+
+#pragma endregion
+
+	auto* grm = mRenderer->GetGraphicsResourceManager();
+
+
 	// Vertex Shadepr
 	cmVertexShader* vs = r->CreateResource<cmVertexShader>("SimpleVS");
 	vs->LoadAndCompileHLSL(
@@ -77,6 +100,7 @@ void cmEngine::LoadCommonResources() const
 		"vs_5_0"
 	);
 	vs->Create();
+	vs->SetConstantBuffers({ grm->FindConstantBufferOrNull<cmCBTransform>(), grm->FindConstantBufferOrNull<cmCBCamera>() });
 
 	// Pixel Shader
 	cmPixelShader* ps = r->CreateResource<cmPixelShader>("SimplePS");
@@ -94,17 +118,6 @@ void cmEngine::LoadCommonResources() const
 	// InputLayout
 	g->CreateInputLayout<cmVertexPosColor>(Engine->GetResourceManager()->FindResourceOrNull<cmVertexShader>("SimpleVS"));
 
-	// Constant Buffer
-	auto* cb = g->CreateConstantBuffer<cmCBTransform>();
-	cb->SetUpdateBufferFunc([](cmGameObject* inGameObject)
-		{
-			auto* t = inGameObject->FindComponentOrNull<cmTransform>();
-			cmCBTransform ret = {};
-			ret.World = t->GetWorldMatrix();
-			return ret;
-		}
-	);
-
 	// Mesh
 	cmMesh* m = r->CreateResource<cmMesh>("SimpleMesh");
 	cmPipelineData d = {};
@@ -114,6 +127,6 @@ void cmEngine::LoadCommonResources() const
 	d.PixelShader = ps;
 
 	m->SetPipelineData(d);
- }
+}
 
 cmEngine* Engine = nullptr;

@@ -18,7 +18,7 @@ void cmDebugGUI::Initialize()
 void cmDebugGUI::RenderGUI()
 {
 	ImGuiIO& io = ImGui::GetIO();
-	static ImGuiWindowFlags flag = ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoCollapse;
+	static ImGuiWindowFlags flag = ImGuiWindowFlags_NoNavInputs | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoCollapse;
 
 	//위치 설정
 	if (mNeedWindowPosAdjust)
@@ -86,7 +86,7 @@ void cmDebugGUI::RenderGUI()
 
 		// Move Flag
 		if (ImGui::Checkbox("No move", &noMoveButton)) { mMoveFlag = noMoveButton ? ImGuiWindowFlags_NoMove : ImGuiWindowFlags_None; };
-		
+
 		ImGui::Separator();
 		if (ImGui::Selectable("Close")) { SetVisible(false); }
 
@@ -131,6 +131,13 @@ void cmDebugGUI::RenderGUI()
 		ImGui::TreePop();
 	}
 
+	// 키보드
+	if (ImGui::TreeNode("Keyboard"))
+	{
+		ImGui::Text("TODO!!");
+		ImGui::TreePop();
+	}
+
 	// 뷰포트
 	if (ImGui::TreeNode("Viewport"))
 	{
@@ -156,7 +163,40 @@ void cmDebugGUI::RenderGUI()
 	{
 		ImGui::Text("Total Time : %.3f sec", Engine->GetTimer()->GetTotalTime());
 		ImGui::Text("Delta Time : %.3f ms", Engine->GetTimer()->GetDeltaTime() * 1000.f);
-		ImGui::Text("Frame Per Sceond : %d update per sec", Engine->GetTimer()->GetFPS());
+
+		int fps = Engine->GetTimer()->GetFPS();
+
+		ImGui::Text("Frame Per Sceond : %d update per sec", fps);
+
+		static float timeAcc = 0.f;
+		timeAcc += DELTA_TIME;
+
+		enum {FPS_BUFFER_SIZE = 10};
+		static int fpsBuffer[FPS_BUFFER_SIZE] = { 0 };
+		static int fpsAcc = 0;
+		static int index = 0;
+		static int fpsCount = 0;
+
+		if (timeAcc >= 1.f)
+		{
+			fpsAcc -= fpsBuffer[index]; 
+			fpsBuffer[index] = fps;     
+			fpsAcc += fpsBuffer[index]; 
+
+			index = (index + 1) % FPS_BUFFER_SIZE;
+
+			if (fpsCount < FPS_BUFFER_SIZE) fpsCount++;
+			timeAcc -= 1.f;
+		}
+
+		if (fpsCount >= FPS_BUFFER_SIZE)
+		{
+			ImGui::Text("10-second Average FPS : %.1f updates per sec", fpsAcc / (float)FPS_BUFFER_SIZE);
+		}
+		else
+		{
+			ImGui::Text("10-second Average FPS : counting...");
+		}
 
 		ImGui::TreePop();
 	}

@@ -1,14 +1,16 @@
 #pragma once
 #include "cmComponent.h"
+#include "cmIRenderable.h"
 
-class cmTransform : public cmComponent
+class cmTransform : public cmComponent, public cmIRenderable
 {
 public:
 	cmTransform() = default;
 	virtual ~cmTransform() = default;
 
-	void OnStart() override;
-	void OnFinish() override;
+	void OnStart() override {}
+	void OnFinish() override {}
+	void Render() override;
 
 	// Position
 	void SetPosition(const Vector3& inPosition) { mPosition = inPosition; }
@@ -29,14 +31,14 @@ public:
 	void SetRotation(const Vector3& inRotation) { mRotation = inRotation; }
 	void AddRotation(const Vector3& inRotation) { mRotation += inRotation; }
 
-	void SetRotationX(float inX) { mRotation.x = inX; }
-	void AddRotationX(float inX) { mRotation.x += inX; }
+	void SetRotationX(float inDegree) { mRotation.x = inDegree; }
+	void AddRotationX(float inDegree) { mRotation.x += inDegree; }
 
-	void SetRotationY(float inY) { mRotation.y = inY; }
-	void AddRotationY(float inY) { mRotation.y += inY; }
+	void SetRotationY(float inDegree) { mRotation.y = inDegree; }
+	void AddRotationY(float inDegree) { mRotation.y += inDegree; }
 
-	void SetRotationZ(float inZ) { mRotation.z = inZ; }
-	void AddRotationZ(float inZ) { mRotation.z += inZ; }
+	void SetRotationZ(float inDegree) { mRotation.z = inDegree; }
+	void AddRotationZ(float inDegree) { mRotation.z += inDegree; }
 
 	Vector3 GetRotation() const { return mRotation; }
 
@@ -56,29 +58,17 @@ public:
 	Vector3 GetScale() const { return mScale; }
 
 	// Matrix
-	Matrix GetWorldMatrix() const
+	Matrix GetWorld() const
 	{
-		Matrix result = Matrix::CreateFromYawPitchRoll(mRotation);
-
-		// v S R T
-		result._11 *= mScale.x;
-		result._12 *= mScale.x;
-		result._13 *= mScale.x;
-
-		result._21 *= mScale.y;
-		result._22 *= mScale.y;
-		result._23 *= mScale.y;
-
-		result._31 *= mScale.z;
-		result._32 *= mScale.z;
-		result._33 *= mScale.z;
-
-		result._41 = mPosition.x;
-		result._42 = mPosition.y;
-		result._43 = mPosition.z;
-
-		return result;
+		return DirectX::XMMatrixAffineTransformation(
+			mScale,
+			Vector3::Zero,
+			Quaternion::CreateFromYawPitchRoll(mRotation),
+			mPosition
+		);
 	}
+
+	constexpr inline static eComponentType ComponentType = eComponentType::Transform;
 
 private:
 	Vector3 mPosition = Vector3::Zero;

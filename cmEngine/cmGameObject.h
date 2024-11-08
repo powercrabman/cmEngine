@@ -1,23 +1,26 @@
 #pragma once
 
-#include "cmComponent.h"
 #include "cmScript.h"
 
 class cmTransform;
 class cmScript;
+class cmIRenderable;
 
 class cmGameObject
 {
 	struct ComponentData;
 public:
 	cmGameObject();
-	virtual ~cmGameObject() = default;
+	virtual ~cmGameObject();
 
-	virtual void OnStart();			/* 오브젝트를 초기화할 때 호출 (초기화 함수) */
-	virtual void OnFinish();		/* 오브젝트가 파괴될 때 호출 (메모리는 해제하지 않음) */
+	void OnStart();			/* 오브젝트를 초기화할 때 호출 (초기화 함수) */
+	void OnFinish();		/* 오브젝트가 파괴될 때 호출 (메모리는 해제하지 않음) */
 
-	virtual void Update();			/* 메인 업데이트 */
-	virtual void LateUpdate();		/* Update 에서 갱신된 내용을 통해 오브젝트 상태 보정 및 결정 */
+	void Update();			/* 메인 업데이트 */
+	void LateUpdate();		/* Update 에서 갱신된 내용을 통해 오브젝트 상태 보정 및 결정 */
+	void PreRender();		/* 파이프라인과 관련된 작업을 수행 */
+
+	cmTransform* GetTransform() const { return mTransform; }
 
 	void SetActive(bool inActive)
 	{
@@ -41,53 +44,69 @@ public:
 	{
 		static_assert(std::is_base_of<cmComponent, Ty>::value, "Ty must derived by cmComponent.");
 
-		auto iter = mCompRepo.find(TYPE_ID(Ty));
-		if (iter != mCompRepo.end())
+		if constexpr (!std::is_base_of<cmScript, Ty>::value)
 		{
-			LOG_ERROR("Component of this type already exists.");
-			return static_cast<Ty*>(iter->second.get()); 
+			uint32 idx = (uint32)Ty::ComponentType;
+			if (mCompRepo[idx])
+			{
+				ASSERT(false, "already exist component!");
+				LOG_ERROR("already exist component!");
+				return static_cast<Ty*>(mCompRepo[idx].get());
+			}
 		}
 
-		std::unique_ptr<Ty> cmp = std::make_unique<Ty>(std::forward<Args>(args)...);
-		cmp->SetOwner(this);
-		if (isActive) { cmp->SetActive(true); }
-
-		Ty* ptr = cmp.get();
-		
-		mCompRepo[TYPE_ID(Ty)] = std::move(cmp);
+		std::unique_ptr<Ty> inst = std::make_unique<Ty>(std::forward<Args>(args)...);
+		inst->SetOwner(this);
+		Ty* retVal = inst.get();
 
 		if constexpr (std::is_base_of<cmScript, Ty>::value)
 		{
-			ptr->Initialize();
-			mUpdateList.push_back(ptr);
+			inst->Initialize();
+			mScripts.push_back(std::move(inst));
+		}
+		else
+		{
+			mCompRepo[(uint32)Ty::ComponentType] = std::move(inst);
+
+			if constexpr (std::is_base_of<cmIRenderable, Ty>::value)
+			{
+				mRenderableList.push_back(std::make_pair(retVal, retVal));
+			}
 		}
 
-		return ptr;
+		if (isActive) { retVal->SetActive(true); }
+		return retVal;
 	}
 
 	template<typename Ty>
-	Ty* FindComponentOrNull()
+	Ty* FindComponentOrNull() const
 	{
 		static_assert(std::is_base_of<cmComponent, Ty>::value, "Ty must derived by cmComponent.");
 
-		auto iter = mCompRepo.find(TYPE_ID(Ty));
+		const std::unique_ptr<cmComponent>& retVal = mCompRepo[(uint32)Ty::ComponentType];
 
-		if (iter == mCompRepo.end())
+		if (retVal)
 		{
-			ASSERT(false, "Do not exist component");
-			LOG_ERROR("Component does not exist.");
+			return static_cast<Ty*>(retVal.get());
+		}
+		else
+		{
+			ASSERT(false, "retVal is nullptr!");
+			LOG_ERROR("retVal is nullptr!");
 			return nullptr;
 		}
-
-		return static_cast<Ty*>(iter->second.get());
 	}
 
 private:
 	inline static uint64 sGameObjectCounter = 0;
 
-	// TODO : 현재 컴포넌트 생성만 존재하고, 제거는 존재하지 않음
-	std::unordered_map<cmTypeID, std::unique_ptr<cmComponent>> mCompRepo;
-	std::vector<cmScript*> mUpdateList;
+	// TODO : 현재 구조는 마구잡이 식이라 나중에 고치기
+	enum { COMPONENT_COUNT = (uint32)(eComponentType::Count) };
+	std::array<std::unique_ptr<cmComponent>, COMPONENT_COUNT> mCompRepo = {};
+	std::vector<std::unique_ptr<cmScript>> mScripts = {};
+	std::vector<std::pair<cmComponent*, cmIRenderable*>> mRenderableList = {};
+
+	cmTransform* mTransform = nullptr;
 
 	std::string mName = "Undefined";
 

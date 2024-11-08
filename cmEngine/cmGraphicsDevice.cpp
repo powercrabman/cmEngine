@@ -32,6 +32,13 @@ void cmGraphicsDevice::CreateDeviceAndDC()
 	);
 
 	DX_CHECK(hr, "Create Device Fail.");
+
+#if defined(DEBUG) || defined(_DEBUG)
+
+	hr = mDevice->QueryInterface(__uuidof(ID3D11Debug), (void**)&mDebug);
+	DX_CHECK(hr, "Create DX Debug fail.");
+
+#endif
 }
 void cmGraphicsDevice::CreateAdapterAndFactory()
 {

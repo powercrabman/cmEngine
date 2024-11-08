@@ -1,0 +1,12 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\ahnjiwoo\\desktop\\projects\\cmengine\\cmengine\\cmguirenderer.h",
+        "ProvidedModule": "",
+        "Includes": [
+            "c:\\users\\ahnjiwoo\\desktop\\projects\\cmengine\\cmengine\\cmgui.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

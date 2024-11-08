@@ -3,3 +3,4 @@
 // 자세한 내용은 다음을 참조하세요. https://go.microsoft.com/fwlink/?linkid=865984
 #define ENGINE_MODULE_BODY()#define NULL
 #define NULL ((void *)0)
+#define INTERFACE

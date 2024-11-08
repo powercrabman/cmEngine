@@ -2,16 +2,6 @@
 
 class cmPipeline
 {
-	// Constant Buffer의 Dirty bit는 자체적으로 관리함
-	enum ePipelineDirtyFlag
-	{
-		PIPELINE_DIRTY_FLAG_NONE         = 0,
-		PIPELINE_DIRTY_FLAG_GEOMETRY     = 1 << 0,
-		PIPELINE_DIRTY_FLAG_INPUTLAYOUT  = 1 << 1,
-		PIPELINE_DIRTY_FLAG_VERTEXSHADER = 1 << 2,
-		PIPELINE_DIRTY_FLAG_PIXELSHADER  = 1 << 3,
-	};
-
 public:
 	cmPipeline() = default;
 	virtual ~cmPipeline() = default;
@@ -19,94 +9,88 @@ public:
 	void DrawIndices()
 	{
 		ID3D11DeviceContext* context = Engine->GetRenderer()->GetGraphicsDevice()->GetContext();
-		context->DrawIndexed(mPipData.Geometry->GetIndexBuffer()->GetBufferSize(), 0, 0);
+		context->DrawIndexed(mPipeData.Geometry->GetIndexBuffer()->GetBufferSize(), 0, 0);
 	}
 
 	void Draw()
 	{
 		ID3D11DeviceContext* context = Engine->GetRenderer()->GetGraphicsDevice()->GetContext();
-		context->Draw(mPipData.Geometry->GetVertexBuffer()->GetBufferSize(), 0);
+		context->Draw(mPipeData.Geometry->GetVertexBuffer()->GetBufferSize(), 0);
 	}
 
-	void SetPipeline(const cmPipelineData& inPipelineDate)
-	{
-		if (mPipData.Geometry != inPipelineDate.Geometry)
-		{
-			mPipData.Geometry = inPipelineDate.Geometry;
-			EnableDirtyBit(PIPELINE_DIRTY_FLAG_GEOMETRY);
-		}
-
-		if (mPipData.InputLayout != inPipelineDate.InputLayout)
-		{
-			mPipData.InputLayout = inPipelineDate.InputLayout;
-			EnableDirtyBit(PIPELINE_DIRTY_FLAG_INPUTLAYOUT);
-		}
-
-		if (mPipData.VertexShader != inPipelineDate.VertexShader)
-		{
-			mPipData.VertexShader = inPipelineDate.VertexShader;
-			EnableDirtyBit(PIPELINE_DIRTY_FLAG_VERTEXSHADER);
-		}
-
-		if (mPipData.PixelShader != inPipelineDate.PixelShader)
-		{
-			mPipData.PixelShader = inPipelineDate.PixelShader;
-			EnableDirtyBit(PIPELINE_DIRTY_FLAG_PIXELSHADER);
-		}
-	}
-
-	void SubmitPipeline()
+	void SubmitPipeline(const cmPipelineData& inPipelineDate)
 	{
 		ID3D11DeviceContext* context = Engine->GetRenderer()->GetGraphicsDevice()->GetContext();
 
-		if (mDirtyBits != PIPELINE_DIRTY_FLAG_NONE)
+		if (mPipeData.Geometry != inPipelineDate.Geometry)
 		{
-			if (mDirtyBits & PIPELINE_DIRTY_FLAG_GEOMETRY)
+			mPipeData.Geometry = inPipelineDate.Geometry;
+
+
+			cmVertexBuffer* vertexBuffer = mPipeData.Geometry->GetVertexBuffer();
+			cmIndexBufferU32* indexBuffer = mPipeData.Geometry->GetIndexBuffer();
+			context->IASetVertexBuffers(0, 1, vertexBuffer->GetBufferRef(), vertexBuffer->GetStrideRef(), vertexBuffer->GetOffsetRef());
+			context->IASetIndexBuffer(indexBuffer->GetBuffer(), DXGI_FORMAT_R32_UINT, 0);
+		}
+
+		if (mPipeData.InputLayout != inPipelineDate.InputLayout)
+		{
+			mPipeData.InputLayout = inPipelineDate.InputLayout;
+			context->IASetInputLayout(mPipeData.InputLayout->GetInputLayout());
+		}
+
+		if (mPipeData.VertexShader != inPipelineDate.VertexShader)
+		{
+			mPipeData.VertexShader = inPipelineDate.VertexShader;
+			context->VSSetShader(mPipeData.VertexShader->GetShader(), nullptr, 0);
+		}
+
+		if (mPipeData.PixelShader != inPipelineDate.PixelShader)
+		{
+			mPipeData.PixelShader = inPipelineDate.PixelShader;
+			context->PSSetShader(mPipeData.PixelShader->GetShader(), nullptr, 0);
+		}
+	}
+
+	void SubmitGraphicsData()
+	{
+		ID3D11DeviceContext* context = Engine->GetRenderer()->GetGraphicsDevice()->GetContext();
+
+		// Constant Buffer
+
+		// VS
+		const std::vector<cmConstantBufferBase*>& vsCBList = mPipeData.VertexShader->GetConstantBuffers();
+		for (int idx = 0; idx < vsCBList.size(); ++idx)
+		{
+			cmConstantBufferBase* cb = vsCBList[idx];
+			if (cb != ConstantBufferDatas[idx])
 			{
-				cmVertexBuffer* vertexBuffer = mPipData.Geometry->GetVertexBuffer();
-				cmIndexBufferU32* indexBuffer = mPipData.Geometry->GetIndexBuffer();
-				context->IASetVertexBuffers(0, 1, vertexBuffer->GetBufferRef(), vertexBuffer->GetStrideRef(), vertexBuffer->GetOffsetRef());
-				context->IASetIndexBuffer(indexBuffer->GetBuffer(), DXGI_FORMAT_R32_UINT, 0);
-				DisableDirtyBit(PIPELINE_DIRTY_FLAG_GEOMETRY);
+				context->VSSetConstantBuffers(idx, 1, cb->GetBufferPtr());
 			}
-			if (mDirtyBits & PIPELINE_DIRTY_FLAG_INPUTLAYOUT)
+		}
+
+		// PS
+		const std::vector<cmConstantBufferBase*>& psCBList = mPipeData.PixelShader->GetConstantBuffers();
+		for (int idx = 0; idx < psCBList.size(); ++idx)
+		{
+			cmConstantBufferBase* cb = psCBList[idx];
+			if (cb != ConstantBufferDatas[idx])
 			{
-				context->IASetInputLayout(mPipData.InputLayout->GetInputLayout());
-				DisableDirtyBit(PIPELINE_DIRTY_FLAG_INPUTLAYOUT);
-			}
-			if (mDirtyBits & PIPELINE_DIRTY_FLAG_VERTEXSHADER)
-			{
-				context->VSSetShader(mPipData.VertexShader->GetShader(), nullptr, 0);
-				DisableDirtyBit(PIPELINE_DIRTY_FLAG_VERTEXSHADER);
-			}
-			if (mDirtyBits & PIPELINE_DIRTY_FLAG_PIXELSHADER)
-			{
-				context->PSSetShader(mPipData.PixelShader->GetShader(), nullptr, 0);
-				DisableDirtyBit(PIPELINE_DIRTY_FLAG_PIXELSHADER);
+				context->PSSetConstantBuffers(idx, 1, cb->GetBufferPtr());
 			}
 		}
 	}
 
 	void Clear()
 	{
-		mPipData.Clear();
-		mDirtyBits = PIPELINE_DIRTY_FLAG_NONE;
-	}
-
-private:
-	void EnableDirtyBit(ePipelineDirtyFlag flag)
-	{
-		mDirtyBits |= flag;
-	}
-
-	void DisableDirtyBit(ePipelineDirtyFlag flag)
-	{
-		mDirtyBits &= ~flag;
+		mPipeData.Clear();
+		ConstantBufferDatas.fill(nullptr);
 	}
 
 private:
 	// Dirty bits
-	uint32 mDirtyBits = PIPELINE_DIRTY_FLAG_NONE;
+	cmPipelineData mPipeData = {};
 
-	cmPipelineData mPipData = {};
+	enum { CONSTANTBUFFER_SLOT_MAX = 10 }; // TEMP
+	std::array<cmConstantBufferBase*, CONSTANTBUFFER_SLOT_MAX> ConstantBufferDatas = {};
 };

@@ -1,0 +1,12 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\ahnjiwoo\\desktop\\projects\\cmengine\\cmengine\\cmscenemanager.h",
+        "ProvidedModule": "",
+        "Includes": [
+            "c:\\users\\ahnjiwoo\\desktop\\projects\\cmengine\\cmengine\\cmscene.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

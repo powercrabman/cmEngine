@@ -22,10 +22,13 @@
     <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_rectpack.h" />
     <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_textedit.h" />
     <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_truetype.h" />
-    <ClInclude Include="cmComponentID.h" />
+    <ClInclude Include="cmCamera.h" />
     <ClInclude Include="cmConstantBufferBase.h" />
     <ClInclude Include="cmGraphicsResourceManager.h" />
     <ClInclude Include="cmInputLayoutBase.h" />
+    <ClInclude Include="cmIRenderable.h" />
+    <ClInclude Include="cmKeyboard.h" />
+    <ClInclude Include="cmMath.h" />
     <ClInclude Include="cmMesh.h" />
     <ClInclude Include="cmMeshRenderer.h" />
     <ClInclude Include="cmPipelineData.h" />
@@ -95,10 +98,13 @@
     <ClInclude Include="Enums.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cmComponentID.cpp" />
+    <ClCompile Include="cmCamera.cpp" />
     <ClCompile Include="cmConstantBufferBase.cpp" />
     <ClCompile Include="cmGraphicsResourceManager.cpp" />
     <ClCompile Include="cmInputLayoutBase.cpp" />
+    <ClCompile Include="cmIRenderable.cpp" />
+    <ClCompile Include="cmKeyboard.cpp" />
+    <ClCompile Include="cmMath.cpp" />
     <ClCompile Include="cmMesh.cpp" />
     <ClCompile Include="cmMeshRenderer.cpp" />
     <ClCompile Include="cmPipelineData.cpp" />
@@ -243,6 +249,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(ProjectDir)Bin\Debug</OutDir>
     <IntDir>$(ProjectDir)Inter\Debug</IntDir>
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)Lib\DirectXTK\Inc</ExternalIncludePath>
+    <LibraryPath>$(SolutionDir)Lib\DirectXTK\Inc;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(ProjectDir)Bin\Release</OutDir>
@@ -301,6 +309,7 @@
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <MinFilesInUnityFile>5</MinFilesInUnityFile>
+      <TranslateIncludes>false</TranslateIncludes>
     </ClCompile>
     <Link>
       <SubSystem>

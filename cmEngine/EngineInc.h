@@ -14,6 +14,7 @@
 #include <array>
 #include <algorithm>
 #include <cassert>
+#include <deque>
 #include <functional>
 #include <format>
 #include <typeinfo>
@@ -38,15 +39,10 @@
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
 
-#include "../Lib/DirectXTK/Inc/SimpleMath.h"
-#include "../Lib/DirectXTK/Inc/Mouse.h"
-#include "../Lib/DirectXTK/Inc/Keyboard.h"
-
-#if defined(DEBUG) || defined(_DEBUG)
-#pragma comment(lib, "../Lib/DirectXTK/Debug/DirectXTK.lib")
-#else
-#pragma comment(lib, "../Lib/DirectXTK/Release/DirectXTK.lib")
-#endif // 
+#include "SimpleMath.h"
+#include "Mouse.h"
+#include "Keyboard.h"
+#pragma comment(lib, "DirectXTK.lib")
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -60,6 +56,7 @@ using namespace DirectX::SimpleMath;
 #include "cmAlgorithm.h"
 #include "cmStaticTextBuffer.h"
 #include "cmType.h"
+#include "cmMath.h"
 
 //Inc
 #include "cmColors.h"
@@ -70,6 +67,7 @@ using namespace DirectX::SimpleMath;
 
 //Engine Module
 #include "cmEngine.h"
+#include "cmKeyboard.h"
 #include "cmTimer.h"
 #include "cmLogger.h"
 #include "cmRenderer.h"

@@ -39,6 +39,17 @@ void cmScene::LateUpdate()
 	}
 }
 
+void cmScene::PreRender()
+{
+	for (cmGameObject* obj : mUpdateList)
+	{
+		if (obj->IsActive())
+		{
+			obj->PreRender();
+		}
+	}
+}
+
 void cmScene::ExitSceneCore()
 {
 	ExitScene();

@@ -2,6 +2,8 @@
 #include "cmScript.h"
 
 class cmRenderer;
+class cmTransform;
+class cmCamera;
 
 class DummyScript : public cmScript
 {
@@ -13,9 +15,10 @@ public:
 	void OnStart() override;
 	void OnFinish() override;
 	void Update() override;
-	void FinalUpdate() override;
+	void LateUpdate() override;
 
 private:
-	cmMeshRenderer* mesh = nullptr;
+	cmMeshRenderer* mMesh = nullptr;
+	cmTransform* mTrans = nullptr;
 };
 

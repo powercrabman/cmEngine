@@ -3,11 +3,11 @@
 
 void cmMeshRenderer::OnStart()
 {
-	Engine->GetRenderer()->RegisterMeshRenderer(this);
+	Engine->GetRenderer()->RegistGameObject(GetOwner());
 }
 
 void cmMeshRenderer::OnFinish()
 {
-	Engine->GetRenderer()->UnregisterMeshRenderer(this);
+	Engine->GetRenderer()->UnregistGameObject(GetOwner());
 }
 

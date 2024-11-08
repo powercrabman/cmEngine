@@ -1,0 +1,149 @@
+﻿  The vcpkg manifest was disabled, but we found a manifest file in C:\Users\Ahnjiwoo\. You may want to enable vcpkg manifests in your properties page or pass /p:VcpkgEnableManifest=true to the msbuild invocation.
+  cmConstantBufferBase.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmConstantBufferBase.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmGraphicsResourceManager.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmGraphicsResourceManager.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmInputLayoutBase.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmInputLayoutBase.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmKeyboard.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmKeyboard.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmMath.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmMath.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmMesh.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmMesh.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmMeshRenderer.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmMeshRenderer.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmPipelineData.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmPipelineData.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmScript.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmScript.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmAlgorithm.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmAlgorithm.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmAssert.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmAssert.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmComponent.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmComponent.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmConsoleData.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmConsoleData.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmConsoleGUI.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmConsoleGUI.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmConsole.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmConsole.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmCommonCommand.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmCommonCommand.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmConstantBuffer.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmConstantBuffer.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmConstantBufferData.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmConstantBufferData.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmDebugGUI.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmDebugGUI.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmEngine.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmEngine.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  cmGameObject.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmGameObject.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmGeometry.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmGeometry.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmGeometryHelper.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmGeometryHelper.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmGraphicsDevice.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmGraphicsDevice.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmGraphicsHelper.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmGraphicsHelper.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmGUIRenderer.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmGUIRenderer.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmGUI.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmGUI.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmHelper.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmHelper.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmICommand.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmICommand.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmIndexBuffer.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmIndexBuffer.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmInputLayout.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmInputLayout.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmLogger.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmLogger.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmLoggerGUI.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmLoggerGUI.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmLogData.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmLogData.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmMenuGUI.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmMenuGUI.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmPipeline.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmPipeline.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmPixelShader.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmPixelShader.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmPopupGUI.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmPopupGUI.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmRenderTargetView.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmRenderTargetView.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmResourceManager.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmResourceManager.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  cmTimer.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmTimer.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmRenderer.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmRenderer.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmStaticTextBuffer.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmStaticTextBuffer.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmTransform.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmTransform.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmType.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmType.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmVertexBuffer.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmVertexBuffer.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmVertexData.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmVertexData.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmVertexShader.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmVertexShader.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmViewport.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmViewport.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmWindow.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmWindow.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmWindowsManager.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmWindowsManager.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmApplication.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmApplication.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmColors.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmColors.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  FileDialog.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\FileDialog.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  ImGuiHelper.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\ImGuiHelper.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  imgui.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\imgui\imgui.cpp(2138,10): error C2006: '#include': "FILENAME" 또는 <FILENAME>이 필요합니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\imgui\imgui.cpp(2912,9): warning C4005: 'va_copy': 매크로 재정의
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\imgui\imgui.cpp(2910,9):
+      'va_copy'의 이전 정의를 참조하십시오.
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\imgui\imgui.cpp(22786,1): error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "pch.h"'을(를) 소스에 추가하시겠습니까?
+  imgui_draw.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\imgui\imgui_draw.cpp(124,10): error C2006: '#include': "FILENAME" 또는 <FILENAME>이 필요합니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\imgui\imgui_draw.cpp(148,10): error C2006: '#include': "FILENAME" 또는 <FILENAME>이 필요합니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\imgui\imgui_draw.cpp(4694,1): error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "pch.h"'을(를) 소스에 추가하시겠습니까?
+  imgui_impl_dx11.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\imgui\imgui_impl_dx11.cpp(756,1): error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "pch.h"'을(를) 소스에 추가하시겠습니까?
+  imgui_impl_win32.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\imgui\imgui_impl_win32.cpp(1393,1): error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "pch.h"'을(를) 소스에 추가하시겠습니까?
+  imgui_tables.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\imgui\imgui_tables.cpp(4467,1): error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "pch.h"'을(를) 소스에 추가하시겠습니까?
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  imgui_widgets.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\imgui\imgui_widgets.cpp(10432,1): error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "pch.h"'을(를) 소스에 추가하시겠습니까?
+  pch.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\pch.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmShader.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmShader.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmScene.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmScene.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  cmSceneManager.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\cmSceneManager.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  UComPtr.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\UComPtr.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  WindowsStruct.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\WindowsStruct.cpp(1,10): error C1083: 미리 컴파일된 헤더 파일을 열 수 없습니다. 'Debug\cmEngine.pch': No such file or directory
+  코드를 생성하고 있습니다...

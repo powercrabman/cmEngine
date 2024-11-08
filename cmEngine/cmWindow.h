@@ -26,7 +26,7 @@ public:
 	void SetFocus(bool isFocus) { mFocus = isFocus; }
 
 private:
-    cmWindow(const cmWindowsManager* inWinMgr, std::wstring_view inWindowName, const ScreenSize& inScreenSize);
+	cmWindow(const cmWindowsManager* inWinMgr, std::wstring_view inWindowName, const ScreenSize& inScreenSize);
 
 private:
 	std::wstring mName = {};

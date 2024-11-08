@@ -18,7 +18,7 @@ void cmConsoleGUI::RenderGUI()
 	const std::vector<cmConsoleData>& consoleDatas = Engine->GetConsole()->GetConsoleDatas();
 
 	ImGui::SetNextWindowSize({ 400, 400 }, ImGuiCond_FirstUseEver);
-	ImGui::Begin("Console", GetVisiblePtr());
+	ImGui::Begin("Console", GetVisiblePtr(), ImGuiWindowFlags_NoFocusOnAppearing);
 	ImGui::SeparatorText("Command-Line");
 
 	// 히스토리
