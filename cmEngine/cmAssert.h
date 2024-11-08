@@ -17,7 +17,7 @@ if (!(cond))					                        \
     __debugbreak();                                            \
 }
 #else
-#define ASSERT(cond, hint) ()
+#define ASSERT(cond, hint) (void)0
 #endif
 
 //HRESULT ERROR Translate
@@ -33,6 +33,6 @@ if (FAILED(cond))																	\
     __debugbreak();																		\
 }
 #else
-#define DX_CHECK(cond, hint) ()
+#define DX_CHECK(cond, hint) (void)0
 #endif
 

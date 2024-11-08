@@ -8,8 +8,7 @@ public:
 	cmSceneManager() = default;
 	virtual ~cmSceneManager() = default;
 
-	void Update(); 
-	void LateUpdate();
+	void UpdateCore();
 
 	template<typename Ty>
 	Ty* CreateScene()

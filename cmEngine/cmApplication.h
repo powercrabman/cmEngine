@@ -14,7 +14,6 @@ protected:
 	cmApplication() = default;
 
 	virtual void Initialize()	abstract;
-	virtual void Update()		abstract;
 	virtual void CleanUp()		abstract;
 
 	virtual void UpdateCore()		final;

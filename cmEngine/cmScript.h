@@ -11,6 +11,8 @@ public:
 	virtual void Update()		abstract; /* 메인 업데이트 */
 	virtual void LateUpdate()	abstract; /* Update 에서 갱신된 내용을 통해 오브젝트 상태 보정 및 결정 */
 
+	constexpr inline static eComponentType ComponentType = eComponentType::Script;
+
 private:
 };
 

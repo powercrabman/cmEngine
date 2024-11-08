@@ -2,18 +2,12 @@
 #include "cmSceneManager.h"
 #include "cmScene.h"
 
-void cmSceneManager::Update()
+void cmSceneManager::UpdateCore()
 {
 	if (mCurrentScene)
 	{
 		mCurrentScene->UpdateScene();
-	}
-}
-
-void cmSceneManager::LateUpdate()
-{
-	if (mCurrentScene)
-	{
 		mCurrentScene->LateUpdate();
+		mCurrentScene->PreRender();
 	}
 }

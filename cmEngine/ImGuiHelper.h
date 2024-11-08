@@ -82,3 +82,4 @@ namespace ImGui::Helper
 		return CalcLayoutPosition(ImVec2{ (float)inPosition.X, (float)inPosition.Y }, pivotWindow, margin, inStdX, inStdY);
 	}
 }
+

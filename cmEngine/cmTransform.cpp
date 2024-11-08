@@ -1,10 +1,12 @@
 #include "pch.h"
 #include "cmTransform.h"
+#include "cmGraphicsResourceManager.h"
 
-void cmTransform::OnStart()
+void cmTransform::Render()
 {
-}
+	cmCBTransform t = {};
+	t.World = GetWorld();
 
-void cmTransform::OnFinish()
-{
+	auto* cb = Engine->GetRenderer()->GetGraphicsResourceManager()->FindConstantBufferOrNull<cmCBTransform>();
+	cb->UpdateBuffer(t);
 }

@@ -15,7 +15,7 @@ void cmLoggerGUI::RenderGUI()
 	const std::vector<cmLogData>& logData = Engine->GetLogger()->GetLogData();
 
 	// GUI 시작
-	ImGui::Begin("Logger", GetVisiblePtr());
+	ImGui::Begin("Logger", GetVisiblePtr(), ImGuiWindowFlags_NoFocusOnAppearing);
 
 	// 옵션
 	ImGui::SeparatorText("Option");

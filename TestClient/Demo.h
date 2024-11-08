@@ -9,6 +9,5 @@ public:
 
 private:
 	void Initialize() override;
-	void Update() override;
 	void CleanUp() override;
 };

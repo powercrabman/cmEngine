@@ -12,6 +12,7 @@
 #include "cmResourceManager.h"
 #include "cmMeshRenderer.h"
 #include "cmGraphicsResourceManager.h"
+#include "cmGameObject.h"
 
 cmRenderer::cmRenderer()
 {
@@ -24,7 +25,7 @@ cmRenderer::cmRenderer()
 	mPipeline = std::make_unique<cmPipeline>();
 
 	mRenderList.reserve(1000);
-	mMeshRendererRepo.reserve(1000);
+	mRenderRepo.reserve(1000);
 }
 cmRenderer::~cmRenderer() = default;
 
@@ -48,31 +49,30 @@ void cmRenderer::OnResize(const ScreenSize& inScreenSize)
 	mViewport->SetFrom(inScreenSize);
 }
 
-
-void cmRenderer::RegisterMeshRenderer(cmMeshRenderer* inMeshRenderer)
+void cmRenderer::RegistGameObject(cmGameObject* inGameObject)
 {
-	auto iter = mMeshRendererRepo.find(inMeshRenderer->GetComponentID());
+	auto iter = mRenderRepo.find(inGameObject->GetObjectID());
 
-	if (iter != mMeshRendererRepo.end())
+	if (iter != mRenderRepo.end())
 	{
 		ASSERT(false, "already registed mesh renderer.");
 		LOG_WARN("already registed mesh renderer.");
 		return;
 	}
 
-	mRenderList.push_back(inMeshRenderer);
+	mRenderList.push_back(inGameObject);
 
-	MeshRendererData data = {};
+	GameObjectData data = {};
 	data.Index = mRenderList.size() - 1;
-	data.MeshRenderer = inMeshRenderer;
-	mMeshRendererRepo[inMeshRenderer->GetComponentID()] = data;
+	data.GameObject = inGameObject;
+	mRenderRepo[inGameObject->GetObjectID()] = data;
 }
 
-void cmRenderer::UnregisterMeshRenderer(cmMeshRenderer* inMeshRenderer)
+void cmRenderer::UnregistGameObject(cmGameObject* inGameObject)
 {
-	auto iter = mMeshRendererRepo.find(inMeshRenderer->GetComponentID());
+	auto iter = mRenderRepo.find(inGameObject->GetObjectID());
 
-	if (iter == mMeshRendererRepo.end())
+	if (iter == mRenderRepo.end())
 	{
 		ASSERT(false, "do not exist mesh renderer.");
 		LOG_WARN("do not exist mesh renderer.");
@@ -81,7 +81,7 @@ void cmRenderer::UnregisterMeshRenderer(cmMeshRenderer* inMeshRenderer)
 
 	if (iter->second.Index != mRenderList.size() - 1)
 	{
-		MeshRendererData& replace = mMeshRendererRepo[mRenderList.back()->GetComponentID()];
+		GameObjectData& replace = mRenderRepo[mRenderList.back()->GetObjectID()];
 		replace.Index             = iter->second.Index;
 
 		mRenderList[iter->second.Index] = mRenderList.back();
@@ -89,7 +89,7 @@ void cmRenderer::UnregisterMeshRenderer(cmMeshRenderer* inMeshRenderer)
 
 	mRenderList.pop_back();
 
-	mMeshRendererRepo.erase(iter);
+	mRenderRepo.erase(iter);
 }
 
 void cmRenderer::RenderBegin()
@@ -110,10 +110,12 @@ void cmRenderer::RenderBegin()
 
 void cmRenderer::Render()
 {
-	for (cmMeshRenderer* meshRenderer : mRenderList)
+	for (cmGameObject* obj : mRenderList)
 	{
-		mPipeline->SetPipeline(meshRenderer->GetMesh()->GetPipelineData());
-		mPipeline->SubmitPipeline();
+		obj->PreRender();
+		auto* meshRenderer = obj->FindComponentOrNull<cmMeshRenderer>();
+		mPipeline->SubmitPipeline(meshRenderer->GetMesh()->GetPipelineData());
+		mPipeline->SubmitGraphicsData();
 		mPipeline->DrawIndices();
 	}
 }
@@ -130,4 +132,5 @@ void cmRenderer::RenderEnd()
 void cmRenderer::CleanUp()
 {
 	mGUIRenderer->CleanUp();
+	mGraphicsDevice->ClearUp();
 }

@@ -15,6 +15,8 @@ public:
 	cmMesh* GetMesh() const { return mMesh; }
 	void SetMesh(cmMesh* inMesh) { mMesh = inMesh; }
 
+	constexpr inline static eComponentType ComponentType = eComponentType::MeshRenderer;
+
 private:
 	cmMesh* mMesh = nullptr;
 };

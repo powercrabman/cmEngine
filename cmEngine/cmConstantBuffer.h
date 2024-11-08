@@ -27,12 +27,10 @@ public:
 		}
 	}
 
-	void UpdateBuffer(const cmGameObject* inObject)
+	void UpdateBuffer(const Ty& inData)
 	{
-		ASSERT(mUpdateFunc != nullptr, "UpdateFunction is nullptr");
 		static_assert(std::is_base_of<cmConstantBufferDataBase, Ty>::value, "Ty must derived of ConstatntBufferBase!");
 
-		mBuffer.Reset();
 		auto* context = Engine->GetRenderer()->GetGraphicsDevice()->GetContext();
 		D3D11_MAPPED_SUBRESOURCE subRes = {};
 		HRESULT hr = context->Map(mBuffer.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &subRes);
@@ -45,18 +43,9 @@ public:
 		}
 		else
 		{
-			std::memcpy(subRes.pData, &mUpdateFunc(inObject), sizeof(Ty));
+			std::memcpy(subRes.pData, &inData, sizeof(Ty));
 		}
 
 		context->Unmap(mBuffer.Get(), 0);
-		mDirtyBit = true;
 	}
-
-	void SetUpdateBufferFunc(const std::function<Ty(cmGameObject*)>& inUpdateFunc)
-	{
-		mUpdateFunc = inUpdateFunc;
-	}
-
-private:
-	std::function<Ty(cmGameObject*)> mUpdateFunc = nullptr;
 };

@@ -11,10 +11,12 @@ public:
 	void EnterSceneCore();
 	void UpdateScene();
 	void LateUpdate();
+	void PreRender();
 	void ExitSceneCore();
 
 	cmGameObject* CreateGameObject(bool isActive);
 	cmGameObject* FindGameObjectByIDOrNull(const uint64& inObjID) const;
+	const std::vector<cmGameObject*>& GetGameObjectList() const { return mUpdateList; }
 	void RemoveGameObject(const uint64& inObjID);
 
 protected:

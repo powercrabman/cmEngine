@@ -32,6 +32,13 @@ public:
 	ID3D11DeviceContext* GetContext() const { return mDC.Get(); }
 	IDXGISwapChain* GetSwapChain() const { return mSwapChain.Get(); }
 
+	void ClearUp()
+	{
+#if defined(DEBUG) || defined(_DEBUG)
+		mDebug->ReportLiveDeviceObjects(D3D11_RLDO_SUMMARY | D3D11_RLDO_DETAIL | D3D11_RLDO_SUMMARY);
+#endif
+	}
+
 private:
 	cmGraphicsDevice();
 
@@ -79,6 +86,7 @@ private:
 	UComPtr<IDXGISwapChain> mSwapChain = nullptr;
 	UComPtr<IDXGIFactory> mFactory = nullptr;
 	UComPtr<IDXGIAdapter> mAdapter = nullptr;
+	UComPtr<ID3D11Debug> mDebug = nullptr;
 
 	D3D_FEATURE_LEVEL mFeatureLevel = {};
 

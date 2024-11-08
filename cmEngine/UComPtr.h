@@ -18,7 +18,6 @@ public:
 	explicit UComPtr(Ty* p)
 		: ptr(p)
 	{
-		
 	}
 
 	~UComPtr()

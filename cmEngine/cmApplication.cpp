@@ -4,6 +4,7 @@
 #include "cmWindow.h"
 #include "cmTimer.h"
 #include "cmSceneManager.h"
+#include "cmKeyboard.h"
 
 void cmApplication::Setup(const ScreenSize& inScreenSize, const ScreenPos& inScreenPos)
 {
@@ -40,19 +41,15 @@ void cmApplication::UpdateCore()
     {
         //타이머
         Engine->GetTimer()->Update();
+
+        //Input
+        Engine->GetKeyboard()->Update();
     }
 
     //Update
     {
-        Update();
-        
         //Scene Update
-        Engine->GetSceneManager()->Update();
-    }
-
-    //FianlUpdate
-    {
-        Engine->GetSceneManager()->LateUpdate();
+        Engine->GetSceneManager()->UpdateCore();
     }
     
     //Render
@@ -72,7 +69,7 @@ void cmApplication::CleanUpCore()
     CleanUp();
 
     // 엔진 삭제
-    Engine->Release();
+    Engine->Destory();
 
     // 메모리 릭 검사 후 어플리케이션 종료
     _CrtDumpMemoryLeaks();
