@@ -74,9 +74,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(ProjectDir)Bin\Debug</OutDir>
     <IntDir>$(ProjectDir)Inter</IntDir>
-    <LibraryPath>$(SolutionDir)Lib\DirectXTK\Debug;$(SolutionDir)\cmEngine\Bin\Debug;$(LibraryPath)</LibraryPath>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <ExternalIncludePath>$(SolutionDir)Lib\DirectXTK\Inc;$(ExternalIncludePath)</ExternalIncludePath>
+    <IncludePath>$(SolutionDir)Libraries\;$(SolutionDir)cmEngine\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries;$(LibraryPath)</LibraryPath>
+    <ExternalIncludePath>$(IncludePath);$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(ProjectDir)Bin\Release</OutDir>
@@ -120,16 +120,14 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)cmEngine;$(SolutionDir)Lib\DirectXTK\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <TranslateIncludes>false</TranslateIncludes>
       <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(SolutionDir)Lib\DirectXTK\Debug\DirectXTK.lib;$(SolutionDir)\cmEngine\Bin\Debug\cmEngine.lib;runtimeobject.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDIr)Lib\DirectXTK\Debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -166,6 +164,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pch.h</PrecompiledHeaderFile>
     </ClCompile>
+    <ClCompile Include="PlayerGUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CameraGUI.h" />
@@ -174,6 +173,7 @@
     <ClInclude Include="DummyScene.h" />
     <ClInclude Include="DummyScript.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PlayerGUI.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cmEngine\cmEngine.vcxproj">

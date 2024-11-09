@@ -47,16 +47,42 @@ enum class eComponentType
 	Undefined
 };
 
-enum class eConstantBufferType
-{
-	TransformData,
-	CameraData,
-
-	Count
-};
-
 enum class eProjectionMode
 {
 	Perspective = 0,
 	Orthographic = 1,
+};
+
+enum class eTextureFormat
+{
+	BMP = 1,
+	JPEG,
+	PNG,
+	TIFF,
+	GIF,
+	WMP,
+	ICO,
+	HEIF
+};
+static_assert((uint32)WICCodecs::WIC_CODEC_BMP == (uint32)eTextureFormat::BMP);
+static_assert((uint32)WICCodecs::WIC_CODEC_HEIF == (uint32)eTextureFormat::HEIF);
+
+enum class eSamplerStateFilter
+{
+	Point = 0,
+	Linear,
+	LinearAdv,
+	Anisotropic,
+
+	Count = 4
+};
+
+enum class eSamplerStateAddress
+{
+	Wrap = 0,
+	Mirror,
+	Clamp,
+	Border,
+
+	Count = 4
 };

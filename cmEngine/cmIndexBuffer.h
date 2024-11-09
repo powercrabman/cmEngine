@@ -31,10 +31,10 @@ public:
 		D3D11_SUBRESOURCE_DATA initData = {};
 		initData.pSysMem = inIndices.data();
 
-		HRESULT hr = dv->CreateBuffer(&desc, &initData, mBuffer.GetAddressOf());
+		HR hr = dv->CreateBuffer(&desc, &initData, mBuffer.GetAddressOf());
 		mSize = inIndices.size();
 
-		DX_CHECK(hr, "vertex buffer creating fail.");
+		DX_ASSERT(hr, "vertex buffer creating fail.");
 	}
 
 	ID3D11Buffer* GetBuffer() const { return mBuffer.Get(); }

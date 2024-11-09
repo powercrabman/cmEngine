@@ -8,7 +8,7 @@ class cmDebugger;
 class cmTimer;
 class cmResourceManager;
 class cmSceneManager;
-class cmKeyboard;
+class cmIKeyboard;
 
 class cmEngine
 {
@@ -31,7 +31,7 @@ public:
 	cmTimer*			GetTimer() const { return mTimer.get(); }
 	cmResourceManager*	GetResourceManager() const { return mResourceManager.get(); }
 	cmSceneManager*		GetSceneManager() const { return mSceneManager.get(); }
-	cmKeyboard*			GetKeyboard() const { return mKeyboard.get(); }
+	cmIKeyboard*		GetKeyboard() const { return mKeyboard.get(); }
 
 private:
 	void Initialize() const;
@@ -50,7 +50,7 @@ private:
 	std::unique_ptr<cmTimer> mTimer = nullptr;
 	std::unique_ptr<cmResourceManager> mResourceManager = nullptr;
 	std::unique_ptr<cmSceneManager> mSceneManager = nullptr;
-	std::unique_ptr<cmKeyboard> mKeyboard = nullptr;
+	std::unique_ptr<cmIKeyboard> mKeyboard = nullptr;
 
 	bool mRunning = true;
 	bool mInitalized = false;

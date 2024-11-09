@@ -10,3 +10,17 @@ void cmResourceManager::Initialize()
 	LOG_INFO("Resource Manager Initialize Done.");
 }
 
+ std::wstring cmResourceManager::GetClientResourcePath(std::wstring_view inPath) const
+{
+	std::wstring retVal = {};
+	retVal = mClientResourcePath.wstring() + std::wstring(inPath);
+	return retVal;
+}
+
+ std::wstring cmResourceManager::GetCommonResourcePath(std::wstring_view inPath) const
+{
+	std::wstring retVal = {};
+	retVal = mCommonResourcePath.wstring() + std::wstring(inPath);
+	return retVal;
+}
+

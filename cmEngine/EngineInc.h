@@ -4,7 +4,10 @@
 // 엔진 및 클라이언트에서 전역적으로 사용
 //============================
 
+#define _WIN32_WINNT 0x0601
 #define _CRTDBG_MAP_ALLOC
+#define CM_ENGINE_USE_KEYBOARD_POLL
+
 #include <crtdbg.h>
 
 //Windows
@@ -35,17 +38,25 @@
 #include <d3d11_4.h>
 #include <d3dcompiler.h>
 #include <dxgi.h>
+#include <winrt/base.h>
+
+#include "DirectXTK/SimpleMath.h"
+#include "DirectXTK/SimpleMath.inl"
+#include "DirectXTex/DirectXTex.h"
+#include "DirectXTex/DirectXTex.inl"
+using namespace DirectX;
+using namespace DirectX::SimpleMath;
 
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
-
-#include "SimpleMath.h"
-#include "Mouse.h"
-#include "Keyboard.h"
-#pragma comment(lib, "DirectXTK.lib")
-
-using namespace DirectX;
-using namespace DirectX::SimpleMath;
+#pragma comment(lib, "dxguid.lib")
+#pragma comment(lib, "uuid.lib")
+#pragma comment(lib, "dxgi.lib")
+#pragma comment(lib, "dxcompiler.lib")
+#pragma comment(lib, "DirectXTK/DirectXTK_debug.lib")
+#pragma comment(lib, "DirectXTex/DirectXTex_debug.lib")
+#pragma comment(lib, "windowsapp.lib")
+#pragma comment(lib, "runtimeobject.lib")
 
 //Imgui
 #include "imguiInc.h"
@@ -67,7 +78,7 @@ using namespace DirectX::SimpleMath;
 
 //Engine Module
 #include "cmEngine.h"
-#include "cmKeyboard.h"
+#include "cmIKeyboard.h"
 #include "cmTimer.h"
 #include "cmLogger.h"
 #include "cmRenderer.h"
@@ -85,10 +96,12 @@ using namespace DirectX::SimpleMath;
 #include "cmConstantBufferBase.h"
 #include "cmConstantBuffer.h"
 #include "cmVertexShader.h"
-#include "cmInputLayout.h"
 #include "cmVertexBuffer.h"
 #include "cmPixelShader.h"
 #include "cmIndexBuffer.h"
 #include "cmGeometry.h"
+#include "cmTexture.h"
+#include "cmRenderState.h"
 #include "cmGeometryHelper.h"
+#include "cmMesh.h"
 #include "cmPipelineData.h"

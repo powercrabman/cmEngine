@@ -4,7 +4,6 @@
 class cmShader : public cmResourceBase
 {
 public:
-	cmShader() = default;
 	virtual ~cmShader() = default;
 
 	void LoadAndCompileHLSL(
@@ -12,39 +11,41 @@ public:
 		std::string_view inEntryPoint,
 		std::string_view inShaderModel
 	);
+	void LoadBlob(std::filesystem::path inFilePath);
 
-	void LoadBlob(std::wstring_view inFilePath)
-	{
-		HRESULT hr = D3DReadFileToBlob(inFilePath.data(), mBlob.GetAddressOf());
-		DX_CHECK(hr, "Load binary file Fail.");
-	}
+	ID3DBlob* GetBlob() const;
 
-	ID3DBlob* GetBlob() const
-	{
-		ASSERT(mBlob != nullptr, "Blob is nullptr.");
-		return mBlob.Get();
-	}
+	void Save(std::wstring_view inFilePath) const;
+	void SetConstantBuffers(const std::vector<cmConstantBufferBase*>& inConstantBuffers);
+	const std::vector<cmConstantBufferBase*>& FindConstantBuffers() const;
 
-	// Blob 파일을 Load 합니다.
-	// 만약, HLSL 파일을 Load 하고 싶다면, LoadAndCompileHLSL 을 사용해야 합니다.
-	void Load(std::wstring_view inFilePath) override { LoadBlob(inFilePath); }
-	void Save(std::wstring_view inFilePath) override;
-
-	virtual void Create() abstract;
-
-	//컨스턴트 버퍼의 순서는 반드시 slot에 맞게 설정해야합니다.
-	void SetConstantBuffers(const std::vector<cmConstantBufferBase*>& inConstantBuffers)
-	{
-		mConstantBuffers = inConstantBuffers;
-	}
-
-	const std::vector<cmConstantBufferBase*>& GetConstantBuffers() const
-	{
-		return mConstantBuffers;
-	}
-
+protected:
+	cmShader() = default;
 
 private:
 	UComPtr<ID3DBlob> mBlob = nullptr;
 	std::vector<cmConstantBufferBase*> mConstantBuffers = {};
 };
+
+inline void cmShader::SetConstantBuffers(const std::vector<cmConstantBufferBase*>& inConstantBuffers)
+{
+	mConstantBuffers = inConstantBuffers;
+}
+
+inline const std::vector<cmConstantBufferBase*>& cmShader::FindConstantBuffers() const
+{
+	return mConstantBuffers;
+}
+
+inline ID3DBlob* cmShader::GetBlob() const
+{
+	ASSERT(mBlob != nullptr, "Blob is nullptr.");
+	return mBlob.Get();
+}
+
+inline void cmShader::LoadBlob(std::filesystem::path inFilePath)
+{
+	HR hr = D3DReadFileToBlob(inFilePath.c_str(), mBlob.GetAddressOf());
+	DX_ASSERT(hr, "Load binary file Fail.");
+}
+

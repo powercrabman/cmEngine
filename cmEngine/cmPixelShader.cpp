@@ -9,8 +9,8 @@ void cmPixelShader::Create()
 
     if (blob)
     {
-        HRESULT hr = d->CreatePixelShader(blob->GetBufferPointer(), blob->GetBufferSize(), nullptr, mPS.GetAddressOf());
-        DX_CHECK(hr, "PixelShader create fail.");
+        HR hr = d->CreatePixelShader(blob->GetBufferPointer(), blob->GetBufferSize(), nullptr, mPS.GetAddressOf());
+        DX_ASSERT(hr, "PixelShader create fail.");
     }
     else
     {

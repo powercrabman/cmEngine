@@ -2,6 +2,7 @@
 #include "cmWindowsManager.h"
 #include "cmWindow.h"
 #include "cmRenderer.h"
+#include "DirectXTK\Keyboard.h"
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -51,6 +52,18 @@ LRESULT CoreProc(HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam)
 		LOG_DEBUG("Main Window No Activate");
 		return 0;
 	}
+
+#ifndef CM_ENGINE_USE_KEYBOARD_POLL
+
+	case WM_KEYUP:
+	case WM_KEYDOWN:
+	case WM_SYSKEYUP:
+	case WM_SYSKEYDOWN:
+	case WM_ACTIVATE:
+	case WM_ACTIVATEAPP:
+		break;
+
+#endif // !CM_ENGINE_USE_KEYBOARD_POLL
 
 	default:
 		return DefWindowProc(hwnd, uMsg, wParam, lParam);

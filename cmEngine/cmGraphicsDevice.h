@@ -58,8 +58,8 @@ private:
 		swapChainDesc.SampleDesc.Quality = mUseMSAA ? mMSAAQuality - 1 : 0;
 		swapChainDesc.Windowed = TRUE;
 
-		HRESULT hr = mFactory->CreateSwapChain(mDevice.Get(), &swapChainDesc, mSwapChain.GetAddressOf());
-		DX_CHECK(hr, "Create Swapchain Fail.");
+		HR hr = mFactory->CreateSwapChain(mDevice.Get(), &swapChainDesc, mSwapChain.GetAddressOf());
+		DX_ASSERT(hr, "Create Swapchain Fail.");
 	}
 
 	void EnableMSAA(uint32 sampleCount)
@@ -67,7 +67,7 @@ private:
 		mUseMSAA = true;
 		mMSAACount = sampleCount;
 
-		HRESULT hr = mDevice->CheckMultisampleQualityLevels(
+		HR hr = mDevice->CheckMultisampleQualityLevels(
 			DXGI_FORMAT_R8G8B8A8_UNORM,
 			sampleCount,
 			&mMSAAQuality

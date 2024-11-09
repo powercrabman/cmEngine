@@ -12,8 +12,8 @@ namespace cmHelper::Graphics
 		D3D11_BUFFER_DESC desc = {};
 		src->GetDesc(&desc);
 
-		HRESULT hr = dv->CreateBuffer(&desc, nullptr, &dst);
-		DX_CHECK(hr, "index buffer creating fail during copy.");
+		HR hr = dv->CreateBuffer(&desc, nullptr, &dst);
+		DX_ASSERT(hr, "index buffer creating fail during copy.");
 
 		dc->CopyResource(dst, src);
 	}

@@ -12,11 +12,11 @@ public:
 	void OnStart() override;
 	void OnFinish() override;
 	
-	cmMesh* GetMesh() const { return mMesh; }
-	void SetMesh(cmMesh* inMesh) { mMesh = inMesh; }
+	void SetPipelineData(const cmPipelineData& inPipeData) { mPipeData = inPipeData; }
+	cmPipelineData GetPipelineData() const { return mPipeData; }
 
 	constexpr inline static eComponentType ComponentType = eComponentType::MeshRenderer;
 
 private:
-	cmMesh* mMesh = nullptr;
+	cmPipelineData mPipeData = {};
 };

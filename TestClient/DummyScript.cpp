@@ -5,13 +5,29 @@
 #include "cmTransform.h"
 #include "cmMesh.h"
 #include "cmCamera.h"
+#include "PlayerGUI.h"
+#include "cmGraphicsResourceManager.h"
 
 void DummyScript::Initialize()
 {
-	mMesh = GetOwner()->CreateComponent<cmMeshRenderer>(true);
-	mMesh->SetMesh(Engine->GetResourceManager()->FindResourceOrNull<cmMesh>("SimpleMesh"));
+	auto* rm = Engine->GetResourceManager();
+
+	cmPipelineData pd = {};
+	pd.Mesh = rm->FindResourceOrNull<cmMesh>("SimpleTexMesh");
+	pd.PixelShader = rm->FindResourceOrNull<cmPixelShader>("SimpleTexPS");
+	pd.VertexShader = rm->FindResourceOrNull<cmVertexShader>("SimpleTexVS");
+	pd.Texture = rm->FindResourceOrNull<cmTexture>("SimpleTexture");
+	pd.SamplerState = Engine->GetRenderer()->GetGraphicsResourceManager()->FindSamplerState(
+		eSamplerStateFilter::Linear, eSamplerStateAddress::Clamp, eSamplerStateAddress::Clamp
+	);
+
+	mMR = GetOwner()->CreateComponent<cmMeshRenderer>(true);
+	mMR->SetPipelineData(pd);
 
 	mTrans = GetOwner()->GetTransform();
+
+	auto* gui = cmHelper::RegisterGUI<PlayerGUI>();
+	gui->SetEntity(GetOwner());
 }
 
 void DummyScript::OnStart()

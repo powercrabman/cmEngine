@@ -1,5 +1,8 @@
 #pragma once
 
+// Legacy 
+// Not Using
+
 class cmGeometry
 {
 public:

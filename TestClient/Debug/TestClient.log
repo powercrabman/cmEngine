@@ -1,0 +1,30 @@
+﻿  The vcpkg manifest was disabled, but we found a manifest file in C:\Users\Ahnjiwoo\. You may want to enable vcpkg manifests in your properties page or pass /p:VcpkgEnableManifest=true to the msbuild invocation.
+  CameraGUI.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestClient\pch.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'EngineInc.h': No such file or directory
+  (소스 파일 'CameraGUI.cpp'을(를) 컴파일하는 중)
+  
+  CameraScript.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestClient\pch.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'EngineInc.h': No such file or directory
+  (소스 파일 'CameraScript.cpp'을(를) 컴파일하는 중)
+  
+  Demo.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestClient\pch.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'EngineInc.h': No such file or directory
+  (소스 파일 'Demo.cpp'을(를) 컴파일하는 중)
+  
+  DummyScene.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestClient\pch.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'EngineInc.h': No such file or directory
+  (소스 파일 'DummyScene.cpp'을(를) 컴파일하는 중)
+  
+  DummyScript.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestClient\pch.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'EngineInc.h': No such file or directory
+  (소스 파일 'DummyScript.cpp'을(를) 컴파일하는 중)
+  
+  Main.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestClient\pch.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'EngineInc.h': No such file or directory
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+  pch.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestClient\pch.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'EngineInc.h': No such file or directory
+  (소스 파일 'pch.cpp'을(를) 컴파일하는 중)
+  
+  코드를 생성하고 있습니다...

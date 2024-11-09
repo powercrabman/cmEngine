@@ -3,18 +3,16 @@
 
 class cmPixelShader : public cmShader
 {
-	RESOURCE_BODY();
 public:
+	cmPixelShader() = default;
 	virtual ~cmPixelShader() = default;
 
-	void Create() override;
+	void Create();
 	ID3D11PixelShader* GetShader() const { return mPS.Get(); }
 
 	bool IsCreated() const { return mPS != nullptr; }
 
 private:
-	cmPixelShader() = default;
-
 	UComPtr<ID3D11PixelShader> mPS = nullptr;
 };
 

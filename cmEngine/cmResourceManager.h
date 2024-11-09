@@ -13,36 +13,10 @@ public:
 
 	void Initialize();
 
-	std::filesystem::path GetClientResourcePath() const { return mClientResourcePath; }
-	std::filesystem::path GetCommonResourcePath() const { return mCommonResourcePath; }
-
-	std::filesystem::path GetClientResourcePath(std::wstring_view inPath) const { return mClientResourcePath / inPath; }
-	std::filesystem::path GetCommonResourcePath(std::wstring_view inPath) const { return mCommonResourcePath / inPath; }
-
-	template <DerivedOfResource Ty>
-	Ty* CreateResource(std::string_view inName)
-	{
-		std::unique_ptr<Ty> inst{ new Ty() };
-		Ty* ret = inst.get();
-
-		auto iter = mResourceRepo.find(TYPE_ID(Ty));
-		if (iter == mResourceRepo.end())
-		{
-			auto [newIter, _] = mResourceRepo.emplace(TYPE_ID(Ty), ResourceMap{});
-			iter = newIter;
-		}
-
-		std::string str(inName);
-		auto mapIter = iter->second.find(str);
-		if (mapIter != iter->second.end())
-		{
-			LOG_ERROR("Already exist Resource!");
-			return static_cast<Ty*>(mapIter->second.get());
-		}
-
-		iter->second[str] = std::move(inst);
-		return ret;
-	}
+	std::wstring GetClientResourcePath() const { return mClientResourcePath.c_str(); }
+	std::wstring GetCommonResourcePath() const { return mCommonResourcePath.c_str(); }
+	std::wstring GetClientResourcePath(std::wstring_view inPath) const;
+	std::wstring GetCommonResourcePath(std::wstring_view inPath) const;
 
 	template <DerivedOfResource Ty>
 	Ty* FindResourceOrNull(std::string_view inName)
@@ -67,6 +41,31 @@ public:
 		}
 
 		return static_cast<Ty*>(mapIter->second.get());
+	}
+
+	template <DerivedOfResource Ty>
+	Ty* CreateResource(std::string_view inName)
+	{
+		std::unique_ptr<Ty> inst{ new Ty() };
+		Ty* ret = inst.get();
+
+		auto iter = mResourceRepo.find(TYPE_ID(Ty));
+		if (iter == mResourceRepo.end())
+		{
+			auto [newIter, _] = mResourceRepo.emplace(TYPE_ID(Ty), ResourceMap{});
+			iter = newIter;
+		}
+
+		std::string str(inName);
+		auto mapIter = iter->second.find(str);
+		if (mapIter != iter->second.end())
+		{
+			LOG_ERROR("Already exist Resource!");
+			return static_cast<Ty*>(mapIter->second.get());
+		}
+
+		iter->second[str] = std::move(inst);
+		return ret;
 	}
 
 private:

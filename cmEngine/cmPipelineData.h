@@ -1,18 +1,21 @@
 #pragma once
 
+class cmTexture;
+
 struct cmPipelineData
 {
 	void Clear()
 	{
-		Geometry = nullptr;
-		InputLayout = nullptr;
+		Mesh		 = nullptr;
 		VertexShader = nullptr;
-		PixelShader = nullptr;
+		PixelShader  = nullptr;
+		Texture      = nullptr;
+		SamplerState = nullptr;
 	}
 
-	cmGeometry*				Geometry           = nullptr;
-	cmInputLayoutBase*		InputLayout        = nullptr;
+	cmMesh*					Mesh               = nullptr;
 	cmVertexShader*			VertexShader       = nullptr;
 	cmPixelShader*			PixelShader        = nullptr;
+	cmTexture*				Texture            = nullptr;
+	ID3D11SamplerState*		SamplerState       = nullptr;
 };
-

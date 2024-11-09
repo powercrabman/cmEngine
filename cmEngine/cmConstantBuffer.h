@@ -18,8 +18,8 @@ public:
 		desc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 		desc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 
-		HRESULT hr = device->CreateBuffer(&desc, nullptr, mBuffer.GetAddressOf());
-		DX_CHECK(hr, "Constant Buffer Create Fail.");
+		HR hr = device->CreateBuffer(&desc, nullptr, mBuffer.GetAddressOf());
+		DX_ASSERT(hr, "Constant Buffer Create Fail.");
 		if (FAILED(hr))
 		{
 			LOG_ERROR("Constant Buffer Create Fail.");
@@ -33,9 +33,9 @@ public:
 
 		auto* context = Engine->GetRenderer()->GetGraphicsDevice()->GetContext();
 		D3D11_MAPPED_SUBRESOURCE subRes = {};
-		HRESULT hr = context->Map(mBuffer.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &subRes);
+		HR hr = context->Map(mBuffer.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &subRes);
 
-		DX_CHECK(hr, "Map open fail.");
+		DX_ASSERT(hr, "Map open fail.");
 
 		if (FAILED(hr))
 		{

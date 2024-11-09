@@ -10,6 +10,11 @@ class UComPtr
 public:
 	static_assert(std::is_base_of<IUnknown, Ty>::value, "Ty must derive from IUnknown.");
 
+	UComPtr()
+		:ptr(nullptr)
+	{
+	}
+
 	UComPtr(std::nullptr_t)
 		:ptr(nullptr)
 	{
@@ -101,7 +106,7 @@ public:
 	template<typename U>
 	HRESULT As(UComPtr<U>* p) const
 	{
-		p.Reset();
+		p->Reset();
 		return ptr->QueryInterface(__uuidof(U), reinterpret_cast<void**>(p->GetAddressOf()));
 	}
 

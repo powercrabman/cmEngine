@@ -25,13 +25,15 @@
     <ClInclude Include="cmCamera.h" />
     <ClInclude Include="cmConstantBufferBase.h" />
     <ClInclude Include="cmGraphicsResourceManager.h" />
+    <ClInclude Include="cmIKeyboard.h" />
     <ClInclude Include="cmInputLayoutBase.h" />
     <ClInclude Include="cmIRenderable.h" />
-    <ClInclude Include="cmKeyboard.h" />
+    <ClInclude Include="cmKeyboardPoll.h" />
     <ClInclude Include="cmMath.h" />
     <ClInclude Include="cmMesh.h" />
     <ClInclude Include="cmMeshRenderer.h" />
     <ClInclude Include="cmPipelineData.h" />
+    <ClInclude Include="cmRenderState.h" />
     <ClInclude Include="cmScript.h" />
     <ClInclude Include="cmAlgorithm.h" />
     <ClInclude Include="cmAssert.h" />
@@ -64,6 +66,7 @@
     <ClInclude Include="cmPopupGUI.h" />
     <ClInclude Include="cmRenderTargetView.h" />
     <ClInclude Include="cmResourceManager.h" />
+    <ClInclude Include="cmTexture.h" />
     <ClInclude Include="cmTimer.h" />
     <ClInclude Include="cmRenderer.h" />
     <ClInclude Include="cmStaticTextBuffer.h" />
@@ -101,13 +104,15 @@
     <ClCompile Include="cmCamera.cpp" />
     <ClCompile Include="cmConstantBufferBase.cpp" />
     <ClCompile Include="cmGraphicsResourceManager.cpp" />
+    <ClCompile Include="cmIKeyboard.cpp" />
     <ClCompile Include="cmInputLayoutBase.cpp" />
     <ClCompile Include="cmIRenderable.cpp" />
-    <ClCompile Include="cmKeyboard.cpp" />
+    <ClCompile Include="cmKeyboardPoll.cpp" />
     <ClCompile Include="cmMath.cpp" />
     <ClCompile Include="cmMesh.cpp" />
     <ClCompile Include="cmMeshRenderer.cpp" />
     <ClCompile Include="cmPipelineData.cpp" />
+    <ClCompile Include="cmRenderState.cpp" />
     <ClCompile Include="cmScript.cpp" />
     <ClCompile Include="cmAlgorithm.cpp" />
     <ClCompile Include="cmAssert.cpp" />
@@ -140,6 +145,7 @@
     <ClCompile Include="cmPopupGUI.cpp" />
     <ClCompile Include="cmRenderTargetView.cpp" />
     <ClCompile Include="cmResourceManager.cpp" />
+    <ClCompile Include="cmTexture.cpp" />
     <ClCompile Include="cmTimer.cpp" />
     <ClCompile Include="cmRenderer.cpp" />
     <ClCompile Include="cmStaticTextBuffer.cpp" />
@@ -191,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\CommonResource\Shader\1. SimpleColorShader.hlsli" />
+    <None Include="..\CommonResource\Shader\2. SimpleTexShader.hlsli" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -247,10 +254,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(ProjectDir)Bin\Debug</OutDir>
+    <OutDir>$(SolutionDir)Libraries\cmEngine\Debug</OutDir>
     <IntDir>$(ProjectDir)Inter\Debug</IntDir>
-    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)Lib\DirectXTK\Inc</ExternalIncludePath>
-    <LibraryPath>$(SolutionDir)Lib\DirectXTK\Inc;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Libraries;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(ProjectDir)Bin\Release</OutDir>
@@ -306,22 +313,19 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <MinFilesInUnityFile>5</MinFilesInUnityFile>
       <TranslateIncludes>false</TranslateIncludes>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
       </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <Lib>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
-    </Lib>
-    <Lib>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Lib>
+    <Lib />
+    <Lib />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>

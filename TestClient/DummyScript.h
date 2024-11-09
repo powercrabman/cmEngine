@@ -18,7 +18,7 @@ public:
 	void LateUpdate() override;
 
 private:
-	cmMeshRenderer* mMesh = nullptr;
+	cmMeshRenderer* mMR = nullptr;
 	cmTransform* mTrans = nullptr;
 };
 

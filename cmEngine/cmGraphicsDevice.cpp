@@ -18,7 +18,7 @@ void cmGraphicsDevice::CreateDeviceAndDC()
 		D3D_FEATURE_LEVEL_10_0
 	};
 
-	HRESULT hr = D3D11CreateDevice(
+	HR hr = D3D11CreateDevice(
 		nullptr,
 		D3D_DRIVER_TYPE_HARDWARE,
 		nullptr,
@@ -31,21 +31,21 @@ void cmGraphicsDevice::CreateDeviceAndDC()
 		mDC.GetAddressOf()
 	);
 
-	DX_CHECK(hr, "Create Device Fail.");
+	DX_ASSERT(hr, "Create Device Fail.");
 
 #if defined(DEBUG) || defined(_DEBUG)
 
 	hr = mDevice->QueryInterface(__uuidof(ID3D11Debug), (void**)&mDebug);
-	DX_CHECK(hr, "Create DX Debug fail.");
+	DX_ASSERT(hr, "Create DX Debug fail.");
 
 #endif
 }
 void cmGraphicsDevice::CreateAdapterAndFactory()
 {
-	HRESULT hr = CreateDXGIFactory1(__uuidof(IDXGIFactory), reinterpret_cast<void**>(mFactory.GetAddressOf()));
-	DX_CHECK(hr, "Create Factory Fail.");
+	HR hr = CreateDXGIFactory1(__uuidof(IDXGIFactory), reinterpret_cast<void**>(mFactory.GetAddressOf()));
+	DX_ASSERT(hr, "Create Factory Fail.");
 
 	hr = mFactory->EnumAdapters(0, mAdapter.GetAddressOf());
-	DX_CHECK(hr, "Create Adapter Fail.");
+	DX_ASSERT(hr, "Create Adapter Fail.");
 }
 cmGraphicsDevice::~cmGraphicsDevice() = default;

@@ -4,7 +4,7 @@
 
 void cmShader::LoadAndCompileHLSL(std::wstring_view inFilePath, std::string_view inEntryPoint, std::string_view inShaderModel)
 {
-	HRESULT hr = S_OK;
+	HR hr = S_OK;
 
 	DWORD dwShaderFlags = D3DCOMPILE_ENABLE_STRICTNESS;
 
@@ -35,11 +35,13 @@ void cmShader::LoadAndCompileHLSL(std::wstring_view inFilePath, std::string_view
 		ASSERT(false, "Shader Compile fail!");
 	}
 
-	DX_CHECK(hr, "Shader compile fail!");
+	DX_ASSERT(hr, "Shader compile fail!");
 	LOG_INFO("Shader compile done.");
 }
 
-void cmShader::Save(std::wstring_view inFilePath)
+
+
+void cmShader::Save(std::wstring_view inFilePath) const
 {
 	ID3DBlob* blob = GetBlob();
 	ASSERT(blob != nullptr, "VertexShader create fail.");

@@ -8,8 +8,8 @@
 void CameraScript::Initialize()
 {
 	t = GetOwner()->GetTransform();
-	cmr = GetOwner()->CreateComponent<cmCamera>(true);
-	cmr->SetupOrthographicMatchAspectRatio(1.f, 0.1f, 100.f);
+	cmr = GetOwner()->CreateComponent<cmCamera>(true, t);
+	cmr->SetupOrthographicRatio(1.f, 0.1f, 100.f);
 
 	auto* gui = cmHelper::RegisterGUI<CameraGUI>();
 	gui->SetCameraObject(cmr);

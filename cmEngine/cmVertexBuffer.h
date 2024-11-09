@@ -21,7 +21,7 @@ public:
 	template <typename VertexType>
 	void Create(const std::vector<VertexType>& inVertices)
 	{
-		static_assert(std::is_base_of<cmVertexBase, VertexType>::value);
+		static_assert(std::is_base_of<cmVertexDataBase, VertexType>::value);
 		mBuffer.Reset();
 
 		auto* dv = Engine->GetRenderer()->GetGraphicsDevice()->GetDevice();
@@ -35,9 +35,9 @@ public:
 		D3D11_SUBRESOURCE_DATA initData = {};
 		initData.pSysMem = inVertices.data();
 
-		HRESULT hr = dv->CreateBuffer(&desc, &initData, mBuffer.GetAddressOf());
+		HR hr = dv->CreateBuffer(&desc, &initData, mBuffer.GetAddressOf());
 
-		DX_CHECK(hr, "vertex buffer creating fail.");
+		DX_ASSERT(hr, "vertex buffer creating fail.");
 
 		// Set Size
 		mBufferSize = static_cast<UINT>(inVertices.size());

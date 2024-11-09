@@ -15,6 +15,6 @@ void cmCamera::Render()
 	cmCBCamera cmr = {};
 	cmr.ViewProj = GetViewProjection();
 
-	auto* cb = Engine->GetRenderer()->GetGraphicsResourceManager()->FindConstantBufferOrNull<cmCBCamera>();
+	auto* cb = Engine->GetRenderer()->GetGraphicsResourceManager()->FindConstantBuffer<cmCBCamera>();
 	cb->UpdateBuffer(cmr);
 }

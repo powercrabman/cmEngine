@@ -7,6 +7,6 @@ void cmTransform::Render()
 	cmCBTransform t = {};
 	t.World = GetWorld();
 
-	auto* cb = Engine->GetRenderer()->GetGraphicsResourceManager()->FindConstantBufferOrNull<cmCBTransform>();
+	auto* cb = Engine->GetRenderer()->GetGraphicsResourceManager()->FindConstantBuffer<cmCBTransform>();
 	cb->UpdateBuffer(t);
 }

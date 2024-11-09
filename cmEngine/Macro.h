@@ -4,9 +4,6 @@
 friend class cmEngine;			\
 friend class cmApplication;
 
-#define RESOURCE_BODY()			\
-friend class cmResourceManager;			
-
 #define LOG_TRACE(format, ...)	Engine->GetLogger()->Logging(eLogLevel::Trace,format, __VA_ARGS__)
 #define LOG_INFO(format, ...)	Engine->GetLogger()->Logging(eLogLevel::Info,format, __VA_ARGS__)
 #define LOG_WARN(format, ...)	Engine->GetLogger()->Logging(eLogLevel::Warn,format, __VA_ARGS__)

@@ -2,11 +2,12 @@
 #include "cmComponent.h"
 #include "cmIRenderable.h"
 #include "cmViewport.h"
+#include "cmTransform.h"
 
 class cmCamera : public cmComponent, public cmIRenderable
 {
 public:
-	cmCamera() = default;
+	cmCamera(cmTransform* inOwnerTransform) { mTransform = inOwnerTransform; };
 	virtual ~cmCamera() = default;
 
 	void OnStart() override;
@@ -14,14 +15,16 @@ public:
 
 	void Render() override;
 
-Matrix GetView() const
-{
-	return DirectX::XMMatrixLookToLH(
-		mPosition,
-		DirectX::XMMatrixRotationRollPitchYawFromVector(mRotate).r[2],
-		Vector3::Up
-	);
-}
+	Matrix GetView() const
+	{
+		Matrix mat = DirectX::XMMatrixRotationRollPitchYawFromVector(mTransform->GetRotation());
+		
+		return DirectX::XMMatrixLookToLH(
+			GetPosition(),
+			mat.Backward(),
+			mat.Up()
+		);
+	}
 
 	Matrix GetProjection() const
 	{
@@ -52,15 +55,15 @@ Matrix GetView() const
 	void SetupOrthographic(float inWidth, float inHeight, float inNear, float inFar)
 	{
 		SetProjectionMode(eProjectionMode::Orthographic);
-		SetCameraScreenSize(inWidth, inHeight);
+		SetCameraResolution(inWidth, inHeight);
 		SetNearPlane(inNear);
 		SetFarPlane(inFar);
 	}
 
-	void SetupOrthographicMatchAspectRatio(float inHeight, float inNear, float inFar)
+	void SetupOrthographicRatio(float inHeight, float inNear, float inFar)
 	{
 		SetProjectionMode(eProjectionMode::Orthographic);
-		SetCameraScreenSizeMatchAspectRatio(inHeight);
+		SetCameraResolutionRatio(inHeight);
 		SetNearPlane(inNear);
 		SetFarPlane(inFar);
 	}
@@ -75,47 +78,45 @@ Matrix GetView() const
 	float GetNearPlane() const { return mNear; }
 	float GetFarPlane() const { return mFar; }
 
-	void SetPosition(const Vector3& inPosition) { mPosition = inPosition; }
-	void AddPosition(const Vector3& inPosition) { mPosition += inPosition; }
+	void SetPosition(const Vector3& inPosition) { mTransform->SetPosition(inPosition); }
+	void AddPosition(const Vector3& inPosition) { mTransform->AddPosition(inPosition); }
 
-	void SetPositionX(float inX) { mPosition.x = inX; }
-	void AddPositionX(float inX) { mPosition.x += inX; }
+	void SetPositionX(float inX) { mTransform->SetPositionX(inX); }
+	void AddPositionX(float inX) { mTransform->AddPositionX(inX); }
 
-	void SetPositionY(float inY) { mPosition.y = inY; }
-	void AddPositionY(float inY) { mPosition.y += inY; }
+	void SetPositionY(float inY) { mTransform->SetPositionY(inY); }
+	void AddPositionY(float inY) { mTransform->AddPositionY(inY); }
 
-	void SetPositionZ(float inZ) { mPosition.z = inZ; }
-	void AddPositionZ(float inZ) { mPosition.z += inZ; }
+	void SetPositionZ(float inZ) { mTransform->SetPositionZ(inZ); }
+	void AddPositionZ(float inZ) { mTransform->AddPositionZ(inZ); }
 
-	Vector3 GetPosition() const { return mPosition; }
+	Vector3 GetPosition() const { return mTransform->GetPosition(); }
 
-	void SetRotation(const Vector3& inRotation) { mRotate = inRotation; }
-	void AddRotation(const Vector3& inRotation) { mRotate += inRotation; }
+	void SetRotation(const Vector3& inRotation) { mTransform->SetRotation(inRotation); }
+	void AddRotation(const Vector3& inRotation) { mTransform->AddRotation(inRotation); }
 
-	void SetRotationX(float inX) { mRotate.x = inX; }
-	void AddRotationX(float inX) { mRotate.x += inX; }
+	void SetRotationX(float inX) { mTransform->SetRotationX(inX); }
+	void AddRotationX(float inX) { mTransform->AddRotationX(inX); }
+	void SetRotationY(float inY) { mTransform->SetRotationY(inY); }
+	void AddRotationY(float inY) { mTransform->AddRotationY(inY); }
+	void SetRotationZ(float inZ) { mTransform->SetRotationZ(inZ); }
+	void AddRotationZ(float inZ) { mTransform->AddRotationZ(inZ); }
 
-	void SetRotationY(float inY) { mRotate.y = inY; }
-	void AddRotationY(float inY) { mRotate.y += inY; }
+	Vector3 GetRotation() const { return mTransform->GetRotation(); }
 
-	void SetRotationZ(float inZ) { mRotate.z = inZ; }
-	void AddRotationZ(float inZ) { mRotate.z += inZ; }
-
-	Vector3 GetRotation() const { return mRotate; }
-
-	void SetCameraScreenSize(float inWidth, float inHeight)
+	void SetCameraResolution(float inWidth, float inHeight)
 	{
 		mWidth = inWidth;
 		mHeight = inHeight;
 	}
 
-	void SetCameraScreenSizeMatchAspectRatio(float inHeight)
+	void SetCameraResolutionRatio(float inHeight)
 	{
 		float ratio = Engine->GetRenderer()->GetViewport()->AspectRatio();
-		SetCameraScreenSize(inHeight * ratio, inHeight);
+		SetCameraResolution(inHeight * ratio, inHeight);
 	}
 
-	auto GetCameraScreenSize() const { return std::make_pair(mWidth, mHeight); }
+	auto GetCameraResolution() const { return std::make_pair(mWidth, mHeight); }
 
 	constexpr inline static eComponentType ComponentType = eComponentType::Camera;
 
@@ -125,14 +126,13 @@ private:
 	float mNear = 0.1f;
 	float mFar = 100.f;
 
-	Vector3 mPosition = Vector3::Zero;
-	Vector3 mRotate = Vector3::Zero;
+	cmTransform* mTransform = nullptr;
 
 	// For Orthographic
 	float mWidth = 1.f;
 	float mHeight = 1.f;
 
 	// For Perspective
-	float mFOV = 45.f;
+	float mFOV = cmMath::PI_Q;
 };
 

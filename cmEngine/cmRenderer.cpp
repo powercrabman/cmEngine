@@ -31,11 +31,17 @@ cmRenderer::~cmRenderer() = default;
 
 void cmRenderer::Initialize(cmWindow* inMainWindow)
 {
+	//COM interface 
+	DX_ASSERT(CoInitializeEx(nullptr, COINIT_MULTITHREADED), "COM Interface Initalize Fail.");
+
 	//그래픽 디바이스 초기화
 	mGraphicsDevice->Initailize(inMainWindow->GetHwnd());
 
 	mRTV->CreateFromSwapChain(mGraphicsDevice->GetSwapChain());
 	mViewport->SetFrom(inMainWindow);
+
+	//그래픽 리소스
+	mGraphicsResourceManager->Initialize();
 
 	//GUI 렌더러 초기화
 	mGUIRenderer->Initialize(inMainWindow->GetHwnd(), mGraphicsDevice.get());
@@ -114,7 +120,7 @@ void cmRenderer::Render()
 	{
 		obj->PreRender();
 		auto* meshRenderer = obj->FindComponentOrNull<cmMeshRenderer>();
-		mPipeline->SubmitPipeline(meshRenderer->GetMesh()->GetPipelineData());
+		mPipeline->SubmitPipeline(meshRenderer->GetPipelineData());
 		mPipeline->SubmitGraphicsData();
 		mPipeline->DrawIndices();
 	}
@@ -131,6 +137,7 @@ void cmRenderer::RenderEnd()
 
 void cmRenderer::CleanUp()
 {
+	CoUninitialize();
 	mGUIRenderer->CleanUp();
 	mGraphicsDevice->ClearUp();
 }

@@ -149,6 +149,15 @@
     <Filter Include="10. Component\Interface">
       <UniqueIdentifier>{da794c36-ed5e-4868-b694-c8b3c46fda58}</UniqueIdentifier>
     </Filter>
+    <Filter Include="07. Resource\Texture">
+      <UniqueIdentifier>{668818fb-badd-406b-bd67-efc0eb23d3c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06. Renderer\04. GraphisResource\RenderState">
+      <UniqueIdentifier>{468be8d1-c668-4bb9-a483-7c3447715376}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Input\Legacy">
+      <UniqueIdentifier>{049f6cf0-5f29-492d-9ede-f58bbfbe2ad8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -370,9 +379,6 @@
     <ClInclude Include="cmType.h">
       <Filter>98. Utiles\TypeID</Filter>
     </ClInclude>
-    <ClInclude Include="cmKeyboard.h">
-      <Filter>05. Input</Filter>
-    </ClInclude>
     <ClInclude Include="cmMath.h">
       <Filter>98. Utiles</Filter>
     </ClInclude>
@@ -381,6 +387,18 @@
     </ClInclude>
     <ClInclude Include="cmIRenderable.h">
       <Filter>10. Component\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="cmTexture.h">
+      <Filter>07. Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="cmRenderState.h">
+      <Filter>06. Renderer\04. GraphisResource\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="cmIKeyboard.h">
+      <Filter>05. Input</Filter>
+    </ClInclude>
+    <ClInclude Include="cmKeyboardPoll.h">
+      <Filter>05. Input\Legacy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -579,9 +597,6 @@
     <ClCompile Include="cmType.cpp">
       <Filter>98. Utiles\TypeID</Filter>
     </ClCompile>
-    <ClCompile Include="cmKeyboard.cpp">
-      <Filter>05. Input</Filter>
-    </ClCompile>
     <ClCompile Include="cmMath.cpp">
       <Filter>98. Utiles</Filter>
     </ClCompile>
@@ -591,9 +606,24 @@
     <ClCompile Include="cmIRenderable.cpp">
       <Filter>10. Component\Interface</Filter>
     </ClCompile>
+    <ClCompile Include="cmTexture.cpp">
+      <Filter>07. Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="cmRenderState.cpp">
+      <Filter>06. Renderer\04. GraphisResource\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="cmIKeyboard.cpp">
+      <Filter>05. Input</Filter>
+    </ClCompile>
+    <ClCompile Include="cmKeyboardPoll.cpp">
+      <Filter>05. Input\Legacy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\CommonResource\Shader\1. SimpleColorShader.hlsli">
+      <Filter>07. Resource\Shader\CommonShader</Filter>
+    </None>
+    <None Include="..\CommonResource\Shader\2. SimpleTexShader.hlsli">
       <Filter>07. Resource\Shader\CommonShader</Filter>
     </None>
   </ItemGroup>

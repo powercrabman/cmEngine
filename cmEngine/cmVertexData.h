@@ -1,10 +1,10 @@
 #pragma once
 
-struct cmVertexBase
+struct cmVertexDataBase
 {
 };
 
-struct cmVertexPosColor : public cmVertexBase
+struct cmVertexPosColor : public cmVertexDataBase
 {
 public:
 	cmVertexPosColor() = default;
@@ -24,7 +24,7 @@ public:
 	SimpleMath::Color Color = cmColors::Black;
 };
 
-struct cmVertexPosTex : public cmVertexBase
+struct cmVertexPosTex : public cmVertexDataBase
 {
 public:
 	cmVertexPosTex() = default;
@@ -33,8 +33,8 @@ public:
 
 	constexpr inline static D3D11_INPUT_ELEMENT_DESC sInputElems[] =
 	{
-		{ "POSITION", 0, DXGI_FORMAT_R32G32_FLOAT, 0, D3D11_APPEND_ALIGNED_ELEMENT , D3D11_INPUT_PER_VERTEX_DATA, 0 },
-		{"TEXCOORD0", 0, DXGI_FORMAT_R32G32_FLOAT, 0, D3D11_APPEND_ALIGNED_ELEMENT , D3D11_INPUT_PER_VERTEX_DATA, 0 }
+		{ "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, D3D11_APPEND_ALIGNED_ELEMENT , D3D11_INPUT_PER_VERTEX_DATA, 0 },
+		{ "TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT, 0, D3D11_APPEND_ALIGNED_ELEMENT , D3D11_INPUT_PER_VERTEX_DATA, 0 }
 	};
 
 	constexpr inline static size_t sInputElemsSize = ARRAYSIZE(sInputElems);

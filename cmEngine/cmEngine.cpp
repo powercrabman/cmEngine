@@ -14,8 +14,9 @@
 #include "cmMesh.h"
 #include "cmGameObject.h"
 #include "cmTransform.h"
-#include "cmKeyboard.h"
+#include "cmKeyboardPoll.h"
 #include "cmCamera.h"
+#include "cmTexture.h"
 
 cmEngine::~cmEngine() = default;
 cmEngine::cmEngine()
@@ -28,7 +29,13 @@ cmEngine::cmEngine()
 	mTimer = std::unique_ptr<cmTimer>(new cmTimer);
 	mResourceManager = std::unique_ptr<cmResourceManager>(new cmResourceManager);
 	mSceneManager = std::unique_ptr<cmSceneManager>(new cmSceneManager);
+
+#ifdef CM_ENGINE_USE_KEYBOARD_POLL
 	mKeyboard = std::unique_ptr<cmKeyboard>(new cmKeyboard);
+#else
+	mKeyboard = std::unique_ptr<cmKeyboardEvent>(new cmKeyboardEvent); // Not Implemented
+#endif // POOLING_KEYBORD
+
 }
 
 void cmEngine::Initialize() const
@@ -75,58 +82,89 @@ void cmEngine::LoadCommonResources() const
 	auto* r = GetResourceManager();
 	auto* g = GetRenderer()->GetGraphicsResourceManager();
 
-#pragma region Constant Buffer
+#pragma region Texture
 
 	{
-		auto* cb = g->CreateConstantBuffer<cmCBTransform>();
-		cb->Create();
-	}
-
-	{
-		auto* cb = g->CreateConstantBuffer<cmCBCamera>();
-		cb->Create();
+		auto* tex = r->CreateResource<cmTexture>("SimpleTexture");
+		tex->Load(r->GetClientResourcePath(L"nagisa.png"));
+		tex->Create();
 	}
 
 #pragma endregion
 
-	auto* grm = mRenderer->GetGraphicsResourceManager();
+#pragma region Vertex Shader
 
+	{
+		cmVertexShader* vs = r->CreateResource<cmVertexShader>("SimpleVS");
+		vs->LoadAndCompileHLSL(
+			r->GetCommonResourcePath(L"Shader\\1. SimpleColorShader.hlsli").data(),
+			"VS",
+			"vs_5_0"
+		);
+		vs->Create<cmVertexPosColor>();
+		vs->SetConstantBuffers({ g->FindConstantBuffer<cmCBTransform>(), g->FindConstantBuffer<cmCBCamera>() });
+	}
 
-	// Vertex Shadepr
-	cmVertexShader* vs = r->CreateResource<cmVertexShader>("SimpleVS");
-	vs->LoadAndCompileHLSL(
-		r->GetCommonResourcePath(L"Shader\\1. SimpleColorShader.hlsli").c_str(),
-		"VS",
-		"vs_5_0"
-	);
-	vs->Create();
-	vs->SetConstantBuffers({ grm->FindConstantBufferOrNull<cmCBTransform>(), grm->FindConstantBufferOrNull<cmCBCamera>() });
+	{
+		cmVertexShader* vs = r->CreateResource<cmVertexShader>("SimpleTexVS");
+		vs->LoadAndCompileHLSL(
+			r->GetCommonResourcePath(L"Shader\\2. SimpleTexShader.hlsli").data(),
+			"VS",
+			"vs_5_0"
+		);
+		vs->Create<cmVertexPosTex>();
+		vs->SetConstantBuffers({ g->FindConstantBuffer<cmCBTransform>(), g->FindConstantBuffer<cmCBCamera>() });
+	}
 
-	// Pixel Shader
-	cmPixelShader* ps = r->CreateResource<cmPixelShader>("SimplePS");
-	ps->LoadAndCompileHLSL(
-		r->GetCommonResourcePath(L"Shader\\1. SimpleColorShader.hlsli").c_str(),
-		"PS",
-		"ps_5_0"
-	);
-	ps->Create();
+#pragma endregion
 
-	// Geometry
-	cmGeometry* geo = g->CreateGeometry("SimpleRect");
-	cmHelper::Graphics::Geometry2D::CreateColoredSquare(geo, 0.5f, { cmColors::Cyan,cmColors::Aqua, cmColors::Darkmagenta, cmColors::Palevioletred });
+#pragma region Pixel Shader
 
-	// InputLayout
-	g->CreateInputLayout<cmVertexPosColor>(Engine->GetResourceManager()->FindResourceOrNull<cmVertexShader>("SimpleVS"));
+	{
+		cmPixelShader* ps = r->CreateResource<cmPixelShader>("SimplePS");
+		ps->LoadAndCompileHLSL(
+			r->GetCommonResourcePath(L"Shader\\1. SimpleColorShader.hlsli").data(),
+			"PS",
+			"ps_5_0"
+		);
+		ps->Create();
+	}
+
+	{
+		cmPixelShader* ps = r->CreateResource<cmPixelShader>("SimpleTexPS");
+		ps->LoadAndCompileHLSL(
+			r->GetCommonResourcePath(L"Shader\\2. SimpleTexShader.hlsli").data(),
+			"PS",
+			"ps_5_0"
+		);
+		ps->Create();
+	}
+
+#pragma endregion
+
+#pragma region Mesh
 
 	// Mesh
-	cmMesh* m = r->CreateResource<cmMesh>("SimpleMesh");
-	cmPipelineData d = {};
-	d.Geometry = g->FindGeometryOrNull("SimpleRect");
-	d.InputLayout = g->FindInputLayoutOrNull<cmVertexPosColor>();
-	d.VertexShader = vs;
-	d.PixelShader = ps;
+	{
+		cmMesh* m = r->CreateResource<cmMesh>("SimpleMesh");
+		cmHelper::Graphics::Geometry2D::CreateColoredQuad(m, 0.5f, { cmColors::Gray, cmColors::Cyan, cmColors::Yellow, cmColors::Magenta });
+	}
 
-	m->SetPipelineData(d);
+	{
+		cmMesh* m = r->CreateResource<cmMesh>("SimpleTexMesh");
+		std::array<Vector2, 4> uvs =
+		{
+			Vector2{1.f,0.f},
+			Vector2{1.f,1.f},
+			Vector2{0.f,1.f},
+			Vector2{0.f,0.f}
+		};
+
+		cmHelper::Graphics::Geometry2D::CreateTexQuad(m, 0.5f, uvs);
+	}
+
+#pragma endregion
+
 }
 
 cmEngine* Engine = nullptr;

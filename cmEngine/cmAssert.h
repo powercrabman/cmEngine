@@ -24,7 +24,7 @@ if (!(cond))					                        \
 std::string GetErrorMessage(HRESULT hr);
 
 #ifdef _DEBUG
-#define DX_CHECK(cond, hint)														\
+#define DX_ASSERT(cond, hint)														\
 if (FAILED(cond))																	\
 {																					\
     std::string errorMsg = GetErrorMessage(cond);									\
@@ -36,3 +36,4 @@ if (FAILED(cond))																	\
 #define DX_CHECK(cond, hint) (void)0
 #endif
 
+#define DX_CHECK(hr) SUCCEEDED(hr)

@@ -1,1 +1,0 @@
-C:\Users\ajw01\source\repos\cmEngine\Lib\DirectXTK\Bin\Desktop_2022\Win32\Debug\DirectXTK.lib
