@@ -17,6 +17,9 @@
 #include "cmKeyboardPoll.h"
 #include "cmCamera.h"
 #include "cmTexture.h"
+#include "cmFlipbook.h"
+#include "cmSprite.h"
+#include "cmKeyboardEv.h"
 
 cmEngine::~cmEngine() = default;
 cmEngine::cmEngine()
@@ -31,9 +34,9 @@ cmEngine::cmEngine()
 	mSceneManager = std::unique_ptr<cmSceneManager>(new cmSceneManager);
 
 #ifdef CM_ENGINE_USE_KEYBOARD_POLL
-	mKeyboard = std::unique_ptr<cmKeyboard>(new cmKeyboard);
+	mKeyboard = std::unique_ptr<cmKeyboardPoll>(new cmKeyboardPoll);
 #else
-	mKeyboard = std::unique_ptr<cmKeyboardEvent>(new cmKeyboardEvent); // Not Implemented
+	mKeyboard = std::unique_ptr<cmKeyboardEv>(new cmKeyboardEv);
 #endif // POOLING_KEYBORD
 
 }
@@ -86,14 +89,50 @@ void cmEngine::LoadCommonResources() const
 
 	{
 		auto* tex = r->CreateResource<cmTexture>("SimpleTexture");
-		tex->Load(r->GetClientResourcePath(L"nagisa.png"));
+		tex->Load(r->GetCommonResourcePath(L"Texture\\Older_Walk.bmp"));
 		tex->Create();
+	}
+
+
+	{
+		auto* tex = r->CreateResource<cmTexture>("SimpleTexture2");
+		tex->Load(r->GetCommonResourcePath(L"Texture\\tsubaki.png"));
+		tex->Create();
+	}
+
+
+#pragma endregion
+
+#pragma region Sprite & Flipbook
+
+	{
+		auto* fb = r->CreateResource<cmFlipbook>("SimpleFlipbook");
+		cmFlipbookData fbd = {};
+		fbd.Loop = true;
+		fbd.FrameCount = 12;
+		fbd.Width = 75;
+		fbd.Height = 85;
+		fbd.Texture = r->FindResourceOrNull<cmTexture>("SimpleTexture");
+		fbd.PivotCol = 0;
+		fbd.PivotRow = 0;
+		fbd.FrameDuration = 0.08f;
+		fb->Create(fbd);
+	}
+
+	{
+		auto sp = r->CreateResource<cmSprite>("SimpleSprite");
+		cmSpriteData spd = {};
+		spd.Width = 0;
+		spd.Height = 0;
+		spd.PivotCol = 0;
+		spd.PivotRow = 0;
+		spd.Texture = r->FindResourceOrNull<cmTexture>("SimpleTexture2");
+		sp->Create(spd);
 	}
 
 #pragma endregion
 
 #pragma region Vertex Shader
-
 	{
 		cmVertexShader* vs = r->CreateResource<cmVertexShader>("SimpleVS");
 		vs->LoadAndCompileHLSL(
@@ -116,6 +155,22 @@ void cmEngine::LoadCommonResources() const
 		vs->SetConstantBuffers({ g->FindConstantBuffer<cmCBTransform>(), g->FindConstantBuffer<cmCBCamera>() });
 	}
 
+	{
+		cmVertexShader* vs = r->CreateResource<cmVertexShader>("SimpleTexSpriteVS");
+		vs->LoadAndCompileHLSL(
+			r->GetCommonResourcePath(L"Shader\\3. SimpleTexSpriteShader.hlsli").data(),
+			"VS",
+			"vs_5_0"
+		);
+
+		vs->Create<cmVertexPosTex>();
+		vs->SetConstantBuffers({
+			g->FindConstantBuffer<cmCBTransform>(),
+			g->FindConstantBuffer<cmCBCamera>(),
+			g->FindConstantBuffer<cmCBSprite>()
+			});
+	}
+
 #pragma endregion
 
 #pragma region Pixel Shader
@@ -134,6 +189,16 @@ void cmEngine::LoadCommonResources() const
 		cmPixelShader* ps = r->CreateResource<cmPixelShader>("SimpleTexPS");
 		ps->LoadAndCompileHLSL(
 			r->GetCommonResourcePath(L"Shader\\2. SimpleTexShader.hlsli").data(),
+			"PS",
+			"ps_5_0"
+		);
+		ps->Create();
+	}
+
+	{
+		cmPixelShader* ps = r->CreateResource<cmPixelShader>("SimpleTexSpritePS");
+		ps->LoadAndCompileHLSL(
+			r->GetCommonResourcePath(L"Shader\\3. SimpleTexSpriteShader.hlsli").data(),
 			"PS",
 			"ps_5_0"
 		);

@@ -1,8 +1,10 @@
 #pragma once
 #include "cmComponent.h"
-#include "cmIRenderable.h"
+#include "cmIPreRenderable.h"
 
-class cmTransform : public cmComponent, public cmIRenderable
+class cmTransform 
+	: public cmComponent
+	, IMPLEMENTS cmIPreRenderable
 {
 public:
 	cmTransform() = default;
@@ -10,7 +12,7 @@ public:
 
 	void OnStart() override {}
 	void OnFinish() override {}
-	void Render() override;
+	void PreRender() override;
 
 	// Position
 	void SetPosition(const Vector3& inPosition) { mPosition = inPosition; }

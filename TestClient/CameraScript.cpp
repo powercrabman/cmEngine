@@ -5,7 +5,7 @@
 #include "cmCamera.h"
 #include "CameraGUI.h"
 
-void CameraScript::Initialize()
+void CameraScript::Setup()
 {
 	t = GetOwner()->GetTransform();
 	cmr = GetOwner()->CreateComponent<cmCamera>(true, t);
@@ -28,6 +28,6 @@ void CameraScript::Update()
 {
 }
 
-void CameraScript::LateUpdate()
+void CameraScript::FinalUpdate()
 {
 }

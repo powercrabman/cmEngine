@@ -37,13 +37,14 @@ enum eConstantBufferApplyFlags_
 
 enum class eComponentType
 {
-	MeshRenderer = 0,
-	Transform,
+	Transform = 0,
 	Camera,
+	RenderComponent,
+	Script,
+	EditorComponent,
 
 	Count,
 
-	Script, // Script는 특별한 ID를 사용해야만 함
 	Undefined
 };
 

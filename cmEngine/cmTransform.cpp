@@ -2,7 +2,7 @@
 #include "cmTransform.h"
 #include "cmGraphicsResourceManager.h"
 
-void cmTransform::Render()
+void cmTransform::PreRender()
 {
 	cmCBTransform t = {};
 	t.World = GetWorld();

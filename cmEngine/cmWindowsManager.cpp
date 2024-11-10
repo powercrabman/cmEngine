@@ -50,17 +50,23 @@ LRESULT CoreProc(HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam)
 	{
 		Engine->GetWindowsManager()->GetMainWindow()->SetFocus(false);
 		LOG_DEBUG("Main Window No Activate");
+
+		// 키보드 리셋
+		Engine->GetKeyboard()->Reset();
+
 		return 0;
 	}
 
 #ifndef CM_ENGINE_USE_KEYBOARD_POLL
 
-	case WM_KEYUP:
 	case WM_KEYDOWN:
-	case WM_SYSKEYUP:
 	case WM_SYSKEYDOWN:
-	case WM_ACTIVATE:
-	case WM_ACTIVATEAPP:
+		Engine->GetKeyboard()->OnKeyDown(uMsg, wParam, lParam);
+		break;
+
+	case WM_KEYUP:
+	case WM_SYSKEYUP:
+		Engine->GetKeyboard()->OnKeyUp(uMsg, wParam, lParam);
 		break;
 
 #endif // !CM_ENGINE_USE_KEYBOARD_POLL

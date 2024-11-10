@@ -6,7 +6,7 @@
 
 #define _WIN32_WINNT 0x0601
 #define _CRTDBG_MAP_ALLOC
-#define CM_ENGINE_USE_KEYBOARD_POLL
+//#define CM_ENGINE_USE_KEYBOARD_POLL
 
 #include <crtdbg.h>
 

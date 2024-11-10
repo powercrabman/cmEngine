@@ -1,23 +1,26 @@
 #include "pch.h"
 #include "cmSprite.h"
 
-void cmSprite::Create()
+void cmSprite::Create(const cmSpriteData& inData)
 {
+	mSpriteData = inData;
 	ASSERT(mSpriteData.Texture, "Texture is nullptr");
 
 	auto [width, height] = mSpriteData.Texture->GetSize();
-	float normWidth = mSpriteData.Width / width;
-	float normHeight = mSpriteData.Height / width;
-	float normWidthDiv2 = normWidth * 0.5f;
-	float normHeightDiv2 = normHeight * 0.5f;
+	float u = mSpriteData.Width == 0 ? 1.f : mSpriteData.Width / static_cast<float>(width);
+	float v = mSpriteData.Height == 0 ? 1.f : mSpriteData.Height / static_cast<float>(height);
+	float meshWDiv2 = mSpriteData.Width  == 0 ? width : mSpriteData.Width;//* ScaleFactor * 0.5f
+	float meshHDiv2 = mSpriteData.Height == 0 ? height : mSpriteData.Height;//* ScaleFactor * 0.5f
 
+	meshWDiv2 *= ScaleFactor * 0.5f;
+	meshHDiv2 *= ScaleFactor * 0.5f;
+	
 	// Vertex Buffer
-	std::vector<cmVertexPosTex> vb =
-	{
-		{Vector3{-normWidthDiv2, normHeightDiv2, 0.f},	Vector2{mSpriteData.PivotCol ,mSpriteData.PivotRow}},
-		{Vector3{normWidthDiv2, normHeightDiv2, 0.f},	Vector2{mSpriteData.PivotCol + normWidth ,mSpriteData.PivotRow}},
-		{Vector3{normWidthDiv2, -normHeightDiv2, 0.f},	Vector2{mSpriteData.PivotCol + normWidth ,mSpriteData.PivotRow + normHeight}},
-		{Vector3{-normWidthDiv2, -normHeightDiv2, 0.f}, Vector2{mSpriteData.PivotCol ,mSpriteData.PivotRow + normHeight}}
+	std::vector<cmVertexPosTex> vb = {
+		{Vector3{-meshWDiv2, meshHDiv2, 0.f}, Vector2{0.f, 0.f}},
+		{Vector3{meshWDiv2, meshHDiv2, 0.f}, Vector2{u, 0.f}},
+		{Vector3{meshWDiv2, -meshHDiv2, 0.f}, Vector2{u, v}},
+		{Vector3{-meshWDiv2, -meshHDiv2, 0.f}, Vector2{0.f, v}},
 	};
 
 	// Index Buffer
@@ -29,3 +32,4 @@ void cmSprite::Create()
 	mMesh = std::make_unique<cmMesh>();
 	mMesh->Create(vb, ib);
 }
+

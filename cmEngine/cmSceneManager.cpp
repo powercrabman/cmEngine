@@ -7,7 +7,7 @@ void cmSceneManager::UpdateCore()
 	if (mCurrentScene)
 	{
 		mCurrentScene->UpdateScene();
-		mCurrentScene->LateUpdate();
+		mCurrentScene->FinalUpdate();
 		mCurrentScene->PreRender();
 	}
 }

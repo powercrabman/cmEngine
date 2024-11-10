@@ -3,44 +3,60 @@
 #include "cmWindow.h"
 #include "cmWindowsManager.h"
 
-cmKeyboard::cmKeyboard()
+cmKeyboardPoll::cmKeyboardPoll()
 {
 }
 
-cmKeyboard::~cmKeyboard()
+cmKeyboardPoll::~cmKeyboardPoll()
 {
 }
-
-void cmKeyboard::Update()
+void cmKeyboardPoll::Update()
 {
 	BYTE keyStates[256] = {};
 	if (!GetKeyboardState(keyStates))
 	{
 		LOG_ERROR("Cannot Get Keyboard State");
+		mKeyState.fill(eKeyState::Away);
 		return;
 	}
+
+	const BYTE KEY_DOWN_MASK = 0x80;
 
 	for (int i = 0; i < KEY_STATE_MAX; i++)
 	{
 		eKeyState& state = mKeyState[i];
 
-		if (Engine->GetWindowsManager()->GetMainWindow()->IsFocused())
+		const bool isKeyDown = (keyStates[i] & KEY_DOWN_MASK) != 0;
+
+		if (isKeyDown)
 		{
-			if (keyStates[i] & 0x80)
+			switch (state)
 			{
-				if (state == eKeyState::Pressed) { state = eKeyState::Hold; }
-				else if (state == eKeyState::Release || state == eKeyState::Away) { state = eKeyState::Pressed; }
-			}
-			else
-			{
-				if (state == eKeyState::Hold || state == eKeyState::Pressed) { state = eKeyState::Release; }
-				else if (state == eKeyState::Release) { state = eKeyState::Away; }
+			case eKeyState::Away:
+			case eKeyState::Release:
+				state = eKeyState::Pressed;
+				break;
+			case eKeyState::Pressed:
+				state = eKeyState::Hold;
+				break;
+			default:
+				break;
 			}
 		}
 		else
 		{
-			if (state == eKeyState::Hold || state == eKeyState::Pressed) { state = eKeyState::Release; }
-			else if (state == eKeyState::Release) { state = eKeyState::Away; }
+			switch (state)
+			{
+			case eKeyState::Pressed:
+			case eKeyState::Hold:
+				state = eKeyState::Release;
+				break;
+			case eKeyState::Release:
+				state = eKeyState::Away;
+				break;
+			default:
+				break;
+			}
 		}
 	}
 }

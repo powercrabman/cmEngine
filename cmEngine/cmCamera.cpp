@@ -10,7 +10,7 @@ void cmCamera::OnFinish()
 {
 }
 
-void cmCamera::Render()
+void cmCamera::PreRender()
 {
 	cmCBCamera cmr = {};
 	cmr.ViewProj = GetViewProjection();

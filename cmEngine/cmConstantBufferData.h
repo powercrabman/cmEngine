@@ -11,3 +11,10 @@ struct cmCBCamera : cmConstantBufferDataBase
 {
 	Matrix ViewProj;
 };
+
+struct cmCBSprite : cmConstantBufferDataBase
+{
+	float PivotCol;
+	float PivotRow;
+	float Pad[2]; // NOT USE
+};

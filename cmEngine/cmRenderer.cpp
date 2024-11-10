@@ -119,8 +119,8 @@ void cmRenderer::Render()
 	for (cmGameObject* obj : mRenderList)
 	{
 		obj->PreRender();
-		auto* meshRenderer = obj->FindComponentOrNull<cmMeshRenderer>();
-		mPipeline->SubmitPipeline(meshRenderer->GetPipelineData());
+		auto* comp = obj->FindComponentOrNull<cmRenderComponent>();
+		mPipeline->SubmitPipeline(comp->GetPipelineData());
 		mPipeline->SubmitGraphicsData();
 		mPipeline->DrawIndices();
 	}

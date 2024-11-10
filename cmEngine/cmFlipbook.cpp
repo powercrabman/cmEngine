@@ -1,23 +1,23 @@
 #include "pch.h"
 #include "cmFlipbook.h"
 
-void cmFlipbook::Create()
+void cmFlipbook::Create(const cmFlipbookData& inData)
 {
+	mFlipbookData = inData;
 	ASSERT(mFlipbookData.Texture, "Texture is nullptr");
 
 	auto [width, height] = mFlipbookData.Texture->GetSize();
-	float normWidth = mFlipbookData.Width / width;
-	float normHeight = mFlipbookData.Height / width;
-	float normWidthDiv2 = normWidth * 0.5f;
-	float normHeightDiv2 = normHeight * 0.5f;
+	float u = mFlipbookData.Width / static_cast<float>(width);
+	float v = mFlipbookData.Height / static_cast<float>(height);
+	float meshWDiv2 = mFlipbookData.Width * ScaleFactor * 0.5f;
+	float meshHDiv2 = mFlipbookData.Height * ScaleFactor * 0.5f;
 
 	// Vertex Buffer
-	std::vector<cmVertexPosTex> vb =
-	{
-		{Vector3{-normWidthDiv2, normHeightDiv2, 0.f},	Vector2{mFlipbookData.PivotCol ,mFlipbookData.PivotRow}},
-		{Vector3{normWidthDiv2, normHeightDiv2, 0.f},	Vector2{mFlipbookData.PivotCol + normWidth ,mFlipbookData.PivotRow}},
-		{Vector3{normWidthDiv2, -normHeightDiv2, 0.f},	Vector2{mFlipbookData.PivotCol + normWidth ,mFlipbookData.PivotRow + normHeight}},
-		{Vector3{-normWidthDiv2, -normHeightDiv2, 0.f}, Vector2{mFlipbookData.PivotCol ,mFlipbookData.PivotRow + normHeight}}
+	std::vector<cmVertexPosTex> vb = {
+		{Vector3{-meshWDiv2, meshHDiv2, 0.f}, Vector2{0.f, 0.f}},
+		{Vector3{meshWDiv2, meshHDiv2, 0.f}, Vector2{u, 0.f}},
+		{Vector3{meshWDiv2, -meshHDiv2, 0.f}, Vector2{u, v}},
+		{Vector3{-meshWDiv2, -meshHDiv2, 0.f}, Vector2{0.f, v}},
 	};
 
 	// Index Buffer

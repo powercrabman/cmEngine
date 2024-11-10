@@ -4,7 +4,9 @@
 
 class cmTransform;
 class cmScript;
-class cmIRenderable;
+class cmIPreRenderable;
+class cmIFinalUpateable;
+class cmIUpdateable;
 
 class cmGameObject
 {
@@ -17,7 +19,7 @@ public:
 	void OnFinish();		/* 오브젝트가 파괴될 때 호출 (메모리는 해제하지 않음) */
 
 	void Update();			/* 메인 업데이트 */
-	void LateUpdate();		/* Update 에서 갱신된 내용을 통해 오브젝트 상태 보정 및 결정 */
+	void FinalUpdate();		/* Update 에서 갱신된 내용을 통해 오브젝트 상태 보정 및 결정 */
 	void PreRender();		/* 파이프라인과 관련된 작업을 수행 */
 
 	cmTransform* GetTransform() const { return mTransform; }
@@ -43,39 +45,30 @@ public:
 	Ty* CreateComponent(bool isActive, Args ...args)
 	{
 		static_assert(std::is_base_of<cmComponent, Ty>::value, "Ty must derived by cmComponent.");
+		uint32 idx = static_cast<uint32>(Ty::ComponentType);
 
-		if constexpr (!std::is_base_of<cmScript, Ty>::value)
+		// 이미 있을 경우
+		if (mCompRepo[idx])
 		{
-			uint32 idx = (uint32)Ty::ComponentType;
-			if (mCompRepo[idx])
-			{
-				ASSERT(false, "already exist component!");
-				LOG_ERROR("already exist component!");
-				return static_cast<Ty*>(mCompRepo[idx].get());
-			}
-		}
-
-		std::unique_ptr<Ty> inst = std::make_unique<Ty>(std::forward<Args>(args)...);
-		inst->SetOwner(this);
-		Ty* retVal = inst.get();
-
-		if constexpr (std::is_base_of<cmScript, Ty>::value)
-		{
-			inst->Initialize();
-			mScripts.push_back(std::move(inst));
+			ASSERT(false, "This is a component type that already exists.");
+			LOG_ERROR("This is a component type that already exists.");
+			return static_cast<Ty*>(mCompRepo[idx].get());
 		}
 		else
 		{
-			mCompRepo[(uint32)Ty::ComponentType] = std::move(inst);
+			mCompRepo[idx] = std::make_unique<Ty>(std::forward<Args>(args)...);
+			Ty* ptr = static_cast<Ty*>(mCompRepo[idx].get());
+			ptr->SetOwner(this);
 
-			if constexpr (std::is_base_of<cmIRenderable, Ty>::value)
-			{
-				mRenderableList.push_back(std::make_pair(retVal, retVal));
-			}
+			if constexpr (std::is_base_of<cmISetupable, Ty>::value) { ptr->Setup(); }
+			if constexpr (std::is_base_of<cmIUpdateable, Ty>::value) { mUpdateableList.emplace_back(ptr, ptr); }
+			if constexpr (std::is_base_of<cmIFinalUpdateable, Ty>::value) { mFinalUpdateableList.emplace_back(ptr, ptr); }
+			if constexpr (std::is_base_of<cmIPreRenderable, Ty>::value) { mPreRenderableList.emplace_back(ptr, ptr); }
+
+			ptr->SetActive(isActive);
+
+			return ptr;
 		}
-
-		if (isActive) { retVal->SetActive(true); }
-		return retVal;
 	}
 
 	template<typename Ty>
@@ -83,7 +76,8 @@ public:
 	{
 		static_assert(std::is_base_of<cmComponent, Ty>::value, "Ty must derived by cmComponent.");
 
-		const std::unique_ptr<cmComponent>& retVal = mCompRepo[(uint32)Ty::ComponentType];
+		uint32 idx = (uint32)Ty::ComponentType;
+		const std::unique_ptr<cmComponent>& retVal = mCompRepo[idx];
 
 		if (retVal)
 		{
@@ -103,8 +97,9 @@ private:
 	// TODO : 현재 구조는 마구잡이 식이라 나중에 고치기
 	enum { COMPONENT_COUNT = (uint32)(eComponentType::Count) };
 	std::array<std::unique_ptr<cmComponent>, COMPONENT_COUNT> mCompRepo = {};
-	std::vector<std::unique_ptr<cmScript>> mScripts = {};
-	std::vector<std::pair<cmComponent*, cmIRenderable*>> mRenderableList = {};
+	std::vector<std::pair<cmComponent*, cmIUpdateable*>>			mUpdateableList;
+	std::vector<std::pair<cmComponent*, cmIFinalUpdateable*>>	mFinalUpdateableList;
+	std::vector<std::pair<cmComponent*, cmIPreRenderable*>>		mPreRenderableList;
 
 	cmTransform* mTransform = nullptr;
 

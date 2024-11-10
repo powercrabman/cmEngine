@@ -20,7 +20,8 @@ friend class cmApplication;
 
 #define TYPE_ID(type)			cmTypeIDGen<type>::ID()
 
-#define INTERFACE class
+#define IMPLEMENTS	public
+#define INTERFACE	class
 
 #define KEY_PRESS(KeyCode)		Engine->GetKeyboard()->IsPressed(KeyCode)
 #define KEY_RELEASE(KeyCode)	Engine->GetKeyboard()->IsRelease(KeyCode)

@@ -2,14 +2,17 @@
 #include "cmGameObject.h"
 #include "cmScript.h"
 #include "cmTransform.h"
-#include "cmIRenderable.h"
+#include "cmIUpdateable.h"
+#include "cmIPreRenderable.h"
+#include "cmIFinalUpdateable.h"
 
 inline cmGameObject::cmGameObject()
 {
 	mGameObjectID = sGameObjectCounter++;
 
-	mScripts.reserve(16);
-	mRenderableList.reserve(16);
+	mUpdateableList.reserve(8);
+	mFinalUpdateableList.reserve(8);
+	mPreRenderableList.reserve(8);
 
 	mTransform = CreateComponent<cmTransform>(true);
 }
@@ -21,9 +24,9 @@ cmGameObject::~cmGameObject()
 //Active 상태인 컴포넌트를 모두 Start 시킴
 void cmGameObject::OnStart()
 {
-	for (const std::unique_ptr<cmScript>& cmp : mScripts)
+	for (const std::unique_ptr<cmComponent>& cmp : mCompRepo)
 	{
-		if (cmp->IsActive())
+		if (cmp && cmp->IsActive())
 		{
 			cmp->OnStart();
 		}
@@ -33,9 +36,9 @@ void cmGameObject::OnStart()
 //모든 컴포넌트를 Finish 시킴
 void cmGameObject::OnFinish()
 {
-	for (const std::unique_ptr<cmScript>& cmp : mScripts)
+	for (const std::unique_ptr<cmComponent>& cmp : mCompRepo)
 	{
-		if (cmp->IsActive())
+		if (cmp && cmp->IsActive())
 		{
 			cmp->OnFinish();
 		}
@@ -44,33 +47,33 @@ void cmGameObject::OnFinish()
 
 void cmGameObject::Update()
 {
-	for (const std::unique_ptr<cmScript>& cmp : mScripts)
+	for (auto& [cmp, updateable] : mUpdateableList)
 	{
 		if (cmp->IsActive())
 		{
-			cmp->Update();
+			updateable->Update();
 		}
 	}
 }
 
-void cmGameObject::LateUpdate()
+void cmGameObject::FinalUpdate()
 {
-	for (const std::unique_ptr<cmScript>& cmp : mScripts)
+	for (auto& [cmp, finalUpdateable] : mFinalUpdateableList)
 	{
 		if (cmp->IsActive())
 		{
-			cmp->LateUpdate();
+			finalUpdateable->FinalUpdate();
 		}
 	}
 }
 
 void cmGameObject::PreRender()
 {
-	for (const auto& [cmp, renderable] : mRenderableList)
+	for (const auto& [cmp, preRenderable] : mPreRenderableList)
 	{
 		if (cmp->IsActive())
 		{
-			renderable->Render();
+			preRenderable->PreRender();
 		}
 	}
 }

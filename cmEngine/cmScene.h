@@ -10,7 +10,7 @@ public:
 	
 	void EnterSceneCore();
 	void UpdateScene();
-	void LateUpdate();
+	void FinalUpdate();
 	void PreRender();
 	void ExitSceneCore();
 

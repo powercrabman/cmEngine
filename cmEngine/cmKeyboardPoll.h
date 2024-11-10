@@ -6,12 +6,12 @@
 // Event 형식의 cmKeyboardEvent 을 사용하는 것을 권장
 //////////////////////////////////////////////////////////////////////
 
-class cmKeyboard : public cmIKeyboard
+class cmKeyboardPoll : IMPLEMENTS cmIKeyboard
 {
 	ENGINE_MODULE_BODY();
 public:
-	cmKeyboard();
-	virtual ~cmKeyboard();
+	cmKeyboardPoll();
+	virtual ~cmKeyboardPoll();
 
 	void Initialize() override
 	{
@@ -24,6 +24,11 @@ public:
 	[[nodiscard]] __forceinline bool IsHold(eKeyCode inKeyCode) const override { return mKeyState[(uint32)inKeyCode] == eKeyState::Hold; }
 	[[nodiscard]] __forceinline bool IsPressed(eKeyCode inKeyCode) const override { return mKeyState[(uint32)inKeyCode] == eKeyState::Pressed; }
 	[[nodiscard]] __forceinline bool IsRelease(eKeyCode inKeyCode) const override { return mKeyState[(uint32)inKeyCode] == eKeyState::Release; }
+
+	virtual void OnKeyDown(uint32 inMsg, WPARAM wParam, LPARAM lParam) override {};
+	virtual void OnKeyUp(uint32 inMsg, WPARAM wParam, LPARAM lParam) override {};
+
+	virtual void Reset() override { mKeyState.fill(eKeyState::Away); }
 
 private:
 	enum {KEY_STATE_MAX = 256};

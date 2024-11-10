@@ -193,9 +193,6 @@ enum class eKeyState
 INTERFACE cmIKeyboard
 {
 public:
-	cmIKeyboard() = default;
-	~cmIKeyboard() = default;
-
 	virtual void Initialize() abstract;
 	virtual void Update() abstract;
 
@@ -204,5 +201,8 @@ public:
 	virtual [[nodiscard]] __forceinline bool IsPressed(eKeyCode inKeyCode) const abstract;
 	virtual [[nodiscard]] __forceinline bool IsRelease(eKeyCode inKeyCode) const abstract;
 
-};
+	virtual void OnKeyDown(uint32 inMsg, WPARAM wParam, LPARAM lParam) abstract;
+	virtual void OnKeyUp(uint32 inMsg, WPARAM wParam, LPARAM lParam) abstract;
 
+	virtual void Reset() abstract;
+};

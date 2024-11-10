@@ -28,13 +28,13 @@ void cmScene::UpdateScene()
 	}
 }
 
-void cmScene::LateUpdate()
+void cmScene::FinalUpdate()
 {
 	for (cmGameObject* obj : mUpdateList) 
 	{
 		if (obj->IsActive()) 
 		{
-			obj->LateUpdate();
+			obj->FinalUpdate();
 		}
 	}
 }

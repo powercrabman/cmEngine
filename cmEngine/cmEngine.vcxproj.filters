@@ -74,9 +74,6 @@
     <Filter Include="06. Renderer\03. Pipeline\02. Geometry">
       <UniqueIdentifier>{b2f609e5-f45c-4993-a5a0-65c00a695981}</UniqueIdentifier>
     </Filter>
-    <Filter Include="06. Renderer\03. Pipeline\03. InputAssembler">
-      <UniqueIdentifier>{880d886c-be42-4c66-bd19-c9e4faad1fbb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="06. Renderer\03. Pipeline\04. VertexShader">
       <UniqueIdentifier>{60561e42-568a-479e-a13a-f42c0559c710}</UniqueIdentifier>
     </Filter>
@@ -134,9 +131,6 @@
     <Filter Include="10. Component\Transform">
       <UniqueIdentifier>{fcfa6cc6-1105-45fd-920e-6e637f1191c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="10. Component\MeshRenderer">
-      <UniqueIdentifier>{8caa1ee2-562b-4bf5-a1da-fa3def3c42d6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="10. Component\Script">
       <UniqueIdentifier>{e5fe200b-a2b9-436b-95a2-726352de6241}</UniqueIdentifier>
     </Filter>
@@ -155,8 +149,26 @@
     <Filter Include="06. Renderer\04. GraphisResource\RenderState">
       <UniqueIdentifier>{468be8d1-c668-4bb9-a483-7c3447715376}</UniqueIdentifier>
     </Filter>
+    <Filter Include="07. Resource\Sprite">
+      <UniqueIdentifier>{17221a5e-ba19-4ae0-b113-38f1d491a43b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07. Resource\Flipbook">
+      <UniqueIdentifier>{a2eb30a1-98fb-4961-bae4-bc5802b28a94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="10. Component\RenderComponent">
+      <UniqueIdentifier>{8caa1ee2-562b-4bf5-a1da-fa3def3c42d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="10. Component\RenderComponent\Base">
+      <UniqueIdentifier>{fd457e53-c328-448b-b2b4-76071d4f0d27}</UniqueIdentifier>
+    </Filter>
     <Filter Include="05. Input\Legacy">
-      <UniqueIdentifier>{049f6cf0-5f29-492d-9ede-f58bbfbe2ad8}</UniqueIdentifier>
+      <UniqueIdentifier>{79322204-f7ea-4a6a-ad37-49f5e39a4668}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="10. Component\EditorComponent">
+      <UniqueIdentifier>{f4930ee7-7138-4ab9-a100-8a79400a4974}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06. Renderer\05. GUI\New">
+      <UniqueIdentifier>{c68f7983-5ae6-4420-9f80-0db722d79899}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -313,12 +325,6 @@
     <ClInclude Include="cmGraphicsHelper.h">
       <Filter>06. Renderer\99. Helper</Filter>
     </ClInclude>
-    <ClInclude Include="cmVertexBuffer.h">
-      <Filter>06. Renderer\03. Pipeline\03. InputAssembler</Filter>
-    </ClInclude>
-    <ClInclude Include="cmIndexBuffer.h">
-      <Filter>06. Renderer\03. Pipeline\03. InputAssembler</Filter>
-    </ClInclude>
     <ClInclude Include="cmViewport.h">
       <Filter>06. Renderer\02. Device</Filter>
     </ClInclude>
@@ -353,7 +359,7 @@
       <Filter>08. Scene</Filter>
     </ClInclude>
     <ClInclude Include="cmMeshRenderer.h">
-      <Filter>10. Component\MeshRenderer</Filter>
+      <Filter>10. Component\RenderComponent</Filter>
     </ClInclude>
     <ClInclude Include="cmMesh.h">
       <Filter>07. Resource\Mesh</Filter>
@@ -385,9 +391,6 @@
     <ClInclude Include="cmCamera.h">
       <Filter>10. Component\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="cmIRenderable.h">
-      <Filter>10. Component\Interface</Filter>
-    </ClInclude>
     <ClInclude Include="cmTexture.h">
       <Filter>07. Resource\Texture</Filter>
     </ClInclude>
@@ -397,9 +400,55 @@
     <ClInclude Include="cmIKeyboard.h">
       <Filter>05. Input</Filter>
     </ClInclude>
+    <ClInclude Include="cmSprite.h">
+      <Filter>07. Resource\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="cmFlipbook.h">
+      <Filter>07. Resource\Flipbook</Filter>
+    </ClInclude>
+    <ClInclude Include="cmFlipbookData.h">
+      <Filter>07. Resource\Flipbook</Filter>
+    </ClInclude>
+    <ClInclude Include="cmSpriteData.h">
+      <Filter>07. Resource\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="cmVertexBuffer.h">
+      <Filter>06. Renderer\03. Pipeline\02. Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="cmIndexBuffer.h">
+      <Filter>06. Renderer\03. Pipeline\02. Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="cmIUpdateable.h">
+      <Filter>10. Component\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="cmIFinalUpdateable.h">
+      <Filter>10. Component\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="cmIPreRenderable.h">
+      <Filter>10. Component\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="cmRenderComponent.h">
+      <Filter>10. Component\RenderComponent\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="cmSpriteRenderer.h">
+      <Filter>10. Component\RenderComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="cmFlipbookRenderer.h">
+      <Filter>10. Component\RenderComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="cmKeyboardEv.h">
+      <Filter>05. Input</Filter>
+    </ClInclude>
     <ClInclude Include="cmKeyboardPoll.h">
       <Filter>05. Input\Legacy</Filter>
     </ClInclude>
+    <ClInclude Include="cmEditorComponent.h">
+      <Filter>10. Component\EditorComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="cmISetupable.h">
+      <Filter>10. Component\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -531,12 +580,6 @@
     <ClCompile Include="cmGraphicsHelper.cpp">
       <Filter>06. Renderer\99. Helper</Filter>
     </ClCompile>
-    <ClCompile Include="cmIndexBuffer.cpp">
-      <Filter>06. Renderer\03. Pipeline\03. InputAssembler</Filter>
-    </ClCompile>
-    <ClCompile Include="cmVertexBuffer.cpp">
-      <Filter>06. Renderer\03. Pipeline\03. InputAssembler</Filter>
-    </ClCompile>
     <ClCompile Include="cmRenderTargetView.cpp">
       <Filter>06. Renderer\02. Device</Filter>
     </ClCompile>
@@ -571,7 +614,7 @@
       <Filter>08. Scene</Filter>
     </ClCompile>
     <ClCompile Include="cmMeshRenderer.cpp">
-      <Filter>10. Component\MeshRenderer</Filter>
+      <Filter>10. Component\RenderComponent</Filter>
     </ClCompile>
     <ClCompile Include="cmMesh.cpp">
       <Filter>07. Resource\Mesh</Filter>
@@ -603,9 +646,6 @@
     <ClCompile Include="cmCamera.cpp">
       <Filter>10. Component\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="cmIRenderable.cpp">
-      <Filter>10. Component\Interface</Filter>
-    </ClCompile>
     <ClCompile Include="cmTexture.cpp">
       <Filter>07. Resource\Texture</Filter>
     </ClCompile>
@@ -615,8 +655,53 @@
     <ClCompile Include="cmIKeyboard.cpp">
       <Filter>05. Input</Filter>
     </ClCompile>
+    <ClCompile Include="cmSprite.cpp">
+      <Filter>07. Resource\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="cmFlipbook.cpp">
+      <Filter>07. Resource\Flipbook</Filter>
+    </ClCompile>
+    <ClCompile Include="cmFlipbookData.cpp">
+      <Filter>07. Resource\Flipbook</Filter>
+    </ClCompile>
+    <ClCompile Include="cmSpriteData.cpp">
+      <Filter>07. Resource\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="cmIndexBuffer.cpp">
+      <Filter>06. Renderer\03. Pipeline\02. Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="cmVertexBuffer.cpp">
+      <Filter>06. Renderer\03. Pipeline\02. Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="cmIUpdateable.cpp">
+      <Filter>10. Component\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="cmIFinalUpdateable.cpp">
+      <Filter>10. Component\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="cmIPreRenderable.cpp">
+      <Filter>10. Component\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="cmRenderComponent.cpp">
+      <Filter>10. Component\RenderComponent\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="cmSpriteRenderer.cpp">
+      <Filter>10. Component\RenderComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="cmFlipbookRenderer.cpp">
+      <Filter>10. Component\RenderComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="cmKeyboardEv.cpp">
+      <Filter>05. Input</Filter>
+    </ClCompile>
     <ClCompile Include="cmKeyboardPoll.cpp">
       <Filter>05. Input\Legacy</Filter>
+    </ClCompile>
+    <ClCompile Include="cmEditorComponent.cpp">
+      <Filter>10. Component\EditorComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="cmISetupable.cpp">
+      <Filter>10. Component\Interface</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -626,5 +711,11 @@
     <None Include="..\CommonResource\Shader\2. SimpleTexShader.hlsli">
       <Filter>07. Resource\Shader\CommonShader</Filter>
     </None>
+    <None Include="..\CommonResource\Shader\3. SimpleTexSpriteShader.hlsli">
+      <Filter>07. Resource\Shader\CommonShader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="cmEngine.rc" />
   </ItemGroup>
 </Project>

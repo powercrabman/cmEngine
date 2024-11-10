@@ -1,10 +1,12 @@
 #pragma once
 #include "cmComponent.h"
-#include "cmIRenderable.h"
 #include "cmViewport.h"
 #include "cmTransform.h"
+#include "cmIPreRenderable.h"
 
-class cmCamera : public cmComponent, public cmIRenderable
+class cmCamera
+	: public cmComponent
+	, IMPLEMENTS cmIPreRenderable
 {
 public:
 	cmCamera(cmTransform* inOwnerTransform) { mTransform = inOwnerTransform; };
@@ -13,7 +15,7 @@ public:
 	void OnStart() override;
 	void OnFinish() override;
 
-	void Render() override;
+	void PreRender() override;
 
 	Matrix GetView() const
 	{

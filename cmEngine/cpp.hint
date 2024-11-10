@@ -4,3 +4,5 @@
 #define ENGINE_MODULE_BODY()#define NULL
 #define NULL ((void *)0)
 #define INTERFACE
+#define IMPLEMENTS
+#define SUPER(SuperClass)

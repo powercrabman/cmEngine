@@ -8,14 +8,15 @@ class CameraScript : public cmScript
 {
 public:
 	CameraScript() = default;
+	virtual ~CameraScript() = default;
 
-	void Initialize() override;
+	void Setup() override;
 
 	void OnStart() override;
 	void OnFinish() override;
 
 	void Update() override;
-	void LateUpdate() override;
+	void FinalUpdate() override;
 
 private:
 	cmTransform* t = nullptr;

@@ -7,28 +7,27 @@
 #include "cmCamera.h"
 #include "PlayerGUI.h"
 #include "cmGraphicsResourceManager.h"
+#include "cmFlipbookRenderer.h"
+#include "cmFlipbook.h"
 
-void DummyScript::Initialize()
+
+void DummyScript::Setup()
 {
 	auto* rm = Engine->GetResourceManager();
 
-	cmPipelineData pd = {};
-	pd.Mesh = rm->FindResourceOrNull<cmMesh>("SimpleTexMesh");
-	pd.PixelShader = rm->FindResourceOrNull<cmPixelShader>("SimpleTexPS");
-	pd.VertexShader = rm->FindResourceOrNull<cmVertexShader>("SimpleTexVS");
-	pd.Texture = rm->FindResourceOrNull<cmTexture>("SimpleTexture");
-	pd.SamplerState = Engine->GetRenderer()->GetGraphicsResourceManager()->FindSamplerState(
-		eSamplerStateFilter::Linear, eSamplerStateAddress::Clamp, eSamplerStateAddress::Clamp
+	auto* fb = GetOwner()->CreateComponent<cmFlipbookRenderer>(true);
+	fb->SetShaders(
+		rm->FindResourceOrNull<cmVertexShader>("SimpleTexSpriteVS"),
+		rm->FindResourceOrNull<cmPixelShader>("SimpleTexSpritePS")
 	);
-
-	mMR = GetOwner()->CreateComponent<cmMeshRenderer>(true);
-	mMR->SetPipelineData(pd);
+	fb->SetFlipbook(rm->FindResourceOrNull<cmFlipbook>("SimpleFlipbook"));
 
 	mTrans = GetOwner()->GetTransform();
 
 	auto* gui = cmHelper::RegisterGUI<PlayerGUI>();
 	gui->SetEntity(GetOwner());
 }
+
 
 void DummyScript::OnStart()
 {
@@ -60,6 +59,6 @@ void DummyScript::Update()
 	if (KEY_HOLD(eKeyCode::Q)) { mTrans->AddRotationZ(sRotate * DELTA_TIME); }
 }
 
-void DummyScript::LateUpdate()
+void DummyScript::FinalUpdate()
 {
 }
