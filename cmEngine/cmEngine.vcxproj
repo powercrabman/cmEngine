@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -22,169 +22,119 @@
     <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_rectpack.h" />
     <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_textedit.h" />
     <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_truetype.h" />
-    <ClInclude Include="cmCamera.h" />
-    <ClInclude Include="cmConstantBufferBase.h" />
-    <ClInclude Include="cmEditorComponent.h" />
-    <ClInclude Include="cmFlipbook.h" />
-    <ClInclude Include="cmFlipbookData.h" />
-    <ClInclude Include="cmFlipbookRenderer.h" />
-    <ClInclude Include="cmGraphicsResourceManager.h" />
-    <ClInclude Include="cmIFinalUpdateable.h" />
-    <ClInclude Include="cmIKeyboard.h" />
-    <ClInclude Include="cmInputLayoutBase.h" />
-    <ClInclude Include="cmISetupable.h" />
-    <ClInclude Include="cmIUpdateable.h" />
-    <ClInclude Include="cmKeyboardEv.h" />
-    <ClInclude Include="cmKeyboardPoll.h" />
-    <ClInclude Include="cmMath.h" />
-    <ClInclude Include="cmMesh.h" />
-    <ClInclude Include="cmMeshRenderer.h" />
-    <ClInclude Include="cmPipelineData.h" />
-    <ClInclude Include="cmIPreRenderable.h" />
-    <ClInclude Include="cmRenderComponent.h" />
-    <ClInclude Include="cmRenderState.h" />
-    <ClInclude Include="cmScript.h" />
-    <ClInclude Include="cmAlgorithm.h" />
-    <ClInclude Include="cmAssert.h" />
-    <ClInclude Include="cmComponent.h" />
-    <ClInclude Include="cmConsoleData.h" />
-    <ClInclude Include="cmConsoleGUI.h" />
-    <ClInclude Include="cmConsole.h" />
-    <ClInclude Include="cmCommonCommand.h" />
-    <ClInclude Include="cmConstantBuffer.h" />
-    <ClInclude Include="cmConstantBufferData.h" />
-    <ClInclude Include="cmDebugGUI.h" />
-    <ClInclude Include="cmEngine.h" />
-    <ClInclude Include="cmGameObject.h" />
-    <ClInclude Include="cmGeometry.h" />
-    <ClInclude Include="cmGeometryHelper.h" />
-    <ClInclude Include="cmGraphicsDevice.h" />
-    <ClInclude Include="cmGraphicsHelper.h" />
-    <ClInclude Include="cmGUIRenderer.h" />
-    <ClInclude Include="cmGUI.h" />
-    <ClInclude Include="cmHelper.h" />
-    <ClInclude Include="cmICommand.h" />
-    <ClInclude Include="cmIndexBuffer.h" />
-    <ClInclude Include="cmInputLayout.h" />
-    <ClInclude Include="cmLogger.h" />
-    <ClInclude Include="cmLoggerGUI.h" />
-    <ClInclude Include="cmLogData.h" />
-    <ClInclude Include="cmMenuGUI.h" />
-    <ClInclude Include="cmPipeline.h" />
-    <ClInclude Include="cmPixelShader.h" />
-    <ClInclude Include="cmPopupGUI.h" />
-    <ClInclude Include="cmRenderTargetView.h" />
-    <ClInclude Include="cmResourceManager.h" />
-    <ClInclude Include="cmSprite.h" />
-    <ClInclude Include="cmSpriteData.h" />
-    <ClInclude Include="cmSpriteRenderer.h" />
-    <ClInclude Include="cmTexture.h" />
-    <ClInclude Include="cmTimer.h" />
-    <ClInclude Include="cmRenderer.h" />
-    <ClInclude Include="cmStaticTextBuffer.h" />
-    <ClInclude Include="cmTransform.h" />
-    <ClInclude Include="cmType.h" />
-    <ClInclude Include="cmVertexBuffer.h" />
-    <ClInclude Include="cmVertexData.h" />
-    <ClInclude Include="cmVertexShader.h" />
-    <ClInclude Include="cmViewport.h" />
-    <ClInclude Include="cmWindow.h" />
-    <ClInclude Include="cmWindowsManager.h" />
-    <ClInclude Include="cmColors.h" />
-    <ClInclude Include="EngineInc.h" />
-    <ClInclude Include="cmApplication.h" />
+    <ClInclude Include="BatchSystem.h" />
+    <ClInclude Include="CameraComponent.h" />
+    <ClInclude Include="EditorComponent.h" />
+    <ClInclude Include="Flipbook.h" />
+    <ClInclude Include="FlipbookRenderer.h" />
+    <ClInclude Include="IFinalUpdateable.h" />
+    <ClInclude Include="ISetupable.h" />
+    <ClInclude Include="IUpdateable.h" />
+    <ClInclude Include="ResourceBase.h" />
+    <ClInclude Include="ConstantBuffer.h" />
+    <ClInclude Include="ConstantBufferBase.h" />
+    <ClInclude Include="ConstantBufferData.h" />
+    <ClInclude Include="ConstantBufferPool.h" />
+    <ClInclude Include="Geometry.h" />
+    <ClInclude Include="Gui.h" />
+    <ClInclude Include="GuiRenderer.h" />
+    <ClInclude Include="IndexBuffer.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="EngineMath.h" />
+    <ClInclude Include="GeometryRenderer.h" />
+    <ClInclude Include="IPreRenderable.h" />
+    <ClInclude Include="RenderComponent.h" />
+    <ClInclude Include="Script.h" />
+    <ClInclude Include="EngineAlgorithm.h" />
+    <ClInclude Include="EngineAssertion.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="EngineCore.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Pipeline.h" />
+    <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpriteRenderer.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="PixelShader.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="RenderState.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="Transform.h" />
+    <ClInclude Include="TypeID.h" />
+    <ClInclude Include="VertexBuffer.h" />
+    <ClInclude Include="VertexData.h" />
+    <ClInclude Include="VertexShader.h" />
+    <ClInclude Include="Viewport.h" />
+    <ClInclude Include="Colors.h" />
+    <ClInclude Include="EnginePch.h" />
+    <ClInclude Include="Application.h" />
     <ClInclude Include="FileDialog.h" />
+    <ClInclude Include="GameWindow.h" />
     <ClInclude Include="ImGuiHelper.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
     <ClInclude Include="imgui\imgui_impl_dx11.h" />
     <ClInclude Include="imgui\imgui_impl_win32.h" />
     <ClInclude Include="imgui\imgui_internal.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="cmShader.h" />
-    <ClInclude Include="cmScene.h" />
-    <ClInclude Include="cmSceneManager.h" />
-    <ClInclude Include="resource.h" />
+    <ClInclude Include="Log.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Types.h" />
-    <ClInclude Include="UComPtr.h" />
-    <ClInclude Include="WindowsStruct.h" />
-    <ClInclude Include="Macro.h" />
+    <ClInclude Include="WindowProc.h" />
+    <ClInclude Include="EngineMacro.h" />
     <ClInclude Include="imguiInc.h" />
-    <ClInclude Include="EngineModules.h" />
     <ClInclude Include="Enums.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cmCamera.cpp" />
-    <ClCompile Include="cmConstantBufferBase.cpp" />
-    <ClCompile Include="cmEditorComponent.cpp" />
-    <ClCompile Include="cmFlipbook.cpp" />
-    <ClCompile Include="cmFlipbookData.cpp" />
-    <ClCompile Include="cmFlipbookRenderer.cpp" />
-    <ClCompile Include="cmGraphicsResourceManager.cpp" />
-    <ClCompile Include="cmIFinalUpdateable.cpp" />
-    <ClCompile Include="cmIKeyboard.cpp" />
-    <ClCompile Include="cmInputLayoutBase.cpp" />
-    <ClCompile Include="cmISetupable.cpp" />
-    <ClCompile Include="cmIUpdateable.cpp" />
-    <ClCompile Include="cmKeyboardEv.cpp" />
-    <ClCompile Include="cmKeyboardPoll.cpp" />
-    <ClCompile Include="cmMath.cpp" />
-    <ClCompile Include="cmMesh.cpp" />
-    <ClCompile Include="cmMeshRenderer.cpp" />
-    <ClCompile Include="cmPipelineData.cpp" />
-    <ClCompile Include="cmIPreRenderable.cpp" />
-    <ClCompile Include="cmRenderComponent.cpp" />
-    <ClCompile Include="cmRenderState.cpp" />
-    <ClCompile Include="cmScript.cpp" />
-    <ClCompile Include="cmAlgorithm.cpp" />
-    <ClCompile Include="cmAssert.cpp" />
-    <ClCompile Include="cmComponent.cpp" />
-    <ClCompile Include="cmConsoleData.cpp" />
-    <ClCompile Include="cmConsoleGUI.cpp" />
-    <ClCompile Include="cmConsole.cpp" />
-    <ClCompile Include="cmCommonCommand.cpp" />
-    <ClCompile Include="cmConstantBuffer.cpp" />
-    <ClCompile Include="cmConstantBufferData.cpp" />
-    <ClCompile Include="cmDebugGUI.cpp" />
-    <ClCompile Include="cmEngine.cpp" />
-    <ClCompile Include="cmGameObject.cpp" />
-    <ClCompile Include="cmGeometry.cpp" />
-    <ClCompile Include="cmGeometryHelper.cpp" />
-    <ClCompile Include="cmGraphicsDevice.cpp" />
-    <ClCompile Include="cmGraphicsHelper.cpp" />
-    <ClCompile Include="cmGUIRenderer.cpp" />
-    <ClCompile Include="cmGUI.cpp" />
-    <ClCompile Include="cmHelper.cpp" />
-    <ClCompile Include="cmICommand.cpp" />
-    <ClCompile Include="cmIndexBuffer.cpp" />
-    <ClCompile Include="cmInputLayout.cpp" />
-    <ClCompile Include="cmLogger.cpp" />
-    <ClCompile Include="cmLoggerGUI.cpp" />
-    <ClCompile Include="cmLogData.cpp" />
-    <ClCompile Include="cmMenuGUI.cpp" />
-    <ClCompile Include="cmPipeline.cpp" />
-    <ClCompile Include="cmPixelShader.cpp" />
-    <ClCompile Include="cmPopupGUI.cpp" />
-    <ClCompile Include="cmRenderTargetView.cpp" />
-    <ClCompile Include="cmResourceManager.cpp" />
-    <ClCompile Include="cmSprite.cpp" />
-    <ClCompile Include="cmSpriteData.cpp" />
-    <ClCompile Include="cmSpriteRenderer.cpp" />
-    <ClCompile Include="cmTexture.cpp" />
-    <ClCompile Include="cmTimer.cpp" />
-    <ClCompile Include="cmRenderer.cpp" />
-    <ClCompile Include="cmStaticTextBuffer.cpp" />
-    <ClCompile Include="cmTransform.cpp" />
-    <ClCompile Include="cmType.cpp" />
-    <ClCompile Include="cmVertexBuffer.cpp" />
-    <ClCompile Include="cmVertexData.cpp" />
-    <ClCompile Include="cmVertexShader.cpp" />
-    <ClCompile Include="cmViewport.cpp" />
-    <ClCompile Include="cmWindow.cpp" />
-    <ClCompile Include="cmWindowsManager.cpp" />
-    <ClCompile Include="cmApplication.cpp" />
-    <ClCompile Include="cmColors.cpp" />
+    <ClCompile Include="BatchSystem.cpp" />
+    <ClCompile Include="CameraComponent.cpp" />
+    <ClCompile Include="EditorComponent.cpp" />
+    <ClCompile Include="Flipbook.cpp" />
+    <ClCompile Include="FlipbookRenderer.cpp" />
+    <ClCompile Include="IFinalUpdateable.cpp" />
+    <ClCompile Include="ISetupable.cpp" />
+    <ClCompile Include="IUpdateable.cpp" />
+    <ClCompile Include="ResourceBase.cpp" />
+    <ClCompile Include="ConstantBuffer.cpp" />
+    <ClCompile Include="ConstantBufferBase.cpp" />
+    <ClCompile Include="ConstantBufferData.cpp" />
+    <ClCompile Include="ConstantBufferPool.cpp" />
+    <ClCompile Include="Geometry.cpp" />
+    <ClCompile Include="Gui.cpp" />
+    <ClCompile Include="GuiRenderer.cpp" />
+    <ClCompile Include="IndexBuffer.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="EngineMath.cpp" />
+    <ClCompile Include="GeometryRenderer.cpp" />
+    <ClCompile Include="IPreRenderable.cpp" />
+    <ClCompile Include="RenderComponent.cpp" />
+    <ClCompile Include="Script.cpp" />
+    <ClCompile Include="EngineAlgorithm.cpp" />
+    <ClCompile Include="EngineAssertion.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="EngineCore.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Pipeline.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="SpriteRenderer.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="PixelShader.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="RenderState.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="TypeID.cpp" />
+    <ClCompile Include="VertexBuffer.cpp" />
+    <ClCompile Include="VertexData.cpp" />
+    <ClCompile Include="VertexShader.cpp" />
+    <ClCompile Include="Viewport.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Colors.cpp" />
     <ClCompile Include="FileDialog.cpp" />
+    <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="ImGuiHelper.cpp" />
     <ClCompile Include="imgui\imgui.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
@@ -210,23 +160,20 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="pch.cpp">
+    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="EnginePch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Enginepch.h</PrecompiledHeaderFile>
     </ClCompile>
-    <ClCompile Include="cmShader.cpp" />
-    <ClCompile Include="cmScene.cpp" />
-    <ClCompile Include="cmSceneManager.cpp" />
-    <ClCompile Include="UComPtr.cpp" />
-    <ClCompile Include="WindowsStruct.cpp" />
+    <ClCompile Include="WindowProc.cpp" />
+    <ClCompile Include="Types.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\CommonResource\Shader\1. SimpleColorShader.hlsli" />
     <None Include="..\CommonResource\Shader\2. SimpleTexShader.hlsli" />
     <None Include="..\CommonResource\Shader\3. SimpleTexSpriteShader.hlsli" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="cmEngine.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -339,7 +286,7 @@
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>EnginePch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>

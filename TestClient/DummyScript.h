@@ -17,6 +17,8 @@ public:
 	void Update() override;
 	void FinalUpdate() override;
 
+	void GUILayout();
+
 private:
 	cmTransform* mTrans = nullptr;
 };

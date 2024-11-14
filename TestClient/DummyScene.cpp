@@ -22,14 +22,14 @@ void DummyScene::EnterScene()
 		obj->CreateComponent<CameraScript>(true);
 	}
 
-	//{
-	//	auto* r = Engine->GetResourceManager();
-	//	auto* obj = Engine->GetSceneManager()->GetCurrentScene()->CreateGameObject(true);
-	//	auto* sp = obj->CreateComponent<cmSpriteRenderer>(true);
-	//	sp->SetShaders(r->FindResourceOrNull<cmVertexShader>("SimpleTexSpriteVS"), r->FindResourceOrNull<cmPixelShader>("SimpleTexSpritePS"));
-	//	sp->SetSprite(r->FindResourceOrNull<cmSprite>("SimpleSprite"));
-	//	obj->GetTransform()->SetPosition({0.f, 0.f, 3.f});
-	//}
+	{
+		auto* r = Engine->GetResourceManager();
+		auto* obj = Engine->GetSceneManager()->GetCurrentScene()->CreateGameObject(true);
+		auto* sp = obj->CreateComponent<cmSpriteRenderer>(true);
+		sp->SetShaders(r->FindResourceOrNull<cmVertexShader>("SimpleTexSpriteVS"), r->FindResourceOrNull<cmPixelShader>("SimpleTexSpritePS"));
+		sp->SetSprite(r->FindResourceOrNull<cmSprite>("SimpleSprite"));
+		obj->GetTransform()->SetPosition({0.f, 0.f, 3.f});
+	}
 }
 
 void DummyScene::ExitScene()

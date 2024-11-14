@@ -151,8 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CameraGUI.cpp" />
-    <ClCompile Include="CameraScript.cpp" />
+    <ClCompile Include="..\cmEngine\CameraScript.cpp" />
     <ClCompile Include="Demo.cpp" />
     <ClCompile Include="DummyScene.cpp" />
     <ClCompile Include="DummyScript.cpp" />
@@ -162,16 +161,13 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pch.h</PrecompiledHeaderFile>
     </ClCompile>
-    <ClCompile Include="PlayerGUI.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CameraGUI.h" />
-    <ClInclude Include="CameraScript.h" />
+    <ClInclude Include="..\cmEngine\CameraScript.h" />
     <ClInclude Include="Demo.h" />
     <ClInclude Include="DummyScene.h" />
     <ClInclude Include="DummyScript.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="PlayerGUI.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cmEngine\cmEngine.vcxproj">

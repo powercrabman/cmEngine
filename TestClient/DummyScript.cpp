@@ -5,11 +5,10 @@
 #include "cmTransform.h"
 #include "cmMesh.h"
 #include "cmCamera.h"
-#include "PlayerGUI.h"
 #include "cmGraphicsResourceManager.h"
 #include "cmFlipbookRenderer.h"
 #include "cmFlipbook.h"
-
+#include "cmEditorComponent.h"
 
 void DummyScript::Setup()
 {
@@ -24,10 +23,9 @@ void DummyScript::Setup()
 
 	mTrans = GetOwner()->GetTransform();
 
-	auto* gui = cmHelper::RegisterGUI<PlayerGUI>();
-	gui->SetEntity(GetOwner());
+	cmEditorComponent* gc = GetOwner()->CreateComponent<cmEditorComponent>(true, [this]() {GUILayout(); });
+	gc->GetGUI()->SetVisible(true);
 }
-
 
 void DummyScript::OnStart()
 {
@@ -61,4 +59,47 @@ void DummyScript::Update()
 
 void DummyScript::FinalUpdate()
 {
+}
+
+void DummyScript::GUILayout()
+{
+	using namespace ImGui;
+	Begin("Player Controller", (bool*)0, ImGuiWindowFlags_AlwaysAutoResize);
+
+	static Vector3 playerPosition = Vector3::Zero;
+	playerPosition = mTrans->GetPosition();
+
+	SeparatorText("Transform");
+
+	Text("Position");
+	Text("X"); SameLine(); if (SliderFloat("PositionX", &playerPosition.x, -3.f, 3.f)) { mTrans->SetPosition(playerPosition); }
+	Text("Y"); SameLine(); if (SliderFloat("PositionY", &playerPosition.y, -3.f, 3.f)) { mTrans->SetPosition(playerPosition); }
+	Text("Z"); SameLine(); if (SliderFloat("PositionZ", &playerPosition.z, -3.f, 3.f)) { mTrans->SetPosition(playerPosition); }
+	Separator();
+
+	static Vector3 playerR = Vector3::Zero;
+	playerR = mTrans->GetRotation();
+
+	Text("Rotation");
+	Text("Pitch");	SameLine(); if (SliderFloat("Pitch", &playerR.x, 0.f, 360.f)) { playerR.x = cmMath::DegToRad(playerR.x); mTrans->SetRotation(playerR); }
+	Text("Yaw");	SameLine(); if (SliderFloat("Yaw", &playerR.y, 0.f, 360.f)) { playerR.y = cmMath::DegToRad(playerR.y);   mTrans->SetRotation(playerR); }
+	Text("Roll");	SameLine(); if (SliderFloat("Roll", &playerR.z, 0.f, 360.f)) { playerR.z = cmMath::DegToRad(playerR.z);  mTrans->SetRotation(playerR); }
+
+	Separator();
+	static Vector3 playerS = Vector3::One;
+	playerS = mTrans->GetScale();
+	Text("Scale");
+
+	Text("X"); SameLine(); if (SliderFloat("ScaleX", &playerS.x, 0.01f, 5.f)) { mTrans->SetScale(playerS); }
+	Text("Y"); SameLine(); if (SliderFloat("ScaleY", &playerS.y, 0.01f, 5.f)) { mTrans->SetScale(playerS); }
+	Text("Z"); SameLine(); if (SliderFloat("ScaleZ", &playerS.z, 0.01f, 5.f)) { mTrans->SetScale(playerS); }
+
+	if (Button("Reset"))
+	{
+		mTrans->SetPosition(Vector3::Zero);
+		mTrans->SetRotation(Vector3::Zero);
+		mTrans->SetScale(Vector3::One);
+	}
+
+	End();
 }

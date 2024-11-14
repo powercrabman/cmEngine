@@ -13,17 +13,11 @@
     <Filter Include="03. GameObject\Camera">
       <UniqueIdentifier>{5dca0b48-dd8a-4949-91f1-fa97e221458e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. GameObject\Camera\GUI">
-      <UniqueIdentifier>{1310b8de-eafe-4e5f-9243-5b46f870d1bc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02. Scene">
       <UniqueIdentifier>{fa2c1d72-2bc1-4fad-bf63-ce1c45525948}</UniqueIdentifier>
     </Filter>
     <Filter Include="03. GameObject\Player">
       <UniqueIdentifier>{6c7df4ef-fb66-4150-8fb3-6a437df82f2a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. GameObject\Player\GUI">
-      <UniqueIdentifier>{2ab9e570-9b51-441b-a336-1dfc21d28d75}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,14 +36,8 @@
     <ClCompile Include="DummyScript.cpp">
       <Filter>03. GameObject\Player</Filter>
     </ClCompile>
-    <ClCompile Include="CameraScript.cpp">
+    <ClCompile Include="..\cmEngine\CameraScript.cpp">
       <Filter>03. GameObject\Camera</Filter>
-    </ClCompile>
-    <ClCompile Include="CameraGUI.cpp">
-      <Filter>03. GameObject\Camera\GUI</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerGUI.cpp">
-      <Filter>03. GameObject\Player\GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -65,14 +53,8 @@
     <ClInclude Include="DummyScript.h">
       <Filter>03. GameObject\Player</Filter>
     </ClInclude>
-    <ClInclude Include="CameraScript.h">
+    <ClInclude Include="..\cmEngine\CameraScript.h">
       <Filter>03. GameObject\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="CameraGUI.h">
-      <Filter>03. GameObject\Camera\GUI</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerGUI.h">
-      <Filter>03. GameObject\Player\GUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

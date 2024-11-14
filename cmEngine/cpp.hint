@@ -6,3 +6,6 @@
 #define INTERFACE
 #define IMPLEMENTS
 #define SUPER(SuperClass)
+#define NODISCARD [[nodiscard]]
+#define FORCEINLINE
+#define VERTEX_INPUT_LAYOUT_BODY(__VA_ARGS__) inline static constexpr D3D11_INPUT_ELEMENT_DESC InputElements[] = {__VA_ARGS__}; inline static constexpr size_t InputElementsSize = ARRAYSIZE(InputElements);
