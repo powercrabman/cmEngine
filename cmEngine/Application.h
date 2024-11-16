@@ -7,8 +7,8 @@ namespace cmEngine
 	public:
 		virtual ~Application();
 
-		virtual void Setup(const WindowResolution& inWindowResolution, const WindowPosition& inWindowPosition) final;
-		virtual void Run();
+		virtual void	Setup(const WindowResolution& inWindowResolution, const WindowPosition& inWindowPosition) final;
+		virtual int		Run();
 
 	protected:
 		Application();

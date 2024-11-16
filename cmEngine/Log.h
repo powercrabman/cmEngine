@@ -14,15 +14,26 @@ namespace cmEngine
 
 	struct LogData
 	{
+		float		LogTime;
 		eLogCaller	LogCaller;
 		eLogLevel	LogLevel;
 		std::string LogMessage;
+
+		inline static std::array<ImVec4, (UINT)eLogLevel::Count> LogLevelColor =
+		{
+			ImVec4{0.5f, 0.5f, 0.5f, 1.f}, // Trace
+			ImVec4{0.f,  1.f, 0.f, 1.f},   // Debug
+			ImVec4{1.f,  1.f, 0.f, 1.f},   // Warn 
+			ImVec4{1.f,  0.f, 0.f, 1.f},   // Error
+			ImVec4{0.5f, 0.f, 0.f, 1.f}    // Fatal
+		};
 	};
 
 	class Log
 	{
 	public:
 		static void Initialize();
+		static void Destory();
 		static void ClearLogList() { mLogList.clear(); }
 
 		static void LogClient(eLogLevel inLevel, std::string_view inMessage);
@@ -30,11 +41,11 @@ namespace cmEngine
 
 		static std::vector<LogData>::const_iterator GetLogDataConstBegin() { return mLogList.cbegin(); }
 		static std::vector<LogData>::const_iterator GetLogDataConstEnd() { return mLogList.cend(); }
+		static size_t GetLogListSize() { return mLogList.size(); }
 
 	private:
-
 		enum { LOG_LIST_CAPACITY = 1024 };
-		static std::vector<LogData> mLogList;
+		inline static std::vector<LogData> mLogList = {};
 	};
 
 	//===================================================
@@ -43,12 +54,12 @@ namespace cmEngine
 
 	inline void Log::LogClient(eLogLevel inLevel, std::string_view inMessage)
 	{
-		mLogList.emplace_back(eLogCaller::Client, inLevel, inMessage.data());
+		mLogList.emplace_back(Timer::GetTotalTime(), eLogCaller::Client, inLevel, inMessage.data());
 	}
 
 	inline void Log::LogEngine(eLogLevel inLevel, std::string_view inMessage)
 	{
-		mLogList.emplace_back(eLogCaller::Engine, inLevel, inMessage.data());
+		mLogList.emplace_back(Timer::GetTotalTime(), eLogCaller::Engine, inLevel, inMessage.data());
 	}
 
 	//===================================================

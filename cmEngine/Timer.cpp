@@ -11,7 +11,7 @@ namespace cmEngine
 
 	void Timer::Update()
 	{
-		// Delta Time üũ
+		// Delta Time 
 		LARGE_INTEGER curCount = {};
 		::QueryPerformanceCounter(&curCount);
 
@@ -20,6 +20,16 @@ namespace cmEngine
 
 		mTimerProp.TimeAcc   += mTimerProp.DeltaTime;
 		mTimerProp.TotalTime += mTimerProp.DeltaTime;
+
+		// Fps
+		++mTimerProp.FrameCount;
+
+		if (mTimerProp.TimeAcc >= 1.f)
+		{
+			mTimerProp.TimeAcc -= 1.f;
+			mTimerProp.FPS = mTimerProp.FrameCount;
+			mTimerProp.FrameCount = 0;
+		}
 	}
 }
 

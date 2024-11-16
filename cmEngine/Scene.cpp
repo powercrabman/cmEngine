@@ -1,6 +1,6 @@
 #include "EnginePch.h"
 #include "Scene.h"
-#include "GameObject.h"
+#include "GameEntity.h"
 
 namespace cmEngine
 {
@@ -21,7 +21,7 @@ namespace cmEngine
 
 	void Scene::UpdateScene()
 	{
-		for (GameObject* obj : mUpdateList)
+		for (GameEntity* obj : mUpdateList)
 		{
 			if (obj->IsActive())
 			{
@@ -32,7 +32,7 @@ namespace cmEngine
 
 	void Scene::FinalUpdate()
 	{
-		for (GameObject* obj : mUpdateList)
+		for (GameEntity* obj : mUpdateList)
 		{
 			if (obj->IsActive())
 			{
@@ -43,7 +43,7 @@ namespace cmEngine
 
 	void Scene::PreRender()
 	{
-		for (GameObject* obj : mUpdateList)
+		for (GameEntity* obj : mUpdateList)
 		{
 			if (obj->IsActive())
 			{
@@ -57,7 +57,7 @@ namespace cmEngine
 		ExitScene();
 
 		// 모든 오브젝트의 Active를 false로 바꾼뒤 파괴
-		for (GameObject* obj : mUpdateList)
+		for (GameEntity* obj : mUpdateList)
 		{
 			obj->SetActive(false);
 		}
@@ -68,10 +68,10 @@ namespace cmEngine
 		// TODO : 다음 씬으로 넘겨야하는 객체는 따로 처리
 	}
 
-	GameObject* Scene::CreateGameObject(bool isActive)
+	GameEntity* Scene::CreateGameEntity(bool isActive)
 	{
-		std::unique_ptr<GameObject> obj = std::make_unique<GameObject>();
-		GameObject* ptr = obj.get();
+		Scope<GameEntity> obj = MakeScope<GameEntity>();
+		GameEntity* ptr = obj.get();
 		mUpdateList.push_back(ptr);
 		mObjectRepo[obj->GetObjectID()] = std::move(obj);
 		if (isActive) { ptr->SetActive(true); };
@@ -79,7 +79,7 @@ namespace cmEngine
 		return ptr;
 	}
 
-	GameObject* Scene::FindGameObjectOrNull(const uint64& inObjID) const
+	GameEntity* Scene::FindGameEntityOrNull(const uint64& inObjID) const
 	{
 		auto iter = mObjectRepo.find(inObjID);
 		if (iter == mObjectRepo.end())
@@ -91,7 +91,7 @@ namespace cmEngine
 		return iter->second.get();
 	}
 
-	void Scene::RemoveGameObject(const uint64& inObjID)
+	void Scene::RemoveGameEntity(const uint64& inObjID)
 	{
 		auto iter = mObjectRepo.find(inObjID);
 		if (iter == mObjectRepo.end())
@@ -102,7 +102,7 @@ namespace cmEngine
 		}
 
 		// TODO : 최적화 필요
-		static const auto FindLambda = [&](GameObject* inObj) { return inObj->GetObjectID() == inObjID; };
+		static const auto FindLambda = [&](GameEntity* inObj) { return inObj->GetObjectID() == inObjID; };
 		auto removeIter = std::remove_if(mUpdateList.begin(), mUpdateList.end(), FindLambda);
 		mUpdateList.erase(removeIter, mUpdateList.end());
 

@@ -1,6 +1,6 @@
 #pragma once
 
-class GameObject;
+class GameEntity;
 
 namespace cmEngine
 {
@@ -39,8 +39,8 @@ namespace cmEngine
 
 		uint64		GetComponentID() const { return mComponentID; }
 
-		void		SetOwner(GameObject* inOwner) { mOwner = inOwner; }
-		GameObject* GetOwner() const { return mOwner; }
+		void		SetOwner(GameEntity* inOwner) { mOwner = inOwner; }
+		GameEntity* GetOwner() const { return mOwner; }
 
 		virtual const char* ToString() abstract;
 
@@ -49,7 +49,7 @@ namespace cmEngine
 		inline static uint64 sComponentIDCounter = 0;
 		uint64 mComponentID = 0;
 
-		GameObject* mOwner = nullptr;
+		GameEntity* mOwner = nullptr;
 
 		bool mActive = false;
 	};
@@ -62,7 +62,7 @@ namespace cmEngine
 	{
 		if (inActive == mActive)
 		{
-			ENGINE_LOG_TRACE("GameObject state not changed!");
+			ENGINE_LOG_TRACE("GameEntity state not changed!");
 			return;
 		}
 

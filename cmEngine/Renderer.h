@@ -5,6 +5,8 @@ namespace cmEngine
 {
 	class Pipeline;
 	class RenderComponent;
+	class GameEntity;
+	class CameraComponent;
 
 	class Renderer
 	{
@@ -16,9 +18,6 @@ namespace cmEngine
 		struct MultiSamplingProp;
 
 	public:
-		Renderer();
-		~Renderer();
-
 		static void		RenderBegin();
 		static void		Render();
 		static void		RenderEnd();
@@ -33,12 +32,18 @@ namespace cmEngine
 
 		static void		RegisterRenderComponent(RenderComponent* inComp) { mRenderSystem.Push(inComp); };
 		static void		UnregisterRenderComponent(RenderComponent* inComp) { mRenderSystem.Remove(inComp); };
-		
+
 		static float	GetAspectRatio() { return mCanvas.RenderViewport.AspectRatio(); }
+
+		static void		RegisterCamera(CameraComponent* inCameraComponent) { mCameraSystem.MainCamera = inCameraComponent; };
+		static void		UnregisterCamera(CameraComponent* inCameraComponent);
 
 	private:
 		static bool Initialize();
-		static void	Deostroy();
+		static void	Destroy();
+
+		static void SaveSetting();
+		static void LoadSetting();
 
 		struct RenderCoreDevice
 		{
@@ -60,7 +65,7 @@ namespace cmEngine
 			::ComPtr<ID3D11DepthStencilView>	DepthStencilView;
 			cmEngine::Viewport					RenderViewport;
 
-			SimpleMath::Color					ClearColor = Colors::Tomato;
+			Color								ClearColor = Colors::Tomato;
 		};
 
 		struct MultiSamplingProp
@@ -72,14 +77,24 @@ namespace cmEngine
 			bool	Enable;
 		};
 
-		inline static RenderCoreDevice	mDevice = {};
+		struct CameraSystem
+		{
+			Scope<GameEntity>	DefaultEntity = nullptr;
+			CameraComponent* MainCamera       = nullptr;
+		};
+
+		inline static RenderCoreDevice	mDevice    = {};
 		inline static RenderSubDevice	mSubDevice = {};
-		inline static RenderCanvas		mCanvas = {};
+		inline static RenderCanvas		mCanvas    = {};
 
 		inline static D3D_FEATURE_LEVEL	mFeatureLevel = {};
-		inline static MultiSamplingProp mMSAA = {};
+		inline static MultiSamplingProp mMSAA         = {};
 
-		inline static std::unique_ptr<Pipeline>		mPipeline = nullptr;
+		inline static Scope<Pipeline>				mPipeline     = nullptr;
 		inline static BatchSystem<RenderComponent>	mRenderSystem = {};
+
+		inline static CameraSystem		mCameraSystem = {};
+
+		inline static constexpr wchar_t sSettingFilePath[] = L"RendererSetting.json";
 	};
 }

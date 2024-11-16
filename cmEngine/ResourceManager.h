@@ -10,6 +10,7 @@ namespace cmEngine
 		Texture,
 		Sprite,
 		Flipbook,
+		ShaderSet,
 
 		Count
 	};
@@ -27,8 +28,8 @@ namespace cmEngine
 		static ResourceType* FindResourceOrNull(std::string_view inName)
 		{
 			ResourceUnorderedMap& repo = mResourceRepo[(uint32)ResourceType::ResourceType];
-			
-			auto iter = repo.find(inName);
+
+			auto iter = repo.find(inName.data());
 
 			if (iter == repo.end())
 			{
@@ -37,7 +38,7 @@ namespace cmEngine
 			}
 			else
 			{
-				return iter->second.get();
+				return static_cast<ResourceType*>(iter->second.get());
 			}
 		}
 
@@ -46,7 +47,7 @@ namespace cmEngine
 		{
 			ResourceUnorderedMap& repo = mResourceRepo[(uint32)ResourceType::ResourceType];
 
-			auto [iter, result] = repo.emplace(inName, std::make_unique<ResourceType>(inName));
+			auto [iter, result] = repo.emplace(inName, MakeScope<ResourceType>(inName));
 			ResourceType* ptr = static_cast<ResourceType*>(iter->second.get());
 
 			if (result)
@@ -67,11 +68,11 @@ namespace cmEngine
 		static void Destroy();
 
 	private:
-		static std::filesystem::path mClientResourcePath;
-		static std::filesystem::path mCommonResourcePath;
+		inline static std::filesystem::path mClientResourcePath = {};
+		inline static std::filesystem::path mCommonResourcePath = {};
 
-		using ResourceUnorderedMap = std::unordered_map<std::string, std::unique_ptr<ResourceBase>>;
-		static std::array<ResourceUnorderedMap, (uint32)eResourceType::Count> mResourceRepo;
+		using ResourceUnorderedMap = std::unordered_map<std::string, Scope<ResourceBase>>;
+		inline static std::array<ResourceUnorderedMap, (uint32)eResourceType::Count> mResourceRepo = {};
 	};
 
 	//===================================================
@@ -82,10 +83,11 @@ namespace cmEngine
 	{
 		switch (inType)
 		{
-		case cmEngine::eResourceType::Texture:  return "Texture";
-		case cmEngine::eResourceType::Sprite:	return "Sprite";
-		case cmEngine::eResourceType::Flipbook: return "Flipbook";
-		default: assert(false);					return "Undefined";
+		case cmEngine::eResourceType::Texture:		return "Texture";
+		case cmEngine::eResourceType::Sprite:		return "Sprite";
+		case cmEngine::eResourceType::Flipbook:		return "Flipbook";
+		case cmEngine::eResourceType::ShaderSet:	return "ShaderSet";
+		default: assert(false);						return "Undefined";
 		}
 	}
 

@@ -2,7 +2,7 @@
 
 namespace cmEngine
 {
-	template <typename Entity>
+	template <typename Ty>
 	struct BatchSystem
 	{
 		BatchSystem()
@@ -11,7 +11,7 @@ namespace cmEngine
 			mEntityList.reserve(1024);
 		}
 
-		void Push(Entity* inComp)
+		void Push(Ty* inComp)
 		{
 			auto [iter, result] = mEntityMap.emplace(inComp, mEntityList.size());
 
@@ -21,14 +21,14 @@ namespace cmEngine
 			}
 		}
 
-		void Remove(Entity* inComp)
+		void Remove(Ty* inComp)
 		{
 			auto iter = mEntityMap.find(inComp);
 
 			if (iter != mEntityMap.end())
 			{
 				uint32 targetIdx        = iter->second;
-				Entity* lastElement     = mEntityList.back();
+				Ty* lastElement     = mEntityList.back();
 				mEntityList[targetIdx]  = lastElement;
 				mEntityMap[lastElement] = targetIdx;
 				mEntityList.pop_back();
@@ -42,11 +42,11 @@ namespace cmEngine
 			mEntityList.clear();
 		}
 
-		typename std::vector<Entity*>::const_iterator begin() const { return mEntityList.cbegin(); }
-		typename std::vector<Entity*>::const_iterator end() const { return mEntityList.cend(); }
+		typename std::vector<Ty*>::const_iterator begin() const { return mEntityList.cbegin(); }
+		typename std::vector<Ty*>::const_iterator end() const { return mEntityList.cend(); }
 
 	private:
-		std::unordered_map<Entity*, uint32>	mEntityMap;
-		std::vector<Entity*>				mEntityList;
+		std::unordered_map<Ty*, uint32>	mEntityMap;
+		std::vector<Ty*>				mEntityList;
 	};
 }

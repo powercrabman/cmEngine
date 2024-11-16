@@ -6,8 +6,8 @@ namespace cmEngine
 {
 	void SpriteRenderer::PreRender()
 	{
-		SpriteData spData    = mSprite->GetSpriteData();
-		auto [width, height] = spData.Texture->GetSize();
+		const SpriteData& spData    = mSprite->GetSpriteData();
+		auto [width, height]        = spData.Texture->GetSize();
 
 		CBSprite cbData = {};
 		cbData.PivotRow = spData.PivotRow / height;

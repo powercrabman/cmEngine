@@ -10,6 +10,9 @@ namespace cmEngine
 		float	DeltaTime			= 0.f;
 		float	TimeAcc             = 0.f;
 		float	TotalTime           = 0.f;
+
+		UINT	FrameCount			= 0;
+		UINT	FPS                 = 0;
 	};
 
 	class Timer
@@ -19,14 +22,13 @@ namespace cmEngine
 	public:
 		static float GetTotalTime() { return mTimerProp.TotalTime; }
 		static float GetDeltaTime() { return mTimerProp.DeltaTime; }
-		static float GetFPS() { return 1.f / mTimerProp.DeltaTime; }
-
+		static UINT	 GetFPS() { return mTimerProp.FPS; }
 
 	private:
 		static void Initialize();
 		static void	Update();
 
-		static TimerProp mTimerProp;
+		inline static TimerProp mTimerProp = {};
 	};
 }
 

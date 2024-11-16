@@ -10,9 +10,21 @@ namespace cmEngine
 	class ResourceBase
 	{
 	public:
-		ResourceBase() = default;
+		ResourceBase(std::string_view inName);;
 		virtual ~ResourceBase() = default;
 
 		virtual const char*			ToString() abstract;
+
+	private:
+		std::string mName = {};
 	};
+
+	//===================================================
+	//                      Inline
+	//===================================================
+
+	inline ResourceBase::ResourceBase(std::string_view inName)
+		: mName(inName)
+	{
+	}
 }

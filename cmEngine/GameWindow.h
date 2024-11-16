@@ -51,12 +51,15 @@ namespace cmEngine
 
 	private:
 		static bool Initialize(
-			const WindowResolution& inResoltuion = { 800, 600 },
-			const WindowPosition& inPosition = { 0, 0 }
+			const WindowResolution& inResoltuion,
+			const WindowPosition& inPosition
 		);
 
-		constexpr inline static wchar_t sClassName[] = L"cmEngine Window";
-		constexpr inline static wchar_t sTitleName[] = L"cmEngine";
+		static void Destory();
+
+		constexpr inline static wchar_t			sClassName[] = L"cmEngine Window";
+		constexpr inline static wchar_t			sTitleName[] = L"cmEngine";
+		constexpr inline static const wchar_t	sSettingFilePath[] = L"GameWindowSetting.json";
 
 		struct WindowProp
 		{
@@ -76,7 +79,7 @@ namespace cmEngine
 	//                      Inline
 	//===================================================
 
-	inline void cmEngine::GameWindow::RepositionWindow(const WindowPosition& inPos)
+	inline void GameWindow::RepositionWindow(const WindowPosition& inPos)
 	{
 		mWinProp.Position = inPos;
 		ActiveWindow();

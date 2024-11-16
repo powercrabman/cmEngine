@@ -1,5 +1,4 @@
 #include "EnginePch.h"
-#include "GuiRenderer.h"
 #include "Gui.h"
 
 namespace cmEngine
@@ -41,7 +40,7 @@ namespace cmEngine
 	inline Gui* GuiRenderer::CreateGui(std::string_view inGuiName)
 	{
 		std::string name = inGuiName.data();
-		auto [iter, success] = mGuiRepo.emplace(name, std::make_unique<Gui>(name));
+		auto [iter, success] = mGuiRepo.emplace(name, MakeScope<Gui>(name));
 		Gui* ptr = iter->second.get();
 
 		if (success)
@@ -57,7 +56,7 @@ namespace cmEngine
 		return ptr;
 	}
 
-	inline Gui* GuiRenderer::FindOrNull(std::string_view inGuiName)
+	inline Gui* GuiRenderer::FindGuiOrNull(std::string_view inGuiName)
 	{
 		std::string name = inGuiName.data();
 		if (mGuiRepo.contains(name))

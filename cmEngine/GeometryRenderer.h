@@ -26,6 +26,6 @@ namespace cmEngine
 		void SetCube(const std::array<Color, 8>& inColor);
 
 	private:
-		std::unique_ptr<Geometry> mGeometry = nullptr;
+		Scope<Geometry> mGeometry = nullptr;
 	};
 };

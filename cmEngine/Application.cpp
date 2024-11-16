@@ -23,31 +23,35 @@ namespace cmEngine
 
 	void Application::Setup(const WindowResolution& inWindowResolution, const WindowPosition& inWindowPosition)
 	{
-		// 엔진 생성
+		// 엔진 생성 및 초기화
 		EngineCore::Create();
+		EngineCore::Get()->Initialize(inWindowResolution, inWindowPosition);
 
+		// User Initialize
 		Initialize();
 	}
 
+	//	====================================================================================================
+	// 
+	//		PreUpdate : 시스템 업데이트
+	//		Update : 게임 메인 로직		(Update -> FinalUpdate)
+	//		Render : 렌더링 로직			(RenderBegin -> PreRender -> Render -> GuiRender -> RenderEnd)
+	// 
+	//	====================================================================================================
+
 	void Application::UpdateCore()
 	{
-		//==================================
-		//PreUpdate : 시스템 업데이트
-		//Update : 게임 메인 로직		(Update -> FinalUpdate)
-		//Render : 렌더링 로직		(RenderBegin -> PreRender -> Render -> GuiRender -> RenderEnd)
-		//==================================
-
-		//PreUpdate
+		// PreUpdate
 		{
 			Timer::Update();
 		}
 
-		//Update
+		// Update
 		{
 			SceneManager::UpdateCore();
 		}
 
-		//Render
+		// Render
 		{
 			Renderer::RenderBegin();
 			Renderer::Render();
@@ -58,19 +62,19 @@ namespace cmEngine
 
 	void Application::CleanUpCore()
 	{
-		// 어플리케이션 Clean up
+		// Application Clean up
 		CleanUp();
 
-		// Log
-		Log::ClearLogList();
-
-		// 엔진 파괴
+		// Engine Terminate
 		EngineCore::Get()->Destory();
+
+		// Log
+		Log::Destory();
 	}
 
-	void Application::Run()
+	int Application::Run()
 	{
-		//메인루프
+		//Main Loop
 		MSG msg = {};
 		while (true)
 		{
@@ -93,10 +97,10 @@ namespace cmEngine
 
 				UpdateCore();
 			}
-
 		}
 
-		//정리
 		CleanUpCore();
+
+		return 0;
 	}
 }

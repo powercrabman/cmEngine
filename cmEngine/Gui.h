@@ -1,12 +1,20 @@
 #pragma once
 
+// ======================================
+//  기본적으로 Gui는 콜백을 등록하는 형식
+//  독립적인 Gui 클래스를 만들기 위해서는
+//	GuiFrame을 상속받은 다음
+//	GuiRenderer::CreateGuiFrame을
+//  사용해야 함
+// ======================================
+
 namespace cmEngine
 {
-	class Gui
+	class Gui final
 	{
 	public:
 		Gui(std::string_view inName);
-		virtual ~Gui() {}
+		~Gui() {}
 		
 		// Core
 		void	RenderGUI();

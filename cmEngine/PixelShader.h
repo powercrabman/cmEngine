@@ -11,7 +11,7 @@ namespace cmEngine
 
 		void Create();
 
-		::ComPtr<ID3D11PixelShader> GetShader() const { mShader; }
+		::ComPtr<ID3D11PixelShader> GetShader() const { return mShader; }
 
 	private:
 		::ComPtr<ID3D11PixelShader> mShader;

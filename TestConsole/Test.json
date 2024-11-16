@@ -1,0 +1,15 @@
+{
+    "Player": {
+        "Hp": 100,
+        "Name": "Jiwoo"
+    },
+    "Sex": {
+        "gender": "Bozi"
+    },
+    "Vector": {
+        "W": 4.0,
+        "X": 1.0,
+        "Y": 2.0,
+        "Z": 3.0
+    }
+}

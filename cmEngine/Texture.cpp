@@ -3,6 +3,7 @@
 
 namespace cmEngine
 {
+
 	void Texture::Load(std::wstring_view inFilePath)
 	{
 		HR hr = LoadFromWICFile(
@@ -16,11 +17,11 @@ namespace cmEngine
 		if (!DX_CHECK(hr))
 		{
 			assert(false);
-			ENGINE_LOG_ERROR("\"{}\" Load Success!", inFilePath);
+			ENGINE_LOG_ERROR("\"{}\" Load Success!", String::ConvertToString(inFilePath));
 			return;
 		}
 
-		ENGINE_LOG_INFO("\"{}\" Load Success! ", inFilePath);
+		ENGINE_LOG_INFO("\"{}\" Load Success! ", String::ConvertToString(inFilePath));
 	}
 
 	void Texture::Save(std::wstring_view inFilePath, eTextureFormat inFormat)
@@ -39,7 +40,7 @@ namespace cmEngine
 			return;
 		}
 
-		ENGINE_LOG_INFO("\"{}\" Save Success! ", inFilePath);
+		ENGINE_LOG_INFO("\"{}\" Save Success! ", String::ConvertToString(inFilePath));
 	}
 
 	void Texture::Create()

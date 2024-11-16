@@ -2,13 +2,11 @@
 #include "Component.h"
 #include "Viewport.h"
 #include "Transform.h"
-#include "IPreRenderable.h"
 
 namespace cmEngine
 {
 	class CameraComponent
 		: public		Component
-		, IMPLEMENTS	IPreRenderable
 	{
 	public:
 		COMPONENT_BODY(CameraComponent);
@@ -19,69 +17,26 @@ namespace cmEngine
 		void OnStart() override;
 		void OnFinish() override;
 
-		void PreRender() override;
+		void SetAsMainCamera() { mIsMainCamera = true; Renderer::RegisterCamera(this); }
+		void UnSetMainCamera();
 
-		Matrix GetView() const
-		{
-			Matrix mat = DirectX::XMMatrixRotationRollPitchYawFromVector(mTransform->GetRotation());
+		Matrix GetView() const;
+		Matrix GetProjection() const;
+		Matrix GetViewProjection() const { return GetView() * GetProjection(); }
 
-			return DirectX::XMMatrixLookToLH(
-				GetPosition(),
-				mat.Backward(),
-				mat.Up()
-			);
-		}
-
-		Matrix GetProjection() const
-		{
-			if (mMode == eProjectionMode::Perspective)
-			{
-				return DirectX::XMMatrixPerspectiveFovLH(mFOV, Renderer::GetAspectRatio(), mNear, mFar);
-			}
-			else
-			{
-				return DirectX::XMMatrixOrthographicLH(mWidth, mHeight, mNear, mFar);
-			}
-		}
-
-		Matrix GetViewProjection() const
-		{
-			return GetView() * GetProjection();
-		}
-
-		void SetupPerspective(float inFov, float inNear, float inFar)
-		{
-			SetProjectionMode(eProjectionMode::Perspective);
-			SetFieldOfView(inFov);
-			SetNearPlane(inNear);
-			SetFarPlane(inFar);
-		}
-
-		void SetupOrthographic(float inWidth, float inHeight, float inNear, float inFar)
-		{
-			SetProjectionMode(eProjectionMode::Orthographic);
-			SetCameraResolution(inWidth, inHeight);
-			SetNearPlane(inNear);
-			SetFarPlane(inFar);
-		}
-
-		void SetupOrthographicRatio(float inHeight, float inNear, float inFar)
-		{
-			SetProjectionMode(eProjectionMode::Orthographic);
-			SetCameraResolutionRatio(inHeight);
-			SetNearPlane(inNear);
-			SetFarPlane(inFar);
-		}
+		void SetupPerspective(float inFov, float inNear, float inFar);
+		void SetupOrthographic(float inWidth, float inHeight, float inNear, float inFar);
+		void SetupOrthographicRatio(float inHeight, float inNear, float inFar);
 
 		void SetFieldOfView(float inFOV) { mFOV = inFOV; }
 		void SetProjectionMode(eProjectionMode inMode) { mMode = inMode; }
 		void SetNearPlane(float inNear) { mNear = inNear; }
 		void SetFarPlane(float inFar) { mFar = max(mNear + 0.01f, inFar); }
 
-		float GetFieldOfView() const { return mFOV; }
+		float			GetFieldOfView() const { return mFOV; }
 		eProjectionMode GetProjectionMode() const { return mMode; }
-		float GetNearPlane() const { return mNear; }
-		float GetFarPlane() const { return mFar; }
+		float			GetNearPlane() const { return mNear; }
+		float			GetFarPlane() const { return mFar; }
 
 		void SetPosition(const Vector3& inPosition) { mTransform->SetPosition(inPosition); }
 		void AddPosition(const Vector3& inPosition) { mTransform->AddPosition(inPosition); }
@@ -137,5 +92,66 @@ namespace cmEngine
 
 		// For Perspective
 		float mFOV = Math::PI_Q;
+
+		bool mIsMainCamera = false;
 	};
+
+	//===================================================
+	//                      Inline
+	//===================================================
+
+	inline Matrix CameraComponent::GetView() const
+	{
+		Matrix mat = DirectX::XMMatrixRotationRollPitchYawFromVector(mTransform->GetRotation());
+
+		return DirectX::XMMatrixLookToLH(
+			GetPosition(),
+			mat.Backward(),
+			mat.Up()
+		);
+	}
+
+	inline Matrix CameraComponent::GetProjection() const
+	{
+		if (mMode == eProjectionMode::Perspective)
+		{
+			return DirectX::XMMatrixPerspectiveFovLH(mFOV, Renderer::GetAspectRatio(), mNear, mFar);
+		}
+		else
+		{
+			return DirectX::XMMatrixOrthographicLH(mWidth, mHeight, mNear, mFar);
+		}
+	}
+
+	inline void CameraComponent::SetupPerspective(float inFov, float inNear, float inFar)
+	{
+		SetProjectionMode(eProjectionMode::Perspective);
+		SetFieldOfView(inFov);
+		SetNearPlane(inNear);
+		SetFarPlane(inFar);
+	}
+
+	inline void CameraComponent::SetupOrthographic(float inWidth, float inHeight, float inNear, float inFar)
+	{
+		SetProjectionMode(eProjectionMode::Orthographic);
+		SetCameraResolution(inWidth, inHeight);
+		SetNearPlane(inNear);
+		SetFarPlane(inFar);
+	}
+
+	inline void CameraComponent::SetupOrthographicRatio(float inHeight, float inNear, float inFar)
+	{
+		SetProjectionMode(eProjectionMode::Orthographic);
+		SetCameraResolutionRatio(inHeight);
+		SetNearPlane(inNear);
+		SetFarPlane(inFar);
+	}
+
+	inline void CameraComponent::UnSetMainCamera() {
+		if (mIsMainCamera)
+		{
+			Renderer::UnregisterCamera(this);
+			mIsMainCamera = false;
+		}
+	}
 }

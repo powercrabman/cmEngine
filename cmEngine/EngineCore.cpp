@@ -1,8 +1,9 @@
 ﻿#include "EnginePch.h"
+#include "EngineViewer.h"
 
 namespace cmEngine
 {
-	EngineCore::EngineCore(const WindowResolution& inResolution, const WindowPosition& inPosition)
+	void EngineCore::Initialize(const WindowResolution& inResolution, const WindowPosition& inPosition)
 	{
 		ENGINE_LOG_INFO("Engine Initialize Start.");
 
@@ -14,9 +15,13 @@ namespace cmEngine
 
 		// Renderer
 		Renderer::Initialize();
+		GuiRenderer::Initialize();
 
 		// ResourceManager
 		ResourceManager::Initialize();
+
+		// Editor
+		EngineViewer::Initialize();
 
 		mRunning = true;
 
@@ -30,8 +35,14 @@ namespace cmEngine
 		// ResourceManager
 		ResourceManager::Destroy();
 
+		// GuiRenderer
+		GuiRenderer::Destroy();
+		
 		// Renderer
-		Renderer::Deostroy();
+		Renderer::Destroy();
+
+		// GameWindow
+		GameWindow::Destory();
 
 		ENGINE_LOG_INFO("Engine Terminate Done.");
 	}

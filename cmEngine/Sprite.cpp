@@ -3,8 +3,11 @@
 
 namespace cmEngine
 {
+
 	void Sprite::Create(const SpriteData& inData)
 	{
+		mGeometry.reset();
+
 		mSpriteData = inData;
 		ASSERT(mSpriteData.Texture, "Texture is nullptr");
 
@@ -31,7 +34,7 @@ namespace cmEngine
 			0,1,2,0,2,3
 		};
 
-		mGeometry = std::make_unique<Geometry>();
+		mGeometry = MakeScope<Geometry>();
 		mGeometry->Create(vb, ib);
 	}
 }

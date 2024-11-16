@@ -20,7 +20,7 @@ namespace cmEngine
 	public:
 		RESOURCE_BODY(Texture);
 
-		Texture() = default;
+		Texture(std::string_view inName);
 		virtual ~Texture() = default;
 
 		void Load(std::wstring_view inFilePath);
@@ -41,6 +41,11 @@ namespace cmEngine
 	//===================================================
 	//                      Inline
 	//===================================================
+
+	inline Texture::Texture(std::string_view inName)
+		: ResourceBase(inName)
+	{
+	}
 
 	inline auto Texture::GetSize() const
 	{

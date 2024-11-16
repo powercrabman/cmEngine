@@ -17,18 +17,27 @@ namespace cmEngine
 	public:
 		RESOURCE_BODY(Sprite);
 
-		Sprite() = default;
+		Sprite(std::string_view inName);
 		virtual ~Sprite() = default;
 
 		void		Create(const SpriteData& inData);
 
-		SpriteData	GetSpriteData() const { return mSpriteData; }
-		Geometry*	GetGeometry() const { return mGeometry.get(); }
+		const SpriteData&	GetSpriteData() const { return mSpriteData; }
+		Geometry*			GetGeometry() const { return mGeometry.get(); }
 
 	private:
 		constexpr inline static float ScaleFactor = 1 / 500.f;
 
-		SpriteData					mSpriteData = {};
-		std::unique_ptr<Geometry>	mGeometry   = {};
+		SpriteData			mSpriteData = {};
+		Scope<Geometry>		mGeometry   = {};
 	};
+
+	//===================================================
+	//                      Inline
+	//===================================================
+
+	inline Sprite::Sprite(std::string_view inName)
+		: ResourceBase(inName)
+	{
+	}
 }

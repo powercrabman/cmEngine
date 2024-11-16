@@ -289,5 +289,4 @@ namespace cmLinearColors
      inline static Color Whitesmoke = { 0.913098991f, 0.913098991f, 0.913098991f, 1.f };
      inline static Color Yellow = { 1.f, 1.f, 0.f, 1.f };
      inline static Color Yellowgreen = { 0.323143244f, 0.610495746f, 0.031896040f, 1.f };
-
 }

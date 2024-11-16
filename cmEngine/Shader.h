@@ -24,10 +24,26 @@ namespace cmEngine
 
 		::ComPtr<ID3DBlob> GetBlob() const { return mBlob; }
 
-		void SetConstantBuffers(const std::vector<ConstantBufferBase*>& inCBufferList) { mConstantBufferList = inCBufferList; }
+		template <typename... ConstantBufferType>
+		void SetConstantBuffers()
+		{
+			mConstantBufferList.clear();
+			SetConstantBuffersEx<ConstantBufferType...>();
+		}
 
 		std::vector<ConstantBufferBase*>::const_iterator GetConstantBufferListConstBegin() const { return mConstantBufferList.cbegin(); }
 		std::vector<ConstantBufferBase*>::const_iterator GetConstantBufferListConstEnd() const { return mConstantBufferList.cend(); }
+
+	private:
+		template <typename First, typename... Rest>
+		void SetConstantBuffersEx()
+		{
+			mConstantBufferList.push_back(ConstantBufferPool::FindConstantBuffer<First>());
+			if constexpr (sizeof...(Rest) > 0)
+			{
+				SetConstantBuffersEx<Rest...>();
+			}
+		}
 
 	protected:
 		::ComPtr<ID3DBlob> mBlob = {};

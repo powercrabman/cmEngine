@@ -59,7 +59,7 @@
     <Filter Include="09. Scene\Core">
       <UniqueIdentifier>{6f72314e-09ea-45f3-a109-61a973d0560a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="10. GameObject">
+    <Filter Include="10. GameEntity">
       <UniqueIdentifier>{188b1e91-89dd-4429-ad7a-455226257f0b}</UniqueIdentifier>
     </Filter>
     <Filter Include="11. Component">
@@ -70,9 +70,6 @@
     </Filter>
     <Filter Include="11. Component\Script">
       <UniqueIdentifier>{e5fe200b-a2b9-436b-95a2-726352de6241}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="11. Component\Camera">
-      <UniqueIdentifier>{78900ad2-f5d6-4a1a-a11d-a62dee9dc077}</UniqueIdentifier>
     </Filter>
     <Filter Include="11. Component\Interface">
       <UniqueIdentifier>{da794c36-ed5e-4868-b694-c8b3c46fda58}</UniqueIdentifier>
@@ -107,32 +104,8 @@
     <Filter Include="06. Renderer\Pipeline">
       <UniqueIdentifier>{acc18251-7ed3-4f83-9331-1dc5bcf51802}</UniqueIdentifier>
     </Filter>
-    <Filter Include="06. Renderer\Pipeline\01. Pipeline">
-      <UniqueIdentifier>{2247907f-9d56-48bf-b94c-21da94b24f1e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Pipeline\02. Geometry">
-      <UniqueIdentifier>{b2f609e5-f45c-4993-a5a0-65c00a695981}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Pipeline\04. VertexShader">
-      <UniqueIdentifier>{60561e42-568a-479e-a13a-f42c0559c710}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Pipeline\04. VertexShader\VertexData">
-      <UniqueIdentifier>{9382f2ca-e8d5-4052-955b-a27b06dc378f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Pipeline\05. PixelShader">
-      <UniqueIdentifier>{4593ec88-2a36-4dee-ba26-03ffa0c80a58}</UniqueIdentifier>
-    </Filter>
     <Filter Include="06. Renderer\RenderState">
       <UniqueIdentifier>{2f2f1068-1538-4164-82e3-7dbe873c0feb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Shader">
-      <UniqueIdentifier>{11241f0e-2d29-4136-8bff-5b037f1b0b1f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Shader\PixelShader">
-      <UniqueIdentifier>{39f4c759-6334-4a3e-b3bb-6f0b0efa42cc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Shader\VertexShader">
-      <UniqueIdentifier>{8cf75ed1-c86e-4fee-9237-5a4ad0fa03be}</UniqueIdentifier>
     </Filter>
     <Filter Include="06. Renderer\VertexData">
       <UniqueIdentifier>{b4d538ab-8678-4fd6-b5d7-5eeb7bc74239}</UniqueIdentifier>
@@ -151,6 +124,51 @@
     </Filter>
     <Filter Include="08. Resource\CommonShader">
       <UniqueIdentifier>{4314ae77-f525-4473-879e-3cbfcbcd7db5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06. Renderer\Shader">
+      <UniqueIdentifier>{11241f0e-2d29-4136-8bff-5b037f1b0b1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06. Renderer\Shader\PixelShader">
+      <UniqueIdentifier>{39f4c759-6334-4a3e-b3bb-6f0b0efa42cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06. Renderer\Shader\VertexShader">
+      <UniqueIdentifier>{8cf75ed1-c86e-4fee-9237-5a4ad0fa03be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="08. Resource\ShaderProgram">
+      <UniqueIdentifier>{c061f43f-6584-40b3-8e32-a940fdee2047}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="11. Component\CameraComponent">
+      <UniqueIdentifier>{78900ad2-f5d6-4a1a-a11d-a62dee9dc077}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07. GUI\GuiFrame">
+      <UniqueIdentifier>{b869148c-58eb-4fbd-96e5-4fbe4920bba1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. EngineViewer">
+      <UniqueIdentifier>{34d6fa18-88bc-4fd2-a2d1-9148bb86c6c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. EngineViewer\EngineVoidPopup">
+      <UniqueIdentifier>{1046cc68-05e2-4630-b107-a3a5729b42ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="95. SystemMonior">
+      <UniqueIdentifier>{beaac227-4ca6-4acd-a0d3-6b6d9bbf6740}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. EngineViewer\EngineOverlay">
+      <UniqueIdentifier>{2e1654a0-9d46-4e65-bca5-b16fac61ba5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. EngineViewer\EngineSceneEditor">
+      <UniqueIdentifier>{05c69544-dc42-41fc-a6c4-ebf0ec697adc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="94. EngineConfig">
+      <UniqueIdentifier>{031f8f36-4a0f-4fa0-bb44-545e29310c8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. EngineViewer\EngineLogViewer">
+      <UniqueIdentifier>{80390593-db48-4595-a277-e07272745a74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. EngineViewer\EngineSceneViewer">
+      <UniqueIdentifier>{876d76ea-7d12-4ded-ba41-c49fe0658b49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. EngineViewer\EngineDebugViewer">
+      <UniqueIdentifier>{24790438-8ecc-418c-bf0a-a62c1ef2cbe5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -193,9 +211,6 @@
     <ClInclude Include="Colors.h">
       <Filter>99. Base</Filter>
     </ClInclude>
-    <ClInclude Include="FileDialog.h">
-      <Filter>07. GUI\ThirdParty\FileDlg</Filter>
-    </ClInclude>
     <ClInclude Include="Enums.h">
       <Filter>99. Base</Filter>
     </ClInclude>
@@ -210,9 +225,6 @@
     </ClInclude>
     <ClInclude Include="EngineCore.h">
       <Filter>02. Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>10. GameObject</Filter>
     </ClInclude>
     <ClInclude Include="Component.h">
       <Filter>11. Component</Filter>
@@ -236,7 +248,7 @@
       <Filter>98. Utiles</Filter>
     </ClInclude>
     <ClInclude Include="CameraComponent.h">
-      <Filter>11. Component\Camera</Filter>
+      <Filter>11. Component\CameraComponent</Filter>
     </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>08. Resource\Sprite</Filter>
@@ -349,7 +361,51 @@
     <ClInclude Include="ResourceBase.h">
       <Filter>08. Resource\Core</Filter>
     </ClInclude>
-    <ClInclude Include="BatchSystem.h" />
+    <ClInclude Include="ShaderSet.h">
+      <Filter>08. Resource\ShaderProgram</Filter>
+    </ClInclude>
+    <ClInclude Include="BatchSystem.h">
+      <Filter>98. Utiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointer.h">
+      <Filter>99. Base</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEntity.h">
+      <Filter>10. GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineViewer.h">
+      <Filter>96. EngineViewer</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiFrame.h">
+      <Filter>07. GUI\GuiFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineVoidPopup.h">
+      <Filter>96. EngineViewer\EngineVoidPopup</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineDebugViewer.h">
+      <Filter>96. EngineViewer\EngineDebugViewer</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemMonitor.h">
+      <Filter>95. SystemMonior</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonOverload.h">
+      <Filter>98. Utiles</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineOverlay.h">
+      <Filter>96. EngineViewer\EngineOverlay</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineSceneEditor.h">
+      <Filter>96. EngineViewer\EngineSceneEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineConfig.h">
+      <Filter>94. EngineConfig</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineLogViewer.h">
+      <Filter>96. EngineViewer\EngineLogViewer</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigSystem.h">
+      <Filter>94. EngineConfig</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EngineAssertion.cpp">
@@ -379,9 +435,6 @@
     <ClCompile Include="Colors.cpp">
       <Filter>99. Base</Filter>
     </ClCompile>
-    <ClCompile Include="FileDialog.cpp">
-      <Filter>07. GUI\ThirdParty\FileDlg</Filter>
-    </ClCompile>
     <ClCompile Include="ImGuiHelper.cpp">
       <Filter>07. GUI\GuiHelper</Filter>
     </ClCompile>
@@ -393,9 +446,6 @@
     </ClCompile>
     <ClCompile Include="EngineCore.cpp">
       <Filter>02. Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>10. GameObject</Filter>
     </ClCompile>
     <ClCompile Include="Component.cpp">
       <Filter>11. Component</Filter>
@@ -419,7 +469,7 @@
       <Filter>98. Utiles</Filter>
     </ClCompile>
     <ClCompile Include="CameraComponent.cpp">
-      <Filter>11. Component\Camera</Filter>
+      <Filter>11. Component\CameraComponent</Filter>
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
       <Filter>08. Resource\Sprite</Filter>
@@ -532,7 +582,51 @@
     <ClCompile Include="ResourceBase.cpp">
       <Filter>08. Resource\Core</Filter>
     </ClCompile>
-    <ClCompile Include="BatchSystem.cpp" />
+    <ClCompile Include="ShaderSet.cpp">
+      <Filter>08. Resource\ShaderProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="BatchSystem.cpp">
+      <Filter>98. Utiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Pointer.cpp">
+      <Filter>99. Base</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEntity.cpp">
+      <Filter>10. GameEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineViewer.cpp">
+      <Filter>96. EngineViewer</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiFrame.cpp">
+      <Filter>07. GUI\GuiFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineVoidPopup.cpp">
+      <Filter>96. EngineViewer\EngineVoidPopup</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineDebugViewer.cpp">
+      <Filter>96. EngineViewer\EngineDebugViewer</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemMonitor.cpp">
+      <Filter>95. SystemMonior</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonOverload.cpp">
+      <Filter>98. Utiles</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineOverlay.cpp">
+      <Filter>96. EngineViewer\EngineOverlay</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineSceneEditor.cpp">
+      <Filter>96. EngineViewer\EngineSceneEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineConfig.cpp">
+      <Filter>94. EngineConfig</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineLogViewer.cpp">
+      <Filter>96. EngineViewer\EngineLogViewer</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigSystem.cpp">
+      <Filter>94. EngineConfig</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\CommonResource\Shader\1. SimpleColorShader.hlsli">

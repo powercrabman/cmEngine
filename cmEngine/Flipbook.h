@@ -20,18 +20,27 @@ namespace cmEngine
 	public:
 		RESOURCE_BODY(Flipbook);
 
-		Flipbook() = default;
+		Flipbook(std::string_view inName);
 		virtual ~Flipbook() = default;
 
-		void Create(const FlipbookData& inData);
+		void				Create(const FlipbookData& inData);
 
-		FlipbookData GetFlipbookData() const { return mFlipbookData; }
-		Geometry* GetGeometry() const { return mGeometry.get(); }
+		const FlipbookData&	GetFlipbookData() const { return mFlipbookData; }
+		Geometry*			GetGeometry() const { return mGeometry.get(); }
 
 	private:
 		constexpr inline static float ScaleFactor = 1 / 500.f;
 
-		FlipbookData mFlipbookData           = {};
-		std::unique_ptr<Geometry>	mGeometry= {};
+		FlipbookData		mFlipbookData   = {};
+		Scope<Geometry>		mGeometry		= {};
 	};
+
+	//===================================================
+	//                      Inline
+	//===================================================
+
+	inline Flipbook::Flipbook(std::string_view inName)
+		: ResourceBase(inName)
+	{
+	}
 }

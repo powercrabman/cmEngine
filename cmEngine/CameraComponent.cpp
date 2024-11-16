@@ -10,12 +10,4 @@ namespace cmEngine
 	void CameraComponent::OnFinish()
 	{
 	}
-
-	void CameraComponent::PreRender()
-	{
-		CBCamera cmr = {};
-		cmr.ViewProj = GetViewProjection();
-
-		ConstantBufferPool::FindConstantBuffer<CBCamera>()->UpdateBuffer(cmr);
-	}
 }

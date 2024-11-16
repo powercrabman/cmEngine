@@ -17,8 +17,8 @@
 #include <algorithm>
 #include <array>
 #include <cassert>
-#include <codecvt>
 #include <deque>
+#include <fstream>
 #include <filesystem>
 #include <format>
 #include <functional>
@@ -33,6 +33,10 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
+
+//Json
+#include "json/json.hpp"
+using json = nlohmann::json;
 
 //DirectX
 #include <d3d11.h>
@@ -62,31 +66,31 @@ using namespace Microsoft::WRL;
 
 //Imgui
 #include "imguiInc.h"
-#include "Log.h"
+
+//Inc
+#include "Types.h"
+#include "Colors.h"
+#include "Enums.h"
+#include "JsonOverload.h"
 
 //Common
-#include "Types.h"
 #include "EngineAssertion.h"
+#include "Timer.h"
+#include "Log.h"
+#include "Pointer.h"
+#include "EngineMacro.h"
 #include "EngineAlgorithm.h"
 #include "TypeID.h"
 #include "EngineMath.h"
-#include "EngineMacro.h"
 #include "BatchSystem.h"
-
-//Inc
-#include "Colors.h"
-#include "Enums.h"
 
 //Engine Module
 #include "GameWindow.h"
 #include "EngineCore.h"
-#include "Timer.h"
 #include "Input.h"
+#include "ConfigSystem.h"
 
-// Resource
-#include "ResourceManager.h"
-
-// Rendering
+// Rendering & Resource
 #include "Viewport.h"
 #include "Renderer.h"
 #include "ConstantBufferData.h"
@@ -97,7 +101,11 @@ using namespace Microsoft::WRL;
 #include "PixelShader.h"
 #include "Geometry.h"
 #include "RenderState.h"
+#include "ResourceManager.h"
 #include "Texture.h"
+#include "Sprite.h"
+#include "Flipbook.h"
+#include "ShaderSet.h"
 #include "Pipeline.h"
 #include "Gui.h"
 #include "GuiRenderer.h"
@@ -105,3 +113,13 @@ using namespace Microsoft::WRL;
 // Scene
 #include "Scene.h"
 #include "SceneManager.h"
+
+// GameEntity
+#include "GameEntity.h"
+#include "Component.h"
+#include "Transform.h"
+#include "GeometryRenderer.h"
+#include "FlipbookRenderer.h"
+#include "SpriteRenderer.h"
+#include "CameraComponent.h"
+#include "EngineConfig.h"

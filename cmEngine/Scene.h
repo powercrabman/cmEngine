@@ -2,7 +2,7 @@
 
 namespace cmEngine
 {
-	class GameObject;
+	class GameEntity;
 
 #define SCENE_BODY(SceneClassName) \
 	virtual const char*			ToString() override { return #SceneClassName; }; \
@@ -19,13 +19,16 @@ namespace cmEngine
 		void PreRender();
 		void ExitSceneCore();
 
-		GameObject* CreateGameObject(bool isActive);
-		GameObject* FindGameObjectOrNull(const uint64& inObjID) const;
-		void		RemoveGameObject(const uint64& inObjID);
+		GameEntity* CreateGameEntity(bool isActive = true);
+		GameEntity* FindGameEntityOrNull(const uint64& inObjID) const;
+		void		RemoveGameEntity(const uint64& inObjID);
 
-		std::vector<GameObject*>::const_iterator GetGameObjectsConstBegin() const { return mUpdateList.cbegin(); }
-		std::vector<GameObject*>::const_iterator GetGameObjectsConstEnd() const { return mUpdateList.cend(); }
+		std::vector<GameEntity*>::const_iterator GetGameEntitiesConstBegin() const { return mUpdateList.cbegin(); }
+		std::vector<GameEntity*>::const_iterator GetGameEntitiesConstEnd() const { return mUpdateList.cend(); }
 
+		const std::vector<GameEntity*>& GetGameEntities() const { return mUpdateList; }
+
+		inline size_t GetEntityCount() { return mUpdateList.size(); }
 
 		virtual constexpr const char* ToString() abstract;
 
@@ -34,8 +37,8 @@ namespace cmEngine
 		virtual void ExitScene() abstract;
 
 	private:
-		std::unordered_map<uint64, std::unique_ptr<GameObject>> mObjectRepo;
-		std::vector<GameObject*> mUpdateList;
+		std::unordered_map<uint64, Scope<GameEntity>> mObjectRepo;
+		std::vector<GameEntity*> mUpdateList;
 	};
 }
 

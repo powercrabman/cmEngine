@@ -3,4 +3,17 @@
   <ItemGroup>
     <ClCompile Include="TestConsole.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Filter Include="json">
+      <UniqueIdentifier>{287eb558-78e8-4e30-9d86-d70470b7c6e1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="JsonTest.json">
+      <Filter>json</Filter>
+    </None>
+    <None Include="Test.json">
+      <Filter>json</Filter>
+    </None>
+  </ItemGroup>
 </Project>

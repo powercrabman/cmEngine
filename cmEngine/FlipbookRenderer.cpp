@@ -14,11 +14,11 @@ namespace cmEngine
 
 	void FlipbookRenderer::PreRender()
 	{
-		FlipbookData fbData  = mFlipbook->GetFlipbookData();
-		auto [width, height] = fbData.Texture->GetSize();
-		CBSprite cbData      = {};
-		cbData.PivotRow      = fbData.PivotRow / height;
-		cbData.PivotCol      = (fbData.PivotCol + fbData.Width * mCurFrame) / static_cast<float>(width);
+		const FlipbookData& fbData  = mFlipbook->GetFlipbookData();
+		auto [width, height]        = fbData.Texture->GetSize();
+		CBSprite cbData             = {};
+		cbData.PivotRow             = fbData.PivotRow / height;
+		cbData.PivotCol             = (fbData.PivotCol + fbData.Width * mCurFrame) / static_cast<float>(width);
 		ConstantBufferPool::FindConstantBuffer<CBSprite>()->UpdateBuffer(cbData);
 	}
 

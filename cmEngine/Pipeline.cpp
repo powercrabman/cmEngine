@@ -5,33 +5,32 @@ namespace cmEngine
 {
 	void Pipeline::SubmitPipeline(const PipelineData& inPipelineDate)
 	{
+		auto context = Renderer::GetContext();
 		if (mPipeData.Geometry != inPipelineDate.Geometry)
 		{
 			mPipeData.Geometry = inPipelineDate.Geometry;
 
 			VertexBuffer* vertexBuffer = mPipeData.Geometry->GetVertexBuffer();
 			IndexBuffer* indexBuffer = mPipeData.Geometry->GetIndexBuffer();
-			Renderer::GetContext()->IASetVertexBuffers(0, 1, vertexBuffer->GetBuffer().GetAddressOf(), vertexBuffer->GetStrideAddr(), vertexBuffer->GetOffsetAddr());
-			Renderer::GetContext()->IASetIndexBuffer(indexBuffer->GetBuffer().Get(), DXGI_FORMAT_R32_UINT, 0);
+			context->IASetVertexBuffers(0, 1, vertexBuffer->GetBuffer().GetAddressOf(), vertexBuffer->GetStrideAddr(), vertexBuffer->GetOffsetAddr());
+			context->IASetIndexBuffer(indexBuffer->GetBuffer().Get(), DXGI_FORMAT_R32_UINT, 0);
 		}
 
-		if (mPipeData.VertexShader != inPipelineDate.VertexShader)
+		if (mPipeData.ShaderSet != inPipelineDate.ShaderSet)
 		{
-			mPipeData.VertexShader = inPipelineDate.VertexShader;
-			Renderer::GetContext()->VSSetShader(mPipeData.VertexShader->GetShader().Get(), nullptr, 0);
-			Renderer::GetContext()->IASetInputLayout(mPipeData.VertexShader->GetInputLayout().Get());
-		}
+			mPipeData.ShaderSet = inPipelineDate.ShaderSet;
+			VertexShader* vs = mPipeData.ShaderSet->GetVertexShader();
+			PixelShader* ps = mPipeData.ShaderSet->GetPixelShader();
 
-		if (mPipeData.PixelShader != inPipelineDate.PixelShader)
-		{
-			mPipeData.PixelShader = inPipelineDate.PixelShader;
-			Renderer::GetContext()->PSSetShader(mPipeData.PixelShader->GetShader().Get(), nullptr, 0);
+			context->IASetInputLayout(vs->GetInputLayout().Get());
+			context->VSSetShader(vs->GetShader().Get(), nullptr, 0);
+			context->PSSetShader(ps->GetShader().Get(), nullptr, 0);
 		}
 
 		if (mPipeData.Texture != inPipelineDate.Texture)
 		{
 			mPipeData.Texture = inPipelineDate.Texture;
-			Renderer::GetContext()->PSSetShaderResources(0, 1, mPipeData.Texture->GetShaderResourceView().GetAddressOf());
+			context->PSSetShaderResources(0, 1, mPipeData.Texture->GetShaderResourceView().GetAddressOf());
 		}
 
 		// Render State
@@ -61,18 +60,22 @@ namespace cmEngine
 		}
 	}
 
-	void Pipeline::SubmitGraphicsData()
+	// TODO - 구조바꾸기 (고정 슬롯 형태)
+	void Pipeline::SubmitConstantData()
 	{
-		// Constant Buffer
+		VertexShader* vs = mPipeData.ShaderSet->GetVertexShader();
+		PixelShader* ps  = mPipeData.ShaderSet->GetPixelShader();
 
 		// VS
 		{
 			uint32 idx = 0;
-			for (auto iter = mPipeData.VertexShader->GetConstantBufferListConstBegin(); iter != mPipeData.VertexShader->GetConstantBufferListConstEnd(); ++iter)
+			
+			for (auto iter = vs->GetConstantBufferListConstBegin(); iter != vs->GetConstantBufferListConstEnd(); ++iter)
 			{
 				ConstantBufferBase* cb = *iter;
 				if (cb != ConstantBufferDatas[idx])
 				{
+					ConstantBufferDatas[idx] = cb;
 					Renderer::GetContext()->VSSetConstantBuffers(idx, 1, cb->GetBuffer().GetAddressOf());
 				}
 				++idx;
@@ -82,12 +85,13 @@ namespace cmEngine
 		// PS
 		{
 			uint32 idx = 0;
-			for (auto iter = mPipeData.PixelShader->GetConstantBufferListConstBegin(); iter != mPipeData.PixelShader->GetConstantBufferListConstEnd(); ++iter)
+			for (auto iter = ps->GetConstantBufferListConstBegin(); iter != ps->GetConstantBufferListConstEnd(); ++iter)
 			{
 				ConstantBufferBase* cb = *iter;
 				if (cb != ConstantBufferDatas[idx])
 				{
-					Renderer::GetContext()->VSSetConstantBuffers(idx, 1, cb->GetBuffer().GetAddressOf());
+					ConstantBufferDatas[idx] = cb;
+					Renderer::GetContext()->PSSetConstantBuffers(idx, 1, cb->GetBuffer().GetAddressOf());
 				}
 				++idx;
 			}

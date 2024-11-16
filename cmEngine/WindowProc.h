@@ -8,10 +8,10 @@ inline LRESULT WindowProc(HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam)
 
 	if (ImGui_ImplWin32_WndProcHandler(hwnd, uMsg, wParam, lParam))
 	{
-		return true;
+		return 1;
 	}
 
-	/* Common Proc */
+	// if Engine is not running, use default proc
 	if (!EngineCore::Get()->IsRunning())
 	{
 		return DefWindowProc(hwnd, uMsg, wParam, lParam);
@@ -28,16 +28,43 @@ inline LRESULT WindowProc(HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam)
 
 	case WM_SIZE:
 	{
+		ENGINE_LOG_DEBUG("Main Window Resizing");
+
 		if (wParam == SIZE_MINIMIZED)
+		{
+			ENGINE_LOG_DEBUG("Window minimized");
 			return 0;
+		}
+		
+		// Resize
+		WindowResolution res = {
+			max(100, (UINT)LOWORD(lParam)), 
+			max(100, (UINT)HIWORD(lParam)) 
+		};
 
-		WindowResolution res = {};
+		// Reposition
+		RECT rect = {};
+		::GetWindowRect(GameWindow::GetHwnd(), &rect);
 
-		res.Width = (UINT)LOWORD(lParam);
-		res.Height = (UINT)HIWORD(lParam);
+		WindowPosition pos = { rect.left, rect.top};
 
+		GameWindow::RepositionWindow(pos);
 		GameWindow::ResizeWindow(res);
 		Renderer::OnResize(res);
+
+		return 0;
+	}
+
+	case WM_EXITSIZEMOVE:
+	{
+		ENGINE_LOG_DEBUG("Main Window Repositioning");
+
+		RECT rect = {};
+		::GetWindowRect(GameWindow::GetHwnd(), &rect);
+
+		WindowPosition pos = { rect.left, rect.top };
+
+		GameWindow::RepositionWindow(pos);
 
 		return 0;
 	}

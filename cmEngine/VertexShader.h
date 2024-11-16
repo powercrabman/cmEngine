@@ -15,13 +15,11 @@ namespace cmEngine
 		void Create();
 
 		::ComPtr<ID3D11VertexShader> GetShader() const { return mShader; }
-		::ComPtr<ID3D11InputLayout>  GetInputLayout() const { mInputLayout; }
+		::ComPtr<ID3D11InputLayout>  GetInputLayout() const { return mInputLayout; }
 
 	private:
 		::ComPtr<ID3D11VertexShader>	mShader;
 		::ComPtr<ID3D11InputLayout>		mInputLayout;
-
-
 	};
 
 	//===================================================
@@ -56,8 +54,8 @@ namespace cmEngine
 		// create Input Layout
 		{
 			HR hr = Renderer::GetDevice()->CreateInputLayout(
-				VertexType::InputElemnets,
-				VertexType::InputElemnetsSize,
+				VertexType::InputElements,
+				VertexType::InputElementsSize,
 				GetBlob()->GetBufferPointer(),
 				GetBlob()->GetBufferSize(),
 				mInputLayout.GetAddressOf()
@@ -65,13 +63,13 @@ namespace cmEngine
 
 			if (!DX_CHECK(hr))
 			{
-				assert(false);
+				assert(false);	
 				ENGINE_LOG_ERROR("create inputlayout fail");
 				return;
 			}
 		}
 
-		ENGINE_LOG_ERROR("VertexShader create Done.");
+		ENGINE_LOG_INFO("VertexShader create Done.");
 	}
 }
 

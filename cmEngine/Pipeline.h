@@ -6,10 +6,9 @@ namespace cmEngine
 	{
 		void Clear()
 		{
-			Geometry = nullptr;
-			VertexShader = nullptr;
-			PixelShader = nullptr;
-			Texture = nullptr;
+			Geometry  = nullptr;
+			ShaderSet = nullptr;
+			Texture   = nullptr;
 
 			Blendstate        = eBlendState::Defaul;
 			SamplerState      = eSamplerState::Default;
@@ -22,15 +21,14 @@ namespace cmEngine
 			RenderState::BindRasterizerState(RasterizerState);
 		}
 
-		Geometry*		Geometry         = nullptr;
-		VertexShader*	VertexShader     = nullptr;
-		PixelShader*	PixelShader      = nullptr;
-		Texture*		Texture          = nullptr;
+		Geometry*			Geometry           = nullptr;
+		ShaderSet*			ShaderSet          = nullptr;
+		Texture*			Texture            = nullptr;
 
-		eBlendState			Blendstate               = eBlendState::Defaul;
-		eSamplerState		SamplerState             = eSamplerState::Default;
-		eDepthStencilState	DepthStencilState        = eDepthStencilState::Default;
-		eRasterizerState	RasterizerState          = eRasterizerState::Default;
+		eBlendState			Blendstate         = eBlendState::Defaul;
+		eSamplerState		SamplerState       = eSamplerState::Default;
+		eDepthStencilState	DepthStencilState  = eDepthStencilState::Default;
+		eRasterizerState	RasterizerState    = eRasterizerState::Default;
 	};
 
 	class Pipeline
@@ -50,7 +48,7 @@ namespace cmEngine
 		}
 
 		void SubmitPipeline(const PipelineData& inPipelineDate);
-		void SubmitGraphicsData();
+		void SubmitConstantData();
 
 		void Clear()
 		{

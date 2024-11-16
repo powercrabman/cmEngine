@@ -12,13 +12,8 @@ namespace cmEngine
 		void OnStart() override;
 		void OnFinish() override;
 
-		PipelineData GetPipelineData() const { return mPipeData; }
-
-		void SetShaders(VertexShader* inVertexShader, PixelShader* inPixelShader)
-		{
-			mPipeData.VertexShader = inVertexShader;
-			mPipeData.PixelShader = inPixelShader;
-		}
+		const PipelineData& GetPipelineData() const { return mPipeData; }
+		void				SetShaders(ShaderSet* inShaderSet) { mPipeData.ShaderSet = inShaderSet; }
 
 	protected:
 		PipelineData mPipeData = {};

@@ -2,7 +2,6 @@
 
 namespace cmEngine
 {
-
 	class EngineCore
 	{
 		friend class Application;
@@ -11,18 +10,19 @@ namespace cmEngine
 
 		static EngineCore* Get();
 
-		void CloseEngine() { mRunning = false; }
+		void CloseGame() { mRunning = false; }
 		bool IsRunning() const { return mRunning; }
 
 	private:
-		static void Create(
-			const WindowResolution& inResolution = { 800, 600 },
-			const WindowPosition&	inPosition   = {0,0}
-		);
+		static void Create();
 
+		void Initialize(
+			const WindowResolution& inResolution,
+			const WindowPosition& inPosition
+		);
 		void Destory();
 
-		EngineCore(const WindowResolution& inResolution, const WindowPosition& inPosition);
+		EngineCore() = default;
 		EngineCore(const EngineCore&) = delete;
 		EngineCore& operator=(const EngineCore&) = delete;
 
@@ -35,11 +35,11 @@ namespace cmEngine
 	//								Inline
 	// ====================================================================
 
-	inline void EngineCore::Create(const WindowResolution& inResolution, const WindowPosition& inPosition)
+	inline void EngineCore::Create()
 	{
-		if (sInstance != nullptr)
+		if (sInstance == nullptr)
 		{
-			sInstance = new EngineCore(inResolution, inPosition);
+			sInstance = new EngineCore;
 		}
 	}
 

@@ -33,8 +33,40 @@ namespace cmEngine::String
 		return MapToFloat(Split(inString));
 	}
 
-	std::string ConvertToString(std::wstring_view inString);
-	std::wstring ConvertToWString(std::string_view inString);
+	inline std::string ConvertToString(std::wstring_view inString) {
+		if (inString.empty()) return {};
+
+		int bufferSize = WideCharToMultiByte(CP_UTF8, 0, inString.data(), static_cast<int>(inString.size()), NULL, 0, NULL, NULL);
+
+		if (bufferSize <= 0)
+		{
+			assert(false);
+			ENGINE_LOG_ERROR("Failed to convert wide string to UTF-8 string.");
+			return "";
+		}
+
+		std::string result(bufferSize, 0);
+		WideCharToMultiByte(CP_UTF8, 0, inString.data(), static_cast<int>(inString.size()), result.data(), bufferSize, NULL, NULL);
+
+		return result;
+	}
+
+	inline std::wstring ConvertToWString(std::string_view inString) {
+		if (inString.empty()) return {};
+
+		int bufferSize = MultiByteToWideChar(CP_UTF8, 0, inString.data(), static_cast<int>(inString.size()), NULL, 0);
+		if (bufferSize <= 0)
+		{
+			assert(false);
+			ENGINE_LOG_ERROR("Failed to convert UTF - 8 string to wide string.");
+			return L"";
+		}
+
+		std::wstring result(bufferSize, 0);
+		MultiByteToWideChar(CP_UTF8, 0, inString.data(), static_cast<int>(inString.size()), result.data(), bufferSize);
+
+		return result;
+	}
 }
 
 namespace cmEngine::Random

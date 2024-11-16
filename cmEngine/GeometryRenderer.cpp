@@ -5,7 +5,7 @@ namespace cmEngine
 {
 	GeometryRenderer::GeometryRenderer()
 	{
-		mGeometry = std::make_unique<Geometry>();
+		mGeometry = MakeScope<Geometry>();
 	}
 	GeometryRenderer::~GeometryRenderer(){}
 
@@ -27,6 +27,7 @@ namespace cmEngine
 		};
 
 		mGeometry->Create(mVertices, mIndices);
+		mPipeData.Geometry = mGeometry.get();
 	}
 
 	void GeometryRenderer::SetCircleGeometry(const Color& inColor)
@@ -60,6 +61,7 @@ namespace cmEngine
 		}
 
 		mGeometry->Create(mVertices, mIndices);
+		mPipeData.Geometry = mGeometry.get();
 	}
 
 	void GeometryRenderer::SetCube(const std::array<Color, 8>& inColor)
@@ -96,6 +98,7 @@ namespace cmEngine
 		};
 
 		mGeometry->Create(mVertices, mIndices);
+		mPipeData.Geometry = mGeometry.get();
 	}
 
 }

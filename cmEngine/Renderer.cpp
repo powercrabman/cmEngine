@@ -2,12 +2,11 @@
 #include "Renderer.h"
 #include "Pipeline.h"
 #include "RenderComponent.h"
+#include "GameEntity.h"
+#include <fstream>
 
 namespace cmEngine
 {
-	Renderer::Renderer() {}
-	Renderer::~Renderer() {}
-
 	void Renderer::RenderBegin()
 	{
 		// InputLayout Setting
@@ -27,11 +26,17 @@ namespace cmEngine
 
 	void Renderer::Render()
 	{
+		// Camera Data PreRender
+		CBCamera cb;
+		cb.ViewProj = mCameraSystem.MainCamera->GetViewProjection();
+		ConstantBufferPool::FindConstantBuffer<CBCamera>()->UpdateBuffer(cb);
+
 		// Render
 		for (const RenderComponent* inComp : mRenderSystem)
 		{
+			inComp->GetOwner()->PreRender();
 			mPipeline->SubmitPipeline(inComp->GetPipelineData());
-			mPipeline->SubmitGraphicsData();
+			mPipeline->SubmitConstantData();
 			mPipeline->DrawIndices();
 		}
 	}
@@ -50,10 +55,17 @@ namespace cmEngine
 		{
 			if (mCanvas.SwapChain)
 			{
-				hr = mCanvas.SwapChain->ResizeBuffers(0, inRes.Width, inRes.Height, DXGI_FORMAT_UNKNOWN, 0);
+				// Render Target View Release
+				GetContext()->OMSetRenderTargets(0, nullptr, nullptr);
+				mCanvas.DepthStencilView.Reset();
+				mCanvas.RenderTargetView.Reset();
+
+				hr = mCanvas.SwapChain->ResizeBuffers(0, inRes.Width, inRes.Height, DXGI_FORMAT_R8G8B8A8_UNORM, 0);
 
 				if (!DX_CHECK(hr))
 				{
+					OutputDebugString(L"ResizeBuffers failed with HRESULT: ");
+					OutputDebugString(std::to_wstring(hr).c_str());
 					ASSERT(false, "Resizing SwapChain Fail.");
 					return false;
 				}
@@ -62,15 +74,15 @@ namespace cmEngine
 			{
 				// 없으면 생성
 				DXGI_SWAP_CHAIN_DESC swapChainDesc = {};
-				swapChainDesc.BufferCount = 2;
-				swapChainDesc.BufferDesc.Width = 0;
-				swapChainDesc.BufferDesc.Height = 0;
-				swapChainDesc.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
-				swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-				swapChainDesc.OutputWindow = GameWindow::GetHwnd();
-				swapChainDesc.SampleDesc.Count = mMSAA.SampleCount;
-				swapChainDesc.SampleDesc.Quality = mMSAA.Quality;
-				swapChainDesc.Windowed = TRUE;
+				swapChainDesc.BufferCount          = 2;
+				swapChainDesc.BufferDesc.Width     = 0;
+				swapChainDesc.BufferDesc.Height    = 0;
+				swapChainDesc.BufferDesc.Format    = DXGI_FORMAT_R8G8B8A8_UNORM;
+				swapChainDesc.BufferUsage          = DXGI_USAGE_RENDER_TARGET_OUTPUT;
+				swapChainDesc.OutputWindow         = GameWindow::GetHwnd();
+				swapChainDesc.SampleDesc.Count     = mMSAA.SampleCount;
+				swapChainDesc.SampleDesc.Quality   = mMSAA.Quality;
+				swapChainDesc.Windowed             = TRUE;
 
 				HR hr = mSubDevice.Factory->CreateSwapChain(mDevice.Device.Get(), &swapChainDesc, mCanvas.SwapChain.GetAddressOf());
 				if (!DX_CHECK(hr))
@@ -150,10 +162,16 @@ namespace cmEngine
 				return false;
 			}
 		}
+
+		return true;
 	}
 
-	void Renderer::Deostroy()
+	void Renderer::Destroy()
 	{
+		// Save setting
+		RendererConfig config = {};
+		config.ClearColor = mCanvas.ClearColor;
+		ConfigSystem::Save(config);
 
 		mDevice.Context.Reset();
 		mDevice.Device.Reset();
@@ -167,6 +185,49 @@ namespace cmEngine
 		mCanvas.SwapChain.Reset();
 
 		mPipeline.reset();
+	}
+
+	void Renderer::SaveSetting()
+	{
+		std::ofstream fs{ sSettingFilePath };
+
+		if (fs.is_open() == false)
+		{
+			assert(false);
+			ENGINE_LOG_ERROR("\"{}\" file open fail", String::ConvertToString(sSettingFilePath));
+			return;
+		}
+
+		json js;
+		js = mCanvas.ClearColor;
+		fs << js.dump(4);
+	}
+
+	void Renderer::LoadSetting()
+	{
+		std::ifstream fs{ sSettingFilePath };
+
+		if (fs.is_open() == false)
+		{
+			ENGINE_LOG_INFO("\"{}\" file not exist. use default setting", String::ConvertToString(sSettingFilePath));
+			return;
+		}
+
+		json js = json::parse(fs);
+		mCanvas.ClearColor = js;
+	}
+
+	void Renderer::UnregisterCamera(CameraComponent* inCameraComponent)
+	{
+		if (inCameraComponent == mCameraSystem.MainCamera)
+		{
+			ENGINE_LOG_TRACE("Main Camera Set. Onwer Object ID: {} Camera Component ID {}", inCameraComponent->GetOwner()->GetObjectID(), inCameraComponent->GetComponentID());
+			mCameraSystem.DefaultEntity->FindComponentOrNull<CameraComponent>();
+		}
+		else
+		{
+			ENGINE_LOG_WARN("Camera Component ID {} is not Main Camera", inCameraComponent->GetComponentID());
+		}
 	}
 
 	bool Renderer::Initialize()
@@ -256,7 +317,24 @@ namespace cmEngine
 			return false;
 		}
 
-		mPipeline = std::make_unique<Pipeline>();
+		// Pipeline
+		mPipeline = MakeScope<Pipeline>();
+
+		// Default Camera System
+		mCameraSystem.DefaultEntity = MakeScope<GameEntity>();
+		mCameraSystem.DefaultEntity->CreateComponent<CameraComponent>(mCameraSystem.DefaultEntity->FindComponentOrNull<Transform>());
+		mCameraSystem.MainCamera = mCameraSystem.DefaultEntity->FindComponentOrNull<CameraComponent>();
+
+		// Setting Load
+		{
+			RendererConfig config;
+			if (ConfigSystem::Load(config))
+			{
+				mCanvas.ClearColor = config.ClearColor;
+			}
+
+		}
+
 		ENGINE_LOG_INFO("Renderer Initialize Done.");
 
 		return true;

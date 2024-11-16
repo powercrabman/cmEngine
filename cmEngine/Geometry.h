@@ -23,8 +23,8 @@ namespace cmEngine
 		VertexBuffer*	GetVertexBuffer() const { return mVertexBuffer.get(); }
 
 	private:
-		std::unique_ptr<IndexBuffer>	mIndexBuffer  = nullptr;
-		std::unique_ptr<VertexBuffer>	mVertexBuffer = nullptr;
+		Scope<IndexBuffer>	mIndexBuffer  = nullptr;
+		Scope<VertexBuffer>	mVertexBuffer = nullptr;
 	};
 
 	//===================================================
@@ -39,8 +39,8 @@ namespace cmEngine
 		mIndexBuffer.reset();
 		mVertexBuffer.reset();
 
-		mIndexBuffer = std::make_unique<IndexBuffer>();
-		mVertexBuffer = std::make_unique<VertexBuffer>();
+		mIndexBuffer = MakeScope<IndexBuffer>();
+		mVertexBuffer = MakeScope<VertexBuffer>();
 
 		mIndexBuffer->Create(inIndices);
 		mVertexBuffer->Create(inVertices);

@@ -35,3 +35,4 @@ friend class cmApplication;
 #endif
 
 #define BIT(x) (1 << x)
+#define BIND_FUNCTION_CALLBACK(function) [this]() { function(); }

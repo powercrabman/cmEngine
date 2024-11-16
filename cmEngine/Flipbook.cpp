@@ -3,8 +3,11 @@
 
 namespace cmEngine
 {
+
 	void Flipbook::Create(const FlipbookData& inData)
 	{
+		mGeometry.reset();
+
 		mFlipbookData = inData;
 		ASSERT(mFlipbookData.Texture, "Texture is nullptr");
 
@@ -28,7 +31,7 @@ namespace cmEngine
 			0,1,2,0,2,3
 		};
 
-		mGeometry = std::make_unique<Geometry>();
+		mGeometry = MakeScope<Geometry>();
 		mGeometry->Create(vb, ib);
 	}
 }
