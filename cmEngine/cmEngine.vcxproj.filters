@@ -80,9 +80,6 @@
     <Filter Include="11. Component\RenderComponent\Base">
       <UniqueIdentifier>{fd457e53-c328-448b-b2b4-76071d4f0d27}</UniqueIdentifier>
     </Filter>
-    <Filter Include="11. Component\EditorComponent">
-      <UniqueIdentifier>{2b37126e-f8f7-4f34-8a35-9d8ceb4a6b7f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="06. Renderer\ConstantBuffer">
       <UniqueIdentifier>{cf8a9746-42b2-433f-8725-dc4f517e4817}</UniqueIdentifier>
     </Filter>
@@ -158,17 +155,14 @@
     <Filter Include="96. EngineViewer\EngineSceneEditor">
       <UniqueIdentifier>{05c69544-dc42-41fc-a6c4-ebf0ec697adc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="94. EngineConfig">
-      <UniqueIdentifier>{031f8f36-4a0f-4fa0-bb44-545e29310c8b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="96. EngineViewer\EngineLogViewer">
       <UniqueIdentifier>{80390593-db48-4595-a277-e07272745a74}</UniqueIdentifier>
     </Filter>
-    <Filter Include="96. EngineViewer\EngineSceneViewer">
-      <UniqueIdentifier>{876d76ea-7d12-4ded-ba41-c49fe0658b49}</UniqueIdentifier>
-    </Filter>
     <Filter Include="96. EngineViewer\EngineDebugViewer">
       <UniqueIdentifier>{24790438-8ecc-418c-bf0a-a62c1ef2cbe5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="94. ConfigEngine">
+      <UniqueIdentifier>{031f8f36-4a0f-4fa0-bb44-545e29310c8b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -283,9 +277,6 @@
     <ClInclude Include="ResourceManager.h">
       <Filter>08. Resource\Core</Filter>
     </ClInclude>
-    <ClInclude Include="EditorComponent.h">
-      <Filter>11. Component\EditorComponent</Filter>
-    </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>01. Application</Filter>
     </ClInclude>
@@ -397,14 +388,17 @@
     <ClInclude Include="EngineSceneEditor.h">
       <Filter>96. EngineViewer\EngineSceneEditor</Filter>
     </ClInclude>
-    <ClInclude Include="EngineConfig.h">
-      <Filter>94. EngineConfig</Filter>
+    <ClInclude Include="ConfigBase.h">
+      <Filter>94. ConfigEngine</Filter>
     </ClInclude>
     <ClInclude Include="EngineLogViewer.h">
       <Filter>96. EngineViewer\EngineLogViewer</Filter>
     </ClInclude>
-    <ClInclude Include="ConfigSystem.h">
-      <Filter>94. EngineConfig</Filter>
+    <ClInclude Include="ConfigEngine.h">
+      <Filter>94. ConfigEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="IGuiEditable.h">
+      <Filter>11. Component\Interface</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -503,9 +497,6 @@
     </ClCompile>
     <ClCompile Include="ResourceManager.cpp">
       <Filter>08. Resource\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="EditorComponent.cpp">
-      <Filter>11. Component\EditorComponent</Filter>
     </ClCompile>
     <ClCompile Include="Log.cpp">
       <Filter>97. Log</Filter>
@@ -618,14 +609,17 @@
     <ClCompile Include="EngineSceneEditor.cpp">
       <Filter>96. EngineViewer\EngineSceneEditor</Filter>
     </ClCompile>
-    <ClCompile Include="EngineConfig.cpp">
-      <Filter>94. EngineConfig</Filter>
+    <ClCompile Include="ConfigBase.cpp">
+      <Filter>94. ConfigEngine</Filter>
     </ClCompile>
     <ClCompile Include="EngineLogViewer.cpp">
       <Filter>96. EngineViewer\EngineLogViewer</Filter>
     </ClCompile>
-    <ClCompile Include="ConfigSystem.cpp">
-      <Filter>94. EngineConfig</Filter>
+    <ClCompile Include="ConfigEngine.cpp">
+      <Filter>94. ConfigEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="IGuiEditable.cpp">
+      <Filter>11. Component\Interface</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

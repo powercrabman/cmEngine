@@ -171,7 +171,7 @@ namespace cmEngine
 		// Save setting
 		RendererConfig config = {};
 		config.ClearColor = mCanvas.ClearColor;
-		ConfigSystem::Save(config);
+		ConfigEngine::Save(config);
 
 		mDevice.Context.Reset();
 		mDevice.Device.Reset();
@@ -187,46 +187,12 @@ namespace cmEngine
 		mPipeline.reset();
 	}
 
-	void Renderer::SaveSetting()
-	{
-		std::ofstream fs{ sSettingFilePath };
-
-		if (fs.is_open() == false)
-		{
-			assert(false);
-			ENGINE_LOG_ERROR("\"{}\" file open fail", String::ConvertToString(sSettingFilePath));
-			return;
-		}
-
-		json js;
-		js = mCanvas.ClearColor;
-		fs << js.dump(4);
-	}
-
-	void Renderer::LoadSetting()
-	{
-		std::ifstream fs{ sSettingFilePath };
-
-		if (fs.is_open() == false)
-		{
-			ENGINE_LOG_INFO("\"{}\" file not exist. use default setting", String::ConvertToString(sSettingFilePath));
-			return;
-		}
-
-		json js = json::parse(fs);
-		mCanvas.ClearColor = js;
-	}
-
 	void Renderer::UnregisterCamera(CameraComponent* inCameraComponent)
 	{
 		if (inCameraComponent == mCameraSystem.MainCamera)
 		{
 			ENGINE_LOG_TRACE("Main Camera Set. Onwer Object ID: {} Camera Component ID {}", inCameraComponent->GetOwner()->GetObjectID(), inCameraComponent->GetComponentID());
 			mCameraSystem.DefaultEntity->FindComponentOrNull<CameraComponent>();
-		}
-		else
-		{
-			ENGINE_LOG_WARN("Camera Component ID {} is not Main Camera", inCameraComponent->GetComponentID());
 		}
 	}
 
@@ -322,13 +288,14 @@ namespace cmEngine
 
 		// Default Camera System
 		mCameraSystem.DefaultEntity = MakeScope<GameEntity>();
+		mCameraSystem.DefaultEntity->SetName("Default Camera Enitiy");
 		mCameraSystem.DefaultEntity->CreateComponent<CameraComponent>(mCameraSystem.DefaultEntity->FindComponentOrNull<Transform>());
 		mCameraSystem.MainCamera = mCameraSystem.DefaultEntity->FindComponentOrNull<CameraComponent>();
 
 		// Setting Load
 		{
 			RendererConfig config;
-			if (ConfigSystem::Load(config))
+			if (ConfigEngine::Load(config))
 			{
 				mCanvas.ClearColor = config.ClearColor;
 			}

@@ -65,11 +65,11 @@ namespace cmEngine
 		// Application Clean up
 		CleanUp();
 
-		// Engine Terminate
-		EngineCore::Get()->Destory();
-
 		// Log
 		Log::Destory();
+
+		// Engine Terminate
+		EngineCore::Get()->Destory();
 	}
 
 	int Application::Run()

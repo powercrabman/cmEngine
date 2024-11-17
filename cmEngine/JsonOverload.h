@@ -11,7 +11,7 @@ namespace nlohmann                                                     \
     };                                                                 \
 }    
 
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(ImVec4, x, y, z, w);
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE_ADL_SERIALIZER(ImVec4, x, y, z, w);
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE_ADL_SERIALIZER(Vector3, x, y, z);
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE_ADL_SERIALIZER(Vector4, x, y, z, w);
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE_ADL_SERIALIZER(Color, x, y, z, w);

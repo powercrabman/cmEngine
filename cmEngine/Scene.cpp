@@ -28,10 +28,7 @@ namespace cmEngine
 				obj->Update();
 			}
 		}
-	}
 
-	void Scene::FinalUpdate()
-	{
 		for (GameEntity* obj : mUpdateList)
 		{
 			if (obj->IsActive())
@@ -39,10 +36,7 @@ namespace cmEngine
 				obj->FinalUpdate();
 			}
 		}
-	}
 
-	void Scene::PreRender()
-	{
 		for (GameEntity* obj : mUpdateList)
 		{
 			if (obj->IsActive())

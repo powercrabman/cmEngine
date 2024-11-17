@@ -88,7 +88,7 @@ using namespace Microsoft::WRL;
 #include "GameWindow.h"
 #include "EngineCore.h"
 #include "Input.h"
-#include "ConfigSystem.h"
+#include "ConfigEngine.h"
 
 // Rendering & Resource
 #include "Viewport.h"
@@ -122,4 +122,4 @@ using namespace Microsoft::WRL;
 #include "FlipbookRenderer.h"
 #include "SpriteRenderer.h"
 #include "CameraComponent.h"
-#include "EngineConfig.h"
+#include "ConfigBase.h"

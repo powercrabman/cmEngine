@@ -16,32 +16,34 @@ namespace cmEngine
 		mFinalUpdateableList.reserve(8);
 		mPreRenderableList.reserve(8);
 
+		mValid = true;
+
 		// default component
 		CreateComponent<Transform>();
 	}
 
-	GameEntity::~GameEntity() {	}
+	GameEntity::~GameEntity() { Sleep(); }
 
 	//Active 상태인 컴포넌트를 모두 Start 시킴
-	void GameEntity::OnStart()
+	void GameEntity::Awake()
 	{
 		for (const Scope<Component>& cmp : mCompRepo)
 		{
 			if (cmp && cmp->IsActive())
 			{
-				cmp->OnStart();
+				cmp->Awake();
 			}
 		}
 	}
 
 	//모든 컴포넌트를 Finish 시킴
-	void GameEntity::OnFinish()
+	void GameEntity::Sleep()
 	{
 		for (const Scope<Component>& cmp : mCompRepo)
 		{
 			if (cmp && cmp->IsActive())
 			{
-				cmp->OnFinish();
+				cmp->Sleep();
 			}
 		}
 	}
@@ -78,8 +80,4 @@ namespace cmEngine
 			}
 		}
 	}
-
-
-
-
 }

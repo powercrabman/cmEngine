@@ -14,8 +14,8 @@ namespace cmEngine
 		CameraComponent(Transform* inOwnerTransform) { mTransform = inOwnerTransform; };
 		virtual ~CameraComponent() = default;
 
-		void OnStart() override;
-		void OnFinish() override;
+		void Awake() override;
+		void Sleep() override;
 
 		void SetAsMainCamera() { mIsMainCamera = true; Renderer::RegisterCamera(this); }
 		void UnSetMainCamera();

@@ -1,13 +1,14 @@
 #pragma once
 #include "GuiFrame.h"
+#include "ConfigBase.h"
 
 namespace cmEngine
 {
 	class EngineVoidPopup : public GuiFrame
 	{
 	public:
-		EngineVoidPopup() {}
-		~EngineVoidPopup() {}
+		EngineVoidPopup();
+		~EngineVoidPopup();
 
 		void Initialize() override;
 		void GuiLayout() override;
@@ -16,5 +17,9 @@ namespace cmEngine
 
 	private:
 		bool mClearColorBit = false;
+
+		Gui* logView = nullptr;
+		Gui* debugView = nullptr;
+		Gui* sceneView = nullptr;
 	};
 }

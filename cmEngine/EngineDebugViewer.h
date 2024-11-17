@@ -1,19 +1,24 @@
 #pragma once
 #include "GuiFrame.h"
-#include "ConfigSystem.h"
 
 namespace cmEngine
 {
 	struct EngineDebugViwerConfig : public ConfigBase
 	{
-		bool OverlayBit = false;
-		CONFIG_BODY(EngineDebugViwerConfig, L"SystemConfig.json", OverlayBit);
+		bool Visible;
+		bool OverlayBit;
+		CONFIG_BODY(
+			EngineDebugViwerConfig, 
+			L"SystemConfig.json", 
+			Visible,
+			OverlayBit
+		);
 	};
 
 	class EngineDebugViewer : public GuiFrame
 	{
 	public:
-		EngineDebugViewer() {}
+		EngineDebugViewer() { ConfigEngine::Load(mConfig); }
 		virtual ~EngineDebugViewer();
 
 		void Initialize() override;
@@ -23,5 +28,6 @@ namespace cmEngine
 		void DrawInputView();
 
 	private:
+		EngineDebugViwerConfig mConfig = {};
 	};
 }

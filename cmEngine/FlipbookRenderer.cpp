@@ -22,9 +22,9 @@ namespace cmEngine
 		ConstantBufferPool::FindConstantBuffer<CBSprite>()->UpdateBuffer(cbData);
 	}
 
-	void FlipbookRenderer::OnStart()
+	void FlipbookRenderer::Awake()
 	{
-		Super::OnStart();
+		Super::Awake();
 		mCurFrame = 0;
 		mTimeAcc = 0.f;
 	}

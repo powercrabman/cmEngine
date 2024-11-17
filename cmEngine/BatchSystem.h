@@ -27,9 +27,9 @@ namespace cmEngine
 
 			if (iter != mEntityMap.end())
 			{
-				uint32 targetIdx        = iter->second;
-				Ty* lastElement     = mEntityList.back();
-				mEntityList[targetIdx]  = lastElement;
+				uint32 targetIdx = iter->second;
+				Ty* lastElement = mEntityList.back();
+				mEntityList[targetIdx] = lastElement;
 				mEntityMap[lastElement] = targetIdx;
 				mEntityList.pop_back();
 				mEntityMap.erase(inComp);
@@ -49,4 +49,6 @@ namespace cmEngine
 		std::unordered_map<Ty*, uint32>	mEntityMap;
 		std::vector<Ty*>				mEntityList;
 	};
+
+
 }

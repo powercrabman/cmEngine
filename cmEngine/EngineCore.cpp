@@ -31,6 +31,9 @@ namespace cmEngine
 	EngineCore::~EngineCore()
 	{
 		ENGINE_LOG_INFO("Engine Terminate Start.");
+		
+		// SceneManager
+		SceneManager::Destroy();
 
 		// ResourceManager
 		ResourceManager::Destroy();
@@ -43,6 +46,9 @@ namespace cmEngine
 
 		// GameWindow
 		GameWindow::Destory();
+
+		// ConfigSystem
+		ConfigEngine::Destroy();
 
 		ENGINE_LOG_INFO("Engine Terminate Done.");
 	}

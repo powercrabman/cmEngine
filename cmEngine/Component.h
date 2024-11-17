@@ -31,8 +31,8 @@ namespace cmEngine
 		Component();
 		virtual ~Component();
 
-		virtual void OnStart()		abstract;	/* 컴포넌트가 Active 될 떄 한 번 호출됨. */
-		virtual void OnFinish()		abstract;	/* 컴포넌트가 파괴되거나 Inactive 될 떄 한 번 호출됨. */
+		virtual void Awake()		abstract;	/* 컴포넌트가 Active 될 떄 한 번 호출됨. */
+		virtual void Sleep()		abstract;	/* 컴포넌트가 파괴되거나 Inactive 될 떄 한 번 호출됨. */
 
 		void		SetActive(bool inActive);
 		bool		IsActive() const { return mActive; }
@@ -68,8 +68,8 @@ namespace cmEngine
 
 		mActive = inActive;
 
-		if (inActive) { OnStart(); }
-		else { OnFinish(); }
+		if (inActive) { Awake(); }
+		else { Sleep(); }
 	}
 }
 

@@ -23,9 +23,10 @@ namespace cmEngine
 		{
 			ImVec4{0.5f, 0.5f, 0.5f, 1.f}, // Trace
 			ImVec4{0.f,  1.f, 0.f, 1.f},   // Debug
+			ImVec4{0.f,  1.f, 0.f, 1.f},   // Info
 			ImVec4{1.f,  1.f, 0.f, 1.f},   // Warn 
 			ImVec4{1.f,  0.f, 0.f, 1.f},   // Error
-			ImVec4{0.5f, 0.f, 0.f, 1.f}    // Fatal
+			ImVec4{0.5f, 1.f, 0.f, 1.f}    // Fatal
 		};
 	};
 

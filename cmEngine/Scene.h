@@ -15,8 +15,6 @@ namespace cmEngine
 
 		void EnterSceneCore();
 		void UpdateScene();
-		void FinalUpdate();
-		void PreRender();
 		void ExitSceneCore();
 
 		GameEntity* CreateGameEntity(bool isActive = true);
@@ -37,8 +35,8 @@ namespace cmEngine
 		virtual void ExitScene() abstract;
 
 	private:
-		std::unordered_map<uint64, Scope<GameEntity>> mObjectRepo;
-		std::vector<GameEntity*> mUpdateList;
+		std::unordered_map<uint64, Scope<GameEntity>>	mObjectRepo;
+		std::vector<GameEntity*>						mUpdateList;
 	};
 }
 

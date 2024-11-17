@@ -51,7 +51,7 @@ namespace cmEngine
 
 		// 윈도우 세팅 가져오기
 		WindowConfig config = {};
-		if (ConfigSystem::Load(config))
+		if (ConfigEngine::Load(config))
 		{
 			// 윈도우 띄우기
 			ResizeWindow(config.Resolution);
@@ -71,7 +71,9 @@ namespace cmEngine
 		WindowConfig wc = {};
 		wc.Position = mWinProp.Position;
 		wc.Resolution = mWinProp.Resolution;
-		ConfigSystem::Save(wc);
+		ConfigEngine::Save(wc);
+
+
 	}
 
 	void GameWindow::ResizeWindow(const WindowResolution& inRes)

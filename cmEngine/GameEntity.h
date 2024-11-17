@@ -15,12 +15,14 @@ namespace cmEngine
 		GameEntity();
 		virtual ~GameEntity();
 
-		void OnStart();			/* 오브젝트를 초기화할 때 호출 (초기화 함수) */
-		void OnFinish();		/* 오브젝트가 파괴될 때 호출 (메모리는 해제하지 않음) */
+		void Awake();			/* 오브젝트를 초기화할 때 호출 (초기화 함수) */
+		void Sleep();			/* 오브젝트가 파괴될 때 호출 (메모리는 해제하지 않음) */
 
 		void Update();			/* 메인 업데이트 */
 		void FinalUpdate();		/* Update 에서 갱신된 내용을 통해 오브젝트 상태 보정 및 결정 */
 		void PreRender();		/* 파이프라인과 관련된 작업을 수행 */
+
+		void Destory() { mValid = true; }
 
 		void	SetActive(bool inActive);
 		bool	IsActive() const { return mActive; }
@@ -33,6 +35,11 @@ namespace cmEngine
 		template<typename Ty>
 		Ty* FindComponentOrNull() const;
 
+		void SetName(std::string_view inName) { mName = inName; }
+
+		const char* GetName() const { return mName.c_str(); }
+		bool		IsValid() const { return mValid; }
+
 	private:
 		// Component
 		enum { COMPONENT_COUNT_MAX = (uint32)eComponentType::Count };
@@ -41,14 +48,15 @@ namespace cmEngine
 		std::vector<std::pair<Component*, IUpdateable*>>				mUpdateableList;
 		std::vector<std::pair<Component*, IFinalUpdateable*>>			mFinalUpdateableList;
 		std::vector<std::pair<Component*, IPreRenderable*>>				mPreRenderableList;
-		
+
 		// Identity
-		std::string mName = "Undefined";
+		std::string mName = "GameEntity";
 
 		inline static uint64 sGameEntityCounter = 0;
 		uint64 mGameEntityID = 0;
 
 		bool mActive = false;
+		bool mValid = false;
 	};
 
 	//===================================================
@@ -73,14 +81,14 @@ namespace cmEngine
 			mCompRepo[idx] = MakeScope<Ty>(std::forward<Args>(args)...);
 			Ty* ptr = static_cast<Ty*>(mCompRepo[idx].get());
 			ptr->SetOwner(this);
-		
+
 			if constexpr (std::is_base_of<ISetupable, Ty>::value) { ptr->Setup(); }
 			if constexpr (std::is_base_of<IUpdateable, Ty>::value) { mUpdateableList.emplace_back(ptr, ptr); }
 			if constexpr (std::is_base_of<IFinalUpdateable, Ty>::value) { mFinalUpdateableList.emplace_back(ptr, ptr); }
 			if constexpr (std::is_base_of<IPreRenderable, Ty>::value) { mPreRenderableList.emplace_back(ptr, ptr); }
-		
+
 			ptr->SetActive(true);
-		
+
 			return ptr;
 		}
 	}
@@ -113,7 +121,7 @@ namespace cmEngine
 
 		mActive = inActive;
 
-		if (inActive) { OnStart(); }
-		else { OnFinish(); }
+		if (inActive) { Awake(); }
+		else { Sleep(); }
 	}
 };

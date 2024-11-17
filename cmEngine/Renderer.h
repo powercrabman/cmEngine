@@ -37,13 +37,11 @@ namespace cmEngine
 
 		static void		RegisterCamera(CameraComponent* inCameraComponent) { mCameraSystem.MainCamera = inCameraComponent; };
 		static void		UnregisterCamera(CameraComponent* inCameraComponent);
+		static CameraComponent* GetCurrentCamera() { return mCameraSystem.MainCamera; }
 
 	private:
 		static bool Initialize();
 		static void	Destroy();
-
-		static void SaveSetting();
-		static void LoadSetting();
 
 		struct RenderCoreDevice
 		{

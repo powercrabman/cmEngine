@@ -6,21 +6,22 @@
 
 namespace cmEngine
 {
-	EngineDebugViewer::~EngineDebugViewer() 
-	{
-			
-	}
-
 	void EngineDebugViewer::Initialize()
 	{
+		GetGui()->SetVisible(mConfig.Visible);
 		GetGui()->SetHotKey(eKeyCode::F5);
+	}
 
-		//ConfigSystem
+	EngineDebugViewer::~EngineDebugViewer()
+	{
+		EngineDebugViwerConfig cf = {};
+		cf.Visible = GetGui()->GetVisible();
+		ConfigEngine::Save(cf);
 	}
 
 	void EngineDebugViewer::GuiLayout()
 	{
-		ImGui::Begin("Debug Viewer (F5)", GetGuiVisibleAddr(), ImGuiWindowFlags_AlwaysAutoResize);
+		ImGui::Begin("Debug Viewer", GetGuiVisibleAddr(), ImGuiWindowFlags_AlwaysAutoResize);
 
 		if (ImGui::BeginTabBar("Test"))
 		{
@@ -40,7 +41,7 @@ namespace cmEngine
 
 		if (ImGui::BeginPopupContextWindow())
 		{
-			if (ImGui::Selectable("Close")) { GetGui()->SetVisible(false); }
+			if (ImGui::MenuItem("Close")) { GetGui()->SetVisible(false); }
 
 			ImGui::EndPopup();
 		}
@@ -59,7 +60,8 @@ namespace cmEngine
 		ImGui::Text("Used memory %d / %d MB", SystemMonitor::GetUsedMemory(), SystemMonitor::GetTotalMemory());
 
 		static GuiFrame* overlayGui = GuiRenderer::FindGuiFrameOrNull<EngineOverlay>();
-		ImGui::Checkbox("Enable overlay view", overlayGui->GetGuiVisibleAddr());
+		ImGui::Checkbox("Enable overlay view", &mConfig.OverlayBit);
+		overlayGui->GetGui()->SetVisible(mConfig.OverlayBit);
 	}
 
 	void EngineDebugViewer::DrawInputView()

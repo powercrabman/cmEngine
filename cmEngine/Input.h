@@ -110,7 +110,7 @@ namespace cmEngine
 	//                    ToString
 	//===================================================
 
-	inline const char* KeyCodeString(eKeyCode inKeyCode) 
+	inline const char* ToString(eKeyCode inKeyCode) 
 	{
 		return ImGui::GetKeyName((ImGuiKey)inKeyCode);
 	}

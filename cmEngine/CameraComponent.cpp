@@ -3,11 +3,12 @@
 
 namespace cmEngine
 {
-	void CameraComponent::OnStart()
+	void CameraComponent::Awake()
 	{
 	}
 
-	void CameraComponent::OnFinish()
+	void CameraComponent::Sleep()
 	{
+		Renderer::UnregisterCamera(this);
 	}
 }

@@ -76,6 +76,13 @@ namespace cmEngine
 			mCurrentScene->EnterSceneCore();
 		}
 
+		static void Destroy()
+		{
+			mCurrentScene->ExitSceneCore();
+			mSceneRepo.clear();
+			mCurrentScene = nullptr;
+		}
+
 		static Scene* GetCurrentScene() { return mCurrentScene; }
 
 	private:

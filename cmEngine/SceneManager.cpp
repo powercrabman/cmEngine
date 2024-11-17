@@ -9,8 +9,6 @@ namespace cmEngine
 		if (mCurrentScene)
 		{
 			mCurrentScene->UpdateScene();
-			mCurrentScene->FinalUpdate();
-			mCurrentScene->PreRender();
 		}
 	}
 }

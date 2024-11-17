@@ -22,7 +22,7 @@ namespace cmEngine
 		void Update() override;
 		void PreRender() override;
 
-		void OnStart() override;
+		void Awake() override;
 
 		void		SetFlipbook(Flipbook* inFlipbook);
 		Flipbook*	GetFlipbook() const { return mFlipbook; }

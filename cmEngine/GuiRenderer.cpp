@@ -33,6 +33,7 @@ namespace cmEngine
 		ImGui_ImplWin32_Shutdown();
 		ImGui::DestroyContext();
 
+		mGuiFrameRepo.clear();
 		mGuiRepo.clear();
 		mGuiBatch.Clear();
 	}

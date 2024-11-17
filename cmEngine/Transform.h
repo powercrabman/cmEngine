@@ -14,8 +14,8 @@ namespace cmEngine
 		Transform() = default;
 		virtual ~Transform() = default;
 
-		void OnStart() override {}
-		void OnFinish() override {}
+		void Awake() override {}
+		void Sleep() override {}
 		void PreRender() override;
 
 		// Position

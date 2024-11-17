@@ -5,15 +5,17 @@ namespace cmEngine
 {
 	void EngineLogViewer::Initialize()
 	{
-		GetGui()->SetVisible(false);
+		GetGui()->SetVisible(mConfig.Visible);
 		GetGui()->SetHotKey(eKeyCode::F6);
 	}
 
 	void EngineLogViewer::GuiLayout()
 	{
-		ImGui::Begin("Log History (F6)", GetGuiVisibleAddr());
+		ImGui::SetNextWindowSize({ 300,400 }, ImGuiCond_FirstUseEver);
+		ImGui::Begin("Log History", GetGuiVisibleAddr());
 
 		ImGui::SeparatorText("Log");
+		ImGui::Text("Log count : %d", mLogSize);
 		ImGui::BeginChild("Log History", { 0,0 }, ImGuiChildFlags_Border, ImGuiWindowFlags_HorizontalScrollbar);
 
 		for (auto iter = Log::GetLogDataConstBegin(); iter != Log::GetLogDataConstEnd(); ++iter)
@@ -28,7 +30,7 @@ namespace cmEngine
 			);
 		}
 
-		if (mLogSize != Log::GetLogListSize() && mAutoScrollBit) { ImGui::SetScrollHereY(1.f); }
+		if (mLogSize != Log::GetLogListSize() && mConfig.AutoScrollBit) { ImGui::SetScrollHereY(1.f); }
 		mLogSize = Log::GetLogListSize();
 
 		if (ImGui::BeginPopupContextWindow())
@@ -50,7 +52,7 @@ namespace cmEngine
 				static int messageCount = 0;
 
 				ImGui::Text("how many make message?");
-				ImGui::SliderInt("##meesageCount", &messageCount, 1, 50);
+				ImGui::SliderInt("##meesageCount", &messageCount, 1, 1000);
 
 				if (ImGui::SmallButton("create"))
 				{
@@ -65,10 +67,11 @@ namespace cmEngine
 				ImGui::EndMenu();
 			}
 
-			ImGui::Checkbox("Auto scroll", &mAutoScrollBit);
+			if (ImGui::MenuItem("Clear")) { Log::ClearLogList(); }
+			ImGui::Checkbox("Auto scroll", &mConfig.AutoScrollBit);
 
 			ImGui::Separator();
-			if (ImGui::Selectable("Close")) { GetGui()->SetVisible(false); }
+			if (ImGui::MenuItem("Close")) { GetGui()->SetVisible(false); }
 
 			ImGui::EndPopup();
 		}

@@ -3,12 +3,12 @@
 
 namespace cmEngine
 {
-	void RenderComponent::OnStart()
+	void RenderComponent::Awake()
 	{
 		Renderer::RegisterRenderComponent(this);
 	}
 
-	void RenderComponent::OnFinish()
+	void RenderComponent::Sleep()
 	{
 		Renderer::UnregisterRenderComponent(this);
 	}

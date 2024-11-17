@@ -1,0 +1,21 @@
+{
+    "EngineDebugViwerConfig": {
+        "OverlayBit": false,
+        "Visible": false
+    },
+    "EngineLogViewerConfig": {
+        "AutoScrollBit": false,
+        "Visible": false
+    },
+    "EngineOverlayConfig": {
+        "FrameViewBit": true,
+        "MemoryViewBit": true,
+        "NoMoveBit": false,
+        "Transparency": 0.5,
+        "Visible": true
+    },
+    "EngineSceneEditorConfig": {
+        "EntityEditView": false,
+        "Visible": false
+    }
+}

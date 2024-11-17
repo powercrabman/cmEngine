@@ -1,10 +1,19 @@
 #include "EnginePch.h"
 #include "EngineVoidPopup.h"
+#include "EngineLogViewer.h"
+#include "EngineDebugViewer.h"
+#include "EngineSceneEditor.h"
 
 namespace cmEngine
 {
+	EngineVoidPopup::EngineVoidPopup() {}
+	EngineVoidPopup::~EngineVoidPopup() {}
+
 	void EngineVoidPopup::Initialize()
 	{
+		logView = GuiRenderer::FindGuiFrameOrNull<EngineLogViewer>()->GetGui();
+		debugView = GuiRenderer::FindGuiFrameOrNull<EngineDebugViewer>()->GetGui();
+		sceneView = GuiRenderer::FindGuiFrameOrNull<EngineSceneEditor>()->GetGui();
 	}
 
 	void EngineVoidPopup::GuiLayout()
@@ -17,7 +26,13 @@ namespace cmEngine
 			ImGui::Separator();
 			ImGui::MenuItem("Set clear color", nullptr, &mClearColorBit);
 			ImGui::Separator();
-			if (ImGui::Selectable("Close Game")) { EngineCore::Get()->CloseGame(); }
+
+			ImGui::MenuItem("Log view", ToString(logView->GetHotKey()), logView->GetVisibleAddr());
+			ImGui::MenuItem("Debug view", ToString(debugView->GetHotKey()), debugView->GetVisibleAddr());
+			ImGui::MenuItem("Scene Editor", ToString(sceneView->GetHotKey()), sceneView->GetVisibleAddr());
+		
+			ImGui::Separator();
+			if (ImGui::MenuItem("Close Game")) { EngineCore::Get()->CloseGame(); }
 			ImGui::EndPopup();
 		}
 	}

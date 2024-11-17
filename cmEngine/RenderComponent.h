@@ -9,8 +9,8 @@ namespace cmEngine
 		RenderComponent() = default;
 		virtual ~RenderComponent() = default;
 
-		void OnStart() override;
-		void OnFinish() override;
+		void Awake() override;
+		void Sleep() override;
 
 		const PipelineData& GetPipelineData() const { return mPipeData; }
 		void				SetShaders(ShaderSet* inShaderSet) { mPipeData.ShaderSet = inShaderSet; }
