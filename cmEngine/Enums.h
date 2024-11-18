@@ -24,8 +24,3 @@ enum eConstantBufferApplyFlags_
 	CONSTANT_BUFFER_APPLY_PIXELSHADER = 1 << 1,
 };
 
-enum class eProjectionMode
-{
-	Perspective = 0,
-	Orthographic = 1,
-};

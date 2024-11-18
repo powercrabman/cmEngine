@@ -13,8 +13,8 @@ namespace cmEngine
 	protected:
 		Application();
 
-		virtual void Initialize()	abstract;
-		virtual void CleanUp()		abstract;
+		virtual void Initialize()	= 0;
+		virtual void CleanUp()		= 0;
 
 		virtual void UpdateCore()		final;
 		virtual void CleanUpCore()		final;

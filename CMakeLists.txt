@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.29)
+cmake_minimum_required(VERSION 3.10)
+
 project(cmEngine)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -37,11 +38,7 @@ add_executable(cmEngine
     cmEngine/ini/INIReader.cpp
     cmEngine/ini/INIReader.h
     cmEngine/Inter/Debug/cmEngine.pch
-    cmEngine/Inter/Debug/unity_8L1BVPPMSL0UHZ09.cpp
-    cmEngine/Inter/Debug/unity_GVYFYSNXYJIRJOYV.cpp
     cmEngine/Inter/Release/cmEngine.pch
-    cmEngine/Inter/Release/unity_8L1BVPPMSL0UHZ09.cpp
-    cmEngine/Inter/Release/unity_LPQ93JSMSYVQ5BPY.cpp
     cmEngine/CameraScript.cpp
     cmEngine/CameraScript.h
     cmEngine/cmAlgorithm.cpp
@@ -249,7 +246,6 @@ add_executable(cmEngine
     Sample/pch.cpp
     Sample/pch.h
     TestClient/Inter/TestClient.pch
-    TestClient/Inter/unity_ZF4N846DJ8K3P53T.cpp
     TestClient/Demo.cpp
     TestClient/Demo.h
     TestClient/DummyScene.cpp
@@ -259,4 +255,6 @@ add_executable(cmEngine
     TestClient/Main.cpp
     TestClient/pch.cpp
     TestClient/pch.h
-    TestConsole/TestConsole.cpp)
+    TestConsole/TestConsole.cpp
+        cmEngine/GameEntity.h
+        cmEngine/GameEntity.h)

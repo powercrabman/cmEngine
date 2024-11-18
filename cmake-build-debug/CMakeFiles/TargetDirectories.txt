@@ -1,3 +1,0 @@
-C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmake-build-debug/CMakeFiles/cmEngine.dir
-C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Ahnjiwoo/Desktop/Projects/cmEngine/cmake-build-debug/CMakeFiles/rebuild_cache.dir

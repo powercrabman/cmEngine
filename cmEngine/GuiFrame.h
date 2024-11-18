@@ -11,8 +11,8 @@ namespace cmEngine
 		GuiFrame() = default;
 		virtual ~GuiFrame() = default;
 
-		virtual void Initialize() abstract;
-		virtual void GuiLayout() abstract;
+		virtual void Initialize() = 0;
+		virtual void GuiLayout() = 0;
 
 		const char* GetName() const { return mName.c_str(); }
 		Gui*		GetGui() const { return mGui; }

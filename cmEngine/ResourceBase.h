@@ -13,7 +13,7 @@ namespace cmEngine
 		ResourceBase(std::string_view inName);;
 		virtual ~ResourceBase() = default;
 
-		virtual const char*			ToString() abstract;
+		virtual const char*			ToString() = 0;
 
 	private:
 		std::string mName = {};

@@ -6,7 +6,4 @@ class Game : public cmEngine::Application
 public:
 	void Initialize() override;
 	void CleanUp() override;
-
-private:
-
 };

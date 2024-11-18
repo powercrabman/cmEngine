@@ -2,64 +2,105 @@
 
 namespace cmEngine
 {
-	struct PipelineData
-	{
-		void Clear()
-		{
-			Geometry  = nullptr;
-			ShaderSet = nullptr;
-			Texture   = nullptr;
-
-			Blendstate        = eBlendState::Defaul;
-			SamplerState      = eSamplerState::Default;
-			DepthStencilState = eDepthStencilState::Default;
-			RasterizerState   = eRasterizerState::Default;
-
-			RenderState::BindBlendState(Blendstate);
-			RenderState::BindSamplerState(SamplerState, PipelineShaderFlags_PixelShader);
-			RenderState::BindDepthStencilState(DepthStencilState);
-			RenderState::BindRasterizerState(RasterizerState);
-		}
-
-		Geometry*			Geometry           = nullptr;
-		ShaderSet*			ShaderSet          = nullptr;
-		Texture*			Texture            = nullptr;
-
-		eBlendState			Blendstate         = eBlendState::Defaul;
-		eSamplerState		SamplerState       = eSamplerState::Default;
-		eDepthStencilState	DepthStencilState  = eDepthStencilState::Default;
-		eRasterizerState	RasterizerState    = eRasterizerState::Default;
-	};
-
 	class Pipeline
 	{
 	public:
-		Pipeline() = default;
+		Pipeline();
 		virtual ~Pipeline() = default;
 
-		void DrawIndices()
+		void Draw(
+			Geometry* inGeometry, 
+			const Matrix& inWorld, 
+			ShaderSet* inShaders, 
+			const RenderState& inRenderState
+		)
 		{
-			Renderer::GetContext()->DrawIndexed(mPipeData.Geometry->GetIndexBuffer()->GetBufferSize(), 0, 0);
+			SetWorld(inWorld);
+			SetShaders(inShaders);
+			SetRenderState(inRenderState);
+
+			Renderer::GetContext()->DrawIndexed(inGeometry->GetIndexBuffer()->GetBufferSize(), 0, 0);
 		}
 
-		void Draw()
+		void DrawTexture(
+			Geometry* inGeometry, 
+			const Matrix& inWorld, 
+			ShaderSet* inShaders, 
+			const RenderState& inRenderState,
+			Texture* inTexture,
+			float inOffsetRow,
+			float inOffsetCol
+		)
 		{
-			Renderer::GetContext()->Draw(mPipeData.Geometry->GetVertexBuffer()->GetBufferSize(), 0);
+			SetWorld(inWorld);
+			SetShaders(inShaders);
+			SetRenderState(inRenderState);
+			SetTexture(inTexture, inOffsetRow, inOffsetCol);
+
+			Renderer::GetContext()->DrawIndexed(inGeometry->GetIndexBuffer()->GetBufferSize(), 0, 0);
 		}
 
-		void SubmitPipeline(const PipelineData& inPipelineDate);
-		void SubmitConstantData();
-
-		void Clear()
+		void SetViewProj(const Matrix& inViewProj)
 		{
-			mPipeData.Clear();
-			ConstantBufferDatas.fill(nullptr);
+			mCameraCB->UpdateBuffer(CBCamera{ .ViewProj = inViewProj });
+		}
+
+		void SetViewProj(const Matrix& inView, const Matrix& inProj)
+		{
+			SetViewProj(inView * inProj);
+		}
+
+		void Clear();
+
+	private:
+		void SetRenderState(const RenderState& inRenderState);
+		void SetShaders(ShaderSet* inShaders)
+		{
+			if (mShaders != inShaders)
+			{
+				mShaders = inShaders;
+				Renderer::GetContext()->VSSetShader(mShaders->GetVertexShader()->GetShader().Get(), nullptr, 0);
+				Renderer::GetContext()->PSSetShader(mShaders->GetPixelShader()->GetShader().Get(), nullptr, 0);
+			}
+		}
+
+		void SetWorld(const Matrix& inWorld)
+		{
+			mTransformCB->UpdateBuffer(CBTransform{ .World = inWorld });
+		}
+
+		void SetTexture(Texture* inTextrue, float offsetX = 0.f, float offsetY = 0.f)
+		{
+			if (mTexture != inTextrue)
+			{
+				mTexture = inTextrue;
+				Renderer::GetContext()->PSSetShaderResources(0, 1, mTexture->GetShaderResourceView().GetAddressOf());
+			}
+
+			mSpriteCB->UpdateBuffer(CBSprite{
+					.PivotCol = offsetX,
+					.PivotRow = offsetY
+				});
 		}
 
 	private:
-		PipelineData	mPipeData = {};
+		// Transform
+		ConstantBuffer<CBTransform>*	mTransformCB = nullptr;
 
-		enum { CONSTANTBUFFER_SLOT_MAX = 10 };
-		std::array<ConstantBufferBase*, CONSTANTBUFFER_SLOT_MAX> ConstantBufferDatas = {}; 
+		// Camera
+		Matrix						mViewProj = Matrix::Identity;
+		ConstantBuffer<CBCamera>*	mCameraCB = nullptr;
+
+		// Texture
+		Texture*					mTexture    = nullptr;
+		ConstantBuffer<CBSprite>*	mSpriteCB   = nullptr;
+
+		// RenderState
+		RenderState mRenderState = {};
+		inline static FLOAT sBlendFactor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
+		inline static UINT sSampleMask = 0xFFFFFFFF;
+
+		// Shader
+		ShaderSet* mShaders = {};
 	};
 };

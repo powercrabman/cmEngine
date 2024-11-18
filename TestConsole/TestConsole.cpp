@@ -1,14 +1,12 @@
 ﻿#include <iostream>
-#include <fstream>
-#include "../Libraries/json/json.hpp"
-using json = nlohmann::json;
-
 
 int main()
 {
-    json js = {};
-    js["Hello"] = 10;
-    std::cout << js;
+#if __cplusplus >= 201703L
+	std::cout << "C++17 or later enabled!" << std::endl;
+#else
+	std::cout << "C++17 not enabled!" << std::endl;
+#endif
 
     return 0;
 }

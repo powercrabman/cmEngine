@@ -4,102 +4,92 @@
 
 namespace cmEngine
 {
-	Scene::Scene()
-	{
-		mObjectRepo.reserve(256);
-		mUpdateList.reserve(256);
-	}
-
-	Scene::~Scene()
-	{
-	}
+	Scene::Scene() {}
+	Scene::~Scene() {}
 
 	void Scene::EnterSceneCore()
 	{
+		// 기본 카메라 엔티티 생성
+		mDefaultCameraEntity = CreateGameEntity();
+		mDefaultCameraEntity.CreateComponent<Transform>(Transform::sIdentity);
+		mDefaultCameraEntity.CreateComponent<Camera>(Camera::CreatePerspective(Math::DegToRad(45.f), 0.01f, 100.f));
+
 		EnterScene();
 	}
 
 	void Scene::UpdateScene()
 	{
-		for (GameEntity* obj : mUpdateList)
+		for (const auto& func : mSystemLayer[static_cast<uint32>(eSystemLayer::Update)])
 		{
-			if (obj->IsActive())
-			{
-				obj->Update();
-			}
+			func(this);
 		}
+	}
 
-		for (GameEntity* obj : mUpdateList)
-		{
-			if (obj->IsActive())
-			{
-				obj->FinalUpdate();
-			}
-		}
+	void Scene::RenderScene()
+	{
+		// Camera Data Update
+		UpdateCamera();
 
-		for (GameEntity* obj : mUpdateList)
+		for (const auto& func : mSystemLayer[static_cast<uint32>(eSystemLayer::Render)])
 		{
-			if (obj->IsActive())
-			{
-				obj->PreRender();
-			}
+			func(this);
 		}
 	}
 
 	void Scene::ExitSceneCore()
 	{
 		ExitScene();
-
-		// 모든 오브젝트의 Active를 false로 바꾼뒤 파괴
-		for (GameEntity* obj : mUpdateList)
-		{
-			obj->SetActive(false);
-		}
-
-		mObjectRepo.clear();
-		mUpdateList.clear();
-
-		// TODO : 다음 씬으로 넘겨야하는 객체는 따로 처리
 	}
 
-	GameEntity* Scene::CreateGameEntity(bool isActive)
+	GameEntity Scene::FindEntityByName(const Name& inName)
 	{
-		Scope<GameEntity> obj = MakeScope<GameEntity>();
-		GameEntity* ptr = obj.get();
-		mUpdateList.push_back(ptr);
-		mObjectRepo[obj->GetObjectID()] = std::move(obj);
-		if (isActive) { ptr->SetActive(true); };
-
-		return ptr;
-	}
-
-	GameEntity* Scene::FindGameEntityOrNull(const uint64& inObjID) const
-	{
-		auto iter = mObjectRepo.find(inObjID);
-		if (iter == mObjectRepo.end())
+		auto view = mRegistry.view<Name>();
+		for (auto entity : view)
 		{
-			ASSERT(false, "Do not exist Game Object.");
-			LOG_ERROR("Do not exist Game Object.");
-			return nullptr;
-		}
-		return iter->second.get();
-	}
-
-	void Scene::RemoveGameEntity(const uint64& inObjID)
-	{
-		auto iter = mObjectRepo.find(inObjID);
-		if (iter == mObjectRepo.end())
-		{
-			ASSERT(false, "Do not exist Game Object.");
-			LOG_ERROR("Do not exist Game Object.");
-			return;
+			if (view.get<Name>(entity) == inName)
+			{
+				return GameEntity{ entity };
+			}
 		}
 
-		// TODO : 최적화 필요
-		static const auto FindLambda = [&](GameEntity* inObj) { return inObj->GetObjectID() == inObjID; };
-		auto removeIter = std::remove_if(mUpdateList.begin(), mUpdateList.end(), FindLambda);
-		mUpdateList.erase(removeIter, mUpdateList.end());
+		return GameEntity::NullEntity;
+	}
 
-		mObjectRepo.erase(iter);
+
+	GameEntity Scene::FindByID(uint32 inID) const
+	{
+		entt::entity entity = static_cast<entt::entity>(inID);
+		if (mRegistry.valid(entity))
+		{
+			return GameEntity{ entity };
+		}
+		else
+		{
+			return GameEntity::NullEntity;
+		}
+	}
+
+	void Scene::SetCameraEntity(const GameEntity& inEntity)
+	{
+		if (inEntity.IsValid() && inEntity.HasComponents<Transform, Camera>())
+		{
+			mCameraEntity = inEntity;
+		}
+	}
+
+	GameEntity Scene::GetCameraEntity() const
+	{
+		return mDefaultCameraEntity;
+	}
+
+	void Scene::UpdateCamera()
+	{
+		if (mCameraEntity.IsValid() == false)
+		{
+			mCameraEntity = mDefaultCameraEntity;
+		}
+
+		auto [trans, cmr] = mRegistry.get<Transform, Camera>(mCameraEntity);
+		Renderer::GetPipeline()->SetViewProj(cmr.GetViewProjMatrix(trans));
 	}
 }

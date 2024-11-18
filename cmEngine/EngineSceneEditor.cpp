@@ -18,38 +18,38 @@ namespace cmEngine
 
 	void EngineSceneEditor::GuiLayout()
 	{
-		ImGui::SetNextWindowSize({ 300,400 }, ImGuiCond_FirstUseEver);
-		ImGui::Begin("Scene Editor", GetGuiVisibleAddr());
-		Scene* curSc = SceneManager::GetCurrentScene();
-
-		ImGui::SeparatorText("Scene");
-		ImGui::Text("Scene Name: %s", curSc->ToString());
-		ImGui::Spacing();
-		ImGui::SeparatorText("Camera");
-
-		GameEntity* entity = Renderer::GetCurrentCamera()->GetOwner();
-		ImGui::Text("Onwer Entity Name : %s", entity->GetName());
-		ImGui::Text("Onwer Entity ID : %d", entity->GetObjectID());
-		ImGui::Spacing();
-
-		ImGui::SeparatorText("Entity List");
-		ImGui::Text("Entity count : %d", curSc->GetEntityCount());
-
-		if (ImGui::BeginChild("Entity Viewer", { 0, -5 -ImGui::GetFrameHeightWithSpacing()}, ImGuiChildFlags_Border))
-		{
-			for (auto iter = curSc->GetGameEntitiesConstBegin(); iter != curSc->GetGameEntitiesConstEnd(); ++iter)
-			{
-				GameEntity* e = (*iter);
-				auto str = std::format("Entity Name : {}\nEntity ID : {}", e->GetName(), e->GetObjectID());
-				ImGui::Selectable(str.c_str());
-				ImGui::Separator();
-			}
-			ImGui::EndChild();
-		}
-
-		ImGui::Spacing();
-		if (ImGui::Button("Add GameEntity")) { /* Do Something*/ }
-		ImGui::End();
+		//ImGui::SetNextWindowSize({ 300,400 }, ImGuiCond_FirstUseEver);
+		//ImGui::Begin("Scene Editor", GetGuiVisibleAddr());
+		//Scene* curSc = SceneManager::GetCurrentScene();
+		//
+		//ImGui::SeparatorText("Scene");
+		//ImGui::Text("Scene Name: %s", curSc->ToString());
+		//ImGui::Spacing();
+		//ImGui::SeparatorText("Camera");
+		//
+		//GameEntity* entity = Renderer::GetCurrentCamera()->GetOwner();
+		//ImGui::Text("Onwer GameEntity Name : %s", entity->GetName());
+		//ImGui::Text("Onwer GameEntity ID : %d", entity->GetObjectID());
+		//ImGui::Spacing();
+		//
+		//ImGui::SeparatorText("GameEntity List");
+		//ImGui::Text("GameEntity count : %d", curSc->GetEntityCountOld());
+		//
+		//if (ImGui::BeginChild("GameEntity Viewer", { 0, -5 -ImGui::GetFrameHeightWithSpacing()}, ImGuiChildFlags_Border))
+		//{
+		//	for (auto iter = curSc->GetGameEntitiesConstBeginOld(); iter != curSc->GetGameEntitiesConstEndOld(); ++iter)
+		//	{
+		//		GameEntity* e = (*iter);
+		//		auto str = std::format("GameEntity Name : {}\nEntity ID : {}", e->GetName(), e->GetObjectID());
+		//		ImGui::Selectable(str.c_str());
+		//		ImGui::Separator();
+		//	}
+		//	ImGui::EndChild();
+		//}
+		//
+		//ImGui::Spacing();
+		//if (ImGui::Button("Add GameEntity")) { /* Do Something*/ }
+		//ImGui::End();
 	}
 
 	void EngineSceneEditor::DrawEntityEditor()

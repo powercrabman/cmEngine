@@ -8045,7 +8045,7 @@ static int IMGUI_CDECL PairComparerByValueInt(const void* lhs, const void* rhs)
     return (lhs_v > rhs_v ? +1 : lhs_v < rhs_v ? -1 : 0);
 }
 
-// GetNextSelectedItem() is an abstraction allowing us to change our underlying actual storage system without impacting user.
+// GetNextSelectedItem() is an = 0ion allowing us to change our underlying actual storage system without impacting user.
 // (e.g. store unselected vs compact down, compact down on demand, use raw ImVector<ImGuiID> instead of ImGuiStorage...)
 bool ImGuiSelectionBasicStorage::GetNextSelectedItem(void** opaque_it, ImGuiID* out_id)
 {

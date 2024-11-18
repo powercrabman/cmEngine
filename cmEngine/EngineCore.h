@@ -20,7 +20,7 @@ namespace cmEngine
 			const WindowResolution& inResolution,
 			const WindowPosition& inPosition
 		);
-		void Destory();
+		void Destroy();
 
 		EngineCore() = default;
 		EngineCore(const EngineCore&) = delete;
@@ -43,7 +43,7 @@ namespace cmEngine
 		}
 	}
 
-	inline void EngineCore::Destory()
+	inline void EngineCore::Destroy()
 	{
 		if (sInstance)
 		{

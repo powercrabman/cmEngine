@@ -38,6 +38,9 @@
 #include "json/json.hpp"
 using json = nlohmann::json;
 
+//entt
+#include "../Libraries/entt/entt.hpp"
+
 //DirectX
 #include <d3d11.h>
 #include <d3d11_4.h>
@@ -88,6 +91,7 @@ using namespace Microsoft::WRL;
 #include "GameWindow.h"
 #include "EngineCore.h"
 #include "Input.h"
+#include "ConfigBase.h"
 #include "ConfigEngine.h"
 
 // Rendering & Resource
@@ -100,6 +104,7 @@ using namespace Microsoft::WRL;
 #include "VertexShader.h"
 #include "PixelShader.h"
 #include "Geometry.h"
+#include "RenderStatePool.h"
 #include "RenderState.h"
 #include "ResourceManager.h"
 #include "Texture.h"
@@ -110,16 +115,17 @@ using namespace Microsoft::WRL;
 #include "Gui.h"
 #include "GuiRenderer.h"
 
+// GameEntity
+#include "GameEntity.h"
+#include "Name.h"
+
 // Scene
 #include "Scene.h"
 #include "SceneManager.h"
 
-// GameEntity
-#include "GameEntity.h"
-#include "Component.h"
+// Compoenent System
 #include "Transform.h"
-#include "GeometryRenderer.h"
-#include "FlipbookRenderer.h"
-#include "SpriteRenderer.h"
-#include "CameraComponent.h"
-#include "ConfigBase.h"
+#include "FlipbookRender.h"
+#include "SpriteRender.h"
+#include "Camera.h"
+#include "GeometryRender.h"

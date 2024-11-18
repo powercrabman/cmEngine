@@ -10,8 +10,9 @@ namespace cmEngine
 
 	struct ConfigBase
 	{
-		virtual const wchar_t* GetConfigPath() const abstract;
-		virtual const char* ToString() const abstract;
+		virtual ~ConfigBase() = default;
+		virtual const wchar_t* GetConfigPath() const = 0;
+		virtual const char* ToString() const = 0;
 	};
 
 	//===================================================

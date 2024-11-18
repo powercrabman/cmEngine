@@ -217,7 +217,7 @@ CODE
    - A typical idle frame should never call malloc/free.
    - We rely on a maximum of constant-time or O(N) algorithms. Limiting searches/scans as much as possible.
    - We put particular energy in making sure performances are decent with typical "Debug" build settings as well.
-     Which mean we tend to avoid over-relying on "zero-cost abstraction" as they aren't zero-cost at all.
+     Which mean we tend to avoid over-relying on "zero-cost = 0ion" as they aren't zero-cost at all.
  - This codebase aims to be both highly opinionated and highly flexible:
    - This code works because of the things it choose to solve or not solve.
    - C++: this is a pragmatic C-ish codebase: we don't use fancy C++ features, we don't include C++ headers,

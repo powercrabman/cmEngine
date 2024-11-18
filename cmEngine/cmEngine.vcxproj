@@ -23,7 +23,6 @@
     <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_textedit.h" />
     <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_truetype.h" />
     <ClInclude Include="BatchSystem.h" />
-    <ClInclude Include="CameraComponent.h" />
     <ClInclude Include="ConfigEngine.h" />
     <ClInclude Include="ConfigBase.h" />
     <ClInclude Include="EngineDebugViewer.h" />
@@ -32,15 +31,21 @@
     <ClInclude Include="EngineSceneEditor.h" />
     <ClInclude Include="EngineViewer.h" />
     <ClInclude Include="EngineVoidPopup.h" />
+    <ClInclude Include="FlipbookRenderSystem.h" />
+    <ClInclude Include="GameEntity.h" />
     <ClInclude Include="Flipbook.h" />
-    <ClInclude Include="FlipbookRenderer.h" />
+    <ClInclude Include="FlipbookRender.h" />
+    <ClInclude Include="GeometryRender.h" />
+    <ClInclude Include="GeometryRenderSystem.h" />
     <ClInclude Include="GuiFrame.h" />
-    <ClInclude Include="IFinalUpdateable.h" />
-    <ClInclude Include="IGuiEditable.h" />
-    <ClInclude Include="ISetupable.h" />
-    <ClInclude Include="IUpdateable.h" />
     <ClInclude Include="JsonOverload.h" />
+    <ClInclude Include="Name.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="PrimitiveGeometry.h" />
+    <ClInclude Include="SpriteRenderSystem.h" />
+    <ClInclude Include="Transform.h" />
     <ClInclude Include="Pointer.h" />
+    <ClInclude Include="RenderState.h" />
     <ClInclude Include="ResourceBase.h" />
     <ClInclude Include="ConstantBuffer.h" />
     <ClInclude Include="ConstantBufferBase.h" />
@@ -52,28 +57,21 @@
     <ClInclude Include="IndexBuffer.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="EngineMath.h" />
-    <ClInclude Include="GeometryRenderer.h" />
-    <ClInclude Include="IPreRenderable.h" />
-    <ClInclude Include="RenderComponent.h" />
-    <ClInclude Include="Script.h" />
     <ClInclude Include="EngineAlgorithm.h" />
     <ClInclude Include="EngineAssertion.h" />
-    <ClInclude Include="Component.h" />
     <ClInclude Include="EngineCore.h" />
-    <ClInclude Include="GameEntity.h" />
     <ClInclude Include="Pipeline.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="ShaderSet.h" />
     <ClInclude Include="Sprite.h" />
-    <ClInclude Include="SpriteRenderer.h" />
+    <ClInclude Include="SpriteRender.h" />
     <ClInclude Include="SystemMonitor.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="PixelShader.h" />
     <ClInclude Include="Renderer.h" />
-    <ClInclude Include="RenderState.h" />
+    <ClInclude Include="RenderStatePool.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Timer.h" />
-    <ClInclude Include="Transform.h" />
     <ClInclude Include="TypeID.h" />
     <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="VertexData.h" />
@@ -100,7 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BatchSystem.cpp" />
-    <ClCompile Include="CameraComponent.cpp" />
     <ClCompile Include="ConfigEngine.cpp" />
     <ClCompile Include="ConfigBase.cpp" />
     <ClCompile Include="EngineDebugViewer.cpp" />
@@ -109,15 +106,21 @@
     <ClCompile Include="EngineSceneEditor.cpp" />
     <ClCompile Include="EngineViewer.cpp" />
     <ClCompile Include="EngineVoidPopup.cpp" />
+    <ClCompile Include="FlipbookRenderSystem.cpp" />
+    <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="Flipbook.cpp" />
-    <ClCompile Include="FlipbookRenderer.cpp" />
+    <ClCompile Include="FlipbookRender.cpp" />
+    <ClCompile Include="GeometryRender.cpp" />
+    <ClCompile Include="GeometryRenderSystem.cpp" />
     <ClCompile Include="GuiFrame.cpp" />
-    <ClCompile Include="IFinalUpdateable.cpp" />
-    <ClCompile Include="IGuiEditable.cpp" />
-    <ClCompile Include="ISetupable.cpp" />
-    <ClCompile Include="IUpdateable.cpp" />
     <ClCompile Include="JsonOverload.cpp" />
+    <ClCompile Include="Name.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="PrimitiveGeometry.cpp" />
+    <ClCompile Include="SpriteRenderSystem.cpp" />
+    <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Pointer.cpp" />
+    <ClCompile Include="RenderState.cpp" />
     <ClCompile Include="ResourceBase.cpp" />
     <ClCompile Include="ConstantBuffer.cpp" />
     <ClCompile Include="ConstantBufferBase.cpp" />
@@ -129,28 +132,21 @@
     <ClCompile Include="IndexBuffer.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="EngineMath.cpp" />
-    <ClCompile Include="GeometryRenderer.cpp" />
-    <ClCompile Include="IPreRenderable.cpp" />
-    <ClCompile Include="RenderComponent.cpp" />
-    <ClCompile Include="Script.cpp" />
     <ClCompile Include="EngineAlgorithm.cpp" />
     <ClCompile Include="EngineAssertion.cpp" />
-    <ClCompile Include="Component.cpp" />
     <ClCompile Include="EngineCore.cpp" />
-    <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="Pipeline.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="ShaderSet.cpp" />
     <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="SpriteRenderer.cpp" />
+    <ClCompile Include="SpriteRender.cpp" />
     <ClCompile Include="SystemMonitor.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="PixelShader.cpp" />
     <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="RenderState.cpp" />
+    <ClCompile Include="RenderStatePool.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Timer.cpp" />
-    <ClCompile Include="Transform.cpp" />
     <ClCompile Include="TypeID.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
     <ClCompile Include="VertexData.cpp" />
@@ -318,6 +314,7 @@
       <TranslateIncludes>false</TranslateIncludes>
       <AdditionalIncludeDirectories>
       </AdditionalIncludeDirectories>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>

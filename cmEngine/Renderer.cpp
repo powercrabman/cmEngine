@@ -1,7 +1,6 @@
 #include "EnginePch.h"
 #include "Renderer.h"
 #include "Pipeline.h"
-#include "RenderComponent.h"
 #include "GameEntity.h"
 #include <fstream>
 
@@ -22,23 +21,6 @@ namespace cmEngine
 
 		// Pipeline Clear
 		mPipeline->Clear();
-	}
-
-	void Renderer::Render()
-	{
-		// Camera Data PreRender
-		CBCamera cb;
-		cb.ViewProj = mCameraSystem.MainCamera->GetViewProjection();
-		ConstantBufferPool::FindConstantBuffer<CBCamera>()->UpdateBuffer(cb);
-
-		// Render
-		for (const RenderComponent* inComp : mRenderSystem)
-		{
-			inComp->GetOwner()->PreRender();
-			mPipeline->SubmitPipeline(inComp->GetPipelineData());
-			mPipeline->SubmitConstantData();
-			mPipeline->DrawIndices();
-		}
 	}
 
 	void Renderer::RenderEnd()
@@ -187,14 +169,6 @@ namespace cmEngine
 		mPipeline.reset();
 	}
 
-	void Renderer::UnregisterCamera(CameraComponent* inCameraComponent)
-	{
-		if (inCameraComponent == mCameraSystem.MainCamera)
-		{
-			ENGINE_LOG_TRACE("Main Camera Set. Onwer Object ID: {} Camera Component ID {}", inCameraComponent->GetOwner()->GetObjectID(), inCameraComponent->GetComponentID());
-			mCameraSystem.DefaultEntity->FindComponentOrNull<CameraComponent>();
-		}
-	}
 
 	bool Renderer::Initialize()
 	{
@@ -285,12 +259,6 @@ namespace cmEngine
 
 		// Pipeline
 		mPipeline = MakeScope<Pipeline>();
-
-		// Default Camera System
-		mCameraSystem.DefaultEntity = MakeScope<GameEntity>();
-		mCameraSystem.DefaultEntity->SetName("Default Camera Enitiy");
-		mCameraSystem.DefaultEntity->CreateComponent<CameraComponent>(mCameraSystem.DefaultEntity->FindComponentOrNull<Transform>());
-		mCameraSystem.MainCamera = mCameraSystem.DefaultEntity->FindComponentOrNull<CameraComponent>();
 
 		// Setting Load
 		{

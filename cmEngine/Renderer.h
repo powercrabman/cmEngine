@@ -19,7 +19,6 @@ namespace cmEngine
 
 	public:
 		static void		RenderBegin();
-		static void		Render();
 		static void		RenderEnd();
 
 		static void		SetClearColor(const Color& inClearColor) { mCanvas.ClearColor = inClearColor; }
@@ -30,14 +29,9 @@ namespace cmEngine
 		static ::ComPtr<ID3D11Device>			GetDevice() { return mDevice.Device; }
 		static ::ComPtr<ID3D11DeviceContext>	GetContext() { return mDevice.Context; }
 
-		static void		RegisterRenderComponent(RenderComponent* inComp) { mRenderSystem.Push(inComp); };
-		static void		UnregisterRenderComponent(RenderComponent* inComp) { mRenderSystem.Remove(inComp); };
-
 		static float	GetAspectRatio() { return mCanvas.RenderViewport.AspectRatio(); }
 
-		static void		RegisterCamera(CameraComponent* inCameraComponent) { mCameraSystem.MainCamera = inCameraComponent; };
-		static void		UnregisterCamera(CameraComponent* inCameraComponent);
-		static CameraComponent* GetCurrentCamera() { return mCameraSystem.MainCamera; }
+		static Pipeline* GetPipeline() { return mPipeline.get(); }
 
 	private:
 		static bool Initialize();
@@ -75,12 +69,6 @@ namespace cmEngine
 			bool	Enable;
 		};
 
-		struct CameraSystem
-		{
-			Scope<GameEntity>	DefaultEntity = nullptr;
-			CameraComponent* MainCamera       = nullptr;
-		};
-
 		inline static RenderCoreDevice	mDevice    = {};
 		inline static RenderSubDevice	mSubDevice = {};
 		inline static RenderCanvas		mCanvas    = {};
@@ -89,9 +77,6 @@ namespace cmEngine
 		inline static MultiSamplingProp mMSAA         = {};
 
 		inline static Scope<Pipeline>				mPipeline     = nullptr;
-		inline static BatchSystem<RenderComponent>	mRenderSystem = {};
-
-		inline static CameraSystem		mCameraSystem = {};
 
 		inline static constexpr wchar_t sSettingFilePath[] = L"RendererSetting.json";
 	};

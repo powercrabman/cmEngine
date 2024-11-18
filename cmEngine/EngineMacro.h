@@ -9,7 +9,8 @@ friend class cmApplication;
 #define TYPE_ID(type)			cmEngine::TypeIDGen<type>::ID()
 
 #define IMPLEMENTS	public
-#define INTERFACE	class
+#undef	INTERFACE
+#define INTERFACE class 
 
 #define NODISCARD		[[nodiscard]]
 #define FORCEINLINE		__forceinline

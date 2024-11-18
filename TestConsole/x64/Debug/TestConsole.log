@@ -1,3 +1,4 @@
 ﻿  The vcpkg manifest was disabled, but we found a manifest file in C:\Users\Ahnjiwoo\. You may want to enable vcpkg manifests in your properties page or pass /p:VcpkgEnableManifest=true to the msbuild invocation.
   TestConsole.cpp
+  LINK : C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\x64\Debug\TestConsole.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
   TestConsole.vcxproj -> C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\x64\Debug\TestConsole.exe

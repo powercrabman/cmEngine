@@ -48,13 +48,12 @@ namespace cmEngine
 
 		// Update
 		{
-			SceneManager::UpdateCore();
+			SceneManager::Update();
 		}
 
 		// Render
 		{
 			Renderer::RenderBegin();
-			Renderer::Render();
 			GuiRenderer::Render();
 			Renderer::RenderEnd();
 		}
@@ -69,7 +68,7 @@ namespace cmEngine
 		Log::Destory();
 
 		// Engine Terminate
-		EngineCore::Get()->Destory();
+		EngineCore::Get()->Destroy();
 	}
 
 	int Application::Run()

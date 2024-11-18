@@ -4,11 +4,18 @@
 
 namespace cmEngine
 {
-	void SceneManager::UpdateCore()
+	void SceneManager::Update()
 	{
 		if (mCurrentScene)
 		{
 			mCurrentScene->UpdateScene();
+		}
+	}
+	void SceneManager::Render()
+	{
+		if (mCurrentScene)
+		{
+			mCurrentScene->RenderScene();
 		}
 	}
 }

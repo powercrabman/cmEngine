@@ -1,0 +1,579 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.42.34433.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/demogame/demoscene.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "07cfc89b66e9139223b3af49530e0452a357ea44577da8bd9b8cda8da8fffb91"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/demogame/pch.h"
+          },
+          "hashes": {
+            "sha-256": "03c8ca306074fcb96ec838b70e474eace931318468775a5d55218579d390b6ba"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/enginepch.h"
+          },
+          "hashes": {
+            "sha-256": "5a56329b6affab1dbf15e7bd5e9136b645480d99c0b3e7a390353e9e40a1a611"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/libraries/json/json.hpp"
+          },
+          "hashes": {
+            "sha-256": "ebde20cb78aeb40fd591f297d550199e9e2edd360a3d5bee4a06e2af83f35e51"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/libraries/directxtk/simplemath.h"
+          },
+          "hashes": {
+            "sha-256": "96dffdf0a2837286b644e052fd49dd508e474258e37a813d9277c6bc1c01b595"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/libraries/directxtk/simplemath.inl"
+          },
+          "hashes": {
+            "sha-256": "c2f52420fc682dbce209780d47c8b657ab8adbc26e6ed129bcfe1f3998d81707"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/libraries/directxtex/directxtex.h"
+          },
+          "hashes": {
+            "sha-256": "62ced84a376724e658b08b7f6aec57b6c864b73354d688e7ce8c059747266b04"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/libraries/directxtex/directxtex.inl"
+          },
+          "hashes": {
+            "sha-256": "08c49ce082128f955834f861127ea763adbd32ae36277be387619598cceed309"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imguiinc.h"
+          },
+          "hashes": {
+            "sha-256": "8c09f855a6191fab0d6c688d06cdded392399940888b82e3f1c1fbc780c3222c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imgui.h"
+          },
+          "hashes": {
+            "sha-256": "1a67a5cf6f31c21bf545582258e17cad9472995e4bc1db7bc61079254b897196"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imconfig.h"
+          },
+          "hashes": {
+            "sha-256": "ab7cab963a542ac9dda100e7189e1f18b28f45aa696b8ba6bd931ac932863d30"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imgui_impl_dx11.h"
+          },
+          "hashes": {
+            "sha-256": "e95c690ca3e16201fd2377a80f1fa343f3c29f0108791d844dda8e19fbe0cdc1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imgui_impl_win32.h"
+          },
+          "hashes": {
+            "sha-256": "43a370ddff798a091613eb9bd1828f6d7c16bbbbcae296b4588db7f4c532d721"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/imgui/imgui_internal.h"
+          },
+          "hashes": {
+            "sha-256": "0adc1da7fca413b5d0feb8c9158dac0b417eadf592ddf02e05b40caf0c655406"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/types.h"
+          },
+          "hashes": {
+            "sha-256": "7f9377393124b4ebf75a83c321d5be83b219f68ea3bbbe3fa67fcfdf8b14e9f8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/colors.h"
+          },
+          "hashes": {
+            "sha-256": "201bd917be76e5d83203014793f078053b34b75b26c9d1767a8796aef7c573a6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/enums.h"
+          },
+          "hashes": {
+            "sha-256": "2004ca6f549c5de78694d71447a5b85c2550dfa1682883119712b60e0df004af"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/jsonoverload.h"
+          },
+          "hashes": {
+            "sha-256": "75ccab0cef476384546d45c5259ae196f9a5805f72d245161e3d15c88d22daa5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/engineassertion.h"
+          },
+          "hashes": {
+            "sha-256": "583974dc9fd3a21a77436d1ae897dd1571f74ce8ed42c64a5750c4fcc16d4215"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/timer.h"
+          },
+          "hashes": {
+            "sha-256": "13a60129203710749810c784f0ab163abf8ef3abc4ddf3e83adc1804fdebd704"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/log.h"
+          },
+          "hashes": {
+            "sha-256": "6a025095bcb47087ca13adfad5fa52f68d66928d94999beff8c2ae9791328268"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/pointer.h"
+          },
+          "hashes": {
+            "sha-256": "7419a3c267b324135e19bed2c3414acb62e8ebc520283337070a8f0182bf97e0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/enginemacro.h"
+          },
+          "hashes": {
+            "sha-256": "345c7fa68505dd37392442b67fae1110e40ae1fe764339d7e0bcf6506866df42"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/enginealgorithm.h"
+          },
+          "hashes": {
+            "sha-256": "1b56ac68da2b6100e664a14115b2103353c82310aa10e69b8c505ca288cfc999"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/typeid.h"
+          },
+          "hashes": {
+            "sha-256": "da89b2dc1481046e1f45df9c0f2bb8ad0b499189eb3ca421a5419c1139af4753"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/enginemath.h"
+          },
+          "hashes": {
+            "sha-256": "9b290187a78f2e850438e6c227a7d7385cb501c496d643bd9b21674771ef8522"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/batchsystem.h"
+          },
+          "hashes": {
+            "sha-256": "c2feec71691526742d28481b1173706496b1cc812381a2d3a10ec68ac3fbd7a1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/gamewindow.h"
+          },
+          "hashes": {
+            "sha-256": "8e356e246a355a109476c02bc99909baff9fdeee7e47dce0ece5e65dba561acd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/enginecore.h"
+          },
+          "hashes": {
+            "sha-256": "979450470977e7407b0182365171e28bdf83fa8618d9b4c0e8ddbe6c09953df7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/input.h"
+          },
+          "hashes": {
+            "sha-256": "850eff12cec5197ba8a46b59321a7e90d5311cb2c8f51fdb689f2fdcf44725d4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/configengine.h"
+          },
+          "hashes": {
+            "sha-256": "e456100592360b118b73d40f3e00064f61d8554ac643d208b67990c8b4c0bec5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/viewport.h"
+          },
+          "hashes": {
+            "sha-256": "ef37840f36b6f59639798c752f441d0f5848932c365a70a9d1f56cb048ee5bcc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/renderer.h"
+          },
+          "hashes": {
+            "sha-256": "b43e500ab0b8b0fe01f0206c95495e40a05848f2af023b63f7b034c7386f860a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/constantbufferdata.h"
+          },
+          "hashes": {
+            "sha-256": "1eb26e2e04c250ac71ebad22afeb1826f3598704951dacbbcf2c95413e08f9f9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/constantbuffer.h"
+          },
+          "hashes": {
+            "sha-256": "1ad99ad07fb1507bece0957d2056241c55f347f2dc5ef12a6fd9876ab68f2412"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/constantbufferbase.h"
+          },
+          "hashes": {
+            "sha-256": "095cf945e3d8619df90b1890ae403c9dd0ae45d7ec22b104ddbb0a47b27adb82"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/constantbufferpool.h"
+          },
+          "hashes": {
+            "sha-256": "8045ab9842596543e913629f37a4f20ec40f6feedeb81aa515c4b74ee4c3bbf1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/vertexdata.h"
+          },
+          "hashes": {
+            "sha-256": "70402b91823157e05aaf034cc8968a623e142bd6f2fa9ece6304e1af7945060a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/vertexshader.h"
+          },
+          "hashes": {
+            "sha-256": "2a07030874f41388cb06afaabdfe817bc48c7c60c843c1bef898dc65ab042cdb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/shader.h"
+          },
+          "hashes": {
+            "sha-256": "d72451c6a692c122edcab1da92c2f69bdd5efa2d27930b879b5ccd94ed44e66c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/pixelshader.h"
+          },
+          "hashes": {
+            "sha-256": "f99925362ba904ea2be7c8eb475ff94d1085dc5bba5fdcc5e6dbf7ceecbb4e25"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/geometry.h"
+          },
+          "hashes": {
+            "sha-256": "c84f93aa721a5ab7ce86c83cbffab0fd4e374b77a267cdb8478a0634d756adc6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/indexbuffer.h"
+          },
+          "hashes": {
+            "sha-256": "0f24200043bbe3881b2d10f7251781b0312d287f3a1d22cea3851a1ac6080376"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/vertexbuffer.h"
+          },
+          "hashes": {
+            "sha-256": "81c666c90c1419d04c1a2c46a844b92483740d17e7ac7bc0a188134b7a1565be"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/renderstate.h"
+          },
+          "hashes": {
+            "sha-256": "8d30df064d17b12f1f57f5f48a2b2eb8358bf3951969b95235b6d4310c1daffa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/resourcemanager.h"
+          },
+          "hashes": {
+            "sha-256": "2d221799426ed862ed7177c1a83fa8364c10f902ec335fff2535889755a42948"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/resourcebase.h"
+          },
+          "hashes": {
+            "sha-256": "6b6e1bd3008d449879a083f0b274f9e30c34774aedaf06721c018743ebcc9b17"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/texture.h"
+          },
+          "hashes": {
+            "sha-256": "511ab0048c56e86db6118d33ba8dca5164dc6d28d2416b61ab9ba16867dca8c5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/sprite.h"
+          },
+          "hashes": {
+            "sha-256": "263b8e429822fc884e111bb7224f8d5009a1913e536ffbddef67b3dbe7499803"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/flipbook.h"
+          },
+          "hashes": {
+            "sha-256": "53e8dfeb5f71984e45f0f85c1503cefd462a4753a92475744dc30fa9bf181fba"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/shaderset.h"
+          },
+          "hashes": {
+            "sha-256": "a5bfc21afd8744c7ec50bf16fbd8937f64423d6235fa6069c37cbff2db19ca6d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/pipeline.h"
+          },
+          "hashes": {
+            "sha-256": "0aaeca1b7f2e9bae6bb375a767a61c121621a12f971bfc671577f2311f6f1e0b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/gui.h"
+          },
+          "hashes": {
+            "sha-256": "e4acf462c45c05284ebde14262cc71023616938a9f4e5758fed2802ddf8268d9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/guirenderer.h"
+          },
+          "hashes": {
+            "sha-256": "9aed46fbb23ec1ef18dd77922faf4334ca45d9b78b17355b6f26486c06418975"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/guiframe.h"
+          },
+          "hashes": {
+            "sha-256": "0b12e4936570fa7e17ff570b0b886052099d6474025b6f0010a5cb0c58472358"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/scene.h"
+          },
+          "hashes": {
+            "sha-256": "796161af4f27a50c70d9175afdbaacd62aad12b3d99482c4d0ac16d9f9069362"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/scenemanager.h"
+          },
+          "hashes": {
+            "sha-256": "54ab7dc89e5c835c629599877e396dd8d44b52ebdb12bd6f2b7803c9de3d95da"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/gameentity.h"
+          },
+          "hashes": {
+            "sha-256": "26c0a470c6591d6fcffdf9e0696cb7fed07afb9765e39f586ed4afd7ed609885"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/component.h"
+          },
+          "hashes": {
+            "sha-256": "cebd49b9fb01392210b06c11777ef646b974622df2fa201fd3d4e31c12857aa7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/transform.h"
+          },
+          "hashes": {
+            "sha-256": "317717a4f46cf1f940535c4cd430e1c9d244ab13b7a8e2e727362dba15f83bc7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/iprerenderable.h"
+          },
+          "hashes": {
+            "sha-256": "2c7c80038888fa1851e67dcdf20b431eef398dfff171224eca5f0105e2a43d95"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/geometryrenderer.h"
+          },
+          "hashes": {
+            "sha-256": "8fddada8eb9ce99117335f308ae5524fb1ae5c4a013944a58f8f263d8a91b9d6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/rendercomponent.h"
+          },
+          "hashes": {
+            "sha-256": "ca9526f41a93e569698b4a758242bf2105c1fa7548b28354cf28e71628db01c4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/flipbookrenderer.h"
+          },
+          "hashes": {
+            "sha-256": "8bae59422782ff324fec2ea9f5b46abffebf542ac34f214f3b9ab06e78156799"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/iupdateable.h"
+          },
+          "hashes": {
+            "sha-256": "a65924b75f10858191a2dcea8afa52a9bb77d9219f3e301e905dce2dd34b2855"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/spriterenderer.h"
+          },
+          "hashes": {
+            "sha-256": "152e70e8e6535ae77a0b285ce3079237fb33718cff004540ff83dd7017089eb7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/cameracomponent.h"
+          },
+          "hashes": {
+            "sha-256": "564ecd7e22d25652dd1093e80dfd805225eaff35dc9c60b519fb1e5214a9a7f7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/cmengine/configbase.h"
+          },
+          "hashes": {
+            "sha-256": "8f7eb5600c536d5789827b6fba690434f0f331c4efab5eea76c24cf30261ff4f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ahnjiwoo/desktop/projects/cmengine/demogame/demoscene.h"
+          },
+          "hashes": {
+            "sha-256": "498afd4bff68c29518bff50b58004f14ca388e2f1ff285be4e21cdd7a6b8e84f"
+          }
+        }
+      ]
+    }
+  ]
+}

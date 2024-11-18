@@ -7,6 +7,14 @@ namespace cmEngine
 #define SCENE_BODY(SceneClassName) \
 	virtual const char*			ToString() override { return #SceneClassName; }; \
 
+	enum eSystemLayer
+	{
+		Update = 0,
+		Render,
+		//
+		Count
+	};
+
 	class Scene
 	{
 	public:
@@ -15,28 +23,77 @@ namespace cmEngine
 
 		void EnterSceneCore();
 		void UpdateScene();
+		void RenderScene();
 		void ExitSceneCore();
 
-		GameEntity* CreateGameEntity(bool isActive = true);
-		GameEntity* FindGameEntityOrNull(const uint64& inObjID) const;
-		void		RemoveGameEntity(const uint64& inObjID);
+		void AttachSystem(void(*inCallback)(Scene*), eSystemLayer inLayer);
+		void DattachSystem(void(*inCallback)(Scene*), eSystemLayer inLayer);
 
-		std::vector<GameEntity*>::const_iterator GetGameEntitiesConstBegin() const { return mUpdateList.cbegin(); }
-		std::vector<GameEntity*>::const_iterator GetGameEntitiesConstEnd() const { return mUpdateList.cend(); }
+		GameEntity	CreateGameEntity() { return GameEntity{ mRegistry.create() }; }
+		void		RemoveGameEntity(const GameEntity& inEntity) { mRegistry.destroy(inEntity); }
 
-		const std::vector<GameEntity*>& GetGameEntities() const { return mUpdateList; }
+		GameEntity	FindEntityByName(const Name& inName);
+		GameEntity	FindByID(uint32 inID) const;
 
-		inline size_t GetEntityCount() { return mUpdateList.size(); }
+		void		SetCameraEntity(const GameEntity& inEntity);
+		GameEntity	GetCameraEntity() const;
 
-		virtual constexpr const char* ToString() abstract;
+		void UpdateCamera();
+
+		template <typename... ComponentTypes>
+		auto GetView();
+
+		template <typename... ComponentTypes>
+		auto GetGroup();
+
+		entt::registry& GetRegistry() { return mRegistry; }
+
+		virtual constexpr const char* ToString() = 0;
 
 	protected:
-		virtual void EnterScene() abstract;
-		virtual void ExitScene() abstract;
+		virtual void EnterScene() = 0;
+		virtual void ExitScene() = 0;
 
 	private:
-		std::unordered_map<uint64, Scope<GameEntity>>	mObjectRepo;
-		std::vector<GameEntity*>						mUpdateList;
+		entt::registry mRegistry = {};
+
+		// System Layer
+		using  GameSystemCallback = void(*)(Scene*);
+		std::array<std::vector<GameSystemCallback>, static_cast<uint32>(eSystemLayer::Count)> mSystemLayer;
+
+		// Camera
+		GameEntity mDefaultCameraEntity = GameEntity::NullEntity;
+		GameEntity mCameraEntity        = GameEntity::NullEntity;
 	};
+
+	//===================================================
+	//                      Inline
+	//===================================================
+
+	inline void cmEngine::Scene::AttachSystem(void(*inCallback)(Scene*), eSystemLayer inLayer)
+	{
+		mSystemLayer[static_cast<uint32>(inLayer)].emplace_back(inCallback);
+	}
+
+	inline void cmEngine::Scene::DattachSystem(void(*inCallback)(Scene*), eSystemLayer inLayer)
+	{
+		auto& callbackList = mSystemLayer[static_cast<uint32>(inLayer)];
+		std::erase_if(callbackList,
+		              [inCallback](const GameSystemCallback& callback) {
+			              return callback == inCallback;
+		              });
+	}
+
+	template<typename ...ComponentTypes>
+	inline auto cmEngine::Scene::GetView()
+	{
+		return mRegistry.view<ComponentTypes...>();
+	}
+
+	template<typename ...ComponentTypes>
+	inline auto cmEngine::Scene::GetGroup()
+	{
+		return mRegistry.group<ComponentTypes...>();
+	}
 }
 

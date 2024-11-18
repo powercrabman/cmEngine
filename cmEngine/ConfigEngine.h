@@ -2,8 +2,6 @@
 
 namespace cmEngine
 {
-	struct ConfigBase;
-
 	struct ConfigEngine
 	{
 		static void Destroy()

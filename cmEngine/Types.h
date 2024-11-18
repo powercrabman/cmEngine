@@ -12,10 +12,10 @@ using uint64 = unsigned __int64;
 
 using HR = HRESULT;
 
-using Vector2    = DirectX::SimpleMath::Vector2;
-using Vector3    = DirectX::SimpleMath::Vector3;
-using Vector4    = DirectX::SimpleMath::Vector4;
-using Matrix     = DirectX::SimpleMath::Matrix;
-using Color      = DirectX::SimpleMath::Color;
-using Quaternion = DirectX::SimpleMath::Quaternion;
-
+using Vector2		= DirectX::SimpleMath::Vector2;
+using Vector3		= DirectX::SimpleMath::Vector3;
+using Vector4		= DirectX::SimpleMath::Vector4;
+using Matrix		= DirectX::SimpleMath::Matrix;
+using Color			= DirectX::SimpleMath::Color;
+using Quaternion	= DirectX::SimpleMath::Quaternion;
+using EulerAngle	= DirectX::SimpleMath::Vector3;

@@ -3,98 +3,57 @@
 
 namespace cmEngine
 {
-	void Pipeline::SubmitPipeline(const PipelineData& inPipelineDate)
+	Pipeline::Pipeline()
 	{
-		auto context = Renderer::GetContext();
-		if (mPipeData.Geometry != inPipelineDate.Geometry)
-		{
-			mPipeData.Geometry = inPipelineDate.Geometry;
+		mTransformCB = ConstantBufferPool::FindConstantBuffer<CBTransform>();
+		mCameraCB    = ConstantBufferPool::FindConstantBuffer<CBCamera>();
+		mSpriteCB    = ConstantBufferPool::FindConstantBuffer<CBSprite>();
 
-			VertexBuffer* vertexBuffer = mPipeData.Geometry->GetVertexBuffer();
-			IndexBuffer* indexBuffer = mPipeData.Geometry->GetIndexBuffer();
-			context->IASetVertexBuffers(0, 1, vertexBuffer->GetBuffer().GetAddressOf(), vertexBuffer->GetStrideAddr(), vertexBuffer->GetOffsetAddr());
-			context->IASetIndexBuffer(indexBuffer->GetBuffer().Get(), DXGI_FORMAT_R32_UINT, 0);
+		Renderer::GetContext()->VSSetConstantBuffers(0, 1, mTransformCB->GetBuffer().GetAddressOf());
+		Renderer::GetContext()->VSSetConstantBuffers(1, 1, mCameraCB->GetBuffer().GetAddressOf());
+		Renderer::GetContext()->VSSetConstantBuffers(2, 1, mSpriteCB->GetBuffer().GetAddressOf());
+	}
+
+	void Pipeline::SetRenderState(const RenderState& inRenderState)
+	{
+		if (mRenderState.blendState != inRenderState.blendState)
+		{
+			mRenderState.blendState = inRenderState.blendState;
+			Renderer::GetContext()->OMSetBlendState(RenderStatePool::GetBlendState(mRenderState.blendState).Get(), sBlendFactor, sSampleMask);
 		}
 
-		if (mPipeData.ShaderSet != inPipelineDate.ShaderSet)
+		if (mRenderState.depthStencilState != inRenderState.depthStencilState)
 		{
-			mPipeData.ShaderSet = inPipelineDate.ShaderSet;
-			VertexShader* vs = mPipeData.ShaderSet->GetVertexShader();
-			PixelShader* ps = mPipeData.ShaderSet->GetPixelShader();
+			mRenderState.depthStencilState = inRenderState.depthStencilState;
 
-			context->IASetInputLayout(vs->GetInputLayout().Get());
-			context->VSSetShader(vs->GetShader().Get(), nullptr, 0);
-			context->PSSetShader(ps->GetShader().Get(), nullptr, 0);
+			Renderer::GetContext()->OMSetDepthStencilState(RenderStatePool::GetDepthStencilState(mRenderState.depthStencilState).Get(), 1);
 		}
 
-		if (mPipeData.Texture != inPipelineDate.Texture)
+		if (mRenderState.rasterizerState != inRenderState.rasterizerState)
 		{
-			mPipeData.Texture = inPipelineDate.Texture;
-			context->PSSetShaderResources(0, 1, mPipeData.Texture->GetShaderResourceView().GetAddressOf());
+			mRenderState.rasterizerState = inRenderState.rasterizerState;
+			Renderer::GetContext()->RSSetState(RenderStatePool::GetRasterizerState(mRenderState.rasterizerState).Get());
 		}
 
-		// Render State
-		if (mPipeData.Blendstate != inPipelineDate.Blendstate)
+		if (mRenderState.samplerState != inRenderState.samplerState)
 		{
-			mPipeData.Blendstate = inPipelineDate.Blendstate;
-			RenderState::BindBlendState(mPipeData.Blendstate);
-		}
-
-		if (mPipeData.SamplerState != inPipelineDate.SamplerState)
-		{
-			//TEMP
-			mPipeData.SamplerState = inPipelineDate.SamplerState;
-			RenderState::BindSamplerState(mPipeData.SamplerState, PipelineShaderFlags_PixelShader);
-		}
-
-		if (mPipeData.DepthStencilState != inPipelineDate.DepthStencilState)
-		{
-			mPipeData.DepthStencilState = inPipelineDate.DepthStencilState;
-			RenderState::BindDepthStencilState(mPipeData.DepthStencilState);
-		}
-
-		if (mPipeData.RasterizerState != inPipelineDate.RasterizerState)
-		{
-			mPipeData.RasterizerState = inPipelineDate.RasterizerState;
-			RenderState::BindRasterizerState(mPipeData.RasterizerState);
+			mRenderState.samplerState = inRenderState.samplerState;
+			Renderer::GetContext()->PSSetSamplers(0, 1, RenderStatePool::GetSamplerState(mRenderState.samplerState).GetAddressOf());
 		}
 	}
 
-	// TODO - 구조바꾸기 (고정 슬롯 형태)
-	void Pipeline::SubmitConstantData()
+	void Pipeline::Clear()
 	{
-		VertexShader* vs = mPipeData.ShaderSet->GetVertexShader();
-		PixelShader* ps  = mPipeData.ShaderSet->GetPixelShader();
+		mViewProj = Matrix::Identity;
 
-		// VS
-		{
-			uint32 idx = 0;
-			
-			for (auto iter = vs->GetConstantBufferListConstBegin(); iter != vs->GetConstantBufferListConstEnd(); ++iter)
-			{
-				ConstantBufferBase* cb = *iter;
-				if (cb != ConstantBufferDatas[idx])
-				{
-					ConstantBufferDatas[idx] = cb;
-					Renderer::GetContext()->VSSetConstantBuffers(idx, 1, cb->GetBuffer().GetAddressOf());
-				}
-				++idx;
-			}
-		}
+		mTexture = nullptr;
 
-		// PS
-		{
-			uint32 idx = 0;
-			for (auto iter = ps->GetConstantBufferListConstBegin(); iter != ps->GetConstantBufferListConstEnd(); ++iter)
-			{
-				ConstantBufferBase* cb = *iter;
-				if (cb != ConstantBufferDatas[idx])
-				{
-					ConstantBufferDatas[idx] = cb;
-					Renderer::GetContext()->PSSetConstantBuffers(idx, 1, cb->GetBuffer().GetAddressOf());
-				}
-				++idx;
-			}
-		}
+		// RenderState Clear
+		mRenderState = RenderState::DefaultState;
+
+		Renderer::GetContext()->OMSetBlendState(RenderStatePool::GetBlendState(mRenderState.blendState).Get(), sBlendFactor, sSampleMask);
+		Renderer::GetContext()->OMSetDepthStencilState(RenderStatePool::GetDepthStencilState(mRenderState.depthStencilState).Get(), 1);
+		Renderer::GetContext()->RSSetState(RenderStatePool::GetRasterizerState(mRenderState.rasterizerState).Get());
+		Renderer::GetContext()->PSSetSamplers(0, 1, RenderStatePool::GetSamplerState(mRenderState.samplerState).GetAddressOf());
 	}
 }

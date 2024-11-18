@@ -5,7 +5,7 @@
 void Game::Initialize()
 {
 	{
-		ShaderSet* sh = ResourceManager::CreateResource<ShaderSet>("DemoShaderSet");
+		ShaderSet* sh = ResourceManager::CreateResource<ShaderSet>("TestShaderSet");
 		VertexShader* vs = sh->GetVertexShader();
 		vs->LoadHLSL(
 			L"C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\CommonResource\\Shader\\1. SimpleColorShader.hlsli",

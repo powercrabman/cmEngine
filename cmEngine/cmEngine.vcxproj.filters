@@ -35,9 +35,6 @@
     <Filter Include="07. GUI\ThirdParty">
       <UniqueIdentifier>{8015412a-1485-48b4-bcf5-d74e816a7be5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="07. GUI\ThirdParty\FileDlg">
-      <UniqueIdentifier>{5462e55e-f84e-4126-a5dd-59c764df4439}</UniqueIdentifier>
-    </Filter>
     <Filter Include="08. Resource">
       <UniqueIdentifier>{baf428ad-91d6-4ff5-8c0a-6a0277008c5e}</UniqueIdentifier>
     </Filter>
@@ -61,24 +58,6 @@
     </Filter>
     <Filter Include="10. GameEntity">
       <UniqueIdentifier>{188b1e91-89dd-4429-ad7a-455226257f0b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="11. Component">
-      <UniqueIdentifier>{9d29ae04-af3f-4e29-8994-095f55173af4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="11. Component\Transform">
-      <UniqueIdentifier>{fcfa6cc6-1105-45fd-920e-6e637f1191c5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="11. Component\Script">
-      <UniqueIdentifier>{e5fe200b-a2b9-436b-95a2-726352de6241}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="11. Component\Interface">
-      <UniqueIdentifier>{da794c36-ed5e-4868-b694-c8b3c46fda58}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="11. Component\RenderComponent">
-      <UniqueIdentifier>{8caa1ee2-562b-4bf5-a1da-fa3def3c42d6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="11. Component\RenderComponent\Base">
-      <UniqueIdentifier>{fd457e53-c328-448b-b2b4-76071d4f0d27}</UniqueIdentifier>
     </Filter>
     <Filter Include="06. Renderer\ConstantBuffer">
       <UniqueIdentifier>{cf8a9746-42b2-433f-8725-dc4f517e4817}</UniqueIdentifier>
@@ -134,9 +113,6 @@
     <Filter Include="08. Resource\ShaderProgram">
       <UniqueIdentifier>{c061f43f-6584-40b3-8e32-a940fdee2047}</UniqueIdentifier>
     </Filter>
-    <Filter Include="11. Component\CameraComponent">
-      <UniqueIdentifier>{78900ad2-f5d6-4a1a-a11d-a62dee9dc077}</UniqueIdentifier>
-    </Filter>
     <Filter Include="07. GUI\GuiFrame">
       <UniqueIdentifier>{b869148c-58eb-4fbd-96e5-4fbe4920bba1}</UniqueIdentifier>
     </Filter>
@@ -163,6 +139,12 @@
     </Filter>
     <Filter Include="94. ConfigEngine">
       <UniqueIdentifier>{031f8f36-4a0f-4fa0-bb44-545e29310c8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="11. Component">
+      <UniqueIdentifier>{9d29ae04-af3f-4e29-8994-095f55173af4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="12. System">
+      <UniqueIdentifier>{318266a7-0812-4551-a1d0-ade588d3539f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -220,20 +202,8 @@
     <ClInclude Include="EngineCore.h">
       <Filter>02. Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Component.h">
-      <Filter>11. Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Script.h">
-      <Filter>11. Component\Script</Filter>
-    </ClInclude>
-    <ClInclude Include="Transform.h">
-      <Filter>11. Component\Transform</Filter>
-    </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>09. Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="GeometryRenderer.h">
-      <Filter>11. Component\RenderComponent</Filter>
     </ClInclude>
     <ClInclude Include="TypeID.h">
       <Filter>98. Utiles\TypeID</Filter>
@@ -241,35 +211,11 @@
     <ClInclude Include="EngineMath.h">
       <Filter>98. Utiles</Filter>
     </ClInclude>
-    <ClInclude Include="CameraComponent.h">
-      <Filter>11. Component\CameraComponent</Filter>
-    </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>08. Resource\Sprite</Filter>
     </ClInclude>
     <ClInclude Include="Flipbook.h">
       <Filter>08. Resource\Flipbook</Filter>
-    </ClInclude>
-    <ClInclude Include="IUpdateable.h">
-      <Filter>11. Component\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="IFinalUpdateable.h">
-      <Filter>11. Component\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="IPreRenderable.h">
-      <Filter>11. Component\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="RenderComponent.h">
-      <Filter>11. Component\RenderComponent\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteRenderer.h">
-      <Filter>11. Component\RenderComponent</Filter>
-    </ClInclude>
-    <ClInclude Include="FlipbookRenderer.h">
-      <Filter>11. Component\RenderComponent</Filter>
-    </ClInclude>
-    <ClInclude Include="ISetupable.h">
-      <Filter>11. Component\Interface</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>09. Scene\Core</Filter>
@@ -301,7 +247,7 @@
     <ClInclude Include="Pipeline.h">
       <Filter>06. Renderer\Pipeline</Filter>
     </ClInclude>
-    <ClInclude Include="RenderState.h">
+    <ClInclude Include="RenderStatePool.h">
       <Filter>06. Renderer\RenderState</Filter>
     </ClInclude>
     <ClInclude Include="VertexBuffer.h">
@@ -361,9 +307,6 @@
     <ClInclude Include="Pointer.h">
       <Filter>99. Base</Filter>
     </ClInclude>
-    <ClInclude Include="GameEntity.h">
-      <Filter>10. GameEntity</Filter>
-    </ClInclude>
     <ClInclude Include="EngineViewer.h">
       <Filter>96. EngineViewer</Filter>
     </ClInclude>
@@ -397,8 +340,41 @@
     <ClInclude Include="ConfigEngine.h">
       <Filter>94. ConfigEngine</Filter>
     </ClInclude>
-    <ClInclude Include="IGuiEditable.h">
-      <Filter>11. Component\Interface</Filter>
+    <ClInclude Include="RenderState.h">
+      <Filter>06. Renderer\RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteRender.h">
+      <Filter>11. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="FlipbookRender.h">
+      <Filter>11. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryRender.h">
+      <Filter>11. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Name.h">
+      <Filter>11. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>11. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>11. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEntity.h">
+      <Filter>10. GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="FlipbookRenderSystem.h">
+      <Filter>12. System</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryRenderSystem.h">
+      <Filter>12. System</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveGeometry.h">
+      <Filter>12. System</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteRenderSystem.h">
+      <Filter>12. System</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -441,20 +417,8 @@
     <ClCompile Include="EngineCore.cpp">
       <Filter>02. Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Component.cpp">
-      <Filter>11. Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Script.cpp">
-      <Filter>11. Component\Script</Filter>
-    </ClCompile>
-    <ClCompile Include="Transform.cpp">
-      <Filter>11. Component\Transform</Filter>
-    </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>09. Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="GeometryRenderer.cpp">
-      <Filter>11. Component\RenderComponent</Filter>
     </ClCompile>
     <ClCompile Include="TypeID.cpp">
       <Filter>98. Utiles\TypeID</Filter>
@@ -462,35 +426,11 @@
     <ClCompile Include="EngineMath.cpp">
       <Filter>98. Utiles</Filter>
     </ClCompile>
-    <ClCompile Include="CameraComponent.cpp">
-      <Filter>11. Component\CameraComponent</Filter>
-    </ClCompile>
     <ClCompile Include="Sprite.cpp">
       <Filter>08. Resource\Sprite</Filter>
     </ClCompile>
     <ClCompile Include="Flipbook.cpp">
       <Filter>08. Resource\Flipbook</Filter>
-    </ClCompile>
-    <ClCompile Include="IUpdateable.cpp">
-      <Filter>11. Component\Interface</Filter>
-    </ClCompile>
-    <ClCompile Include="IFinalUpdateable.cpp">
-      <Filter>11. Component\Interface</Filter>
-    </ClCompile>
-    <ClCompile Include="IPreRenderable.cpp">
-      <Filter>11. Component\Interface</Filter>
-    </ClCompile>
-    <ClCompile Include="RenderComponent.cpp">
-      <Filter>11. Component\RenderComponent\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="SpriteRenderer.cpp">
-      <Filter>11. Component\RenderComponent</Filter>
-    </ClCompile>
-    <ClCompile Include="FlipbookRenderer.cpp">
-      <Filter>11. Component\RenderComponent</Filter>
-    </ClCompile>
-    <ClCompile Include="ISetupable.cpp">
-      <Filter>11. Component\Interface</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>09. Scene\Core</Filter>
@@ -519,7 +459,7 @@
     <ClCompile Include="Pipeline.cpp">
       <Filter>06. Renderer\Pipeline</Filter>
     </ClCompile>
-    <ClCompile Include="RenderState.cpp">
+    <ClCompile Include="RenderStatePool.cpp">
       <Filter>06. Renderer\RenderState</Filter>
     </ClCompile>
     <ClCompile Include="VertexBuffer.cpp">
@@ -582,9 +522,6 @@
     <ClCompile Include="Pointer.cpp">
       <Filter>99. Base</Filter>
     </ClCompile>
-    <ClCompile Include="GameEntity.cpp">
-      <Filter>10. GameEntity</Filter>
-    </ClCompile>
     <ClCompile Include="EngineViewer.cpp">
       <Filter>96. EngineViewer</Filter>
     </ClCompile>
@@ -618,8 +555,41 @@
     <ClCompile Include="ConfigEngine.cpp">
       <Filter>94. ConfigEngine</Filter>
     </ClCompile>
-    <ClCompile Include="IGuiEditable.cpp">
-      <Filter>11. Component\Interface</Filter>
+    <ClCompile Include="RenderState.cpp">
+      <Filter>06. Renderer\RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryRender.cpp">
+      <Filter>11. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Name.cpp">
+      <Filter>11. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>11. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>11. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteRender.cpp">
+      <Filter>11. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="FlipbookRender.cpp">
+      <Filter>11. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEntity.cpp">
+      <Filter>10. GameEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="FlipbookRenderSystem.cpp">
+      <Filter>12. System</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryRenderSystem.cpp">
+      <Filter>12. System</Filter>
+    </ClCompile>
+    <ClCompile Include="PrimitiveGeometry.cpp">
+      <Filter>12. System</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteRenderSystem.cpp">
+      <Filter>12. System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

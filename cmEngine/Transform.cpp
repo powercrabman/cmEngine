@@ -3,11 +3,16 @@
 
 namespace cmEngine
 {
-	void Transform::PreRender()
-	{
-		CBTransform t = {};
-		t.World = GetWorld();
+	Transform Transform::sIdentity = { Vector3::Zero, EulerAngle::Zero, Vector3::One };
 
-		ConstantBufferPool::FindConstantBuffer<CBTransform>()->UpdateBuffer(t);
+	Matrix Transform::GetWorldMatrix() const
+	{
+		return DirectX::XMMatrixAffineTransformation(
+			scaling,
+			Vector3::Zero,
+			Quaternion::CreateFromYawPitchRoll(rotation),
+			position
+		);
 	}
 }
+	

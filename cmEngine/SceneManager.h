@@ -5,7 +5,8 @@ namespace cmEngine
 	class SceneManager
 	{
 	public:
-		static void UpdateCore();
+		static void Update();
+		static void Render();
 
 		template<typename Ty>
 		static Ty* CreateScene()
@@ -29,7 +30,7 @@ namespace cmEngine
 		template<typename Ty>
 		static Ty* FindSceneOrNull()
 		{
-			static_assert(std::is_base_of<Scene, Ty>::value, "Ty must derived by Scene.");
+			static_assert(std::is_base_of_v<Scene, Ty>, "Ty must derived by Scene.");
 			auto iter = mSceneRepo.find(TYPE_ID(Ty));
 
 			if (iter == mSceneRepo.end())
@@ -45,7 +46,7 @@ namespace cmEngine
 		template<typename Ty>
 		static void RemoveScene()
 		{
-			static_assert(std::is_base_of<Scene, Ty>::value, "Ty must derived by Scene.");
+			static_assert(std::is_base_of_v<Scene, Ty>, "Ty must derived by Scene.");
 			auto iter = mSceneRepo.find(TYPE_ID(Ty));
 
 			if (iter == mSceneRepo.end())
@@ -87,6 +88,6 @@ namespace cmEngine
 
 	private:
 		inline static std::unordered_map<TypeID, Scope<Scene>> mSceneRepo = {};
-		inline static Scene* mCurrentScene = nullptr;
+		inline static Scene* mCurrentScene                                = nullptr;
 	};
 }
