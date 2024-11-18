@@ -1,6 +1,9 @@
 #include "EnginePch.h"
 #include "Scene.h"
 #include "GameEntity.h"
+#include "FlipbookRenderSystem.h"
+#include "SpriteRenderSystem.h"
+#include "GeometryRenderSystem.h"
 
 namespace cmEngine
 {
@@ -14,31 +17,41 @@ namespace cmEngine
 		mDefaultCameraEntity.CreateComponent<Transform>(Transform::sIdentity);
 		mDefaultCameraEntity.CreateComponent<Camera>(Camera::CreatePerspective(Math::DegToRad(45.f), 0.01f, 100.f));
 
+		// 기본 시스템 등록
+		AttachSystem(FlipbookUpdateSystem, eSystemLayer::Update);
+
+		AttachSystem(FlipbookRenderSystem, eSystemLayer::Render);
+		AttachSystem(SpriteRenderSystem, eSystemLayer::Render);
+		AttachSystem(GeometryRenderSystem, eSystemLayer::Render);
+
 		EnterScene();
 	}
 
 	void Scene::UpdateScene()
 	{
-		for (const auto& func : mSystemLayer[static_cast<uint32>(eSystemLayer::Update)])
-		{
-			func(this);
-		}
+		// Update Layer
+		for (const auto& func : mSystemLayer[static_cast<uint32>(eSystemLayer::Update)]) { func(this); }
 	}
 
 	void Scene::RenderScene()
 	{
-		// Camera Data Update
-		UpdateCamera();
+		// Camera Update
+		mCameraEntity = mCameraEntity.IsValid() ? mCameraEntity : mDefaultCameraEntity;
+		auto [trans, cmr] = mRegistry.get<Transform, Camera>(mCameraEntity);
+		Renderer::GetPipeline()->SetViewProj(cmr.GetViewProjMatrix(trans));
 
-		for (const auto& func : mSystemLayer[static_cast<uint32>(eSystemLayer::Render)])
-		{
-			func(this);
-		}
+		// Render Layer
+		for (const auto& func : mSystemLayer[static_cast<uint32>(eSystemLayer::Render)]) { func(this); }
 	}
 
 	void Scene::ExitSceneCore()
 	{
 		ExitScene();
+
+		for (auto& layer : mSystemLayer)
+		{
+			layer.clear();
+		}
 	}
 
 	GameEntity Scene::FindEntityByName(const Name& inName)
@@ -63,13 +76,11 @@ namespace cmEngine
 		{
 			return GameEntity{ entity };
 		}
-		else
-		{
-			return GameEntity::NullEntity;
-		}
+
+		return GameEntity::NullEntity;
 	}
 
-	void Scene::SetCameraEntity(const GameEntity& inEntity)
+	void Scene::SetMainCameraEntity(const GameEntity& inEntity)
 	{
 		if (inEntity.IsValid() && inEntity.HasComponents<Transform, Camera>())
 		{
@@ -77,19 +88,8 @@ namespace cmEngine
 		}
 	}
 
-	GameEntity Scene::GetCameraEntity() const
+	GameEntity Scene::GetMainCameraEntity() const
 	{
-		return mDefaultCameraEntity;
-	}
-
-	void Scene::UpdateCamera()
-	{
-		if (mCameraEntity.IsValid() == false)
-		{
-			mCameraEntity = mDefaultCameraEntity;
-		}
-
-		auto [trans, cmr] = mRegistry.get<Transform, Camera>(mCameraEntity);
-		Renderer::GetPipeline()->SetViewProj(cmr.GetViewProjMatrix(trans));
+		return mCameraEntity;
 	}
 }

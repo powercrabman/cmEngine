@@ -26,8 +26,8 @@ namespace cmEngine
 		void RenderScene();
 		void ExitSceneCore();
 
-		void AttachSystem(void(*inCallback)(Scene*), eSystemLayer inLayer);
-		void DattachSystem(void(*inCallback)(Scene*), eSystemLayer inLayer);
+		void AttachSystem(std::function<void(Scene*)> inCallback, eSystemLayer inLayer);
+		void DattachSystem(std::function<void(Scene*)> inCallback, eSystemLayer inLayer);
 
 		GameEntity	CreateGameEntity() { return GameEntity{ mRegistry.create() }; }
 		void		RemoveGameEntity(const GameEntity& inEntity) { mRegistry.destroy(inEntity); }
@@ -35,10 +35,8 @@ namespace cmEngine
 		GameEntity	FindEntityByName(const Name& inName);
 		GameEntity	FindByID(uint32 inID) const;
 
-		void		SetCameraEntity(const GameEntity& inEntity);
-		GameEntity	GetCameraEntity() const;
-
-		void UpdateCamera();
+		void		SetMainCameraEntity(const GameEntity& inEntity);
+		GameEntity	GetMainCameraEntity() const;
 
 		template <typename... ComponentTypes>
 		auto GetView();
@@ -58,7 +56,7 @@ namespace cmEngine
 		entt::registry mRegistry = {};
 
 		// System Layer
-		using  GameSystemCallback = void(*)(Scene*);
+		using GameSystemCallback = std::function<void(Scene*)>;
 		std::array<std::vector<GameSystemCallback>, static_cast<uint32>(eSystemLayer::Count)> mSystemLayer;
 
 		// Camera
@@ -70,18 +68,17 @@ namespace cmEngine
 	//                      Inline
 	//===================================================
 
-	inline void cmEngine::Scene::AttachSystem(void(*inCallback)(Scene*), eSystemLayer inLayer)
+	inline void Scene::AttachSystem(GameSystemCallback inCallback, eSystemLayer inLayer)
 	{
-		mSystemLayer[static_cast<uint32>(inLayer)].emplace_back(inCallback);
+		mSystemLayer[static_cast<uint32>(inLayer)].emplace_back(std::move(inCallback));
 	}
 
-	inline void cmEngine::Scene::DattachSystem(void(*inCallback)(Scene*), eSystemLayer inLayer)
+	inline void Scene::DattachSystem(GameSystemCallback inCallback, eSystemLayer inLayer)
 	{
 		auto& callbackList = mSystemLayer[static_cast<uint32>(inLayer)];
-		std::erase_if(callbackList,
-		              [inCallback](const GameSystemCallback& callback) {
-			              return callback == inCallback;
-		              });
+		std::erase_if(callbackList, [inCallback](const GameSystemCallback& callback) {
+			return callback.target<void(Scene*)>() == inCallback.target<void(Scene*)>();
+			});
 	}
 
 	template<typename ...ComponentTypes>

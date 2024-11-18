@@ -111,16 +111,16 @@ C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\Renderer.cpp(222,5): warnin
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\Renderer.cpp(256,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
   (소스 파일 'Inter/Debug/unity_3FHXIG1T5GOICEL2.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\RenderStatePool.cpp(103,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\RenderStatePool.cpp(43,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
   (소스 파일 'Inter/Debug/unity_3FHXIG1T5GOICEL2.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\RenderStatePool.cpp(176,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\RenderStatePool.cpp(116,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
   (소스 파일 'Inter/Debug/unity_3FHXIG1T5GOICEL2.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\RenderStatePool.cpp(251,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\RenderStatePool.cpp(191,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
   (소스 파일 'Inter/Debug/unity_3FHXIG1T5GOICEL2.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\RenderStatePool.cpp(353,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\RenderStatePool.cpp(293,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
   (소스 파일 'Inter/Debug/unity_3FHXIG1T5GOICEL2.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\Shader.cpp(36,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.

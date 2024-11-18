@@ -260,6 +260,9 @@ namespace cmEngine
 		// Pipeline
 		mPipeline = MakeScope<Pipeline>();
 
+		// Preload RenderState
+		RenderStatePool::Initialize();
+
 		// Setting Load
 		{
 			RendererConfig config;

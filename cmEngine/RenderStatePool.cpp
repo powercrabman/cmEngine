@@ -37,66 +37,6 @@ namespace cmEngine
 					desc.RenderTarget[0].BlendOpAlpha = D3D11_BLEND_OP_ADD;
 					desc.RenderTarget[0].RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
 					break;
-
-				case eBlendState::StraightAlpha:
-					desc.AlphaToCoverageEnable = FALSE;
-					desc.IndependentBlendEnable = FALSE;
-					desc.RenderTarget[0].BlendEnable = TRUE;
-					desc.RenderTarget[0].SrcBlend = D3D11_BLEND_SRC_ALPHA;
-					desc.RenderTarget[0].DestBlend = D3D11_BLEND_INV_SRC_ALPHA;
-					desc.RenderTarget[0].BlendOp = D3D11_BLEND_OP_ADD;
-					desc.RenderTarget[0].RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
-					break;
-
-				case eBlendState::Additive:
-					desc.AlphaToCoverageEnable = FALSE;
-					desc.IndependentBlendEnable = FALSE;
-					desc.RenderTarget[0].BlendEnable = TRUE;
-					desc.RenderTarget[0].SrcBlend = D3D11_BLEND_ONE;
-					desc.RenderTarget[0].DestBlend = D3D11_BLEND_ONE;
-					desc.RenderTarget[0].BlendOp = D3D11_BLEND_OP_ADD;
-					desc.RenderTarget[0].RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
-					break;
-
-				case eBlendState::Multiplicative:
-					desc.AlphaToCoverageEnable = FALSE;
-					desc.IndependentBlendEnable = FALSE;
-					desc.RenderTarget[0].BlendEnable = TRUE;
-					desc.RenderTarget[0].SrcBlend = D3D11_BLEND_DEST_COLOR;
-					desc.RenderTarget[0].DestBlend = D3D11_BLEND_ZERO;
-					desc.RenderTarget[0].BlendOp = D3D11_BLEND_OP_ADD;
-					desc.RenderTarget[0].RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
-					break;
-
-				case eBlendState::Substractive:
-					desc.AlphaToCoverageEnable = FALSE;
-					desc.IndependentBlendEnable = FALSE;
-					desc.RenderTarget[0].BlendEnable = TRUE;
-					desc.RenderTarget[0].SrcBlend = D3D11_BLEND_ONE;
-					desc.RenderTarget[0].DestBlend = D3D11_BLEND_ONE;
-					desc.RenderTarget[0].BlendOp = D3D11_BLEND_OP_REV_SUBTRACT;
-					desc.RenderTarget[0].RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
-					break;
-
-				case eBlendState::AlphaToCoverage:
-					desc.AlphaToCoverageEnable = TRUE;
-					desc.IndependentBlendEnable = FALSE;
-					desc.RenderTarget[0].BlendEnable = TRUE;
-					desc.RenderTarget[0].SrcBlend = D3D11_BLEND_SRC_ALPHA;
-					desc.RenderTarget[0].DestBlend = D3D11_BLEND_INV_SRC_ALPHA;
-					desc.RenderTarget[0].BlendOp = D3D11_BLEND_OP_ADD;
-					desc.RenderTarget[0].RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
-					break;
-
-				case eBlendState::Screen:
-					desc.AlphaToCoverageEnable = FALSE;
-					desc.IndependentBlendEnable = FALSE;
-					desc.RenderTarget[0].BlendEnable = TRUE;
-					desc.RenderTarget[0].SrcBlend = D3D11_BLEND_ONE;
-					desc.RenderTarget[0].DestBlend = D3D11_BLEND_INV_SRC_COLOR;
-					desc.RenderTarget[0].BlendOp = D3D11_BLEND_OP_ADD;
-					desc.RenderTarget[0].RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
-					break;
 				}
 
 				hr = Renderer::GetDevice()->CreateBlendState(&desc, mBlendState[idx].GetAddressOf());
@@ -265,13 +205,13 @@ namespace cmEngine
 				case eRasterizerState::Solid_CCWCull:
 					desc.FillMode = D3D11_FILL_SOLID;
 					desc.CullMode = D3D11_CULL_BACK;
-					desc.FrontCounterClockwise = TRUE;
+					desc.FrontCounterClockwise = FALSE;
 					desc.DepthClipEnable = TRUE;
 					break;
 
 				case eRasterizerState::Solid_CWCull:
 					desc.FillMode = D3D11_FILL_SOLID;
-					desc.CullMode = D3D11_CULL_BACK;
+					desc.CullMode = D3D11_CULL_FRONT;
 					desc.FrontCounterClockwise = FALSE;
 					desc.DepthClipEnable = TRUE;
 					break;
@@ -285,13 +225,13 @@ namespace cmEngine
 				case eRasterizerState::Wireframe_CCWCull:
 					desc.FillMode = D3D11_FILL_WIREFRAME;
 					desc.CullMode = D3D11_CULL_BACK;
-					desc.FrontCounterClockwise = TRUE;
+					desc.FrontCounterClockwise = FALSE;
 					desc.DepthClipEnable = TRUE;
 					break;
 
 				case eRasterizerState::Wireframe_CWCull:
 					desc.FillMode = D3D11_FILL_WIREFRAME;
-					desc.CullMode = D3D11_CULL_BACK;
+					desc.CullMode = D3D11_CULL_FRONT;
 					desc.FrontCounterClockwise = FALSE;
 					desc.DepthClipEnable = TRUE;
 					break;
@@ -305,14 +245,14 @@ namespace cmEngine
 				case eRasterizerState::Solid_CCWCull_Antialias:
 					desc.FillMode = D3D11_FILL_SOLID;
 					desc.CullMode = D3D11_CULL_BACK;
-					desc.FrontCounterClockwise = TRUE;
+					desc.FrontCounterClockwise = FALSE;
 					desc.AntialiasedLineEnable = TRUE;
 					desc.DepthClipEnable = TRUE;
 					break;
 
 				case eRasterizerState::Solid_CWCull_Antialias:
 					desc.FillMode = D3D11_FILL_SOLID;
-					desc.CullMode = D3D11_CULL_BACK;
+					desc.CullMode = D3D11_CULL_FRONT;
 					desc.FrontCounterClockwise = FALSE;
 					desc.AntialiasedLineEnable = TRUE;
 					desc.DepthClipEnable = TRUE;
@@ -328,14 +268,14 @@ namespace cmEngine
 				case eRasterizerState::Wireframe_CCWCull_Antialias:
 					desc.FillMode = D3D11_FILL_WIREFRAME;
 					desc.CullMode = D3D11_CULL_BACK;
-					desc.FrontCounterClockwise = TRUE;
+					desc.FrontCounterClockwise = FALSE;
 					desc.AntialiasedLineEnable = TRUE;
 					desc.DepthClipEnable = TRUE;
 					break;
 
 				case eRasterizerState::Wireframe_CWCull_Antialias:
 					desc.FillMode = D3D11_FILL_WIREFRAME;
-					desc.CullMode = D3D11_CULL_BACK;
+					desc.CullMode = D3D11_CULL_FRONT;
 					desc.FrontCounterClockwise = FALSE;
 					desc.AntialiasedLineEnable = TRUE;
 					desc.DepthClipEnable = TRUE;

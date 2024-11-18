@@ -18,6 +18,7 @@ namespace cmEngine
 			SetWorld(inWorld);
 			SetShaders(inShaders);
 			SetRenderState(inRenderState);
+			SetGeometry(inGeometry);
 
 			Renderer::GetContext()->DrawIndexed(inGeometry->GetIndexBuffer()->GetBufferSize(), 0, 0);
 		}
@@ -35,17 +36,29 @@ namespace cmEngine
 			SetWorld(inWorld);
 			SetShaders(inShaders);
 			SetRenderState(inRenderState);
-			SetTexture(inTexture, inOffsetRow, inOffsetCol);
+			SetTexture(inTexture, inOffsetCol, inOffsetRow);
+			SetGeometry(inGeometry);
 
 			Renderer::GetContext()->DrawIndexed(inGeometry->GetIndexBuffer()->GetBufferSize(), 0, 0);
 		}
 
-		void SetViewProj(const Matrix& inViewProj)
+		void SetGeometry(Geometry* inGeometry)
+		{
+			if (mGeometry != inGeometry)
+			{
+				mGeometry = inGeometry;
+				Renderer::GetContext()->IASetIndexBuffer(inGeometry->GetIndexBuffer()->GetBuffer().Get(), DXGI_FORMAT_R32_UINT, 0);
+				VertexBuffer* vb = inGeometry->GetVertexBuffer();
+				Renderer::GetContext()->IASetVertexBuffers(0, 1, vb->GetBuffer().GetAddressOf(), vb->GetStrideAddr(), vb->GetOffsetAddr());
+			}
+		}
+
+		void SetViewProj(const Matrix& inViewProj) const
 		{
 			mCameraCB->UpdateBuffer(CBCamera{ .ViewProj = inViewProj });
 		}
 
-		void SetViewProj(const Matrix& inView, const Matrix& inProj)
+		void SetViewProj(const Matrix& inView, const Matrix& inProj) const
 		{
 			SetViewProj(inView * inProj);
 		}
@@ -60,11 +73,12 @@ namespace cmEngine
 			{
 				mShaders = inShaders;
 				Renderer::GetContext()->VSSetShader(mShaders->GetVertexShader()->GetShader().Get(), nullptr, 0);
+				Renderer::GetContext()->IASetInputLayout(mShaders->GetVertexShader()->GetInputLayout().Get());
 				Renderer::GetContext()->PSSetShader(mShaders->GetPixelShader()->GetShader().Get(), nullptr, 0);
 			}
 		}
 
-		void SetWorld(const Matrix& inWorld)
+		void SetWorld(const Matrix& inWorld) const
 		{
 			mTransformCB->UpdateBuffer(CBTransform{ .World = inWorld });
 		}
@@ -85,6 +99,7 @@ namespace cmEngine
 
 	private:
 		// Transform
+		Geometry* mGeometry                          = nullptr;
 		ConstantBuffer<CBTransform>*	mTransformCB = nullptr;
 
 		// Camera

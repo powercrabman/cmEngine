@@ -6,16 +6,10 @@ namespace cmEngine
 	{
 		Opaque = 0, /* Default */
 		Alpha,
-		StraightAlpha,
-		Additive,
-		Multiplicative,
-		Substractive,
-		AlphaToCoverage,
-		Screen,
 
 		Count,
 
-		Default = Opaque
+		Default = Alpha
 	};
 
 	enum class eSamplerState
@@ -92,27 +86,27 @@ namespace cmEngine
 
 		static ::ComPtr<ID3D11BlendState> GetBlendState(eBlendState inState)
 		{
-			return mBlendState[(uint32)inState];
+			return mBlendState[static_cast<uint32>(inState)];
 
 		}
 		static ::ComPtr<ID3D11SamplerState> GetSamplerState(eSamplerState inState)
 		{
-			return mSamplerState[(uint32)inState];
+			return mSamplerState[static_cast<uint32>(inState)];
 		}
 		static ::ComPtr<ID3D11DepthStencilState> GetDepthStencilState(eDepthStencilState inState)
 		{
-			return mDepthStencilState[(uint32)inState];
+			return mDepthStencilState[static_cast<uint32>(inState)];
 		}
 		static ::ComPtr<ID3D11RasterizerState> GetRasterizerState(eRasterizerState inState)
 		{
-			return mRasterizeState[(uint32)inState];
+			return mRasterizeState[static_cast<uint32>(inState)];
 		}
 
 	private:
-		inline static std::array<::ComPtr<ID3D11BlendState>, (uint32)eBlendState::Count>					mBlendState = {};
-		inline static std::array<::ComPtr<ID3D11SamplerState>, (uint32)eSamplerState::Count>				mSamplerState = {};
-		inline static std::array<::ComPtr<ID3D11DepthStencilState>, (uint32)eDepthStencilState::Count>		mDepthStencilState = {};
-		inline static std::array<::ComPtr<ID3D11RasterizerState>, (uint32)eRasterizerState::Count>			mRasterizeState = {};
+		inline static std::array<::ComPtr<ID3D11BlendState>, static_cast<uint32>(eBlendState::Count)>					mBlendState = {};
+		inline static std::array<::ComPtr<ID3D11SamplerState>, static_cast<uint32>(eSamplerState::Count)>				mSamplerState = {};
+		inline static std::array<::ComPtr<ID3D11DepthStencilState>, static_cast<uint32>(eDepthStencilState::Count)>		mDepthStencilState = {};
+		inline static std::array<::ComPtr<ID3D11RasterizerState>, static_cast<uint32>(eRasterizerState::Count)>			mRasterizeState = {};
 	};
 
 	//===================================================
@@ -129,13 +123,7 @@ namespace cmEngine
 		{
 		case eBlendState::Opaque:				return "Opaque";
 		case eBlendState::Alpha:				return "Alpha";
-		case eBlendState::StraightAlpha:		return "StraightAlpha";
-		case eBlendState::Additive:				return "Additive";
-		case eBlendState::Multiplicative:		return "Multiplicative";
-		case eBlendState::Substractive:			return "Substractive";
-		case eBlendState::AlphaToCoverage:		return "AlphaToCoverage";
-		case eBlendState::Screen:				return "Screen";
-		default: assert(false); return "Unkownd";
+		default: assert(false);					return "Unkownd";
 		}
 	}
 

@@ -13,7 +13,7 @@ namespace cmEngine
 		::ComPtr<ID3D11Buffer>	GetBuffer() const { return mBuffer; }
 		UINT					GetBufferSize() const { return mSize; }
 
-		constexpr DXGI_FORMAT	GetFormat() const { return DXGI_FORMAT_R8_UINT; }
+		constexpr DXGI_FORMAT	GetFormat() const { return DXGI_FORMAT_R32_UINT; }
 		
 	private:
 		::ComPtr<ID3D11Buffer>	mBuffer;

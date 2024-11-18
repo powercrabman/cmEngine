@@ -54,6 +54,7 @@ namespace cmEngine
 		// Render
 		{
 			Renderer::RenderBegin();
+			SceneManager::Render();
 			GuiRenderer::Render();
 			Renderer::RenderEnd();
 		}
