@@ -90,20 +90,43 @@ namespace cmEngine
 		COUNT,
 	};
 
+	enum class eKeyState
+	{
+		Pressed,
+		Hold,
+		Release,
+		Away,
+
+		Count
+	};
+
 	class Input
 	{
 	public:
-		static NODISCARD FORCEINLINE bool IsAway(eKeyCode inKeyCode) { return !ImGui::IsKeyDown((ImGuiKey)inKeyCode); }
-		static NODISCARD FORCEINLINE bool IsHold(eKeyCode inKeyCode) { return ImGui::IsKeyDown((ImGuiKey)inKeyCode); }
-		static NODISCARD FORCEINLINE bool IsPressed(eKeyCode inKeyCode) { return ImGui::IsKeyPressed((ImGuiKey)inKeyCode); }
-		static NODISCARD FORCEINLINE bool IsRelease(eKeyCode inKeyCode) { return ImGui::IsKeyReleased((ImGuiKey)inKeyCode); }
+		static NODISCARD FORCEINLINE bool IsAway(eKeyCode inKeyCode) { return !ImGui::IsKeyDown(static_cast<ImGuiKey>(inKeyCode)); }
+		static NODISCARD FORCEINLINE bool IsHold(eKeyCode inKeyCode) { return ImGui::IsKeyDown(static_cast<ImGuiKey>(inKeyCode)); }
+		static NODISCARD FORCEINLINE bool IsPressed(eKeyCode inKeyCode) { return ImGui::IsKeyPressed(static_cast<ImGuiKey>(inKeyCode)); }
+		static NODISCARD FORCEINLINE bool IsRelease(eKeyCode inKeyCode) { return ImGui::IsKeyReleased(static_cast<ImGuiKey>(inKeyCode)); }
+
+		static NODISCARD FORCEINLINE bool IsKeyState(eKeyCode inKeyCode, eKeyState inKeyState)
+		{
+			switch (inKeyState)
+			{
+			case eKeyState::Pressed:	return IsPressed(inKeyCode);
+			case eKeyState::Hold:		return IsHold(inKeyCode);
+			case eKeyState::Release:	return IsRelease(inKeyCode);
+			case eKeyState::Away:	 	return IsAway(inKeyCode);
+			default: assert(false);
+			}
+
+			return false;
+		}
 
 		static auto GetMousePosition()
 		{
 			ImVec2 vec = ImGui::GetMousePos();
 			return std::make_pair(vec.x, vec.y);
 		}
-
 	};
 
 	//===================================================

@@ -4,6 +4,7 @@
 #include "FlipbookRenderSystem.h"
 #include "SpriteRenderSystem.h"
 #include "GeometryRenderSystem.h"
+#include "BehaviorSystem.h"
 
 namespace cmEngine
 {
@@ -19,6 +20,7 @@ namespace cmEngine
 
 		// 기본 시스템 등록
 		AttachSystem(FlipbookUpdateSystem, eSystemLayer::Update);
+		AttachSystem(BehaviorSystem, eSystemLayer::Update);
 
 		AttachSystem(FlipbookRenderSystem, eSystemLayer::Render);
 		AttachSystem(SpriteRenderSystem, eSystemLayer::Render);

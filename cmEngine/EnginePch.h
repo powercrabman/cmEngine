@@ -129,3 +129,5 @@ using namespace Microsoft::WRL;
 #include "SpriteRender.h"
 #include "Camera.h"
 #include "GeometryRender.h"
+#include "Behavior.h"
+#include "InputController.h"

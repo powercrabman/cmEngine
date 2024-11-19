@@ -10,7 +10,7 @@ namespace cmEngine
 			, mEntity(inEntity)
 		{
 		}
-		explicit GameEntity(entt::entity inEntity);
+		GameEntity(entt::entity inEntity);
 		operator entt::entity() const { return mEntity; }
 
 		[[nodiscard]] entt::entity GetNakedEntity() const { return mEntity; }

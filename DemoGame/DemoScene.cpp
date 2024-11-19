@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "DemoScene.h"
-#include "SpriteRenderSystem.h"
 
 void DemoScene::EnterScene()
 {
@@ -23,7 +22,7 @@ void DemoScene::EnterScene()
 
 	{
 		Texture* tex = ResourceManager::CreateResource<Texture>("TestFlipbookTexture");
-		tex->Load(ResourceManager::GetClientResourcePath(L"Older_Walk.bmp"));
+		tex->Load(ResourceManager::GetClientResourcePath(L"Older_Walk_transparent.png"));
 		tex->Create();
 
 		Flipbook* fb = ResourceManager::CreateResource<Flipbook>("TestFlipbook");
@@ -35,14 +34,13 @@ void DemoScene::EnterScene()
 		.PivotCol      = 0,
 		.FrameCount    = 12,
 		.FrameDuration = 0.08f,
-		.Loop          = true
-			});
+		.Loop          = true});
 	}
 
 	// Player
 	{
 		auto entity = CreateGameEntity();
-		entity.CreateComponent<Transform>(Transform::sIdentity);
+		entity.CreateComponent<Transform>(Transform{ Vector3{0.f,0.f,0.5f}, EulerAngle::Zero, Vector3::One });
 		entity.CreateComponent<SpriteRender>(SpriteRender{
 		.sprite            = ResourceManager::FindResourceOrNull<Sprite>("TestSprite"),
 		.shaders           = ResourceManager::FindResourceOrNull<ShaderSet>("TestShaders"),
@@ -59,14 +57,43 @@ void DemoScene::EnterScene()
 		auto entity = CreateGameEntity();
 		entity.CreateComponent<Transform>(Transform{ Vector3{0.5f,0.f,0.f}, EulerAngle::Zero, Vector3::One });
 		entity.CreateComponent<FlipbookRender>(FlipbookRender{
-			.flipbook      = ResourceManager::FindResourceOrNull<Flipbook>("TestFlipbook"),
-			.shaders       = ResourceManager::FindResourceOrNull<ShaderSet>("TestShaders"),
-			.rendererState = RenderState::DefaultState,
-			.curFrame      = 0,
-			.playbackSpeed = 1.f,
-			.timeAcc       = 0.f,
-			.finish        = false
+			.flipbook              = ResourceManager::FindResourceOrNull<Flipbook>("TestFlipbook"),
+			.shaders               = ResourceManager::FindResourceOrNull<ShaderSet>("TestShaders"),
+			.rendererState         = RenderState{
+				.samplerState      = eSamplerState::Point_Clamp,
+				.depthStencilState = eDepthStencilState::Default,
+				.rasterizerState   = eRasterizerState::Default,
+				.blendState        = eBlendState::Alpha},
+			.curFrame              = 0,
+			.playbackSpeed         = 1.f,
+			.timeAcc               = 0.f,
+			.finish                = false
 			});
+
+		entity.CreateComponent<Behavior>().userFunction = [](GameEntity inEntity)
+		{
+			enum {PLAYER_SPEED = 1};
+
+			if (Input::IsHold(eKeyCode::LeftArrow))
+			{
+				inEntity.FindComponent<Transform>().position.x += -PLAYER_SPEED * Timer::GetDeltaTime();
+			}
+
+			if (Input::IsHold(eKeyCode::RightArrow))
+			{
+				inEntity.FindComponent<Transform>().position.x += PLAYER_SPEED * Timer::GetDeltaTime();
+			}
+
+			if (Input::IsHold(eKeyCode::UpArrow))
+			{
+				inEntity.FindComponent<Transform>().position.y += PLAYER_SPEED * Timer::GetDeltaTime();
+			}
+
+			if (Input::IsHold(eKeyCode::DownArrow))
+			{
+				inEntity.FindComponent<Transform>().position.y += -PLAYER_SPEED * Timer::GetDeltaTime();
+			}
+		};
 	}
 
 	// Camera

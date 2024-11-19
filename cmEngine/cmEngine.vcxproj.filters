@@ -376,6 +376,18 @@
     <ClInclude Include="PrimitiveGeometry.h">
       <Filter>06. Renderer\Geometry</Filter>
     </ClInclude>
+    <ClInclude Include="Behavior.h">
+      <Filter>11. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="BehaviorSystem.h">
+      <Filter>12. System</Filter>
+    </ClInclude>
+    <ClInclude Include="InputController.h">
+      <Filter>11. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="InputControllerSystem.h">
+      <Filter>12. System</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EngineAssertion.cpp">
@@ -590,6 +602,18 @@
     </ClCompile>
     <ClCompile Include="PrimitiveGeometry.cpp">
       <Filter>06. Renderer\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior.cpp">
+      <Filter>11. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="BehaviorSystem.cpp">
+      <Filter>12. System</Filter>
+    </ClCompile>
+    <ClCompile Include="InputController.cpp">
+      <Filter>11. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="InputControllerSystem.cpp">
+      <Filter>12. System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

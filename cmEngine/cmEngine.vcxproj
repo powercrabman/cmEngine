@@ -23,8 +23,11 @@
     <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_textedit.h" />
     <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_truetype.h" />
     <ClInclude Include="BatchSystem.h" />
+    <ClInclude Include="Behavior.h" />
+    <ClInclude Include="BehaviorSystem.h" />
     <ClInclude Include="ConfigEngine.h" />
     <ClInclude Include="ConfigBase.h" />
+    <ClInclude Include="InputController.h" />
     <ClInclude Include="EngineDebugViewer.h" />
     <ClInclude Include="EngineLogViewer.h" />
     <ClInclude Include="EngineOverlay.h" />
@@ -38,6 +41,7 @@
     <ClInclude Include="GeometryRender.h" />
     <ClInclude Include="GeometryRenderSystem.h" />
     <ClInclude Include="GuiFrame.h" />
+    <ClInclude Include="InputControllerSystem.h" />
     <ClInclude Include="JsonOverload.h" />
     <ClInclude Include="Name.h" />
     <ClInclude Include="Camera.h" />
@@ -98,8 +102,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BatchSystem.cpp" />
+    <ClCompile Include="Behavior.cpp" />
+    <ClCompile Include="BehaviorSystem.cpp" />
     <ClCompile Include="ConfigEngine.cpp" />
     <ClCompile Include="ConfigBase.cpp" />
+    <ClCompile Include="InputController.cpp" />
     <ClCompile Include="EngineDebugViewer.cpp" />
     <ClCompile Include="EngineLogViewer.cpp" />
     <ClCompile Include="EngineOverlay.cpp" />
@@ -113,6 +120,7 @@
     <ClCompile Include="GeometryRender.cpp" />
     <ClCompile Include="GeometryRenderSystem.cpp" />
     <ClCompile Include="GuiFrame.cpp" />
+    <ClCompile Include="InputControllerSystem.cpp" />
     <ClCompile Include="JsonOverload.cpp" />
     <ClCompile Include="Name.cpp" />
     <ClCompile Include="Camera.cpp" />

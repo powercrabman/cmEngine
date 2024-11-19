@@ -49,16 +49,10 @@ float4 PS(VSOutput input) : SV_Target
 {
     float4 finalColor = texDiffuse.Sample(samLinear, input.UV);
 
-    float4 ignoreColor = float4(1.f, 0.f, 1.f, 1.f);
-    float tolerance = 0.01f;
-    
-    if (abs(finalColor.r - ignoreColor.r) < tolerance &&
-        abs(finalColor.g - ignoreColor.g) < tolerance &&
-        abs(finalColor.b - ignoreColor.b) < tolerance &&
-        abs(finalColor.a - ignoreColor.a) < tolerance)
+    if (finalColor.w < 0.01f)
     {
-        return float4(0.f, 0.f, 0.f, 0.f);
+        discard;
     }
-    
+
     return finalColor;
 }
