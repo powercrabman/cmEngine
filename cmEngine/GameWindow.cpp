@@ -49,13 +49,19 @@ namespace cmEngine
 
 		ENGINE_LOG_INFO("Window create success.");
 
-		// 윈도우 세팅 가져오기
-		WindowConfig config = {};
-		if (ConfigEngine::Load(config))
+		// Window Config Deserialize
+		GameWindowConfig cf = {};
+		if (JsonSerializer::Deserialize<GameWindowConfig>(cf))
 		{
-			// 윈도우 띄우기
-			ResizeWindow(config.Resolution);
-			RepositionWindow(config.Position);
+			ResizeWindow(WindowResolution{
+				.Width  = cf.windowResolutionWidth,
+				.Height = cf.windowResolutionHeight,
+				});
+
+			RepositionWindow(WindowPosition{
+				.X = cf.windowPositionX,
+				.Y = cf.windowPositionY
+				});
 		}
 		else
 		{
@@ -66,14 +72,15 @@ namespace cmEngine
 		return true;
 	}
 
-	void GameWindow::Destory()
+	void GameWindow::Destroy()
 	{
-		WindowConfig wc = {};
-		wc.Position = mWinProp.Position;
-		wc.Resolution = mWinProp.Resolution;
-		ConfigEngine::Save(wc);
-
-
+		// Window Config Serialize
+		GameWindowConfig cf       = {};
+		cf.windowPositionX        = mWinProp.Position.X;
+		cf.windowPositionY        = mWinProp.Position.Y;
+		cf.windowResolutionHeight = mWinProp.Resolution.Height;
+		cf.windowResolutionWidth  = mWinProp.Resolution.Width;
+		JsonSerializer::Serialize(cf);
 	}
 
 	void GameWindow::ResizeWindow(const WindowResolution& inRes)
@@ -83,7 +90,7 @@ namespace cmEngine
 		// Calc Window Rect
 		RECT rect = {};
 		FILL_ZERO(rect, RECT);
-		rect.right = mWinProp.Resolution.Width;
+		rect.right  = mWinProp.Resolution.Width;
 		rect.bottom = mWinProp.Resolution.Height;
 
 		::AdjustWindowRect(

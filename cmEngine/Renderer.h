@@ -8,6 +8,12 @@ namespace cmEngine
 	class GameEntity;
 	class CameraComponent;
 
+	struct RendererConfig : public JsonMetaData
+	{
+		Color clearColor;
+		JSON_STRUCT_BODY(RendererConfig, L"RendererConfig.json", clearColor);
+	};
+
 	class Renderer
 	{
 		friend class EngineCore;
@@ -29,7 +35,7 @@ namespace cmEngine
 		static ::ComPtr<ID3D11Device>			GetDevice() { return mDevice.Device; }
 		static ::ComPtr<ID3D11DeviceContext>	GetContext() { return mDevice.Context; }
 
-		static float	GetAspectRatio() { return mCanvas.RenderViewport.AspectRatio(); }
+		static float	 GetAspectRatio() { return mCanvas.RenderViewport.AspectRatio(); }
 
 		static Pipeline* GetPipeline() { return mPipeline.get(); }
 
@@ -55,7 +61,7 @@ namespace cmEngine
 			::ComPtr<IDXGISwapChain>			SwapChain;
 			::ComPtr<ID3D11RenderTargetView>	RenderTargetView;
 			::ComPtr<ID3D11DepthStencilView>	DepthStencilView;
-			cmEngine::Viewport					RenderViewport;
+			Viewport							RenderViewport;
 
 			Color								ClearColor = Colors::Tomato;
 		};
@@ -76,8 +82,6 @@ namespace cmEngine
 		inline static D3D_FEATURE_LEVEL	mFeatureLevel = {};
 		inline static MultiSamplingProp mMSAA         = {};
 
-		inline static Scope<Pipeline>				mPipeline     = nullptr;
-
-		inline static constexpr wchar_t sSettingFilePath[] = L"RendererSetting.json";
+		inline static Scope<Pipeline>	mPipeline     = nullptr;
 	};
 }

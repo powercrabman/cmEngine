@@ -42,22 +42,16 @@ namespace cmEngine
 	void Application::UpdateCore()
 	{
 		// PreUpdate
-		{
-			Timer::Update();
-		}
+		Timer::Update();
 
 		// Update
-		{
-			SceneManager::Update();
-		}
+		SceneManager::Update();
 
 		// Render
-		{
-			Renderer::RenderBegin();
-			SceneManager::Render();
-			GuiRenderer::Render();
-			Renderer::RenderEnd();
-		}
+		Renderer::RenderBegin();
+		SceneManager::Render();
+		GuiRenderer::Render();
+		Renderer::RenderEnd();
 	}
 
 	void Application::CleanUpCore()

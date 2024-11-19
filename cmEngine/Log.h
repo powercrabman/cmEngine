@@ -19,7 +19,7 @@ namespace cmEngine
 		eLogLevel	LogLevel;
 		std::string LogMessage;
 
-		inline static std::array<ImVec4, (UINT)eLogLevel::Count> LogLevelColor =
+		inline static std::array<ImVec4, static_cast<UINT>(eLogLevel::Count)> LogLevelColor =
 		{
 			ImVec4{0.5f, 0.5f, 0.5f, 1.f}, // Trace
 			ImVec4{0.f,  1.f, 0.f, 1.f},   // Debug

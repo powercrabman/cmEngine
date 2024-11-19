@@ -68,13 +68,18 @@ using namespace Microsoft::WRL;
 #pragma comment(lib, "runtimeobject.lib")
 
 //Imgui
-#include "imguiInc.h"
+#include "../Libraries/ImGui/imgui.h"
+
+#include "../Libraries/ImGui/imgui_impl_dx11.h"
+#include "../Libraries/ImGui/imgui_impl_win32.h"
+#include "../Libraries/ImGui/imgui_internal.h"
+
+#pragma comment(lib, "../Libraries/ImGui/imgui.lib")
 
 //Inc
 #include "Types.h"
 #include "Colors.h"
 #include "Enums.h"
-#include "JsonOverload.h"
 
 //Common
 #include "EngineAssertion.h"
@@ -88,11 +93,11 @@ using namespace Microsoft::WRL;
 #include "BatchSystem.h"
 
 //Engine Module
+#include "JsonSerializer.h"
+
 #include "GameWindow.h"
-#include "EngineCore.h"
 #include "Input.h"
-#include "ConfigBase.h"
-#include "ConfigEngine.h"
+#include "EngineCore.h"
 
 // Rendering & Resource
 #include "Viewport.h"

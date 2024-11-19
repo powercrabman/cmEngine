@@ -19,32 +19,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_rectpack.h" />
-    <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_textedit.h" />
-    <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_truetype.h" />
     <ClInclude Include="BatchSystem.h" />
     <ClInclude Include="Behavior.h" />
     <ClInclude Include="BehaviorSystem.h" />
-    <ClInclude Include="ConfigEngine.h" />
-    <ClInclude Include="ConfigBase.h" />
+    <ClInclude Include="EditorDebugViewer.h" />
+    <ClInclude Include="EditorLogViewer.h" />
+    <ClInclude Include="EditorOverlay.h" />
+    <ClInclude Include="EditorSceneViewer.h" />
+    <ClInclude Include="EditorVoidPopup.h" />
+    <ClInclude Include="JsonSerializer.h" />
     <ClInclude Include="InputController.h" />
-    <ClInclude Include="EngineDebugViewer.h" />
-    <ClInclude Include="EngineLogViewer.h" />
-    <ClInclude Include="EngineOverlay.h" />
-    <ClInclude Include="EngineSceneEditor.h" />
-    <ClInclude Include="EngineViewer.h" />
-    <ClInclude Include="EngineVoidPopup.h" />
+    <ClInclude Include="Editor.h" />
     <ClInclude Include="FlipbookRenderSystem.h" />
     <ClInclude Include="GameEntity.h" />
     <ClInclude Include="Flipbook.h" />
     <ClInclude Include="FlipbookRender.h" />
     <ClInclude Include="GeometryRender.h" />
     <ClInclude Include="GeometryRenderSystem.h" />
-    <ClInclude Include="GuiFrame.h" />
     <ClInclude Include="InputControllerSystem.h" />
-    <ClInclude Include="JsonOverload.h" />
     <ClInclude Include="Name.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Gui.h" />
     <ClInclude Include="PrimitiveGeometry.h" />
     <ClInclude Include="SpriteRenderSystem.h" />
     <ClInclude Include="Transform.h" />
@@ -56,7 +51,6 @@
     <ClInclude Include="ConstantBufferData.h" />
     <ClInclude Include="ConstantBufferPool.h" />
     <ClInclude Include="Geometry.h" />
-    <ClInclude Include="Gui.h" />
     <ClInclude Include="GuiRenderer.h" />
     <ClInclude Include="IndexBuffer.h" />
     <ClInclude Include="Input.h" />
@@ -85,45 +79,37 @@
     <ClInclude Include="EnginePch.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="GameWindow.h" />
-    <ClInclude Include="ImGuiHelper.h" />
-    <ClInclude Include="imgui\imconfig.h" />
-    <ClInclude Include="imgui\imgui.h" />
-    <ClInclude Include="imgui\imgui_impl_dx11.h" />
-    <ClInclude Include="imgui\imgui_impl_win32.h" />
-    <ClInclude Include="imgui\imgui_internal.h" />
+    <ClInclude Include="GuiHelper.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Types.h" />
     <ClInclude Include="WindowProc.h" />
     <ClInclude Include="EngineMacro.h" />
-    <ClInclude Include="imguiInc.h" />
     <ClInclude Include="Enums.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BatchSystem.cpp" />
     <ClCompile Include="Behavior.cpp" />
     <ClCompile Include="BehaviorSystem.cpp" />
-    <ClCompile Include="ConfigEngine.cpp" />
-    <ClCompile Include="ConfigBase.cpp" />
+    <ClCompile Include="EditorDebugViewer.cpp" />
+    <ClCompile Include="EditorLogViewer.cpp" />
+    <ClCompile Include="EditorOverlay.cpp" />
+    <ClCompile Include="EditorSceneViewer.cpp" />
+    <ClCompile Include="EditorVoidPopup.cpp" />
+    <ClCompile Include="JsonSerializer.cpp" />
     <ClCompile Include="InputController.cpp" />
-    <ClCompile Include="EngineDebugViewer.cpp" />
-    <ClCompile Include="EngineLogViewer.cpp" />
-    <ClCompile Include="EngineOverlay.cpp" />
-    <ClCompile Include="EngineSceneEditor.cpp" />
-    <ClCompile Include="EngineViewer.cpp" />
-    <ClCompile Include="EngineVoidPopup.cpp" />
+    <ClCompile Include="Editor.cpp" />
     <ClCompile Include="FlipbookRenderSystem.cpp" />
     <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="Flipbook.cpp" />
     <ClCompile Include="FlipbookRender.cpp" />
     <ClCompile Include="GeometryRender.cpp" />
     <ClCompile Include="GeometryRenderSystem.cpp" />
-    <ClCompile Include="GuiFrame.cpp" />
     <ClCompile Include="InputControllerSystem.cpp" />
-    <ClCompile Include="JsonOverload.cpp" />
     <ClCompile Include="Name.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Gui.cpp" />
     <ClCompile Include="PrimitiveGeometry.cpp" />
     <ClCompile Include="SpriteRenderSystem.cpp" />
     <ClCompile Include="Transform.cpp" />
@@ -135,7 +121,6 @@
     <ClCompile Include="ConstantBufferData.cpp" />
     <ClCompile Include="ConstantBufferPool.cpp" />
     <ClCompile Include="Geometry.cpp" />
-    <ClCompile Include="Gui.cpp" />
     <ClCompile Include="GuiRenderer.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -163,31 +148,7 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Colors.cpp" />
     <ClCompile Include="GameWindow.cpp" />
-    <ClCompile Include="ImGuiHelper.cpp" />
-    <ClCompile Include="imgui\imgui.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="imgui\imgui_draw.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="imgui\imgui_impl_dx11.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="imgui\imgui_impl_win32.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="imgui\imgui_tables.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="imgui\imgui_widgets.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="GuiHelper.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />

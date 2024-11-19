@@ -32,9 +32,6 @@
     <Filter Include="07. GUI">
       <UniqueIdentifier>{a37ff62f-e688-4353-9caf-e970df78d927}</UniqueIdentifier>
     </Filter>
-    <Filter Include="07. GUI\ThirdParty">
-      <UniqueIdentifier>{8015412a-1485-48b4-bcf5-d74e816a7be5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="08. Resource">
       <UniqueIdentifier>{baf428ad-91d6-4ff5-8c0a-6a0277008c5e}</UniqueIdentifier>
     </Filter>
@@ -113,38 +110,35 @@
     <Filter Include="08. Resource\ShaderProgram">
       <UniqueIdentifier>{c061f43f-6584-40b3-8e32-a940fdee2047}</UniqueIdentifier>
     </Filter>
-    <Filter Include="07. GUI\GuiFrame">
-      <UniqueIdentifier>{b869148c-58eb-4fbd-96e5-4fbe4920bba1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="96. EngineViewer">
-      <UniqueIdentifier>{34d6fa18-88bc-4fd2-a2d1-9148bb86c6c6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="96. EngineViewer\EngineVoidPopup">
-      <UniqueIdentifier>{1046cc68-05e2-4630-b107-a3a5729b42ee}</UniqueIdentifier>
-    </Filter>
     <Filter Include="95. SystemMonior">
       <UniqueIdentifier>{beaac227-4ca6-4acd-a0d3-6b6d9bbf6740}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="96. EngineViewer\EngineOverlay">
-      <UniqueIdentifier>{2e1654a0-9d46-4e65-bca5-b16fac61ba5d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="96. EngineViewer\EngineSceneEditor">
-      <UniqueIdentifier>{05c69544-dc42-41fc-a6c4-ebf0ec697adc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="96. EngineViewer\EngineLogViewer">
-      <UniqueIdentifier>{80390593-db48-4595-a277-e07272745a74}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="96. EngineViewer\EngineDebugViewer">
-      <UniqueIdentifier>{24790438-8ecc-418c-bf0a-a62c1ef2cbe5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="94. ConfigEngine">
-      <UniqueIdentifier>{031f8f36-4a0f-4fa0-bb44-545e29310c8b}</UniqueIdentifier>
     </Filter>
     <Filter Include="11. Component">
       <UniqueIdentifier>{9d29ae04-af3f-4e29-8994-095f55173af4}</UniqueIdentifier>
     </Filter>
     <Filter Include="12. System">
       <UniqueIdentifier>{318266a7-0812-4551-a1d0-ade588d3539f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="94. JsonSerializer">
+      <UniqueIdentifier>{031f8f36-4a0f-4fa0-bb44-545e29310c8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. Editor">
+      <UniqueIdentifier>{34d6fa18-88bc-4fd2-a2d1-9148bb86c6c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. Editor\EditorDebugViewer">
+      <UniqueIdentifier>{24790438-8ecc-418c-bf0a-a62c1ef2cbe5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. Editor\EditorLogViewer">
+      <UniqueIdentifier>{80390593-db48-4595-a277-e07272745a74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. Editor\EditorOverlay">
+      <UniqueIdentifier>{2e1654a0-9d46-4e65-bca5-b16fac61ba5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. Editor\EditorSceneEditor">
+      <UniqueIdentifier>{05c69544-dc42-41fc-a6c4-ebf0ec697adc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. Editor\EditorVoidPopup">
+      <UniqueIdentifier>{1046cc68-05e2-4630-b107-a3a5729b42ee}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -157,40 +151,13 @@
     <ClInclude Include="EngineMacro.h">
       <Filter>99. Base</Filter>
     </ClInclude>
-    <ClInclude Include="imgui\imgui.h">
-      <Filter>07. GUI\ThirdParty</Filter>
-    </ClInclude>
-    <ClInclude Include="imgui\imgui_impl_dx11.h">
-      <Filter>07. GUI\ThirdParty</Filter>
-    </ClInclude>
-    <ClInclude Include="imgui\imgui_impl_win32.h">
-      <Filter>07. GUI\ThirdParty</Filter>
-    </ClInclude>
-    <ClInclude Include="imgui\imgui_internal.h">
-      <Filter>07. GUI\ThirdParty</Filter>
-    </ClInclude>
-    <ClInclude Include="imgui\imconfig.h">
-      <Filter>07. GUI\ThirdParty</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_truetype.h">
-      <Filter>07. GUI\ThirdParty</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_rectpack.h">
-      <Filter>07. GUI\ThirdParty</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\Jiwoo\imgui\imstb_textedit.h">
-      <Filter>07. GUI\ThirdParty</Filter>
-    </ClInclude>
-    <ClInclude Include="imguiInc.h">
-      <Filter>07. GUI</Filter>
-    </ClInclude>
     <ClInclude Include="Colors.h">
       <Filter>99. Base</Filter>
     </ClInclude>
     <ClInclude Include="Enums.h">
       <Filter>99. Base</Filter>
     </ClInclude>
-    <ClInclude Include="ImGuiHelper.h">
+    <ClInclude Include="GuiHelper.h">
       <Filter>07. GUI\GuiHelper</Filter>
     </ClInclude>
     <ClInclude Include="Timer.h">
@@ -283,9 +250,6 @@
     <ClInclude Include="GuiRenderer.h">
       <Filter>07. GUI\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Gui.h">
-      <Filter>07. GUI\Gui</Filter>
-    </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>08. Resource\Texture</Filter>
     </ClInclude>
@@ -307,38 +271,14 @@
     <ClInclude Include="Pointer.h">
       <Filter>99. Base</Filter>
     </ClInclude>
-    <ClInclude Include="EngineViewer.h">
-      <Filter>96. EngineViewer</Filter>
-    </ClInclude>
-    <ClInclude Include="GuiFrame.h">
-      <Filter>07. GUI\GuiFrame</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineVoidPopup.h">
-      <Filter>96. EngineViewer\EngineVoidPopup</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineDebugViewer.h">
-      <Filter>96. EngineViewer\EngineDebugViewer</Filter>
+    <ClInclude Include="Editor.h">
+      <Filter>96. Editor</Filter>
     </ClInclude>
     <ClInclude Include="SystemMonitor.h">
       <Filter>95. SystemMonior</Filter>
     </ClInclude>
-    <ClInclude Include="JsonOverload.h">
-      <Filter>98. Utiles</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineOverlay.h">
-      <Filter>96. EngineViewer\EngineOverlay</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineSceneEditor.h">
-      <Filter>96. EngineViewer\EngineSceneEditor</Filter>
-    </ClInclude>
-    <ClInclude Include="ConfigBase.h">
-      <Filter>94. ConfigEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineLogViewer.h">
-      <Filter>96. EngineViewer\EngineLogViewer</Filter>
-    </ClInclude>
-    <ClInclude Include="ConfigEngine.h">
-      <Filter>94. ConfigEngine</Filter>
+    <ClInclude Include="JsonSerializer.h">
+      <Filter>94. JsonSerializer</Filter>
     </ClInclude>
     <ClInclude Include="RenderState.h">
       <Filter>06. Renderer\RenderState</Filter>
@@ -388,6 +328,24 @@
     <ClInclude Include="InputControllerSystem.h">
       <Filter>12. System</Filter>
     </ClInclude>
+    <ClInclude Include="Gui.h">
+      <Filter>07. GUI\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorVoidPopup.h">
+      <Filter>96. Editor\EditorVoidPopup</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorDebugViewer.h">
+      <Filter>96. Editor\EditorDebugViewer</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorLogViewer.h">
+      <Filter>96. Editor\EditorLogViewer</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorOverlay.h">
+      <Filter>96. Editor\EditorOverlay</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorSceneViewer.h">
+      <Filter>96. Editor\EditorSceneEditor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EngineAssertion.cpp">
@@ -396,28 +354,10 @@
     <ClCompile Include="Application.cpp">
       <Filter>01. Application</Filter>
     </ClCompile>
-    <ClCompile Include="imgui\imgui.cpp">
-      <Filter>07. GUI\ThirdParty</Filter>
-    </ClCompile>
-    <ClCompile Include="imgui\imgui_draw.cpp">
-      <Filter>07. GUI\ThirdParty</Filter>
-    </ClCompile>
-    <ClCompile Include="imgui\imgui_impl_dx11.cpp">
-      <Filter>07. GUI\ThirdParty</Filter>
-    </ClCompile>
-    <ClCompile Include="imgui\imgui_impl_win32.cpp">
-      <Filter>07. GUI\ThirdParty</Filter>
-    </ClCompile>
-    <ClCompile Include="imgui\imgui_tables.cpp">
-      <Filter>07. GUI\ThirdParty</Filter>
-    </ClCompile>
-    <ClCompile Include="imgui\imgui_widgets.cpp">
-      <Filter>07. GUI\ThirdParty</Filter>
-    </ClCompile>
     <ClCompile Include="Colors.cpp">
       <Filter>99. Base</Filter>
     </ClCompile>
-    <ClCompile Include="ImGuiHelper.cpp">
+    <ClCompile Include="GuiHelper.cpp">
       <Filter>07. GUI\GuiHelper</Filter>
     </ClCompile>
     <ClCompile Include="Timer.cpp">
@@ -507,9 +447,6 @@
     <ClCompile Include="GuiRenderer.cpp">
       <Filter>07. GUI\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Gui.cpp">
-      <Filter>07. GUI\Gui</Filter>
-    </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>08. Resource\Texture</Filter>
     </ClCompile>
@@ -534,38 +471,14 @@
     <ClCompile Include="Pointer.cpp">
       <Filter>99. Base</Filter>
     </ClCompile>
-    <ClCompile Include="EngineViewer.cpp">
-      <Filter>96. EngineViewer</Filter>
-    </ClCompile>
-    <ClCompile Include="GuiFrame.cpp">
-      <Filter>07. GUI\GuiFrame</Filter>
-    </ClCompile>
-    <ClCompile Include="EngineVoidPopup.cpp">
-      <Filter>96. EngineViewer\EngineVoidPopup</Filter>
-    </ClCompile>
-    <ClCompile Include="EngineDebugViewer.cpp">
-      <Filter>96. EngineViewer\EngineDebugViewer</Filter>
+    <ClCompile Include="Editor.cpp">
+      <Filter>96. Editor</Filter>
     </ClCompile>
     <ClCompile Include="SystemMonitor.cpp">
       <Filter>95. SystemMonior</Filter>
     </ClCompile>
-    <ClCompile Include="JsonOverload.cpp">
-      <Filter>98. Utiles</Filter>
-    </ClCompile>
-    <ClCompile Include="EngineOverlay.cpp">
-      <Filter>96. EngineViewer\EngineOverlay</Filter>
-    </ClCompile>
-    <ClCompile Include="EngineSceneEditor.cpp">
-      <Filter>96. EngineViewer\EngineSceneEditor</Filter>
-    </ClCompile>
-    <ClCompile Include="ConfigBase.cpp">
-      <Filter>94. ConfigEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="EngineLogViewer.cpp">
-      <Filter>96. EngineViewer\EngineLogViewer</Filter>
-    </ClCompile>
-    <ClCompile Include="ConfigEngine.cpp">
-      <Filter>94. ConfigEngine</Filter>
+    <ClCompile Include="JsonSerializer.cpp">
+      <Filter>94. JsonSerializer</Filter>
     </ClCompile>
     <ClCompile Include="RenderState.cpp">
       <Filter>06. Renderer\RenderState</Filter>
@@ -614,6 +527,24 @@
     </ClCompile>
     <ClCompile Include="InputControllerSystem.cpp">
       <Filter>12. System</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui.cpp">
+      <Filter>07. GUI\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorVoidPopup.cpp">
+      <Filter>96. Editor\EditorVoidPopup</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorDebugViewer.cpp">
+      <Filter>96. Editor\EditorDebugViewer</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorLogViewer.cpp">
+      <Filter>96. Editor\EditorLogViewer</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorOverlay.cpp">
+      <Filter>96. Editor\EditorOverlay</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorSceneViewer.cpp">
+      <Filter>96. Editor\EditorSceneEditor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

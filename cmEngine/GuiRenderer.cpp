@@ -33,80 +33,104 @@ namespace cmEngine
 		ImGui_ImplWin32_Shutdown();
 		ImGui::DestroyContext();
 
-		mGuiFrameRepo.clear();
 		mGuiRepo.clear();
-		mGuiBatch.Clear();
+		mGuiList.clear();
 	}
 
-	inline Gui* GuiRenderer::CreateGui(std::string_view inGuiName)
+	Gui* GuiRenderer::CreateGui(std::string_view inName)
 	{
-		std::string name = inGuiName.data();
-		auto [iter, success] = mGuiRepo.emplace(name, MakeScope<Gui>(name));
-		Gui* ptr = iter->second.get();
-
-		if (success)
-		{
-			mGuiBatch.Push(ptr);
-		}
-		else
+		if (mGuiRepo.contains(inName.data()))
 		{
 			assert(false);
 			ENGINE_LOG_ERROR("already exist gui");
+			return mGuiRepo[inName.data()].gui.get();
 		}
 
-		return ptr;
+		// make instance
+		Scope<Gui> gui = Scope<Gui>(new Gui);
+		gui->mName     = inName;
+		Gui* pGui  = gui.get();
+
+		// insert to list
+		uint64 pushIdx = mGuiList.size();
+		mGuiList.push_back(pGui);
+
+		// insert to hash map
+		mGuiRepo.emplace(inName, GuiNode{
+			                 .gui = std::move(gui),
+			                 .listIdx = pushIdx}
+		);
+
+		return pGui;
 	}
 
-	inline Gui* GuiRenderer::FindGuiOrNull(std::string_view inGuiName)
+	Gui* GuiRenderer::FindGuiOrNull(std::string_view inName)
 	{
-		std::string name = inGuiName.data();
-		if (mGuiRepo.contains(name))
+		auto iter = mGuiRepo.find(inName.data());
+
+		if (iter == mGuiRepo.end())
 		{
-			return mGuiRepo[name].get();
+			return  nullptr;
 		}
 		else
 		{
-			assert(false);
-			ENGINE_LOG_ERROR("do not exist gui");
-			return nullptr;
+			return iter->second.gui.get();
 		}
 	}
 
-	inline bool GuiRenderer::RemoveGui(std::string_view inGuiName)
+	bool GuiRenderer::RemoveGui(std::string_view inName)
 	{
-		auto iter = mGuiRepo.find(inGuiName.data());
+		auto iter = mGuiRepo.find(inName.data());
 
 		if (iter == mGuiRepo.end())
 		{
 			assert(false);
-			ENGINE_LOG_WARN("do not exist gui");
+			ENGINE_LOG_ERROR("{} : gui do not exist.", inName);
 			return false;
 		}
+		else
+		{
+			uint64 eraseListIdx = iter->second.listIdx;
 
-		mGuiBatch.Remove(iter->second.get());
-		mGuiRepo.erase(iter);
-		return true;
+			// delete in mGuiList
+			if (eraseListIdx != mGuiList.size() - 1)
+			{
+				Gui* successor = mGuiList.back();
+				std::swap(mGuiList[eraseListIdx], mGuiList.back());
+				mGuiRepo[successor->GetName()].listIdx = eraseListIdx; 
+			}
+
+			mGuiList.pop_back(); 
+			mGuiRepo.erase(iter); 
+
+			return true;
+		}
 	}
 
 	void GuiRenderer::Render()
 	{
-		//GUI RENDER BEGIN
+		//Gui Render Begin
 		ImGui_ImplDX11_NewFrame();
 		ImGui_ImplWin32_NewFrame();
 		ImGui::NewFrame();
 
-		//GUI RENDER
-		for (Gui* gui : mGuiBatch)
+		//Gui Render
+		for (Gui* gui : mGuiList)
 		{
-			gui->HotKeyHandler();
-
-			if (gui->GetVisible())
+			// Gui Hotkey Handler
+			if (gui->HasHotKey() && Input::IsPressed(gui->GetHotKey()))
 			{
-				gui->RenderGUI();
+				gui->ToggleVisible();
+			}
+
+			// Gui Layout Render
+			if (gui->IsVisible())
+			{
+				gui->RenderGui();
 			}
 		}
 
-		//GUI RENDER END
+		//Gui Render End
 		ImGui::Render();
 		ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 

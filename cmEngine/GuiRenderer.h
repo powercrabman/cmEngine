@@ -1,93 +1,128 @@
 #pragma once
-#include "GuiFrame.h"
+
+template<typename GuiType>
+concept GuiConstraint = std::is_base_of_v<cmEngine::Gui, GuiType> &&
+						!std::is_same_v<cmEngine::Gui, GuiType>;
 
 namespace cmEngine
 {
-	class Gui;
 
 	class GuiRenderer
 	{
-		friend class EngineCore;
+		friend class	EngineCore;
+		struct			GuiNode;
 	public:
-		template<typename GuiFrameType>
-		static GuiFrameType* CreateGuiFrame();
+		// Create
+		static Gui* CreateGui(std::string_view inName);
 
-		template<typename GuiFrameType>
-		static GuiFrameType* FindGuiFrameOrNull()
-		{
-			static_assert(std::is_base_of<GuiFrame, GuiFrameType>::value, "GuiFrameType must inherit from GuiFrame");
-			auto iter = mGuiFrameRepo.find(TYPE_ID(GuiFrameType));
+		template <GuiConstraint GuiType>
+		static GuiType* CreateConcreteGui();
 
-			if (iter == mGuiFrameRepo.end())
-			{
-				assert(false);
-				ENGINE_LOG_DEBUG("do not exist gui frame");
-				return nullptr;
-			}
-			else
-			{
-				return static_cast<GuiFrameType*>(iter->second.get());
-			}
-		}
+		// Find
+		static Gui* FindGuiOrNull(std::string_view inName);
 
-		static Gui* CreateGui(std::string_view inGuiName);
-		static Gui* FindGuiOrNull(std::string_view inGuiName);
-		static bool RemoveGui(std::string_view inGuiName);
+		template <GuiConstraint GuiType>
+		static GuiType* FindConcreteGuiOrNull();
 
+		// Remove
+		static bool RemoveGui(std::string_view inName);
+
+		template <GuiConstraint GuiType>
+		static bool RemoveConcreteGui();
+
+		// Core
 		static void Render();
-	
+
 	private:
 		static void Initialize();
 		static void Destroy();
 
 	private:
-		inline static std::unordered_map<TypeID, Scope<GuiFrame>>			mGuiFrameRepo = {};
-		inline static std::unordered_map<std::string, Scope<Gui>>			mGuiRepo	  = {};
-		inline static BatchSystem<Gui>										mGuiBatch	  = {};
+		struct GuiNode
+		{
+			Scope<Gui>	gui;
+			uint64		listIdx;
+		};
+		inline static std::unordered_map<std::string, GuiNode>	mGuiRepo         = {};
+		inline static std::unordered_map<TypeID, GuiNode>		mConcreteGuiRepo = {};
+		inline static std::vector<Gui*>							mGuiList         = {};
 	};
 
 	//===================================================
 	//                      Inline
 	//===================================================
 
-	template <typename GuiFrameType>
-	inline GuiFrameType* GuiRenderer::CreateGuiFrame()
+	template <GuiConstraint GuiType>
+	GuiType* GuiRenderer::CreateConcreteGui()
 	{
-		static_assert(std::is_base_of<GuiFrame, GuiFrameType>::value, "GuiFrameType must inherit from GuiFrame");
-
-		const std::string typeName = typeid(GuiFrameType).name();
-		ENGINE_LOG_INFO("Creating GuiFrame of type: {}", typeName);
-
-		if (mGuiFrameRepo.find(TYPE_ID(GuiFrameType)) != mGuiFrameRepo.end()) {
-			ENGINE_LOG_WARN("GuiFrame of this type already exists: {}", typeName);
-			return static_cast<GuiFrameType*>(mGuiFrameRepo[TYPE_ID(GuiFrameType)].get());
+		if (mConcreteGuiRepo.contains(TYPE_ID(GuiType)))
+		{
+			assert(false);
+			ENGINE_LOG_ERROR("already exist gui");
+			return static_cast<GuiType*>(mConcreteGuiRepo[TYPE_ID(GuiType)].gui.get());
 		}
 
-		// Create GUI object
-		Gui* gui = CreateGui(typeName);
-		if (!gui) {
-			ENGINE_LOG_ERROR("Failed to create Gui for: {}", typeName);
-			return nullptr;
-		}
+		// make instance
+		Scope<GuiType> gui = Scope<GuiType>(new GuiType);
+		gui->mTypeID       = TYPE_ID(GuiType);
+		GuiType* pGui      = gui.get();
 
-		// Create and store GuiFrame
-		auto [iter, result] = mGuiFrameRepo.emplace(TYPE_ID(GuiFrameType), MakeScope<GuiFrameType>());
-		if (!result) {
-			ENGINE_LOG_ERROR("Failed to create GuiFrame. Type already exists: {}", typeName);
-			return nullptr;
-		}
+		// insert to list
+		uint64 pushIdx = mGuiList.size();
+		mGuiList.push_back(pGui);
 
-		// Initialize GuiFrame
-		auto* frame = static_cast<GuiFrameType*>(iter->second.get());
-		frame->SetGui(gui);
-		frame->Initialize();
+		// insert to hash map
+		mConcreteGuiRepo.emplace(TYPE_ID(GuiType), GuiNode{
+			                         .gui = std::move(gui),
+			                         .listIdx = pushIdx }
+		);
 
-		// Register layout callback
-		gui->SetLayoutCallback([frame]() { frame->GuiLayout(); });
-
-		ENGINE_LOG_INFO("GuiFrame created successfully: {}", typeName);
-		return frame;
+		return pGui;
 	}
 
+	template <GuiConstraint GuiType>
+	GuiType* GuiRenderer::FindConcreteGuiOrNull()
+	{
+		auto iter = mConcreteGuiRepo.find(TYPE_ID(GuiType));
+
+		if (iter == mConcreteGuiRepo.end())
+		{
+			return nullptr;
+		}
+		else
+		{
+			return static_cast<GuiType*>(iter->second.gui.get());
+		}
+	}
+
+	template <GuiConstraint GuiType>
+	bool GuiRenderer::RemoveConcreteGui()
+	{
+		auto iter = mConcreteGuiRepo.find(TYPE_ID(GuiType));
+
+		if (iter == mConcreteGuiRepo.end())
+		{
+			assert(false);
+			ENGINE_LOG_ERROR("{} : gui do not exist.", TYPE_ID(GuiType));
+			return false;
+		}
+		else
+		{
+			uint64 eraseListIdx = iter->second.listIdx;
+
+			// delete in mGuiList
+			if (eraseListIdx != mGuiList.size() - 1)
+			{
+				Gui* successor = mGuiList.back();
+				std::swap(mGuiList[eraseListIdx], mGuiList.back());
+				mConcreteGuiRepo[successor->GetTypeID()].listIdx = eraseListIdx;
+			}
+
+			mGuiList.pop_back();
+			mConcreteGuiRepo.erase(iter);
+
+			return true;
+		}
+	}
 }
 

@@ -15,7 +15,7 @@ namespace cmEngine
 		mDevice.Context->ClearRenderTargetView(mCanvas.RenderTargetView.Get(), mCanvas.ClearColor);
 		mDevice.Context->ClearDepthStencilView(mCanvas.DepthStencilView.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.f, 0);
 
-		// Set Resterizer / Output Merget
+		// Set Rasterize / Output Merger
 		mDevice.Context->RSSetViewports(1, mCanvas.RenderViewport.GetViewport());
 		mDevice.Context->OMSetRenderTargets(1, mCanvas.RenderTargetView.GetAddressOf(), mCanvas.DepthStencilView.Get());
 
@@ -56,15 +56,15 @@ namespace cmEngine
 			{
 				// 없으면 생성
 				DXGI_SWAP_CHAIN_DESC swapChainDesc = {};
-				swapChainDesc.BufferCount          = 2;
-				swapChainDesc.BufferDesc.Width     = 0;
-				swapChainDesc.BufferDesc.Height    = 0;
-				swapChainDesc.BufferDesc.Format    = DXGI_FORMAT_R8G8B8A8_UNORM;
-				swapChainDesc.BufferUsage          = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-				swapChainDesc.OutputWindow         = GameWindow::GetHwnd();
-				swapChainDesc.SampleDesc.Count     = mMSAA.SampleCount;
-				swapChainDesc.SampleDesc.Quality   = mMSAA.Quality;
-				swapChainDesc.Windowed             = TRUE;
+				swapChainDesc.BufferCount = 2;
+				swapChainDesc.BufferDesc.Width = 0;
+				swapChainDesc.BufferDesc.Height = 0;
+				swapChainDesc.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+				swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
+				swapChainDesc.OutputWindow = GameWindow::GetHwnd();
+				swapChainDesc.SampleDesc.Count = mMSAA.SampleCount;
+				swapChainDesc.SampleDesc.Quality = mMSAA.Quality;
+				swapChainDesc.Windowed = TRUE;
 
 				HR hr = mSubDevice.Factory->CreateSwapChain(mDevice.Device.Get(), &swapChainDesc, mCanvas.SwapChain.GetAddressOf());
 				if (!DX_CHECK(hr))
@@ -152,8 +152,8 @@ namespace cmEngine
 	{
 		// Save setting
 		RendererConfig config = {};
-		config.ClearColor = mCanvas.ClearColor;
-		ConfigEngine::Save(config);
+		config.clearColor = mCanvas.ClearColor;
+		JsonSerializer::Serialize(config);
 
 		mDevice.Context.Reset();
 		mDevice.Device.Reset();
@@ -264,13 +264,10 @@ namespace cmEngine
 		RenderStatePool::Initialize();
 
 		// Setting Load
+		RendererConfig config = {};
+		if (JsonSerializer::Deserialize(config))
 		{
-			RendererConfig config;
-			if (ConfigEngine::Load(config))
-			{
-				mCanvas.ClearColor = config.ClearColor;
-			}
-
+			mCanvas.ClearColor = config.clearColor;
 		}
 
 		ENGINE_LOG_INFO("Renderer Initialize Done.");

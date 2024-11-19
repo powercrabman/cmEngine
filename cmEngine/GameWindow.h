@@ -34,6 +34,27 @@ namespace cmEngine
 		uint32 Y;
 	};
 
+	// GameWindow Config
+	struct GameWindowConfig : public JsonMetaData
+	{
+		// WindowPosition
+		uint32 windowPositionX;
+		uint32 windowPositionY;
+
+		// WindowResoltion
+		uint32 windowResolutionWidth;
+		uint32 windowResolutionHeight;
+
+		JSON_STRUCT_BODY(
+			GameWindowConfig,
+			L"WindowConfig.json",
+			windowPositionX,
+			windowPositionY,
+			windowResolutionWidth,
+			windowResolutionHeight
+		);
+	};
+
 	class GameWindow
 	{
 		friend class EngineCore;
@@ -55,7 +76,7 @@ namespace cmEngine
 			const WindowPosition& inPosition
 		);
 
-		static void Destory();
+		static void Destroy();
 
 		constexpr inline static wchar_t			sClassName[] = L"cmEngine Window";
 		constexpr inline static wchar_t			sTitleName[] = L"cmEngine";
@@ -67,8 +88,8 @@ namespace cmEngine
 			HWND				Hwnd = NULL;
 
 			WindowResolution	Resolution = {};
-			WindowRect			WndRect = {};
 			WindowPosition		Position = {};
+			WindowRect			WndRect = {};
 		};
 
 		inline static WindowProp	mWinProp = {};
