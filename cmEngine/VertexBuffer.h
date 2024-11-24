@@ -31,7 +31,6 @@ namespace cmEngine
 	template<typename VertexType>
 	inline void VertexBuffer::Create(const std::vector<VertexType>& inVertices)
 	{
-		static_assert(std::is_base_of<IVertexBase, VertexType>::value);
 		mBuffer.Reset();
 
 		D3D11_BUFFER_DESC desc = {};

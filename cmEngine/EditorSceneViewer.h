@@ -9,7 +9,6 @@ namespace cmEngine
 
 		JSON_STRUCT_BODY(
 			EditorScecneViwerConfig,
-			L"EditorConfig.json",
 			visible,
 			entityEditView
 		);
@@ -28,7 +27,8 @@ namespace cmEngine
 		void DrawEntityEditor();
 
 	private:
-		EditorScecneViwerConfig mConfig       = {};
-		GameEntity				mTargetEntity = GameEntity::NullEntity;
+		EditorScecneViwerConfig mConfig          = {};
+		GameEntity				mTargetEntity    = GameEntity::NullEntity;
+		bool					mEntityEditorBit = false;
 	};
 }

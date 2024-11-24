@@ -15,11 +15,11 @@ namespace cmEngine
 		if (!DX_CHECK(hr))
 		{
 			assert(false);
-			ENGINE_LOG_ERROR("pixel shader creat error.");
+			ENGINE_LOG_ERROR("pixel shader create error.");
 			return;
 		}
 
-		ENGINE_LOG_INFO("pixel shader creat done.");
+		ENGINE_LOG_INFO("pixel shader create done.");
 	}
 }
 

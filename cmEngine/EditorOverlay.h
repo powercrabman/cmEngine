@@ -12,7 +12,6 @@ namespace cmEngine
 
 		JSON_STRUCT_BODY(
 			EditorOverlayConfig,
-			L"EditorConfig.json",
 			transparency,
 			noMoveBit,
 			frameViewBit,

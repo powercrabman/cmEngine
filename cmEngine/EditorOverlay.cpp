@@ -6,14 +6,22 @@ namespace cmEngine
 {
 	EditorOverlay::EditorOverlay()
 	{
-		JsonSerializer::Deserialize(mConfig);
+		JsonSerializer::DeserializeFromSection(
+			mConfig,
+			Editor::sEditorConfigPath,
+			"EditorOverlay"
+		);
 		SetVisible(mConfig.visible);
 	}
 
 	EditorOverlay::~EditorOverlay()
 	{
 		mConfig.visible = IsVisible();
-		JsonSerializer::Serialize(mConfig);
+		JsonSerializer::SerializeToSection(
+			mConfig,
+			Editor::sEditorConfigPath,
+			"EditorOverlay"
+		);
 	}
 
 	void EditorOverlay::RenderGui()

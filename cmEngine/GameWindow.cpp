@@ -49,9 +49,13 @@ namespace cmEngine
 
 		ENGINE_LOG_INFO("Window create success.");
 
-		// Window Config Deserialize
+		// Window Config DeserializeFromFile
 		GameWindowConfig cf = {};
-		if (JsonSerializer::Deserialize<GameWindowConfig>(cf))
+		if (JsonSerializer::DeserializeFromSection<GameWindowConfig>(
+			cf,
+			sConfigPath,
+			"GameWindowConfig"
+		))
 		{
 			ResizeWindow(WindowResolution{
 				.Width  = cf.windowResolutionWidth,
@@ -74,13 +78,17 @@ namespace cmEngine
 
 	void GameWindow::Destroy()
 	{
-		// Window Config Serialize
+		// Window Config SerializeToFile
 		GameWindowConfig cf       = {};
 		cf.windowPositionX        = mWinProp.Position.X;
 		cf.windowPositionY        = mWinProp.Position.Y;
 		cf.windowResolutionHeight = mWinProp.Resolution.Height;
 		cf.windowResolutionWidth  = mWinProp.Resolution.Width;
-		JsonSerializer::Serialize(cf);
+		JsonSerializer::SerializeToSection(
+			cf,
+			sConfigPath,
+			"GameWindowConfig"
+		);
 	}
 
 	void GameWindow::ResizeWindow(const WindowResolution& inRes)

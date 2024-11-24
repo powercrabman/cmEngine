@@ -34,8 +34,6 @@ namespace cmEngine
 	template<typename VertexType>
 	inline void Geometry::Create(const std::vector<VertexType>& inVertices, const std::vector<UINT>& inIndices)
 	{
-		static_assert(std::is_base_of<IVertexBase, VertexType>::value);
-
 		mIndexBuffer.reset();
 		mVertexBuffer.reset();
 

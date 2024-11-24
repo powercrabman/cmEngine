@@ -9,7 +9,6 @@ namespace cmEngine
 
 		JSON_STRUCT_BODY(
 			LogConfig,
-			L"SystemConfig.json",
 			logLevelColor
 		);
 	};
@@ -19,20 +18,25 @@ namespace cmEngine
 	void Log::Initialize()
 	{
 		mLogList.clear();
-		mLogList.reserve(LOG_LIST_CAPACITY);
-
-		LogConfig cf = {};
-		JsonSerializer::Deserialize(cf);
-		LogData::LogLevelColor = cf.logLevelColor;
+		mLogList.reserve(1000);
+		mLogList.reserve(50000);
 	}
 
-	void Log::Destory()
+	void Log::Destroy()
 	{
 		ClearLogList();
-
-		LogConfig cf = {};
-		cf.logLevelColor = LogData::LogLevelColor;
-		JsonSerializer::Serialize(cf);
 	}
 
+	void Log::LogEx(eLogCaller inCaller, eLogLevel inLevel, std::string_view inMessage)
+	{
+		float timeStamp = Timer::GetTotalTime();
+
+		size_t oldSize = mLogText.size();
+		mLogText.appendf("[%.3f sec][%s][%s] %s\n", timeStamp, ToString(inCaller), ToString(inLevel), inMessage.data());
+		for (int newSize = mLogText.size(); oldSize < newSize; oldSize++)
+			if (mLogText[oldSize] == '\n')
+			{
+				mLogList.emplace_back(Timer::GetTotalTime(), inCaller, inLevel, oldSize + 1);
+			}
+	}
 }

@@ -47,7 +47,6 @@ namespace cmEngine
 
 		JSON_STRUCT_BODY(
 			GameWindowConfig,
-			L"WindowConfig.json",
 			windowPositionX,
 			windowPositionY,
 			windowResolutionWidth,
@@ -80,7 +79,7 @@ namespace cmEngine
 
 		constexpr inline static wchar_t			sClassName[] = L"cmEngine Window";
 		constexpr inline static wchar_t			sTitleName[] = L"cmEngine";
-		constexpr inline static const wchar_t	sSettingFilePath[] = L"GameWindowSetting.json";
+		constexpr inline static const wchar_t	sConfigPath[] = L"EngineConfig.json";
 
 		struct WindowProp
 		{

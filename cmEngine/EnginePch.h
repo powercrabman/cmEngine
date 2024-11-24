@@ -73,6 +73,7 @@ using namespace Microsoft::WRL;
 #include "../Libraries/ImGui/imgui_impl_dx11.h"
 #include "../Libraries/ImGui/imgui_impl_win32.h"
 #include "../Libraries/ImGui/imgui_internal.h"
+#include "GuiHelper.h"
 
 #pragma comment(lib, "../Libraries/ImGui/imgui.lib")
 
@@ -88,10 +89,10 @@ using namespace Microsoft::WRL;
 #include "Pointer.h"
 #include "EngineMacro.h"
 #include "EngineAlgorithm.h"
+#include "SerializeHelper.h"
 #include "TypeID.h"
 #include "EngineMath.h"
-#include "BatchSystem.h"
-
+#include "EngineResource.h"
 //Engine Module
 #include "JsonSerializer.h"
 
@@ -119,10 +120,11 @@ using namespace Microsoft::WRL;
 #include "Pipeline.h"
 #include "Gui.h"
 #include "GuiRenderer.h"
+#include "ShaderAnalyzer.h"
 
 // GameEntity
+#include "Component.h"
 #include "GameEntity.h"
-#include "Name.h"
 
 // Scene
 #include "Scene.h"
@@ -130,9 +132,8 @@ using namespace Microsoft::WRL;
 
 // Compoenent System
 #include "Transform.h"
-#include "FlipbookRender.h"
-#include "SpriteRender.h"
 #include "Camera.h"
-#include "GeometryRender.h"
+#include "RenderComponent.h"
 #include "Behavior.h"
 #include "InputController.h"
+#include "Editor.h"

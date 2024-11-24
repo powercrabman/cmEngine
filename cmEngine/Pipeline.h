@@ -29,14 +29,14 @@ namespace cmEngine
 			ShaderSet* inShaders, 
 			const RenderState& inRenderState,
 			Texture* inTexture,
-			float inOffsetRow,
-			float inOffsetCol
+			float inOffsetX,
+			float inOffsetY
 		)
 		{
 			SetWorld(inWorld);
 			SetShaders(inShaders);
 			SetRenderState(inRenderState);
-			SetTexture(inTexture, inOffsetCol, inOffsetRow);
+			SetTexture(inTexture, inOffsetX, inOffsetY);
 			SetGeometry(inGeometry);
 
 			Renderer::GetContext()->DrawIndexed(inGeometry->GetIndexBuffer()->GetBufferSize(), 0, 0);
@@ -92,8 +92,8 @@ namespace cmEngine
 			}
 
 			mSpriteCB->UpdateBuffer(CBSprite{
-					.PivotCol = offsetX,
-					.PivotRow = offsetY
+					.OffsetX = offsetX,
+					.OffsetY = offsetY
 				});
 		}
 
@@ -106,7 +106,7 @@ namespace cmEngine
 		Matrix						mViewProj = Matrix::Identity;
 		ConstantBuffer<CBCamera>*	mCameraCB = nullptr;
 
-		// Texture
+		// texture
 		Texture*					mTexture    = nullptr;
 		ConstantBuffer<CBSprite>*	mSpriteCB   = nullptr;
 

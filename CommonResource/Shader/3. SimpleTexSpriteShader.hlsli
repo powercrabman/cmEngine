@@ -10,8 +10,8 @@ cbuffer cbCamera : register(b1)
 
 cbuffer cmCBSprite : register(b2)
 {
-    float PivotCol;
-    float PivotRow;
+    float OffsetX;
+    float OffsetY;
 }
 
 Texture2D texDiffuse : register(t0);
@@ -39,8 +39,8 @@ VSOutput VS(VSInput input)
     float4x4 finalMatrix = mul(World, ViewProj);
     output.PositionH = mul(float4(input.Position, 1.f), finalMatrix);
 
-    output.UV.x = input.UV.x + PivotCol;
-    output.UV.y = input.UV.y + PivotRow;
+    output.UV.x = input.UV.x + OffsetX;
+    output.UV.y = input.UV.y + OffsetY;
     
     return output;
 }

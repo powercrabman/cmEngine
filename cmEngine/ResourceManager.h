@@ -1,79 +1,156 @@
 #pragma once
 #include "ResourceBase.h"
 
-class ResourceBase;
-
 namespace cmEngine
 {
-	enum class eResourceType
-	{
-		Texture,
-		Sprite,
-		Flipbook,
-		ShaderSet,
+	class ResourceBase;
 
-		Count
-	};
+	template <typename ResourceType>
+	concept ResourceConstraint = std::is_base_of_v<ResourceBase, ResourceType> && requires { ResourceType::ResourceType; };
 
 	class ResourceManager
 	{
 		friend class EngineCore;
+
+		using ResourceMap          = std::unordered_map<std::string, Scope<ResourceBase>>;
+		using ResourceMapIterator  = std::unordered_map<std::string, Scope<ResourceBase>>::iterator;
+
 	public:
-		static std::wstring GetClientResourcePath() { return mClientResourcePath.c_str(); }
-		static std::wstring GetCommonResourcePath() { return mCommonResourcePath.c_str(); }
-		static std::wstring GetClientResourcePath(std::wstring_view inPath);
-		static std::wstring GetCommonResourcePath(std::wstring_view inPath);
+		template<ResourceConstraint ResourceType>
+		static ResourceType* TryFindResource(std::string_view inName);
 
-		template<typename ResourceType>
-		static ResourceType* FindResourceOrNull(std::string_view inName)
-		{
-			ResourceUnorderedMap& repo = mResourceRepo[(uint32)ResourceType::ResourceType];
+		// this is runtime-function
+		static ResourceBase* TryFindResourceByType(eResourceType inType, std::string_view inName);
 
-			auto iter = repo.find(inName.data());
+		// this is runtime-function
+		static ResourceBase* CreateResourceByType(eResourceType inType, std::string_view inName);
 
-			if (iter == repo.end())
-			{
-				ENGINE_LOG_ERROR("{}::{} is not exist resource!", ToString(ResourceType::ResourceType), inName);
-				return nullptr;
-			}
-			else
-			{
-				return static_cast<ResourceType*>(iter->second.get());
-			}
-		}
+		// this is runtime-function
+		static void LoadResourceBundleJson(std::wstring_view inJsonPath, bool useAbsolutePath = false);
 
-		template<typename ResourceType>
-		static ResourceType* CreateResource(std::string_view inName)
-		{
-			ResourceUnorderedMap& repo = mResourceRepo[(uint32)ResourceType::ResourceType];
+		template<ResourceConstraint ResourceType>
+		static ResourceType* LoadResourceFromFile(std::wstring_view inFilePath);
 
-			auto [iter, result] = repo.emplace(inName, MakeScope<ResourceType>(inName));
-			ResourceType* ptr = static_cast<ResourceType*>(iter->second.get());
+		template<ResourceConstraint ResourceType>
+		static ResourceType* LoadResourceFromSection(std::wstring_view inFilePath, std::string_view inSection);
 
-			if (result)
-			{
-				ENGINE_LOG_INFO("{}::{} create done.", ToString(ResourceType::ResourceType), inName);
-				return ptr;
-			}
-			else
-			{
-				assert(false);
-				ENGINE_LOG_ERROR("{}::{} is already exist resource!", ToString(ResourceType::ResourceType), inName);
-				return ptr;
-			}
-		}
-		
+		template<ResourceConstraint ResourceType>
+		static ResourceType* CreateEmptyResource(std::string_view inName);
+
+		template<ResourceConstraint ResourceType>
+		static ResourceMapIterator GetBegin() { return mResourceRepo[static_cast<uint32>(ResourceType::ResourceType)].begin(); }
+
+		template<ResourceConstraint ResourceType>
+		static ResourceMapIterator GetEnd() { return mResourceRepo[static_cast<uint32>(ResourceType::ResourceType)].end(); }
+
 	private:
 		static void Initialize();
 		static void Destroy();
 
-	private:
-		inline static std::filesystem::path mClientResourcePath = {};
-		inline static std::filesystem::path mCommonResourcePath = {};
+		template <ResourceConstraint ResourceType>
+		static ResourceType* LoadResourceEx(Scope<ResourceType>& inLoadedResource);
 
-		using ResourceUnorderedMap = std::unordered_map<std::string, Scope<ResourceBase>>;
-		inline static std::array<ResourceUnorderedMap, (uint32)eResourceType::Count> mResourceRepo = {};
+		static Scope<ResourceBase> CreateResourceByTypeEx(eResourceType inType);
+
+	private:
+		inline static std::array<ResourceMap, static_cast<uint32>(eResourceType::Count)> mResourceRepo = {};
 	};
+
+	//===================================================
+	//			          Inline
+	//===================================================
+
+	template <ResourceConstraint ResourceType>
+	ResourceType* ResourceManager::TryFindResource(std::string_view inName)
+	{
+		ResourceMap& repo = mResourceRepo[static_cast<uint32>(ResourceType::ResourceType)];
+
+		auto iter = repo.find(inName.data());
+
+		if (iter == repo.end())
+		{
+			ENGINE_LOG_ERROR("{}::{} is not exist resource!", ToString(ResourceType::ResourceType), inName);
+			return nullptr;
+		}
+		else
+		{
+			return static_cast<ResourceType*>(iter->second.get());
+		}
+	}
+
+	template <ResourceConstraint ResourceType>
+	ResourceType* ResourceManager::LoadResourceFromFile(std::wstring_view inFilePath)
+	{
+		Scope<ResourceType> resource{ new ResourceType };
+
+		// 로드 성공
+		if (resource->LoadJsonFromFile(inFilePath))
+		{
+			return LoadResourceEx(resource);
+		}
+		else
+		{
+			return nullptr;
+		}
+	}
+
+	template <ResourceConstraint ResourceType>
+	ResourceType* ResourceManager::LoadResourceFromSection(std::wstring_view inFilePath, std::string_view inSection)
+	{
+		Scope<ResourceType> resource{ new ResourceType };
+
+		// 로드 성공
+		if (resource->LoadJsonFromSection(inFilePath, inSection))
+		{
+			return LoadResourceEx(resource);
+		}
+		else
+		{
+			return nullptr;
+		}
+	}
+
+	template <ResourceConstraint ResourceType>
+	ResourceType* ResourceManager::CreateEmptyResource(std::string_view inName)
+	{
+		ResourceMap& repo = mResourceRepo[static_cast<uint32>(ResourceType::ResourceType)];
+
+		auto [iter, result] = repo.emplace(inName, Scope<ResourceType>(new ResourceType));
+		ResourceType* ptr   = static_cast<ResourceType*>(iter->second.get());
+
+		if (result)
+		{
+			ptr->mName = inName;
+			ENGINE_LOG_INFO("{}::{} create done.", ToString(ResourceType::ResourceType), inName);
+			return ptr;
+		}
+		else
+		{
+			assert(false);
+			ENGINE_LOG_ERROR("{}::{} is already exist resource!", ToString(ResourceType::ResourceType), inName);
+			return ptr;
+		}
+	}
+
+	template <ResourceConstraint ResourceType>
+	ResourceType* ResourceManager::LoadResourceEx(Scope<ResourceType>& inLoadedResource)
+	{
+		ResourceMap& repo = mResourceRepo[static_cast<uint32>(ResourceType::ResourceType)];
+		auto [iter, result]        = repo.emplace(inLoadedResource->GetName(), std::move(inLoadedResource));
+		ResourceType* ptr          = static_cast<ResourceType*>(iter->second.get());
+
+		if (result)
+		{
+			ENGINE_LOG_INFO("{}::{} create done.", ToString(ResourceType::ResourceType), ptr->GetName());
+			return ptr;
+		}
+		else
+		{
+			assert(false);
+			ENGINE_LOG_ERROR("{}::{} is already exist resource!", ToString(ResourceType::ResourceType), ptr->GetName());
+			return ptr;
+		}
+	}
 
 	//===================================================
 	//                    ToString
@@ -83,7 +160,7 @@ namespace cmEngine
 	{
 		switch (inType)
 		{
-		case cmEngine::eResourceType::Texture:		return "Texture";
+		case cmEngine::eResourceType::Texture:		return "texture";
 		case cmEngine::eResourceType::Sprite:		return "Sprite";
 		case cmEngine::eResourceType::Flipbook:		return "Flipbook";
 		case cmEngine::eResourceType::ShaderSet:	return "ShaderSet";

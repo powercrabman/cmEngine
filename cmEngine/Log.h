@@ -12,41 +12,43 @@ namespace cmEngine
 		Client, Engine, Count
 	};
 
-	struct LogData
+	struct LogInfo
 	{
-		float		LogTime;
-		eLogCaller	LogCaller;
-		eLogLevel	LogLevel;
-		std::string LogMessage;
-
-		inline static std::array<ImVec4, static_cast<UINT>(eLogLevel::Count)> LogLevelColor =
-		{
-			ImVec4{0.5f, 0.5f, 0.5f, 1.f}, // Trace
-			ImVec4{0.f,  1.f, 0.f, 1.f},   // Debug
-			ImVec4{0.f,  1.f, 0.f, 1.f},   // Info
-			ImVec4{1.f,  1.f, 0.f, 1.f},   // Warn 
-			ImVec4{1.f,  0.f, 0.f, 1.f},   // Error
-			ImVec4{0.5f, 1.f, 0.f, 1.f}    // Fatal
-		};
+		float		logTime;
+		eLogCaller	logCaller;
+		eLogLevel	logLevel;
+		uint32		lineOffset;
 	};
 
 	class Log
 	{
 	public:
 		static void Initialize();
-		static void Destory();
-		static void ClearLogList() { mLogList.clear(); }
+		static void Destroy();
+		static void ClearLogList()
+		{
+			mLogText.clear();
+			mLogList.clear();
+			mLogList.emplace_back(Timer::GetDeltaTime(), eLogCaller::Engine, eLogLevel::Debug, 0);
+		}
 
 		static void LogClient(eLogLevel inLevel, std::string_view inMessage);
 		static void LogEngine(eLogLevel inLevel, std::string_view inMessage);
 
-		static std::vector<LogData>::const_iterator GetLogDataConstBegin() { return mLogList.cbegin(); }
-		static std::vector<LogData>::const_iterator GetLogDataConstEnd() { return mLogList.cend(); }
-		static size_t GetLogListSize() { return mLogList.size(); }
+		static const char* GetLogTextBegin() { return mLogText.begin(); }
+		static const char* GetLogTextEnd() { return mLogText.end(); }
+
+		static std::vector<LogInfo>::iterator	GetLogListBegin() { return mLogList.begin(); }
+		static std::vector<LogInfo>::iterator	GetLogListEnd() { return mLogList.end(); }
+		static LogInfo*							GetLogListData() { return mLogList.data(); }
+		static size_t							GetLogListSize() { return mLogList.size(); }
 
 	private:
-		enum { LOG_LIST_CAPACITY = 1024 };
-		inline static std::vector<LogData> mLogList = {};
+		static void LogEx(eLogCaller inCaller,eLogLevel inLevel, std::string_view inMessage);
+
+	private:
+		inline static std::vector<LogInfo>	mLogList = {};
+		inline static ImGuiTextBuffer		mLogText = {};
 	};
 
 	//===================================================
@@ -55,12 +57,12 @@ namespace cmEngine
 
 	inline void Log::LogClient(eLogLevel inLevel, std::string_view inMessage)
 	{
-		mLogList.emplace_back(Timer::GetTotalTime(), eLogCaller::Client, inLevel, inMessage.data());
+		LogEx(eLogCaller::Client, inLevel, inMessage);
 	}
 
 	inline void Log::LogEngine(eLogLevel inLevel, std::string_view inMessage)
 	{
-		mLogList.emplace_back(Timer::GetTotalTime(), eLogCaller::Engine, inLevel, inMessage.data());
+		LogEx(eLogCaller::Engine, inLevel, inMessage);
 	}
 
 	//===================================================

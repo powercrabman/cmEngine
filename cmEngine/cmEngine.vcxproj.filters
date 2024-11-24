@@ -140,6 +140,12 @@
     <Filter Include="96. Editor\EditorVoidPopup">
       <UniqueIdentifier>{1046cc68-05e2-4630-b107-a3a5729b42ee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="96. Editor\EditorBrowser">
+      <UniqueIdentifier>{f29ecdca-0a2a-4f06-ad8a-c8733dcaff48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. Editor\EditorResourceViewer">
+      <UniqueIdentifier>{ee2430f9-9a11-4b06-b94d-d4a214c147b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Types.h">
@@ -283,18 +289,6 @@
     <ClInclude Include="RenderState.h">
       <Filter>06. Renderer\RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteRender.h">
-      <Filter>11. Component</Filter>
-    </ClInclude>
-    <ClInclude Include="FlipbookRender.h">
-      <Filter>11. Component</Filter>
-    </ClInclude>
-    <ClInclude Include="GeometryRender.h">
-      <Filter>11. Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Name.h">
-      <Filter>11. Component</Filter>
-    </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>11. Component</Filter>
     </ClInclude>
@@ -303,15 +297,6 @@
     </ClInclude>
     <ClInclude Include="GameEntity.h">
       <Filter>10. GameEntity</Filter>
-    </ClInclude>
-    <ClInclude Include="FlipbookRenderSystem.h">
-      <Filter>12. System</Filter>
-    </ClInclude>
-    <ClInclude Include="GeometryRenderSystem.h">
-      <Filter>12. System</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteRenderSystem.h">
-      <Filter>12. System</Filter>
     </ClInclude>
     <ClInclude Include="PrimitiveGeometry.h">
       <Filter>06. Renderer\Geometry</Filter>
@@ -345,6 +330,33 @@
     </ClInclude>
     <ClInclude Include="EditorSceneViewer.h">
       <Filter>96. Editor\EditorSceneEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>11. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderAnalyzer.h">
+      <Filter>06. Renderer\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderComponent.h">
+      <Filter>11. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderSystem.h">
+      <Filter>12. System</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorResourceViewer.h">
+      <Filter>96. Editor\EditorResourceViewer</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorBrowser.h">
+      <Filter>96. Editor\EditorBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="FileDialog.h">
+      <Filter>07. GUI\GuiHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="SerializeHelper.h">
+      <Filter>94. JsonSerializer</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineResource.h">
+      <Filter>08. Resource</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -483,35 +495,14 @@
     <ClCompile Include="RenderState.cpp">
       <Filter>06. Renderer\RenderState</Filter>
     </ClCompile>
-    <ClCompile Include="GeometryRender.cpp">
-      <Filter>11. Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Name.cpp">
-      <Filter>11. Component</Filter>
-    </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>11. Component</Filter>
     </ClCompile>
     <ClCompile Include="Transform.cpp">
       <Filter>11. Component</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteRender.cpp">
-      <Filter>11. Component</Filter>
-    </ClCompile>
-    <ClCompile Include="FlipbookRender.cpp">
-      <Filter>11. Component</Filter>
-    </ClCompile>
     <ClCompile Include="GameEntity.cpp">
       <Filter>10. GameEntity</Filter>
-    </ClCompile>
-    <ClCompile Include="FlipbookRenderSystem.cpp">
-      <Filter>12. System</Filter>
-    </ClCompile>
-    <ClCompile Include="GeometryRenderSystem.cpp">
-      <Filter>12. System</Filter>
-    </ClCompile>
-    <ClCompile Include="SpriteRenderSystem.cpp">
-      <Filter>12. System</Filter>
     </ClCompile>
     <ClCompile Include="PrimitiveGeometry.cpp">
       <Filter>06. Renderer\Geometry</Filter>
@@ -545,6 +536,30 @@
     </ClCompile>
     <ClCompile Include="EditorSceneViewer.cpp">
       <Filter>96. Editor\EditorSceneEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>11. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderAnalyzer.cpp">
+      <Filter>06. Renderer\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderComponent.cpp">
+      <Filter>11. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderSystem.cpp">
+      <Filter>12. System</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorResourceViewer.cpp">
+      <Filter>96. Editor\EditorResourceViewer</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorBrowser.cpp">
+      <Filter>96. Editor\EditorBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="FileDialog.cpp">
+      <Filter>07. GUI\GuiHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="SerializeHelper.cpp">
+      <Filter>94. JsonSerializer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

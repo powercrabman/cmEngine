@@ -29,7 +29,9 @@ namespace cmEngine
 		void AttachSystem(std::function<void(Scene*)> inCallback, eSystemLayer inLayer);
 		void DattachSystem(std::function<void(Scene*)> inCallback, eSystemLayer inLayer);
 
-		GameEntity	CreateGameEntity() { return GameEntity{ mRegistry.create() }; }
+		GameEntity	CreateGameEntity();
+		GameEntity	CloneGameEntity(GameEntity inGameEntity);
+
 		void		RemoveGameEntity(const GameEntity& inEntity) { mRegistry.destroy(inEntity); }
 
 		GameEntity	FindEntityByName(const Name& inName);
@@ -61,7 +63,7 @@ namespace cmEngine
 
 		// Camera
 		GameEntity mDefaultCameraEntity = GameEntity::NullEntity;
-		GameEntity mCameraEntity        = GameEntity::NullEntity;
+		GameEntity mCameraEntity = GameEntity::NullEntity;
 	};
 
 	//===================================================
@@ -91,6 +93,12 @@ namespace cmEngine
 	inline auto cmEngine::Scene::GetGroup()
 	{
 		return mRegistry.group<ComponentTypes...>();
+	}
+
+	inline GameEntity Scene::CreateGameEntity()
+	{
+		GameEntity entity = GameEntity{ mRegistry.create() };
+		return entity;
 	}
 }
 

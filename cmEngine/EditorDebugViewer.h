@@ -8,7 +8,6 @@ namespace cmEngine
 
 		JSON_STRUCT_BODY(
 			EngineDebugViwerConfig,
-			L"EditorConfig.json",
 			visible
 		);
 	};

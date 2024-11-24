@@ -23,6 +23,21 @@ namespace cmEngine
 		}
 
 		template<typename Ty, typename...Args>
+		bool TryCreateComponent(Args&& ...args)
+		{
+			if (TryFindComponent<Ty>())
+			{
+				ENGINE_LOG_WARN("Already exist component.");
+				return false;
+			}
+			else
+			{
+				mRegi->emplace<Ty>(mEntity, std::forward<Args>(args)...);
+				return true;
+			}
+		}
+
+		template<typename Ty, typename...Args>
 		Ty& ReplaceComponent(Args&&... args)
 		{
 			return mRegi->emplace_or_replace<Ty>(mEntity, std::forward<Args>(args)...);
@@ -32,6 +47,18 @@ namespace cmEngine
 		void RemoveComponent() const
 		{
 			mRegi->remove<Ty>(mEntity);
+		}
+
+		template<typename Ty>
+		Ty* TryFindComponent()
+		{
+			return mRegi->try_get<Ty>(mEntity);
+		}
+
+		template<typename ...Types>
+		auto TryFindComponents() const
+		{
+			return mRegi->try_get<Types...>(mEntity);
 		}
 
 		template<typename Ty>
@@ -77,7 +104,6 @@ namespace cmEngine
 		{
 			return mRegi && mRegi->valid(mEntity);
 		}
-
 
 		static GameEntity NullEntity;
 

@@ -1,10 +1,9 @@
 #include "EnginePch.h"
 #include "Scene.h"
 #include "GameEntity.h"
-#include "FlipbookRenderSystem.h"
-#include "SpriteRenderSystem.h"
-#include "GeometryRenderSystem.h"
+#include "RenderSystem.h"
 #include "BehaviorSystem.h"
+#include "InputControllerSystem.h"
 
 namespace cmEngine
 {
@@ -17,10 +16,12 @@ namespace cmEngine
 		mDefaultCameraEntity = CreateGameEntity();
 		mDefaultCameraEntity.CreateComponent<Transform>(Transform::sIdentity);
 		mDefaultCameraEntity.CreateComponent<Camera>(Camera::CreatePerspective(Math::DegToRad(45.f), 0.01f, 100.f));
+		mDefaultCameraEntity.CreateComponent<Name>("Default Scene Camera");
 
 		// 기본 시스템 등록
 		AttachSystem(FlipbookUpdateSystem, eSystemLayer::Update);
 		AttachSystem(BehaviorSystem, eSystemLayer::Update);
+		AttachSystem(InputControllerSystem, eSystemLayer::Update);
 
 		AttachSystem(FlipbookRenderSystem, eSystemLayer::Render);
 		AttachSystem(SpriteRenderSystem, eSystemLayer::Render);
@@ -54,6 +55,22 @@ namespace cmEngine
 		{
 			layer.clear();
 		}
+	}
+
+	GameEntity Scene::CloneGameEntity(GameEntity inGameEntity)
+	{
+		GameEntity copied = CreateGameEntity();
+
+		auto storage_view = mRegistry.storage();
+		for (auto [id, storage] : mRegistry.storage())
+		{
+			if (storage.contains(inGameEntity))
+			{
+				storage.push(copied, storage.value(inGameEntity));
+			}
+		}
+
+		return copied;
 	}
 
 	GameEntity Scene::FindEntityByName(const Name& inName)

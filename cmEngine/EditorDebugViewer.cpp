@@ -7,7 +7,11 @@ namespace cmEngine
 {
 	EditorDebugViewer::EditorDebugViewer()
 	{
-		JsonSerializer::Deserialize(mConfig);
+		JsonSerializer::DeserializeFromSection(
+			mConfig,
+			Editor::sEditorConfigPath,
+			"EditorDebugViewer"
+		);
 		SetVisible(mConfig.visible);
 		SetHotKey(eKeyCode::F5);
 	}
@@ -15,7 +19,11 @@ namespace cmEngine
 	EditorDebugViewer::~EditorDebugViewer()
 	{
 		mConfig.visible = IsVisible();
-		JsonSerializer::Serialize(mConfig);
+		JsonSerializer::SerializeToSection(
+			mConfig,
+			Editor::sEditorConfigPath,
+			"EditorDebugViewer"
+		);
 	}
 
 	void EditorDebugViewer::RenderGui()

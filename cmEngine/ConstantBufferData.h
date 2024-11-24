@@ -16,8 +16,8 @@ namespace cmEngine
 
 	struct CBSprite : IMPLEMENTS ConstantBufferDataBase
 	{
-		float	PivotCol;
-		float	PivotRow;
+		float	OffsetX;
+		float	OffsetY;
 		float	NotUse[2];
 	};
 }

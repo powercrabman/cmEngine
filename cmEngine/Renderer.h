@@ -11,7 +11,11 @@ namespace cmEngine
 	struct RendererConfig : public JsonMetaData
 	{
 		Color clearColor;
-		JSON_STRUCT_BODY(RendererConfig, L"RendererConfig.json", clearColor);
+
+		JSON_STRUCT_BODY(
+			RendererConfig,
+			clearColor
+		)
 	};
 
 	class Renderer
@@ -38,6 +42,8 @@ namespace cmEngine
 		static float	 GetAspectRatio() { return mCanvas.RenderViewport.AspectRatio(); }
 
 		static Pipeline* GetPipeline() { return mPipeline.get(); }
+
+		inline static const wchar_t* sConfigPath = L"EngineConfig.json";
 
 	private:
 		static bool Initialize();

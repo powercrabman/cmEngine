@@ -11,8 +11,7 @@ namespace cmEngine
 		VertexShader();
 		~VertexShader();
 
-		template<typename VertexType>
-		void Create();
+		void Create(const D3D11_INPUT_ELEMENT_DESC* inInputElements, size_t inInputElementsCount);
 
 		::ComPtr<ID3D11VertexShader> GetShader() const { return mShader; }
 		::ComPtr<ID3D11InputLayout>  GetInputLayout() const { return mInputLayout; }
@@ -26,11 +25,11 @@ namespace cmEngine
 	//                      Inline
 	//===================================================
 
-	template<typename VertexType>
-	inline void VertexShader::Create()
+	inline void VertexShader::Create(
+		const D3D11_INPUT_ELEMENT_DESC* inInputElements,
+		size_t							inInputElementsCount
+	)
 	{
-		static_assert(std::is_base_of<IVertexBase, VertexType>::value);
-
 		mInputLayout.Reset();
 		mShader.Reset();
 
@@ -54,8 +53,8 @@ namespace cmEngine
 		// create Input Layout
 		{
 			HR hr = Renderer::GetDevice()->CreateInputLayout(
-				VertexType::InputElements,
-				VertexType::InputElementsSize,
+				inInputElements,
+				inInputElementsCount,
 				GetBlob()->GetBufferPointer(),
 				GetBlob()->GetBufferSize(),
 				mInputLayout.GetAddressOf()

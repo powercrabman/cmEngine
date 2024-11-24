@@ -3,8 +3,7 @@
 
 namespace cmEngine
 {
-
-	void Texture::Load(std::wstring_view inFilePath)
+	void Texture::LoadTextureImage(std::wstring_view inFilePath)
 	{
 		HR hr = LoadFromWICFile(
 			inFilePath.data(),
@@ -17,14 +16,16 @@ namespace cmEngine
 		if (!DX_CHECK(hr))
 		{
 			assert(false);
-			ENGINE_LOG_ERROR("\"{}\" Load Success!", String::ConvertToString(inFilePath));
+			ENGINE_LOG_ERROR("\"{}\" LoadTextureImage Fail.", String::ConvertToString(inFilePath));
 			return;
 		}
 
-		ENGINE_LOG_INFO("\"{}\" Load Success! ", String::ConvertToString(inFilePath));
+		mImagePath = inFilePath;
+		Create();
+		ENGINE_LOG_INFO("\"{}\" LoadTextureImage Success! ", String::ConvertToString(inFilePath));
 	}
 
-	void Texture::Save(std::wstring_view inFilePath, eTextureFormat inFormat)
+	void Texture::SaveTextureImage(std::wstring_view inFilePath, eTextureFormat inFormat) const
 	{
 		HR hr = DirectX::SaveToWICFile(
 			*mImage.GetImage(0, 0, 0),
@@ -36,19 +37,19 @@ namespace cmEngine
 		if (FAILED(hr))
 		{
 			assert(false);
-			ENGINE_LOG_ERROR("Texture Save Fail.");
+			ENGINE_LOG_ERROR("texture SaveTextureImage Fail.");
 			return;
 		}
 
-		ENGINE_LOG_INFO("\"{}\" Save Success! ", String::ConvertToString(inFilePath));
+		ENGINE_LOG_INFO("\"{}\" SaveTextureImage Success! ", String::ConvertToString(inFilePath));
 	}
 
 	void Texture::Create()
 	{
-		if (mImage.GetImages() == nullptr)
+		if (mImage.GetImages() == nullptr || mImage.GetImageCount() == 0)
 		{
-			ASSERT(false, "Image is not loaded");
-			LOG_ERROR("Image is not loaded");
+			ASSERT(false, "Image data is invalid");
+			LOG_ERROR("Image data is invalid");
 			return;
 		}
 
@@ -63,8 +64,8 @@ namespace cmEngine
 
 		if (FAILED(hr))
 		{
-			ASSERT(false, "Create Texture Fail.");
-			LOG_ERROR("Create Texture Fail.");
+			ASSERT(false, "Create texture Fail.");
+			LOG_ERROR("Create texture Fail.");
 			return;
 		}
 
@@ -72,8 +73,8 @@ namespace cmEngine
 
 		if (FAILED(hr))
 		{
-			ASSERT(false, "Create Texture Fail.");
-			LOG_ERROR("Create Texture Fail.");
+			ASSERT(false, "Create texture Fail.");
+			LOG_ERROR("Create texture Fail.");
 			return;
 		}
 
@@ -91,6 +92,54 @@ namespace cmEngine
 			LOG_ERROR("Create Shader Resource View Fail.");
 			return;
 		}
+	}
+
+	bool Texture::LoadJsonFromFile(std::wstring_view inFilePath)
+	{
+		TextureJson js = {};
+
+		if (JsonSerializer::DeserializeFromFile(js, inFilePath))
+		{
+			mName = js.textureName;
+			LoadTextureImage(String::ConvertToWString(js.imagePath));
+			ENGINE_LOG_INFO("{} texture load success", js.textureName);
+			return true;
+		}
+
+		return false;
+	}
+
+	void Texture::SaveJsonToFile(std::wstring_view inFilePath)
+	{
+		TextureJson js = {};
+		js.imagePath = String::ConvertToString(mImagePath);
+		js.textureName = GetName();
+
+		JsonSerializer::SerializeToFile(js, inFilePath);
+	}
+
+	bool Texture::LoadJsonFromSection(std::wstring_view inFilePath,std::string_view inSectionName)
+	{
+		TextureJson js = {};
+
+		if (JsonSerializer::DeserializeFromSection(js, inFilePath, inSectionName))
+		{
+			mName = js.textureName;
+			LoadTextureImage(String::ConvertToWString(js.imagePath));
+			ENGINE_LOG_INFO("{} texture load success", js.textureName);
+			return true;
+		}
+
+		return false;
+	}
+
+	void Texture::SaveJsonToSection(std::wstring_view inFilePath, std::string_view inSectionName)
+	{
+		TextureJson js = {};
+		js.imagePath = String::ConvertToString(mImagePath);
+		js.textureName = GetName();
+
+		JsonSerializer::SerializeToSection(js, inFilePath, inSectionName);
 	}
 }
 

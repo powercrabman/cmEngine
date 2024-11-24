@@ -150,10 +150,14 @@ namespace cmEngine
 
 	void Renderer::Destroy()
 	{
-		// Save setting
+		// SaveTextureImage setting
 		RendererConfig config = {};
 		config.clearColor = mCanvas.ClearColor;
-		JsonSerializer::Serialize(config);
+		JsonSerializer::SerializeToSection(
+			config,
+			sConfigPath,
+			"RendererConfig"
+		);
 
 		mDevice.Context.Reset();
 		mDevice.Device.Reset();
@@ -263,9 +267,9 @@ namespace cmEngine
 		// Preload RenderState
 		RenderStatePool::Initialize();
 
-		// Setting Load
+		// Setting LoadTextureImage
 		RendererConfig config = {};
-		if (JsonSerializer::Deserialize(config))
+		if (JsonSerializer::DeserializeFromSection(config, sConfigPath, "RendererConfig"))
 		{
 			mCanvas.ClearColor = config.clearColor;
 		}

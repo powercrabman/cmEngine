@@ -60,7 +60,7 @@ namespace cmEngine
 		CleanUp();
 
 		// Log
-		Log::Destory();
+		Log::Destroy();
 
 		// Engine Terminate
 		EngineCore::Get()->Destroy();
@@ -68,7 +68,7 @@ namespace cmEngine
 
 	int Application::Run()
 	{
-		//Main Loop
+		//Main loop
 		MSG msg = {};
 		while (true)
 		{

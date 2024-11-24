@@ -4,9 +4,19 @@ namespace cmEngine
 {
 	enum class eCameraProjectionMode
 	{
-		Perspective = 0,
-		Orthographic = 1,
+		Orthographic = 0,
+		Perspective = 1,
 	};
+
+	constexpr const char* ToString(const eCameraProjectionMode e)
+	{
+		switch (e)
+		{
+		case eCameraProjectionMode::Orthographic: return "Orthographic";
+		case eCameraProjectionMode::Perspective: return "Perspective";
+		default: return "Undefined";
+		}
+	}
 
 	struct Camera
 	{

@@ -34,6 +34,7 @@ namespace cmEngine
 		ImGui::DestroyContext();
 
 		mGuiRepo.clear();
+		mConcreteGuiRepo.clear();
 		mGuiList.clear();
 	}
 

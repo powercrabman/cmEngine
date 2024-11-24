@@ -7,16 +7,14 @@ namespace cmEngine
 	//                 Json Meta Data 
 	//===================================================
 
-#define JSON_STRUCT_BODY(TypeName, FileName, ...)\
+#define JSON_STRUCT_BODY(TypeName, ...)\
 	NLOHMANN_DEFINE_TYPE_INTRUSIVE(TypeName, __VA_ARGS__); \
-		const wchar_t* GetPath() const override { return FileName; }\
 		const char* ToString() const override { return #TypeName; }
 
 	struct JsonMetaData
 	{
 		virtual ~JsonMetaData() = default;
-		virtual const wchar_t*	GetPath() const = 0;
-		virtual const char*		ToString() const = 0;
+		virtual const char* ToString() const = 0;
 	};
 
 	//===================================================
@@ -24,23 +22,30 @@ namespace cmEngine
 	//===================================================
 
 	template <typename JsonDataType>
-	concept JsonConstraint = std::is_base_of_v<JsonMetaData, JsonDataType>;
+	concept JsonDataConstraint = std::is_base_of_v<JsonMetaData, JsonDataType>;
 
 	class JsonSerializer
 	{
 		friend class EngineCore;
 	public:
-		template <JsonConstraint JsonDataType>
-		static void Serialize(const JsonDataType& inData)
+		template <JsonDataConstraint JsonDataType>
+		static void SerializeToFile(const JsonDataType& inData, std::wstring_view inFilePath, bool useAbsolutePath = false)
 		{
-			json& js = GetJson(inData.GetPath());
+			json& js = GetJsonEx(inFilePath, useAbsolutePath);
 			js[inData.ToString()] = inData;
 		}
 
-		template <JsonConstraint JsonDataType>
-		static bool Deserialize(JsonDataType& inOutData)
+		template <JsonDataConstraint JsonDataType>
+		static void SerializeToSection(const JsonDataType& inData, std::wstring_view inFilePath, std::string_view inSectionName, bool useAbsolutePath = false)
 		{
-			json& js = GetJson(inOutData.GetPath());
+			json& js = GetJsonEx(inFilePath, useAbsolutePath);
+			js[inSectionName] = inData;
+		}
+
+		template <JsonDataConstraint JsonDataType>
+		static bool DeserializeFromFile(JsonDataType& inOutData, std::wstring_view inFilePath, bool useAbsolutePath = false)
+		{
+			json& js = GetJsonEx(inFilePath, useAbsolutePath);
 
 			try
 			{
@@ -60,6 +65,36 @@ namespace cmEngine
 			}
 
 			return true;
+		}
+
+		template <JsonDataConstraint JsonDataType>
+		static bool DeserializeFromSection(JsonDataType& inOutData, std::wstring_view inFilePath, std::string_view inSectionName, bool useAbsolutePath = false)
+		{
+			json& js = GetJsonEx(inFilePath, useAbsolutePath);
+
+			try
+			{
+				if (js.contains(inSectionName))
+				{
+					inOutData = js.at(inSectionName).get<JsonDataType>();
+				}
+				else
+				{
+					return false;
+				}
+			}
+			catch (const std::exception& e)
+			{
+				ENGINE_LOG_ERROR("{} : parsing failed. Error: {}", inOutData.ToString(), e.what());
+				return false;
+			}
+
+			return true;
+		}
+
+		static json& GetJson(std::wstring_view inFilePath, bool useAbsolutePath = false)
+		{
+			return GetJsonEx(inFilePath, useAbsolutePath);
 		}
 
 	private:
@@ -94,13 +129,13 @@ namespace cmEngine
 			std::filesystem::create_directory(mJsonDirectory);
 		}
 
-		static json& GetJson(std::wstring_view inFilePath)
+		static json& GetJsonEx(std::wstring_view inFilePath, bool useAbsolutePath)
 		{
 			auto iter = mJsonRepo.find(inFilePath.data());
 
 			if (iter == mJsonRepo.end())
 			{
-				return LoadJson(inFilePath);
+				return LoadJsonEx(inFilePath, useAbsolutePath);
 			}
 			else
 			{
@@ -108,9 +143,9 @@ namespace cmEngine
 			}
 		}
 
-		static json& LoadJson(std::wstring_view inFilePath)
+		static json& LoadJsonEx(std::wstring_view inFilePath, bool useAbsolutePath)
 		{
-			std::ifstream fs{ inFilePath.data() };
+			std::ifstream fs{ useAbsolutePath ? inFilePath : mJsonDirectory / inFilePath };
 			json js = {};
 			if (fs.is_open())
 			{
@@ -122,6 +157,6 @@ namespace cmEngine
 		inline static std::unordered_map<std::wstring, json>	mJsonRepo = {};
 		inline static std::filesystem::path						mJsonDirectory = {};
 
-		inline static constexpr wchar_t mJsonDirectoryName[] = L"Config";
+		inline static constexpr wchar_t mJsonDirectoryName[] = L"json";
 	};
 }

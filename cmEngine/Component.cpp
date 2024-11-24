@@ -3,11 +3,4 @@
 
 namespace cmEngine
 {
-	Component::Component()
-	{
-		mComponentID = sComponentIDCounter++;
-	}
-
-	Component::~Component() {}
-
 }

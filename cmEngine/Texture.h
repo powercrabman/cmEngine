@@ -15,37 +15,55 @@ namespace cmEngine
 		HEIF
 	};
 
+	struct TextureJson : JsonMetaData
+	{
+		std::string		textureName;
+		eResourceType	resourceType;
+		std::string		imagePath;
+
+		JSON_STRUCT_BODY(
+			TextureJson,
+			textureName,
+			resourceType,
+			imagePath
+		);
+	};
+
 	class Texture : public ResourceBase
 	{
 	public:
 		RESOURCE_BODY(Texture);
+		~Texture() override = default;
 
-		Texture(std::string_view inName);
-		virtual ~Texture() = default;
+		void LoadTextureImage(std::wstring_view inFilePath);
+		void SaveTextureImage(std::wstring_view inFilePath, eTextureFormat inFormat) const;
 
-		void Load(std::wstring_view inFilePath);
-		void Save(std::wstring_view inFilePath, eTextureFormat inFormat);
-
-		void Create();
-		auto GetSize() const;
+		auto  GetSize() const;
+		float GetAspectRatio() const { return mMetaData.width / static_cast<float>(mMetaData.height); }
 
 		::ComPtr<ID3D11ShaderResourceView> GetShaderResourceView() const { return mSRV; }
 
+		const wchar_t* GetTextureImagePath() const { return mImagePath.c_str(); }
+
 	private:
-		::ComPtr<ID3D11ShaderResourceView> mSRV = nullptr;
-		::ComPtr<ID3D11Texture2D> mTex          = nullptr;
-		TexMetadata mMetaData                   = {};
-		ScratchImage mImage                     = {};
+		Texture() = default;
+		void Create();
+
+		bool LoadJsonFromFile(std::wstring_view inFilePath) override;
+		void SaveJsonToFile(std::wstring_view inFilePath) override;
+		bool LoadJsonFromSection(std::wstring_view inFilePath,std::string_view inSectionName) override;
+		void SaveJsonToSection(std::wstring_view inFilePath, std::string_view inSectionName) override;
+
+		::ComPtr<ID3D11ShaderResourceView>	mSRV         = nullptr;
+		::ComPtr<ID3D11Texture2D>			mTex         = nullptr;
+		TexMetadata							mMetaData    = {};
+		ScratchImage						mImage       = {};
+		std::wstring						mImagePath = {};
 	};
 
 	//===================================================
 	//                      Inline
 	//===================================================
-
-	inline Texture::Texture(std::string_view inName)
-		: ResourceBase(inName)
-	{
-	}
 
 	inline auto Texture::GetSize() const
 	{

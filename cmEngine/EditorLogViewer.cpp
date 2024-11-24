@@ -5,14 +5,24 @@ namespace cmEngine
 {
 	EditorLogViewer::EditorLogViewer()
 	{
-		JsonSerializer::Deserialize(mConfig);
+		JsonSerializer::DeserializeFromSection(
+			mConfig,
+			Editor::sEditorConfigPath,
+			"EditorLogViewer"
+		);
+
 		SetVisible(mConfig.visible);
+		SetHotKey(eKeyCode::F6);
 	}
 
 	EditorLogViewer::~EditorLogViewer()
 	{
 		mConfig.visible = IsVisible();
-		JsonSerializer::Serialize(mConfig);
+		JsonSerializer::SerializeToSection(
+			mConfig,
+			Editor::sEditorConfigPath,
+			"EditorLogViewer"
+		);
 	}
 
 	void EditorLogViewer::RenderGui()
@@ -21,34 +31,46 @@ namespace cmEngine
 		ImGui::Begin("Log History", GetVisiblePtr());
 
 		ImGui::SeparatorText("Log");
-		ImGui::Text("Log count : %d", mLogSize);
-		ImGui::BeginChild("Log History", { 0,0 }, ImGuiChildFlags_Border, ImGuiWindowFlags_HorizontalScrollbar);
+		ImGui::Text("Log count : %d", Log::GetLogListSize());
+		ImGui::BeginChild("Log History", { 0,0 }, ImGuiChildFlags_Border);
 
-		for (auto iter = Log::GetLogDataConstBegin(); iter != Log::GetLogDataConstEnd(); ++iter)
+		size_t		lineOffsetSize = Log::GetLogListSize();
+		const char* buf = Log::GetLogTextBegin();
+		const char* buf_end = Log::GetLogTextEnd();
+		LogInfo* LineOffsets = Log::GetLogListData();
+
+		ImGuiListClipper clipper;
+		clipper.Begin(lineOffsetSize);
+		while (clipper.Step())
 		{
-			ImGui::TextColored(
-				LogData::LogLevelColor[(uint32)iter->LogLevel],
-				"[%.2f sec] %s | %s | %s",
-				iter->LogTime,
-				ToString(iter->LogCaller),
-				ToString(iter->LogLevel),
-				iter->LogMessage.c_str()
-			);
+			for (int line_no = clipper.DisplayStart; line_no < clipper.DisplayEnd; line_no++)
+			{
+				const char* line_start = buf + LineOffsets[line_no].lineOffset;
+				const char* line_end = (line_no + 1 < lineOffsetSize) ? (buf + LineOffsets[line_no + 1].lineOffset - 1) : buf_end;
+				ImGui::PushStyleColor(ImGuiCol_Text, mConfig.textColor[static_cast<uint32>(LineOffsets[line_no].logLevel)]);
+				ImGui::TextUnformatted(line_start, line_end);
+				ImGui::PopStyleColor();
+			}
 		}
+		clipper.End();
 
-		if (mLogSize != Log::GetLogListSize() && mConfig.autoScrollBit) { ImGui::SetScrollHereY(1.f); }
-		mLogSize = Log::GetLogListSize();
+		// Auto-Scroll
+		if (mConfig.autoScrollBit && mPrevLogSize != lineOffsetSize)
+		{
+			mPrevLogSize = lineOffsetSize;
+			ImGui::SetScrollHereY(1.f);
+		}
 
 		if (ImGui::BeginPopupContextWindow())
 		{
 			if (ImGui::BeginMenu("Set log level color"))
 			{
-				ImGui::ColorEdit4("Trace", (float*)&LogData::LogLevelColor[(uint32)eLogLevel::Trace]);
-				ImGui::ColorEdit4("Debug", (float*)&LogData::LogLevelColor[(uint32)eLogLevel::Debug]);
-				ImGui::ColorEdit4("Info", (float*)&LogData::LogLevelColor[(uint32)eLogLevel::Info]);
-				ImGui::ColorEdit4("Warn", (float*)&LogData::LogLevelColor[(uint32)eLogLevel::Warn]);
-				ImGui::ColorEdit4("Error", (float*)&LogData::LogLevelColor[(uint32)eLogLevel::Error]);
-				ImGui::ColorEdit4("Fatal", (float*)&LogData::LogLevelColor[(uint32)eLogLevel::Fatal]);
+				ImGui::ColorEdit4("Trace", reinterpret_cast<float*>(&mConfig.textColor[static_cast<uint32>(eLogLevel::Trace)]));
+				ImGui::ColorEdit4("Debug", reinterpret_cast<float*>(&mConfig.textColor[static_cast<uint32>(eLogLevel::Debug)]));
+				ImGui::ColorEdit4("Info", reinterpret_cast<float*>(&mConfig.textColor[static_cast<uint32>(eLogLevel::Info)]));
+				ImGui::ColorEdit4("Warn", reinterpret_cast<float*>(&mConfig.textColor[static_cast<uint32>(eLogLevel::Warn)]));
+				ImGui::ColorEdit4("Error", reinterpret_cast<float*>(&mConfig.textColor[static_cast<uint32>(eLogLevel::Error)]));
+				ImGui::ColorEdit4("Fatal", reinterpret_cast<float*>(&mConfig.textColor[static_cast<uint32>(eLogLevel::Fatal)]));
 
 				ImGui::EndMenu();
 			}
@@ -64,9 +86,9 @@ namespace cmEngine
 				{
 					for (int i = 0; i < messageCount; i++)
 					{
-						int loglevel = Random::GetInt(0, (uint32)eLogLevel::Count - 1);
-						if (rand() & 1) { Log::LogEngine((eLogLevel)loglevel, "Hello!! I am debug message!"); }
-						else { Log::LogClient((eLogLevel)loglevel, "Hello!! I am debug message!"); }
+						int loglevel = Random::GetInt(0, static_cast<uint32>(eLogLevel::Count) - 1);
+						if (rand() & 1) { Log::LogEngine(static_cast<eLogLevel>(loglevel), "Hello!! I am debug message!"); }
+						else { Log::LogClient(static_cast<eLogLevel>(loglevel), "Hello!! I am debug message!"); }
 					}
 				}
 
