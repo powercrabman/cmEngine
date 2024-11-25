@@ -1,4 +1,6 @@
 #pragma once
 
-#include "EnginePch.h"
+#include "0. cmEngine/cmEngine.h"
 using namespace cmEngine;
+
+#pragma comment(lib, "cmEngine.lib")

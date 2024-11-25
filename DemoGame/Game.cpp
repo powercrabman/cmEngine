@@ -2,21 +2,19 @@
 #include "Game.h"
 #include "DemoScene.h"
 
-void Game::Initialize()
+void Game::Init()
 {
-	{
-		ShaderSet* sh = ResourceManager::CreateEmptyResource<ShaderSet>("TestShaders");
-		sh->CreateByHLSL(
-			L"C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\CommonResource\\Shader\\3. SimpleTexSpriteShader.hlsli",
-			VertexPosTex::sInputElements,
-			VertexPosTex::sInputElementsSize
-		);
-	}
+	ShaderSet* sh = ResourceManager::Ref().CreateEmptyResource<ShaderSet>("TestShaders");
+	sh->CreateByHLSL(
+		L"C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\CommonResource\\Shader\\3. SimpleTexSpriteShader.hlsli",
+		VertexPosTex::sInputElements,
+		VertexPosTex::sInputElementsSize
+	);
 
-	SceneManager::CreateScene<DemoScene>();
-	SceneManager::ChangeScene<DemoScene>();
+	SceneManager::Ref().CreateScene<DemoScene>();
+	SceneManager::Ref().ChangeScene<DemoScene>();
 }
 
-void Game::CleanUp()
+void Game::Shutdown()
 {
 }

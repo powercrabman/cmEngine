@@ -19,148 +19,133 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BatchSystem.h" />
-    <ClInclude Include="Behavior.h" />
-    <ClInclude Include="BehaviorSystem.h" />
-    <ClInclude Include="Component.h" />
-    <ClInclude Include="EditorBrowser.h" />
-    <ClInclude Include="EditorDebugViewer.h" />
-    <ClInclude Include="EditorLogViewer.h" />
-    <ClInclude Include="EditorOverlay.h" />
-    <ClInclude Include="EditorResourceViewer.h" />
-    <ClInclude Include="EditorSceneViewer.h" />
-    <ClInclude Include="EditorVoidPopup.h" />
-    <ClInclude Include="EngineResource.h" />
-    <ClInclude Include="FileDialog.h" />
-    <ClInclude Include="JsonSerializer.h" />
-    <ClInclude Include="InputController.h" />
-    <ClInclude Include="Editor.h" />
-    <ClInclude Include="GameEntity.h" />
-    <ClInclude Include="Flipbook.h" />
-    <ClInclude Include="InputControllerSystem.h" />
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="Gui.h" />
-    <ClInclude Include="PrimitiveGeometry.h" />
-    <ClInclude Include="RenderComponent.h" />
-    <ClInclude Include="RenderSystem.h" />
-    <ClInclude Include="SerializeHelper.h" />
-    <ClInclude Include="ShaderAnalyzer.h" />
-    <ClInclude Include="Transform.h" />
-    <ClInclude Include="Pointer.h" />
-    <ClInclude Include="RenderState.h" />
-    <ClInclude Include="ResourceBase.h" />
-    <ClInclude Include="ConstantBuffer.h" />
-    <ClInclude Include="ConstantBufferBase.h" />
-    <ClInclude Include="ConstantBufferData.h" />
-    <ClInclude Include="ConstantBufferPool.h" />
-    <ClInclude Include="Geometry.h" />
-    <ClInclude Include="GuiRenderer.h" />
-    <ClInclude Include="IndexBuffer.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="EngineMath.h" />
-    <ClInclude Include="EngineAlgorithm.h" />
-    <ClInclude Include="EngineAssertion.h" />
-    <ClInclude Include="EngineCore.h" />
-    <ClInclude Include="Pipeline.h" />
-    <ClInclude Include="ResourceManager.h" />
-    <ClInclude Include="ShaderSet.h" />
-    <ClInclude Include="Sprite.h" />
-    <ClInclude Include="SystemMonitor.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="PixelShader.h" />
-    <ClInclude Include="Renderer.h" />
-    <ClInclude Include="RenderStatePool.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="Timer.h" />
-    <ClInclude Include="TypeID.h" />
-    <ClInclude Include="VertexBuffer.h" />
-    <ClInclude Include="VertexData.h" />
-    <ClInclude Include="VertexShader.h" />
-    <ClInclude Include="Viewport.h" />
-    <ClInclude Include="Colors.h" />
-    <ClInclude Include="EnginePch.h" />
-    <ClInclude Include="Application.h" />
-    <ClInclude Include="GameWindow.h" />
-    <ClInclude Include="GuiHelper.h" />
-    <ClInclude Include="Log.h" />
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="Types.h" />
-    <ClInclude Include="WindowProc.h" />
-    <ClInclude Include="EngineMacro.h" />
-    <ClInclude Include="Enums.h" />
+    <ClInclude Include="10. Scene\ScriptStack.h" />
+    <ClInclude Include="12. Component\Behavior.h" />
+    <ClInclude Include="13. Script\UserScript.h" />
+    <ClInclude Include="12. Component\Component.h" />
+    <ClInclude Include="9. Resource\EngineResource.h" />
+    <ClInclude Include="7. Gui\Helper\FileDialog.h" />
+    <ClInclude Include="96. JsonSerializer\JsonSerializer.h" />
+    <ClInclude Include="12. Component\InputController.h" />
+    <ClInclude Include="11. GameEntity\GameEntity.h" />
+    <ClInclude Include="9. Resource\Flipbook\Flipbook.h" />
+    <ClInclude Include="13. Script\InputControllerScript.h" />
+    <ClInclude Include="12. Component\Camera.h" />
+    <ClInclude Include="7. Gui\Gui.h" />
+    <ClInclude Include="6. Renderer\Geometry\PrimitiveGeometry.h" />
+    <ClInclude Include="12. Component\RenderComponent.h" />
+    <ClInclude Include="13. Script\RenderScript.h" />
+    <ClInclude Include="96. JsonSerializer\JsonHelper.h" />
+    <ClInclude Include="6. Renderer\Shader\ShaderAnalyzer.h" />
+    <ClInclude Include="12. Component\Transform.h" />
+    <ClInclude Include="99. Base\Pointer.h" />
+    <ClInclude Include="6. Renderer\RenderState\RenderState.h" />
+    <ClInclude Include="9. Resource\Core\ResourceBase.h" />
+    <ClInclude Include="6. Renderer\ContantBuffer\ConstantBuffer.h" />
+    <ClInclude Include="6. Renderer\ContantBuffer\ConstantBufferData.h" />
+    <ClInclude Include="6. Renderer\ContantBuffer\ConstantBufferPool.h" />
+    <ClInclude Include="6. Renderer\Geometry\Geometry.h" />
+    <ClInclude Include="7. Gui\GuiRenderer.h" />
+    <ClInclude Include="6. Renderer\Geometry\IndexBuffer.h" />
+    <ClInclude Include="4. Input\Input.h" />
+    <ClInclude Include="99. Base\EngineMath.h" />
+    <ClInclude Include="99. Base\EngineAlgorithm.h" />
+    <ClInclude Include="99. Base\EngineAssertion.h" />
+    <ClInclude Include="2. Engine\EngineCore.h" />
+    <ClInclude Include="6. Renderer\Pipeline\Pipeline.h" />
+    <ClInclude Include="9. Resource\Core\ResourceManager.h" />
+    <ClInclude Include="9. Resource\ShaderSet\ShaderSet.h" />
+    <ClInclude Include="9. Resource\Sprite\Sprite.h" />
+    <ClInclude Include="97. SystemMonitor\SystemMonitor.h" />
+    <ClInclude Include="9. Resource\Texture\Texture.h" />
+    <ClInclude Include="6. Renderer\Shader\PixelShader.h" />
+    <ClInclude Include="6. Renderer\Core\Renderer.h" />
+    <ClInclude Include="6. Renderer\RenderState\RenderStatePool.h" />
+    <ClInclude Include="6. Renderer\Shader\Shader.h" />
+    <ClInclude Include="5. Timer\Timer.h" />
+    <ClInclude Include="99. Base\TypeID.h" />
+    <ClInclude Include="6. Renderer\Geometry\VertexBuffer.h" />
+    <ClInclude Include="6. Renderer\Vertex\VertexData.h" />
+    <ClInclude Include="6. Renderer\Shader\VertexShader.h" />
+    <ClInclude Include="6. Renderer\Viewport\Viewport.h" />
+    <ClInclude Include="99. Base\Colors.h" />
+    <ClInclude Include="0. cmEngine\cmEngine.h" />
+    <ClInclude Include="1. Application\Application.h" />
+    <ClInclude Include="3. Window\GameWindow.h" />
+    <ClInclude Include="7. Gui\Helper\GuiHelper.h" />
+    <ClInclude Include="98. Log\Log.h" />
+    <ClInclude Include="10. Scene\Scene.h" />
+    <ClInclude Include="10. Scene\SceneManager.h" />
+    <ClInclude Include="99. Base\Types.h" />
+    <ClInclude Include="3. Window\WindowProc.h" />
+    <ClInclude Include="99. Base\EngineMacro.h" />
+    <ClInclude Include="3. Event\GameEvent.h" />
+    <ClInclude Include="3. Event\EventDispatcher.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BatchSystem.cpp" />
-    <ClCompile Include="Behavior.cpp" />
-    <ClCompile Include="BehaviorSystem.cpp" />
-    <ClCompile Include="Component.cpp" />
-    <ClCompile Include="EditorBrowser.cpp" />
-    <ClCompile Include="EditorDebugViewer.cpp" />
-    <ClCompile Include="EditorLogViewer.cpp" />
-    <ClCompile Include="EditorOverlay.cpp" />
-    <ClCompile Include="EditorResourceViewer.cpp" />
-    <ClCompile Include="EditorSceneViewer.cpp" />
-    <ClCompile Include="EditorVoidPopup.cpp" />
-    <ClCompile Include="FileDialog.cpp" />
-    <ClCompile Include="JsonSerializer.cpp" />
-    <ClCompile Include="InputController.cpp" />
-    <ClCompile Include="Editor.cpp" />
-    <ClCompile Include="GameEntity.cpp" />
-    <ClCompile Include="Flipbook.cpp" />
-    <ClCompile Include="InputControllerSystem.cpp" />
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="Gui.cpp" />
-    <ClCompile Include="PrimitiveGeometry.cpp" />
-    <ClCompile Include="RenderComponent.cpp" />
-    <ClCompile Include="RenderSystem.cpp" />
-    <ClCompile Include="SerializeHelper.cpp" />
-    <ClCompile Include="ShaderAnalyzer.cpp" />
-    <ClCompile Include="Transform.cpp" />
-    <ClCompile Include="Pointer.cpp" />
-    <ClCompile Include="RenderState.cpp" />
-    <ClCompile Include="ResourceBase.cpp" />
-    <ClCompile Include="ConstantBuffer.cpp" />
-    <ClCompile Include="ConstantBufferBase.cpp" />
-    <ClCompile Include="ConstantBufferData.cpp" />
-    <ClCompile Include="ConstantBufferPool.cpp" />
-    <ClCompile Include="Geometry.cpp" />
-    <ClCompile Include="GuiRenderer.cpp" />
-    <ClCompile Include="IndexBuffer.cpp" />
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="EngineMath.cpp" />
-    <ClCompile Include="EngineAlgorithm.cpp" />
-    <ClCompile Include="EngineAssertion.cpp" />
-    <ClCompile Include="EngineCore.cpp" />
-    <ClCompile Include="Pipeline.cpp" />
-    <ClCompile Include="ResourceManager.cpp" />
-    <ClCompile Include="ShaderSet.cpp" />
-    <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="SystemMonitor.cpp" />
-    <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="PixelShader.cpp" />
-    <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="RenderStatePool.cpp" />
-    <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="Timer.cpp" />
-    <ClCompile Include="TypeID.cpp" />
-    <ClCompile Include="VertexBuffer.cpp" />
-    <ClCompile Include="VertexData.cpp" />
-    <ClCompile Include="VertexShader.cpp" />
-    <ClCompile Include="Viewport.cpp" />
-    <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Colors.cpp" />
-    <ClCompile Include="GameWindow.cpp" />
-    <ClCompile Include="GuiHelper.cpp" />
-    <ClCompile Include="Log.cpp" />
-    <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="EnginePch.cpp">
+    <ClCompile Include="10. Scene\ScriptStack.cpp" />
+    <ClCompile Include="12. Component\Behavior.cpp" />
+    <ClCompile Include="13. Script\UserScript.cpp" />
+    <ClCompile Include="12. Component\Component.cpp" />
+    <ClCompile Include="7. Gui\Helper\FileDialog.cpp" />
+    <ClCompile Include="96. JsonSerializer\JsonSerializer.cpp" />
+    <ClCompile Include="12. Component\InputController.cpp" />
+    <ClCompile Include="11. GameEntity\GameEntity.cpp" />
+    <ClCompile Include="9. Resource\Flipbook\Flipbook.cpp" />
+    <ClCompile Include="13. Script\InputControllerScript.cpp" />
+    <ClCompile Include="12. Component\Camera.cpp" />
+    <ClCompile Include="7. Gui\Gui.cpp" />
+    <ClCompile Include="6. Renderer\Geometry\PrimitiveGeometry.cpp" />
+    <ClCompile Include="12. Component\RenderComponent.cpp" />
+    <ClCompile Include="13. Script\RenderScript.cpp" />
+    <ClCompile Include="96. JsonSerializer\JsonHelper.cpp" />
+    <ClCompile Include="6. Renderer\Shader\ShaderAnalyzer.cpp" />
+    <ClCompile Include="12. Component\Transform.cpp" />
+    <ClCompile Include="99. Base\Pointer.cpp" />
+    <ClCompile Include="6. Renderer\RenderState\RenderState.cpp" />
+    <ClCompile Include="9. Resource\Core\ResourceBase.cpp" />
+    <ClCompile Include="6. Renderer\ContantBuffer\ConstantBuffer.cpp" />
+    <ClCompile Include="6. Renderer\ContantBuffer\ConstantBufferData.cpp" />
+    <ClCompile Include="6. Renderer\ContantBuffer\ConstantBufferPool.cpp" />
+    <ClCompile Include="6. Renderer\Geometry\Geometry.cpp" />
+    <ClCompile Include="7. Gui\GuiRenderer.cpp" />
+    <ClCompile Include="6. Renderer\Geometry\IndexBuffer.cpp" />
+    <ClCompile Include="4. Input\Input.cpp" />
+    <ClCompile Include="99. Base\EngineMath.cpp" />
+    <ClCompile Include="99. Base\EngineAlgorithm.cpp" />
+    <ClCompile Include="99. Base\EngineAssertion.cpp" />
+    <ClCompile Include="2. Engine\EngineCore.cpp" />
+    <ClCompile Include="6. Renderer\Pipeline\Pipeline.cpp" />
+    <ClCompile Include="9. Resource\Core\ResourceManager.cpp" />
+    <ClCompile Include="9. Resource\ShaderSet\ShaderSet.cpp" />
+    <ClCompile Include="9. Resource\Sprite\Sprite.cpp" />
+    <ClCompile Include="97. SystemMonitor\SystemMonitor.cpp" />
+    <ClCompile Include="9. Resource\Texture\Texture.cpp" />
+    <ClCompile Include="6. Renderer\Shader\PixelShader.cpp" />
+    <ClCompile Include="6. Renderer\Core\Renderer.cpp" />
+    <ClCompile Include="6. Renderer\RenderState\RenderStatePool.cpp" />
+    <ClCompile Include="6. Renderer\Shader\Shader.cpp" />
+    <ClCompile Include="5. Timer\Timer.cpp" />
+    <ClCompile Include="99. Base\TypeID.cpp" />
+    <ClCompile Include="6. Renderer\Geometry\VertexBuffer.cpp" />
+    <ClCompile Include="6. Renderer\Vertex\VertexData.cpp" />
+    <ClCompile Include="6. Renderer\Shader\VertexShader.cpp" />
+    <ClCompile Include="6. Renderer\Viewport\Viewport.cpp" />
+    <ClCompile Include="1. Application\Application.cpp" />
+    <ClCompile Include="99. Base\Colors.cpp" />
+    <ClCompile Include="3. Window\GameWindow.cpp" />
+    <ClCompile Include="7. Gui\Helper\GuiHelper.cpp" />
+    <ClCompile Include="98. Log\Log.cpp" />
+    <ClCompile Include="10. Scene\Scene.cpp" />
+    <ClCompile Include="10. Scene\SceneManager.cpp" />
+    <ClCompile Include="0. cmEngine\cmEngine.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Enginepch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">0. cmEngine/cmEngine.h</PrecompiledHeaderFile>
     </ClCompile>
-    <ClCompile Include="WindowProc.cpp" />
-    <ClCompile Include="Types.cpp" />
+    <ClCompile Include="3. Window\WindowProc.cpp" />
+    <ClCompile Include="99. Base\Types.cpp" />
+    <ClCompile Include="3. Event\GameEvent.cpp" />
+    <ClCompile Include="3. Event\EventDispatcher.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\CommonResource\Shader\1. SimpleColorShader.hlsli" />
@@ -224,7 +209,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Libraries\cmEngine\Debug</OutDir>
     <IntDir>$(ProjectDir)Inter\Debug</IntDir>
-    <IncludePath>$(SolutionDir)Libraries;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Libraries;$(ProjectDir);$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Libraries;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -278,7 +263,7 @@
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>EnginePch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>0. cmEngine/cmEngine.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>

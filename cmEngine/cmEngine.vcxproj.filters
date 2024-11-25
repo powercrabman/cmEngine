@@ -1,51 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="01. Application">
-      <UniqueIdentifier>{0500183a-ff53-40c6-9eb0-6809fd37c004}</UniqueIdentifier>
-    </Filter>
     <Filter Include="98. Utiles">
       <UniqueIdentifier>{ac410b82-6cce-42c3-9b61-a2a0a2fc37cb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Windows">
-      <UniqueIdentifier>{c9beee48-891d-49a4-a910-b289ab2978b8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="04. Timer">
-      <UniqueIdentifier>{94ec8797-7ab3-4425-bfbe-bc60b52945be}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. Engine">
-      <UniqueIdentifier>{1bc1ef22-88fa-421e-9403-385d58be5d2c}</UniqueIdentifier>
     </Filter>
     <Filter Include="98. Utiles\TypeID">
       <UniqueIdentifier>{d994e033-96e3-44b7-9b12-2c20fe1ae980}</UniqueIdentifier>
     </Filter>
-    <Filter Include="06. Renderer">
-      <UniqueIdentifier>{907557ff-b3d7-4805-8add-d531627f6411}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="05. Input">
-      <UniqueIdentifier>{b94913fb-b130-4df8-a20a-3aa19b8ad79c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="99. Base">
       <UniqueIdentifier>{16a821a0-c4f6-4ba2-b873-b91da5cecb41}</UniqueIdentifier>
       <Extensions>.h</Extensions>
-    </Filter>
-    <Filter Include="07. GUI">
-      <UniqueIdentifier>{a37ff62f-e688-4353-9caf-e970df78d927}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="08. Resource">
-      <UniqueIdentifier>{baf428ad-91d6-4ff5-8c0a-6a0277008c5e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="08. Resource\Texture">
-      <UniqueIdentifier>{668818fb-badd-406b-bd67-efc0eb23d3c8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="08. Resource\Sprite">
-      <UniqueIdentifier>{17221a5e-ba19-4ae0-b113-38f1d491a43b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="08. Resource\Flipbook">
-      <UniqueIdentifier>{a2eb30a1-98fb-4961-bae4-bc5802b28a94}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="08. Resource\Core">
-      <UniqueIdentifier>{bd1d894f-3566-48d4-ad3e-7d8072b94693}</UniqueIdentifier>
     </Filter>
     <Filter Include="09. Scene">
       <UniqueIdentifier>{ad7f8453-6d19-4d3e-8f89-616cc868244e}</UniqueIdentifier>
@@ -56,59 +20,8 @@
     <Filter Include="10. GameEntity">
       <UniqueIdentifier>{188b1e91-89dd-4429-ad7a-455226257f0b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="06. Renderer\ConstantBuffer">
-      <UniqueIdentifier>{cf8a9746-42b2-433f-8725-dc4f517e4817}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Core">
-      <UniqueIdentifier>{aa4907c4-3971-4903-8b30-d620f70c9ec9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Geometry">
-      <UniqueIdentifier>{1c4af463-4d3e-49f5-8255-da01eafbc35a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Geometry\VertexBuffer">
-      <UniqueIdentifier>{d9a0d8cf-6cb5-426c-b2c7-bbbc71ea2f8b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Geometry\IndexBuffer">
-      <UniqueIdentifier>{40dbf78c-98a1-4b86-8ae3-bec306ea72d0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Viewport">
-      <UniqueIdentifier>{675cadc8-a722-4fae-8929-f06cf330e12c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Pipeline">
-      <UniqueIdentifier>{acc18251-7ed3-4f83-9331-1dc5bcf51802}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\RenderState">
-      <UniqueIdentifier>{2f2f1068-1538-4164-82e3-7dbe873c0feb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\VertexData">
-      <UniqueIdentifier>{b4d538ab-8678-4fd6-b5d7-5eeb7bc74239}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="07. GUI\Core">
-      <UniqueIdentifier>{303d15bd-ffcc-45fa-861a-049f7e0683f1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="07. GUI\GuiHelper">
-      <UniqueIdentifier>{3a5d5d4e-f10c-484e-b7fe-299df00e93a0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="07. GUI\Gui">
-      <UniqueIdentifier>{34e5832e-beeb-4fa2-acc6-9ded346df250}</UniqueIdentifier>
-    </Filter>
     <Filter Include="97. Log">
       <UniqueIdentifier>{bce551ab-0dfa-450f-aded-781e23270d31}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="08. Resource\CommonShader">
-      <UniqueIdentifier>{4314ae77-f525-4473-879e-3cbfcbcd7db5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Shader">
-      <UniqueIdentifier>{11241f0e-2d29-4136-8bff-5b037f1b0b1f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Shader\PixelShader">
-      <UniqueIdentifier>{39f4c759-6334-4a3e-b3bb-6f0b0efa42cc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="06. Renderer\Shader\VertexShader">
-      <UniqueIdentifier>{8cf75ed1-c86e-4fee-9237-5a4ad0fa03be}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="08. Resource\ShaderProgram">
-      <UniqueIdentifier>{c061f43f-6584-40b3-8e32-a940fdee2047}</UniqueIdentifier>
     </Filter>
     <Filter Include="95. SystemMonior">
       <UniqueIdentifier>{beaac227-4ca6-4acd-a0d3-6b6d9bbf6740}</UniqueIdentifier>
@@ -146,431 +59,461 @@
     <Filter Include="96. Editor\EditorResourceViewer">
       <UniqueIdentifier>{ee2430f9-9a11-4b06-b94d-d4a214c147b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Application">
+      <UniqueIdentifier>{0500183a-ff53-40c6-9eb0-6809fd37c004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{1bc1ef22-88fa-421e-9403-385d58be5d2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows">
+      <UniqueIdentifier>{c9beee48-891d-49a4-a910-b289ab2978b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Timer">
+      <UniqueIdentifier>{94ec8797-7ab3-4425-bfbe-bc60b52945be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{b94913fb-b130-4df8-a20a-3aa19b8ad79c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{907557ff-b3d7-4805-8add-d531627f6411}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\ConstantBuffer">
+      <UniqueIdentifier>{cf8a9746-42b2-433f-8725-dc4f517e4817}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Core">
+      <UniqueIdentifier>{aa4907c4-3971-4903-8b30-d620f70c9ec9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Geometry">
+      <UniqueIdentifier>{1c4af463-4d3e-49f5-8255-da01eafbc35a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Geometry\VertexBuffer">
+      <UniqueIdentifier>{d9a0d8cf-6cb5-426c-b2c7-bbbc71ea2f8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Geometry\IndexBuffer">
+      <UniqueIdentifier>{40dbf78c-98a1-4b86-8ae3-bec306ea72d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Viewport">
+      <UniqueIdentifier>{675cadc8-a722-4fae-8929-f06cf330e12c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Pipeline">
+      <UniqueIdentifier>{acc18251-7ed3-4f83-9331-1dc5bcf51802}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\RenderState">
+      <UniqueIdentifier>{2f2f1068-1538-4164-82e3-7dbe873c0feb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\VertexData">
+      <UniqueIdentifier>{b4d538ab-8678-4fd6-b5d7-5eeb7bc74239}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Shader">
+      <UniqueIdentifier>{11241f0e-2d29-4136-8bff-5b037f1b0b1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Shader\PixelShader">
+      <UniqueIdentifier>{39f4c759-6334-4a3e-b3bb-6f0b0efa42cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Shader\VertexShader">
+      <UniqueIdentifier>{8cf75ed1-c86e-4fee-9237-5a4ad0fa03be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{a37ff62f-e688-4353-9caf-e970df78d927}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\Core">
+      <UniqueIdentifier>{303d15bd-ffcc-45fa-861a-049f7e0683f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\GuiHelper">
+      <UniqueIdentifier>{3a5d5d4e-f10c-484e-b7fe-299df00e93a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\Gui">
+      <UniqueIdentifier>{34e5832e-beeb-4fa2-acc6-9ded346df250}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{baf428ad-91d6-4ff5-8c0a-6a0277008c5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Texture">
+      <UniqueIdentifier>{668818fb-badd-406b-bd67-efc0eb23d3c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Sprite">
+      <UniqueIdentifier>{17221a5e-ba19-4ae0-b113-38f1d491a43b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Flipbook">
+      <UniqueIdentifier>{a2eb30a1-98fb-4961-bae4-bc5802b28a94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Core">
+      <UniqueIdentifier>{bd1d894f-3566-48d4-ad3e-7d8072b94693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\CommonShader">
+      <UniqueIdentifier>{4314ae77-f525-4473-879e-3cbfcbcd7db5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\ShaderProgram">
+      <UniqueIdentifier>{c061f43f-6584-40b3-8e32-a940fdee2047}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Types.h">
+    <ClInclude Include="99. Base\Types.h">
       <Filter>99. Base</Filter>
     </ClInclude>
-    <ClInclude Include="EngineAssertion.h">
+    <ClInclude Include="99. Base\EngineAssertion.h">
       <Filter>99. Base</Filter>
     </ClInclude>
-    <ClInclude Include="EngineMacro.h">
+    <ClInclude Include="99. Base\EngineMacro.h">
       <Filter>99. Base</Filter>
     </ClInclude>
-    <ClInclude Include="Colors.h">
+    <ClInclude Include="99. Base\Colors.h">
       <Filter>99. Base</Filter>
     </ClInclude>
-    <ClInclude Include="Enums.h">
-      <Filter>99. Base</Filter>
+    <ClInclude Include="7. Gui\Helper\GuiHelper.h">
+      <Filter>GUI\GuiHelper</Filter>
     </ClInclude>
-    <ClInclude Include="GuiHelper.h">
-      <Filter>07. GUI\GuiHelper</Filter>
+    <ClInclude Include="5. Timer\Timer.h">
+      <Filter>Timer</Filter>
     </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>04. Timer</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineAlgorithm.h">
+    <ClInclude Include="99. Base\EngineAlgorithm.h">
       <Filter>98. Utiles</Filter>
     </ClInclude>
-    <ClInclude Include="EngineCore.h">
-      <Filter>02. Engine</Filter>
+    <ClInclude Include="2. Engine\EngineCore.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.h">
+    <ClInclude Include="10. Scene\Scene.h">
       <Filter>09. Scene</Filter>
     </ClInclude>
-    <ClInclude Include="TypeID.h">
+    <ClInclude Include="99. Base\TypeID.h">
       <Filter>98. Utiles\TypeID</Filter>
     </ClInclude>
-    <ClInclude Include="EngineMath.h">
+    <ClInclude Include="99. Base\EngineMath.h">
       <Filter>98. Utiles</Filter>
     </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>08. Resource\Sprite</Filter>
+    <ClInclude Include="9. Resource\Sprite\Sprite.h">
+      <Filter>Resource\Sprite</Filter>
     </ClInclude>
-    <ClInclude Include="Flipbook.h">
-      <Filter>08. Resource\Flipbook</Filter>
+    <ClInclude Include="9. Resource\Flipbook\Flipbook.h">
+      <Filter>Resource\Flipbook</Filter>
     </ClInclude>
-    <ClInclude Include="SceneManager.h">
+    <ClInclude Include="10. Scene\SceneManager.h">
       <Filter>09. Scene\Core</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager.h">
-      <Filter>08. Resource\Core</Filter>
+    <ClInclude Include="9. Resource\Core\ResourceManager.h">
+      <Filter>Resource\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Application.h">
-      <Filter>01. Application</Filter>
+    <ClInclude Include="1. Application\Application.h">
+      <Filter>Application</Filter>
     </ClInclude>
-    <ClInclude Include="Log.h">
+    <ClInclude Include="98. Log\Log.h">
       <Filter>97. Log</Filter>
     </ClInclude>
-    <ClInclude Include="EnginePch.h">
+    <ClInclude Include="0. cmEngine\cmEngine.h">
       <Filter>99. Base</Filter>
     </ClInclude>
-    <ClInclude Include="GameWindow.h">
-      <Filter>03. Windows</Filter>
+    <ClInclude Include="3. Window\GameWindow.h">
+      <Filter>Windows</Filter>
     </ClInclude>
-    <ClInclude Include="WindowProc.h">
-      <Filter>03. Windows</Filter>
+    <ClInclude Include="3. Window\WindowProc.h">
+      <Filter>Windows</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>05. Input</Filter>
+    <ClInclude Include="4. Input\Input.h">
+      <Filter>Input</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer.h">
-      <Filter>06. Renderer\Core</Filter>
+    <ClInclude Include="6. Renderer\Core\Renderer.h">
+      <Filter>Renderer\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Pipeline.h">
-      <Filter>06. Renderer\Pipeline</Filter>
+    <ClInclude Include="6. Renderer\Pipeline\Pipeline.h">
+      <Filter>Renderer\Pipeline</Filter>
     </ClInclude>
-    <ClInclude Include="RenderStatePool.h">
-      <Filter>06. Renderer\RenderState</Filter>
+    <ClInclude Include="6. Renderer\RenderState\RenderStatePool.h">
+      <Filter>Renderer\RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="VertexBuffer.h">
-      <Filter>06. Renderer\Geometry\VertexBuffer</Filter>
+    <ClInclude Include="6. Renderer\Geometry\VertexBuffer.h">
+      <Filter>Renderer\Geometry\VertexBuffer</Filter>
     </ClInclude>
-    <ClInclude Include="IndexBuffer.h">
-      <Filter>06. Renderer\Geometry\IndexBuffer</Filter>
+    <ClInclude Include="6. Renderer\Geometry\IndexBuffer.h">
+      <Filter>Renderer\Geometry\IndexBuffer</Filter>
     </ClInclude>
-    <ClInclude Include="Geometry.h">
-      <Filter>06. Renderer\Geometry</Filter>
+    <ClInclude Include="6. Renderer\Geometry\Geometry.h">
+      <Filter>Renderer\Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="VertexShader.h">
-      <Filter>06. Renderer\Shader\VertexShader</Filter>
+    <ClInclude Include="6. Renderer\Shader\VertexShader.h">
+      <Filter>Renderer\Shader\VertexShader</Filter>
     </ClInclude>
-    <ClInclude Include="PixelShader.h">
-      <Filter>06. Renderer\Shader\PixelShader</Filter>
+    <ClInclude Include="6. Renderer\Shader\PixelShader.h">
+      <Filter>Renderer\Shader\PixelShader</Filter>
     </ClInclude>
-    <ClInclude Include="ConstantBuffer.h">
-      <Filter>06. Renderer\ConstantBuffer</Filter>
+    <ClInclude Include="6. Renderer\ContantBuffer\ConstantBuffer.h">
+      <Filter>Renderer\ConstantBuffer</Filter>
     </ClInclude>
-    <ClInclude Include="VertexData.h">
-      <Filter>06. Renderer\VertexData</Filter>
+    <ClInclude Include="6. Renderer\Vertex\VertexData.h">
+      <Filter>Renderer\VertexData</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>06. Renderer\Shader</Filter>
+    <ClInclude Include="6. Renderer\Shader\Shader.h">
+      <Filter>Renderer\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="Viewport.h">
-      <Filter>06. Renderer\Viewport</Filter>
+    <ClInclude Include="6. Renderer\Viewport\Viewport.h">
+      <Filter>Renderer\Viewport</Filter>
     </ClInclude>
-    <ClInclude Include="ConstantBufferBase.h">
-      <Filter>06. Renderer\ConstantBuffer</Filter>
+    <ClInclude Include="7. Gui\GuiRenderer.h">
+      <Filter>GUI\Core</Filter>
     </ClInclude>
-    <ClInclude Include="GuiRenderer.h">
-      <Filter>07. GUI\Core</Filter>
+    <ClInclude Include="9. Resource\Texture\Texture.h">
+      <Filter>Resource\Texture</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>08. Resource\Texture</Filter>
+    <ClInclude Include="6. Renderer\ContantBuffer\ConstantBufferPool.h">
+      <Filter>Renderer\ConstantBuffer</Filter>
     </ClInclude>
-    <ClInclude Include="ConstantBufferPool.h">
-      <Filter>06. Renderer\ConstantBuffer</Filter>
+    <ClInclude Include="6. Renderer\ContantBuffer\ConstantBufferData.h">
+      <Filter>Renderer\ConstantBuffer</Filter>
     </ClInclude>
-    <ClInclude Include="ConstantBufferData.h">
-      <Filter>06. Renderer\ConstantBuffer</Filter>
+    <ClInclude Include="9. Resource\Core\ResourceBase.h">
+      <Filter>Resource\Core</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceBase.h">
-      <Filter>08. Resource\Core</Filter>
+    <ClInclude Include="9. Resource\ShaderSet\ShaderSet.h">
+      <Filter>Resource\ShaderProgram</Filter>
     </ClInclude>
-    <ClInclude Include="ShaderSet.h">
-      <Filter>08. Resource\ShaderProgram</Filter>
-    </ClInclude>
-    <ClInclude Include="BatchSystem.h">
-      <Filter>98. Utiles</Filter>
-    </ClInclude>
-    <ClInclude Include="Pointer.h">
+    <ClInclude Include="99. Base\Pointer.h">
       <Filter>99. Base</Filter>
     </ClInclude>
-    <ClInclude Include="Editor.h">
-      <Filter>96. Editor</Filter>
-    </ClInclude>
-    <ClInclude Include="SystemMonitor.h">
+    <ClInclude Include="97. SystemMonitor\SystemMonitor.h">
       <Filter>95. SystemMonior</Filter>
     </ClInclude>
-    <ClInclude Include="JsonSerializer.h">
+    <ClInclude Include="96. JsonSerializer\JsonSerializer.h">
       <Filter>94. JsonSerializer</Filter>
     </ClInclude>
-    <ClInclude Include="RenderState.h">
-      <Filter>06. Renderer\RenderState</Filter>
+    <ClInclude Include="6. Renderer\RenderState\RenderState.h">
+      <Filter>Renderer\RenderState</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h">
+    <ClInclude Include="12. Component\Camera.h">
       <Filter>11. Component</Filter>
     </ClInclude>
-    <ClInclude Include="Transform.h">
+    <ClInclude Include="12. Component\Transform.h">
       <Filter>11. Component</Filter>
     </ClInclude>
-    <ClInclude Include="GameEntity.h">
+    <ClInclude Include="11. GameEntity\GameEntity.h">
       <Filter>10. GameEntity</Filter>
     </ClInclude>
-    <ClInclude Include="PrimitiveGeometry.h">
-      <Filter>06. Renderer\Geometry</Filter>
+    <ClInclude Include="6. Renderer\Geometry\PrimitiveGeometry.h">
+      <Filter>Renderer\Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="Behavior.h">
+    <ClInclude Include="12. Component\Behavior.h">
       <Filter>11. Component</Filter>
     </ClInclude>
-    <ClInclude Include="BehaviorSystem.h">
+    <ClInclude Include="13. Script\UserScript.h">
       <Filter>12. System</Filter>
     </ClInclude>
-    <ClInclude Include="InputController.h">
+    <ClInclude Include="12. Component\InputController.h">
       <Filter>11. Component</Filter>
     </ClInclude>
-    <ClInclude Include="InputControllerSystem.h">
+    <ClInclude Include="13. Script\InputControllerScript.h">
       <Filter>12. System</Filter>
     </ClInclude>
-    <ClInclude Include="Gui.h">
-      <Filter>07. GUI\Gui</Filter>
+    <ClInclude Include="7. Gui\Gui.h">
+      <Filter>GUI\Gui</Filter>
     </ClInclude>
-    <ClInclude Include="EditorVoidPopup.h">
-      <Filter>96. Editor\EditorVoidPopup</Filter>
-    </ClInclude>
-    <ClInclude Include="EditorDebugViewer.h">
-      <Filter>96. Editor\EditorDebugViewer</Filter>
-    </ClInclude>
-    <ClInclude Include="EditorLogViewer.h">
-      <Filter>96. Editor\EditorLogViewer</Filter>
-    </ClInclude>
-    <ClInclude Include="EditorOverlay.h">
-      <Filter>96. Editor\EditorOverlay</Filter>
-    </ClInclude>
-    <ClInclude Include="EditorSceneViewer.h">
-      <Filter>96. Editor\EditorSceneEditor</Filter>
-    </ClInclude>
-    <ClInclude Include="Component.h">
+    <ClInclude Include="12. Component\Component.h">
       <Filter>11. Component</Filter>
     </ClInclude>
-    <ClInclude Include="ShaderAnalyzer.h">
-      <Filter>06. Renderer\Shader</Filter>
+    <ClInclude Include="6. Renderer\Shader\ShaderAnalyzer.h">
+      <Filter>Renderer\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="RenderComponent.h">
+    <ClInclude Include="12. Component\RenderComponent.h">
       <Filter>11. Component</Filter>
     </ClInclude>
-    <ClInclude Include="RenderSystem.h">
+    <ClInclude Include="13. Script\RenderScript.h">
       <Filter>12. System</Filter>
     </ClInclude>
-    <ClInclude Include="EditorResourceViewer.h">
-      <Filter>96. Editor\EditorResourceViewer</Filter>
+    <ClInclude Include="7. Gui\Helper\FileDialog.h">
+      <Filter>GUI\GuiHelper</Filter>
     </ClInclude>
-    <ClInclude Include="EditorBrowser.h">
-      <Filter>96. Editor\EditorBrowser</Filter>
-    </ClInclude>
-    <ClInclude Include="FileDialog.h">
-      <Filter>07. GUI\GuiHelper</Filter>
-    </ClInclude>
-    <ClInclude Include="SerializeHelper.h">
+    <ClInclude Include="96. JsonSerializer\JsonHelper.h">
       <Filter>94. JsonSerializer</Filter>
     </ClInclude>
-    <ClInclude Include="EngineResource.h">
-      <Filter>08. Resource</Filter>
+    <ClInclude Include="9. Resource\EngineResource.h">
+      <Filter>Resource</Filter>
     </ClInclude>
+    <ClInclude Include="3. Event\GameEvent.h" />
+    <ClInclude Include="3. Event\EventDispatcher.h" />
+    <ClInclude Include="10. Scene\ScriptStack.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EngineAssertion.cpp">
+    <ClCompile Include="99. Base\EngineAssertion.cpp">
       <Filter>99. Base</Filter>
     </ClCompile>
-    <ClCompile Include="Application.cpp">
-      <Filter>01. Application</Filter>
+    <ClCompile Include="1. Application\Application.cpp">
+      <Filter>Application</Filter>
     </ClCompile>
-    <ClCompile Include="Colors.cpp">
+    <ClCompile Include="99. Base\Colors.cpp">
       <Filter>99. Base</Filter>
     </ClCompile>
-    <ClCompile Include="GuiHelper.cpp">
-      <Filter>07. GUI\GuiHelper</Filter>
+    <ClCompile Include="7. Gui\Helper\GuiHelper.cpp">
+      <Filter>GUI\GuiHelper</Filter>
     </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>04. Timer</Filter>
+    <ClCompile Include="5. Timer\Timer.cpp">
+      <Filter>Timer</Filter>
     </ClCompile>
-    <ClCompile Include="EngineAlgorithm.cpp">
+    <ClCompile Include="99. Base\EngineAlgorithm.cpp">
       <Filter>98. Utiles</Filter>
     </ClCompile>
-    <ClCompile Include="EngineCore.cpp">
-      <Filter>02. Engine</Filter>
+    <ClCompile Include="2. Engine\EngineCore.cpp">
+      <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Scene.cpp">
+    <ClCompile Include="10. Scene\Scene.cpp">
       <Filter>09. Scene</Filter>
     </ClCompile>
-    <ClCompile Include="TypeID.cpp">
+    <ClCompile Include="99. Base\TypeID.cpp">
       <Filter>98. Utiles\TypeID</Filter>
     </ClCompile>
-    <ClCompile Include="EngineMath.cpp">
+    <ClCompile Include="99. Base\EngineMath.cpp">
       <Filter>98. Utiles</Filter>
     </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>08. Resource\Sprite</Filter>
+    <ClCompile Include="9. Resource\Sprite\Sprite.cpp">
+      <Filter>Resource\Sprite</Filter>
     </ClCompile>
-    <ClCompile Include="Flipbook.cpp">
-      <Filter>08. Resource\Flipbook</Filter>
+    <ClCompile Include="9. Resource\Flipbook\Flipbook.cpp">
+      <Filter>Resource\Flipbook</Filter>
     </ClCompile>
-    <ClCompile Include="SceneManager.cpp">
+    <ClCompile Include="10. Scene\SceneManager.cpp">
       <Filter>09. Scene\Core</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceManager.cpp">
-      <Filter>08. Resource\Core</Filter>
+    <ClCompile Include="9. Resource\Core\ResourceManager.cpp">
+      <Filter>Resource\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Log.cpp">
+    <ClCompile Include="98. Log\Log.cpp">
       <Filter>97. Log</Filter>
     </ClCompile>
-    <ClCompile Include="EnginePch.cpp">
+    <ClCompile Include="0. cmEngine\cmEngine.cpp">
       <Filter>99. Base</Filter>
     </ClCompile>
-    <ClCompile Include="GameWindow.cpp">
-      <Filter>03. Windows</Filter>
+    <ClCompile Include="3. Window\GameWindow.cpp">
+      <Filter>Windows</Filter>
     </ClCompile>
-    <ClCompile Include="WindowProc.cpp">
-      <Filter>03. Windows</Filter>
+    <ClCompile Include="3. Window\WindowProc.cpp">
+      <Filter>Windows</Filter>
     </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>05. Input</Filter>
+    <ClCompile Include="4. Input\Input.cpp">
+      <Filter>Input</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer.cpp">
-      <Filter>06. Renderer\Core</Filter>
+    <ClCompile Include="6. Renderer\Core\Renderer.cpp">
+      <Filter>Renderer\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Pipeline.cpp">
-      <Filter>06. Renderer\Pipeline</Filter>
+    <ClCompile Include="6. Renderer\Pipeline\Pipeline.cpp">
+      <Filter>Renderer\Pipeline</Filter>
     </ClCompile>
-    <ClCompile Include="RenderStatePool.cpp">
-      <Filter>06. Renderer\RenderState</Filter>
+    <ClCompile Include="6. Renderer\RenderState\RenderStatePool.cpp">
+      <Filter>Renderer\RenderState</Filter>
     </ClCompile>
-    <ClCompile Include="VertexBuffer.cpp">
-      <Filter>06. Renderer\Geometry\VertexBuffer</Filter>
+    <ClCompile Include="6. Renderer\Geometry\VertexBuffer.cpp">
+      <Filter>Renderer\Geometry\VertexBuffer</Filter>
     </ClCompile>
-    <ClCompile Include="IndexBuffer.cpp">
-      <Filter>06. Renderer\Geometry\IndexBuffer</Filter>
+    <ClCompile Include="6. Renderer\Geometry\IndexBuffer.cpp">
+      <Filter>Renderer\Geometry\IndexBuffer</Filter>
     </ClCompile>
-    <ClCompile Include="Geometry.cpp">
-      <Filter>06. Renderer\Geometry</Filter>
+    <ClCompile Include="6. Renderer\Geometry\Geometry.cpp">
+      <Filter>Renderer\Geometry</Filter>
     </ClCompile>
-    <ClCompile Include="VertexShader.cpp">
-      <Filter>06. Renderer\Shader\VertexShader</Filter>
+    <ClCompile Include="6. Renderer\Shader\VertexShader.cpp">
+      <Filter>Renderer\Shader\VertexShader</Filter>
     </ClCompile>
-    <ClCompile Include="PixelShader.cpp">
-      <Filter>06. Renderer\Shader\PixelShader</Filter>
+    <ClCompile Include="6. Renderer\Shader\PixelShader.cpp">
+      <Filter>Renderer\Shader\PixelShader</Filter>
     </ClCompile>
-    <ClCompile Include="ConstantBuffer.cpp">
-      <Filter>06. Renderer\ConstantBuffer</Filter>
+    <ClCompile Include="6. Renderer\ContantBuffer\ConstantBuffer.cpp">
+      <Filter>Renderer\ConstantBuffer</Filter>
     </ClCompile>
-    <ClCompile Include="VertexData.cpp">
-      <Filter>06. Renderer\VertexData</Filter>
+    <ClCompile Include="6. Renderer\Vertex\VertexData.cpp">
+      <Filter>Renderer\VertexData</Filter>
     </ClCompile>
-    <ClCompile Include="Shader.cpp">
-      <Filter>06. Renderer\Shader</Filter>
+    <ClCompile Include="6. Renderer\Shader\Shader.cpp">
+      <Filter>Renderer\Shader</Filter>
     </ClCompile>
-    <ClCompile Include="Viewport.cpp">
-      <Filter>06. Renderer\Viewport</Filter>
+    <ClCompile Include="6. Renderer\Viewport\Viewport.cpp">
+      <Filter>Renderer\Viewport</Filter>
     </ClCompile>
-    <ClCompile Include="ConstantBufferBase.cpp">
-      <Filter>06. Renderer\ConstantBuffer</Filter>
+    <ClCompile Include="7. Gui\GuiRenderer.cpp">
+      <Filter>GUI\Core</Filter>
     </ClCompile>
-    <ClCompile Include="GuiRenderer.cpp">
-      <Filter>07. GUI\Core</Filter>
+    <ClCompile Include="9. Resource\Texture\Texture.cpp">
+      <Filter>Resource\Texture</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>08. Resource\Texture</Filter>
+    <ClCompile Include="6. Renderer\ContantBuffer\ConstantBufferPool.cpp">
+      <Filter>Renderer\ConstantBuffer</Filter>
     </ClCompile>
-    <ClCompile Include="ConstantBufferPool.cpp">
-      <Filter>06. Renderer\ConstantBuffer</Filter>
-    </ClCompile>
-    <ClCompile Include="Types.cpp">
+    <ClCompile Include="99. Base\Types.cpp">
       <Filter>99. Base</Filter>
     </ClCompile>
-    <ClCompile Include="ConstantBufferData.cpp">
-      <Filter>06. Renderer\ConstantBuffer</Filter>
+    <ClCompile Include="6. Renderer\ContantBuffer\ConstantBufferData.cpp">
+      <Filter>Renderer\ConstantBuffer</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceBase.cpp">
-      <Filter>08. Resource\Core</Filter>
+    <ClCompile Include="9. Resource\Core\ResourceBase.cpp">
+      <Filter>Resource\Core</Filter>
     </ClCompile>
-    <ClCompile Include="ShaderSet.cpp">
-      <Filter>08. Resource\ShaderProgram</Filter>
+    <ClCompile Include="9. Resource\ShaderSet\ShaderSet.cpp">
+      <Filter>Resource\ShaderProgram</Filter>
     </ClCompile>
-    <ClCompile Include="BatchSystem.cpp">
-      <Filter>98. Utiles</Filter>
-    </ClCompile>
-    <ClCompile Include="Pointer.cpp">
+    <ClCompile Include="99. Base\Pointer.cpp">
       <Filter>99. Base</Filter>
     </ClCompile>
-    <ClCompile Include="Editor.cpp">
-      <Filter>96. Editor</Filter>
-    </ClCompile>
-    <ClCompile Include="SystemMonitor.cpp">
+    <ClCompile Include="97. SystemMonitor\SystemMonitor.cpp">
       <Filter>95. SystemMonior</Filter>
     </ClCompile>
-    <ClCompile Include="JsonSerializer.cpp">
+    <ClCompile Include="96. JsonSerializer\JsonSerializer.cpp">
       <Filter>94. JsonSerializer</Filter>
     </ClCompile>
-    <ClCompile Include="RenderState.cpp">
-      <Filter>06. Renderer\RenderState</Filter>
+    <ClCompile Include="6. Renderer\RenderState\RenderState.cpp">
+      <Filter>Renderer\RenderState</Filter>
     </ClCompile>
-    <ClCompile Include="Camera.cpp">
+    <ClCompile Include="12. Component\Camera.cpp">
       <Filter>11. Component</Filter>
     </ClCompile>
-    <ClCompile Include="Transform.cpp">
+    <ClCompile Include="12. Component\Transform.cpp">
       <Filter>11. Component</Filter>
     </ClCompile>
-    <ClCompile Include="GameEntity.cpp">
+    <ClCompile Include="11. GameEntity\GameEntity.cpp">
       <Filter>10. GameEntity</Filter>
     </ClCompile>
-    <ClCompile Include="PrimitiveGeometry.cpp">
-      <Filter>06. Renderer\Geometry</Filter>
+    <ClCompile Include="6. Renderer\Geometry\PrimitiveGeometry.cpp">
+      <Filter>Renderer\Geometry</Filter>
     </ClCompile>
-    <ClCompile Include="Behavior.cpp">
+    <ClCompile Include="12. Component\Behavior.cpp">
       <Filter>11. Component</Filter>
     </ClCompile>
-    <ClCompile Include="BehaviorSystem.cpp">
+    <ClCompile Include="13. Script\UserScript.cpp">
       <Filter>12. System</Filter>
     </ClCompile>
-    <ClCompile Include="InputController.cpp">
+    <ClCompile Include="12. Component\InputController.cpp">
       <Filter>11. Component</Filter>
     </ClCompile>
-    <ClCompile Include="InputControllerSystem.cpp">
+    <ClCompile Include="13. Script\InputControllerScript.cpp">
       <Filter>12. System</Filter>
     </ClCompile>
-    <ClCompile Include="Gui.cpp">
-      <Filter>07. GUI\Gui</Filter>
+    <ClCompile Include="7. Gui\Gui.cpp">
+      <Filter>GUI\Gui</Filter>
     </ClCompile>
-    <ClCompile Include="EditorVoidPopup.cpp">
-      <Filter>96. Editor\EditorVoidPopup</Filter>
-    </ClCompile>
-    <ClCompile Include="EditorDebugViewer.cpp">
-      <Filter>96. Editor\EditorDebugViewer</Filter>
-    </ClCompile>
-    <ClCompile Include="EditorLogViewer.cpp">
-      <Filter>96. Editor\EditorLogViewer</Filter>
-    </ClCompile>
-    <ClCompile Include="EditorOverlay.cpp">
-      <Filter>96. Editor\EditorOverlay</Filter>
-    </ClCompile>
-    <ClCompile Include="EditorSceneViewer.cpp">
-      <Filter>96. Editor\EditorSceneEditor</Filter>
-    </ClCompile>
-    <ClCompile Include="Component.cpp">
+    <ClCompile Include="12. Component\Component.cpp">
       <Filter>11. Component</Filter>
     </ClCompile>
-    <ClCompile Include="ShaderAnalyzer.cpp">
-      <Filter>06. Renderer\Shader</Filter>
+    <ClCompile Include="6. Renderer\Shader\ShaderAnalyzer.cpp">
+      <Filter>Renderer\Shader</Filter>
     </ClCompile>
-    <ClCompile Include="RenderComponent.cpp">
+    <ClCompile Include="12. Component\RenderComponent.cpp">
       <Filter>11. Component</Filter>
     </ClCompile>
-    <ClCompile Include="RenderSystem.cpp">
+    <ClCompile Include="13. Script\RenderScript.cpp">
       <Filter>12. System</Filter>
     </ClCompile>
-    <ClCompile Include="EditorResourceViewer.cpp">
-      <Filter>96. Editor\EditorResourceViewer</Filter>
+    <ClCompile Include="7. Gui\Helper\FileDialog.cpp">
+      <Filter>GUI\GuiHelper</Filter>
     </ClCompile>
-    <ClCompile Include="EditorBrowser.cpp">
-      <Filter>96. Editor\EditorBrowser</Filter>
-    </ClCompile>
-    <ClCompile Include="FileDialog.cpp">
-      <Filter>07. GUI\GuiHelper</Filter>
-    </ClCompile>
-    <ClCompile Include="SerializeHelper.cpp">
+    <ClCompile Include="96. JsonSerializer\JsonHelper.cpp">
       <Filter>94. JsonSerializer</Filter>
     </ClCompile>
+    <ClCompile Include="3. Event\GameEvent.cpp" />
+    <ClCompile Include="3. Event\EventDispatcher.cpp" />
+    <ClCompile Include="10. Scene\ScriptStack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\CommonResource\Shader\1. SimpleColorShader.hlsli">
-      <Filter>08. Resource\CommonShader</Filter>
+      <Filter>Resource\CommonShader</Filter>
     </None>
     <None Include="..\CommonResource\Shader\2. SimpleTexShader.hlsli">
-      <Filter>08. Resource\CommonShader</Filter>
+      <Filter>Resource\CommonShader</Filter>
     </None>
     <None Include="..\CommonResource\Shader\3. SimpleTexSpriteShader.hlsli">
-      <Filter>08. Resource\CommonShader</Filter>
+      <Filter>Resource\CommonShader</Filter>
     </None>
   </ItemGroup>
 </Project>

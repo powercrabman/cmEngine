@@ -6,10 +6,10 @@ void DemoScene::EnterScene()
 	using namespace cmEngine;
 
 	{
-		Texture* tex = ResourceManager::CreateEmptyResource<Texture>("TestTexture");
+		Texture* tex = ResourceManager::Ref().CreateEmptyResource<Texture>("TestTexture");
 		tex->LoadTextureImage(L"Resources\\test.png");
 
-		Sprite* sp = ResourceManager::CreateEmptyResource<Sprite>("TestSprite");
+		Sprite* sp = ResourceManager::Ref().CreateEmptyResource<Sprite>("TestSprite");
 		sp->Create(SpriteData{
 			.texture  = tex,
 			.width    = 0,
@@ -20,10 +20,10 @@ void DemoScene::EnterScene()
 	}
 
 	{
-		Texture* tex = ResourceManager::CreateEmptyResource<Texture>("TestFlipbookTexture");
+		Texture* tex = ResourceManager::Ref().CreateEmptyResource<Texture>("TestFlipbookTexture");
 		tex->LoadTextureImage(L"Resources\\Older_Walk_transparent.png");
 
-		Flipbook* fb = ResourceManager::CreateEmptyResource<Flipbook>("TestFlipbook");
+		Flipbook* fb = ResourceManager::Ref().CreateEmptyResource<Flipbook>("TestFlipbook");
 		fb->Create(FlipbookData{
 		.texture       = tex,
 		.width         = 75,
@@ -40,11 +40,11 @@ void DemoScene::EnterScene()
 		auto entity = CreateGameEntity();
 		entity.CreateComponent<Transform>(Transform{ Vector3{0.f,0.f,0.5f}, EulerAngle::Zero, Vector3::One });
 		entity.CreateComponent<SpriteRender>(SpriteRender{
-			.sprite = ResourceManager::TryFindResource<Sprite>("TestSprite")
+			.sprite = ResourceManager::Ref().TryFindResource<Sprite>("TestSprite")
 			}
 		);
 		entity.CreateComponent<RenderProfile>(RenderProfile{
-			.shaders           = ResourceManager::TryFindResource<ShaderSet>("TestShaders"),
+			.shaders           = ResourceManager::Ref().TryFindResource<ShaderSet>("TestShaders"),
 			.rendererState     = RenderState{
 			.samplerState      = eSamplerState::Point_Wrap,
 			.depthStencilState = eDepthStencilState::Depth,
@@ -60,7 +60,7 @@ void DemoScene::EnterScene()
 		auto entity = CreateGameEntity();
 		entity.CreateComponent<Transform>(Transform{ Vector3{0.5f,0.f,0.f}, EulerAngle::Zero, Vector3::One });
 		entity.CreateComponent<FlipbookRender>(FlipbookRender{
-			.flipbook              = ResourceManager::TryFindResource<Flipbook>("TestFlipbook"),
+			.flipbook              = ResourceManager::Ref().TryFindResource<Flipbook>("TestFlipbook"),
 			.curFrame              = 0,
 			.playbackSpeed         = 1.f,
 			.timeAcc               = 0.f,
@@ -69,7 +69,7 @@ void DemoScene::EnterScene()
 		);
 
 		entity.CreateComponent<RenderProfile>(RenderProfile{
-			.shaders = ResourceManager::TryFindResource<ShaderSet>("TestShaders"),
+			.shaders = ResourceManager::Ref().TryFindResource<ShaderSet>("TestShaders"),
 			.rendererState = RenderState{
 			.samplerState = eSamplerState::Point_Wrap,
 			.depthStencilState = eDepthStencilState::Depth,
@@ -86,7 +86,7 @@ void DemoScene::EnterScene()
 			eKeyState::Hold,
 			[] (GameEntity inGameEntity)
 			{
-				inGameEntity.FindComponent<Transform>().position.x += -1 * Timer::GetDeltaTime();
+				inGameEntity.FindComponent<Transform>().position.x += -1 * Timer::Ref().GetDeltaTime();
 			}
 		);
 
@@ -96,7 +96,7 @@ void DemoScene::EnterScene()
 			eKeyState::Hold,
 			[](GameEntity inGameEntity)
 			{
-				inGameEntity.FindComponent<Transform>().position.x += 1 * Timer::GetDeltaTime();
+				inGameEntity.FindComponent<Transform>().position.x += 1 * Timer::Ref().GetDeltaTime();
 			}
 		);
 
@@ -106,7 +106,7 @@ void DemoScene::EnterScene()
 			eKeyState::Hold,
 			[](GameEntity inGameEntity)
 			{
-				inGameEntity.FindComponent<Transform>().position.y += 1 * Timer::GetDeltaTime();
+				inGameEntity.FindComponent<Transform>().position.y += 1 * Timer::Ref().GetDeltaTime();
 			}
 		);
 
@@ -116,7 +116,7 @@ void DemoScene::EnterScene()
 			eKeyState::Hold,
 			[](GameEntity inGameEntity)
 			{
-				inGameEntity.FindComponent<Transform>().position.y += -1 * Timer::GetDeltaTime();
+				inGameEntity.FindComponent<Transform>().position.y += -1 * Timer::Ref().GetDeltaTime();
 			}
 		);
 	}
@@ -126,7 +126,7 @@ void DemoScene::EnterScene()
 		auto entity = CreateGameEntity();
 		entity.CreateComponent<Transform>(Transform{ Vector3{0.f,0.f,-1.f}, EulerAngle::Zero, Vector3::One });
 		entity.CreateComponent<Camera>(Camera::CreatePerspective(45.f, 0.01f, 100.f));
-		SetMainCameraEntity(entity);
+		SetSceneCamera(entity);
 	}
 }
 
