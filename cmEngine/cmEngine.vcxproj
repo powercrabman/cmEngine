@@ -67,7 +67,7 @@
     <ClInclude Include="6. Renderer\Geometry\VertexBuffer.h" />
     <ClInclude Include="6. Renderer\Vertex\VertexData.h" />
     <ClInclude Include="6. Renderer\Shader\VertexShader.h" />
-    <ClInclude Include="6. Renderer\Viewport\Viewport.h" />
+    <ClInclude Include="6. Renderer\RenderTarget\Viewport.h" />
     <ClInclude Include="99. Base\Colors.h" />
     <ClInclude Include="0. cmEngine\cmEngine.h" />
     <ClInclude Include="1. Application\Application.h" />
@@ -81,6 +81,9 @@
     <ClInclude Include="99. Base\EngineMacro.h" />
     <ClInclude Include="3. Event\GameEvent.h" />
     <ClInclude Include="3. Event\EventDispatcher.h" />
+    <ClInclude Include="6. Renderer\RenderTarget\RenderTarget.h" />
+    <ClInclude Include="6. Renderer\RenderTarget\SubRenderTarget.h" />
+    <ClInclude Include="6. Renderer\RenderTarget\MasterRenderTarget.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="10. Scene\ScriptStack.cpp" />
@@ -130,7 +133,7 @@
     <ClCompile Include="6. Renderer\Geometry\VertexBuffer.cpp" />
     <ClCompile Include="6. Renderer\Vertex\VertexData.cpp" />
     <ClCompile Include="6. Renderer\Shader\VertexShader.cpp" />
-    <ClCompile Include="6. Renderer\Viewport\Viewport.cpp" />
+    <ClCompile Include="6. Renderer\RenderTarget\Viewport.cpp" />
     <ClCompile Include="1. Application\Application.cpp" />
     <ClCompile Include="99. Base\Colors.cpp" />
     <ClCompile Include="3. Window\GameWindow.cpp" />
@@ -146,6 +149,9 @@
     <ClCompile Include="99. Base\Types.cpp" />
     <ClCompile Include="3. Event\GameEvent.cpp" />
     <ClCompile Include="3. Event\EventDispatcher.cpp" />
+    <ClCompile Include="6. Renderer\RenderTarget\RenderTarget.cpp" />
+    <ClCompile Include="6. Renderer\RenderTarget\SubRenderTarget.cpp" />
+    <ClCompile Include="6. Renderer\RenderTarget\MasterRenderTarget.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\CommonResource\Shader\1. SimpleColorShader.hlsli" />

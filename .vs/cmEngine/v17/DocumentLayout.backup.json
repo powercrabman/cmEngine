@@ -3,217 +3,67 @@
   "WorkspaceRootPath": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{587BE608-26DE-46C6-A71D-F1F0001F61ED}|cmEditor\\cmEditor.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\1. EditorApp\\EntryPoint.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{587BE608-26DE-46C6-A71D-F1F0001F61ED}|cmEditor\\cmEditor.vcxproj|solutionrelative:cmEditor\\1. EditorApp\\EntryPoint.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{587BE608-26DE-46C6-A71D-F1F0001F61ED}|cmEditor\\cmEditor.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\4. EditorPanel\\EditViewport.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{587BE608-26DE-46C6-A71D-F1F0001F61ED}|cmEditor\\cmEditor.vcxproj|solutionrelative:cmEditor\\4. EditorPanel\\EditViewport.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\1. Application\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\1. Application\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\RenderTarget\\RenderTarget.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\6. Renderer\\RenderTarget\\RenderTarget.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\1. Application\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\1. Application\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{587BE608-26DE-46C6-A71D-F1F0001F61ED}|cmEditor\\cmEditor.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\1. EditorApp\\EditorApp.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{587BE608-26DE-46C6-A71D-F1F0001F61ED}|cmEditor\\cmEditor.vcxproj|solutionrelative:cmEditor\\1. EditorApp\\EditorApp.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{587BE608-26DE-46C6-A71D-F1F0001F61ED}|cmEditor\\cmEditor.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\1. EditorApp\\EditorApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{587BE608-26DE-46C6-A71D-F1F0001F61ED}|cmEditor\\cmEditor.vcxproj|solutionrelative:cmEditor\\1. EditorApp\\EditorApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\ContantBuffer\\ConstantBufferPool.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\6. Renderer\\ContantBuffer\\ConstantBufferPool.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\5. Timer\\Timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\5. Timer\\Timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\5. Timer\\Timer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\5. Timer\\Timer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Core\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\6. Renderer\\Core\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\winrt\\wrl\\client.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Core\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\6. Renderer\\Core\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\RenderState\\RenderStatePool.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\6. Renderer\\RenderState\\RenderStatePool.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\7. Gui\\Gui.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\7. Gui\\Gui.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\9. Resource\\Core\\ResourceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\9. Resource\\Core\\ResourceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\7. Gui\\GuiRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\7. Gui\\GuiRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\RenderTarget\\Viewport.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\6. Renderer\\RenderTarget\\Viewport.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Core\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\6. Renderer\\Core\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\7. Gui\\GuiRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\7. Gui\\GuiRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\9. Resource\\Core\\ResourceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\9. Resource\\Core\\ResourceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\9. Resource\\Core\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\9. Resource\\Core\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\10. Scene\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\SceneManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\10. Scene\\SceneManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\10. Scene\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\10. Scene\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\96. JsonSerializer\\JsonSerializer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\96. JsonSerializer\\JsonSerializer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\96. JsonSerializer\\JsonSerializer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\96. JsonSerializer\\JsonSerializer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\97. SystemMonitor\\SystemMonitor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\97. SystemMonitor\\SystemMonitor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\98. Log\\Log.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\98. Log\\Log.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\98. Log\\Log.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\98. Log\\Log.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF37C887-F116-4DFD-8596-F28E91F92DFE}|TestConsole\\TestConsole.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\TestConsole\\TestConsole.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CF37C887-F116-4DFD-8596-F28E91F92DFE}|TestConsole\\TestConsole.vcxproj|solutionrelative:TestConsole\\TestConsole.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\0. cmEngine\\cmEngine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\0. cmEngine\\cmEngine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{587BE608-26DE-46C6-A71D-F1F0001F61ED}|cmEditor\\cmEditor.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\0. cmEditor\\cmEditor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{587BE608-26DE-46C6-A71D-F1F0001F61ED}|cmEditor\\cmEditor.vcxproj|solutionrelative:cmEditor\\0. cmEditor\\cmEditor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{587BE608-26DE-46C6-A71D-F1F0001F61ED}|cmEditor\\cmEditor.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\0. cmEditor\\cmEditor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{587BE608-26DE-46C6-A71D-F1F0001F61ED}|cmEditor\\cmEditor.vcxproj|solutionrelative:cmEditor\\0. cmEditor\\cmEditor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\USERS\\AHNJIWOO\\DESKTOP\\PROJECTS\\CMENGINE\\LIBRARIES\\VISUALLEAKDETECTOR\\VLD.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:LIBRARIES\\VISUALLEAKDETECTOR\\VLD.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\99. Base\\EngineMacro.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\99. Base\\EngineMacro.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\xmemory||{3B902123-F8A7-4915-9F01-361F908088D0}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\crt\\src\\vcruntime\\new_scalar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\2. Engine\\EngineCore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\2. Engine\\EngineCore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Shader\\ShaderAnalyzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\6. Renderer\\Shader\\ShaderAnalyzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Pipeline\\Pipeline.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\6. Renderer\\Pipeline\\Pipeline.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\ContantBuffer\\ConstantBufferData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\6. Renderer\\ContantBuffer\\ConstantBufferData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\ContantBuffer\\ConstantBuffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\6. Renderer\\ContantBuffer\\ConstantBuffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\4. Input\\Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\4. Input\\Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\GameWindow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\3. Window\\GameWindow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\2. Engine\\EngineCore.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\2. Engine\\EngineCore.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\WindowProc.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\3. Window\\WindowProc.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Event\\EventDispatcher.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\3. Event\\EventDispatcher.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\1. Application\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\1. Application\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\GameWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\3. Window\\GameWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\Libraries\\Imgui\\imgui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Libraries\\Imgui\\imgui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\WindowProc.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\3. Window\\WindowProc.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\Libraries\\Imgui\\imgui.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Libraries\\Imgui\\imgui.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\GameWindow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\3. Window\\GameWindow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{587BE608-26DE-46C6-A71D-F1F0001F61ED}|cmEditor\\cmEditor.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\2. Editor\\Editor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{587BE608-26DE-46C6-A71D-F1F0001F61ED}|cmEditor\\cmEditor.vcxproj|solutionrelative:cmEditor\\2. Editor\\Editor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\WindowProc.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\3. Window\\WindowProc.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\9. Resource\\Texture\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\9. Resource\\Texture\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\Libraries\\json\\json.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Libraries\\json\\json.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\ScriptStack.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\10. Scene\\ScriptStack.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\96. JsonSerializer\\JsonHelper.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\96. JsonSerializer\\JsonHelper.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Event\\GameEvent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\3. Event\\GameEvent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\imgui.ini||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cmEditor\\imgui.ini||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\RenderTarget\\Viewport.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9698F044-D906-4515-AF7F-194B61C83518}|cmEngine\\cmEngine.vcxproj|solutionrelative:cmEngine\\6. Renderer\\RenderTarget\\Viewport.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -222,8 +72,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 270,
-          "SelectedChildIndex": 5,
+          "DockedWidth": 419,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -247,687 +97,211 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EntryPoint.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\1. EditorApp\\EntryPoint.cpp",
-              "RelativeDocumentMoniker": "cmEditor\\1. EditorApp\\EntryPoint.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\1. EditorApp\\EntryPoint.cpp*",
-              "RelativeToolTip": "cmEditor\\1. EditorApp\\EntryPoint.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T14:23:36.035Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ConstantBufferPool.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\ContantBuffer\\ConstantBufferPool.h",
-              "RelativeDocumentMoniker": "cmEngine\\6. Renderer\\ContantBuffer\\ConstantBufferPool.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\ContantBuffer\\ConstantBufferPool.h",
-              "RelativeToolTip": "cmEngine\\6. Renderer\\ContantBuffer\\ConstantBufferPool.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:00:19.278Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Application.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\1. Application\\Application.h",
-              "RelativeDocumentMoniker": "cmEngine\\1. Application\\Application.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\1. Application\\Application.h",
-              "RelativeToolTip": "cmEngine\\1. Application\\Application.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAKAAAAAAAAAA==",
+              "Title": "client.h",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\winrt\\wrl\\client.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\winrt\\wrl\\client.h",
+              "ToolTip": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\winrt\\wrl\\client.h",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\winrt\\wrl\\client.h",
+              "ViewState": "AgIAAGQBAAAAAAAAAAAUwG8BAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T14:44:07.104Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Application.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\1. Application\\Application.cpp",
-              "RelativeDocumentMoniker": "cmEngine\\1. Application\\Application.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\1. Application\\Application.cpp*",
-              "RelativeToolTip": "cmEngine\\1. Application\\Application.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T14:33:47.12Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EditorApp.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\1. EditorApp\\EditorApp.h",
-              "RelativeDocumentMoniker": "cmEditor\\1. EditorApp\\EditorApp.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\1. EditorApp\\EditorApp.h",
-              "RelativeToolTip": "cmEditor\\1. EditorApp\\EditorApp.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T13:52:06.035Z",
+              "WhenOpened": "2024-11-27T06:51:28.601Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "EditorApp.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\1. EditorApp\\EditorApp.cpp",
-              "RelativeDocumentMoniker": "cmEditor\\1. EditorApp\\EditorApp.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\1. EditorApp\\EditorApp.cpp",
-              "RelativeToolTip": "cmEditor\\1. EditorApp\\EditorApp.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T13:52:06.96Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Timer.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\5. Timer\\Timer.h",
-              "RelativeDocumentMoniker": "cmEngine\\5. Timer\\Timer.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\5. Timer\\Timer.h",
-              "RelativeToolTip": "cmEngine\\5. Timer\\Timer.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:00:03.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Timer.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\5. Timer\\Timer.cpp",
-              "RelativeDocumentMoniker": "cmEngine\\5. Timer\\Timer.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\5. Timer\\Timer.cpp",
-              "RelativeToolTip": "cmEngine\\5. Timer\\Timer.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T15:55:38.283Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Renderer.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Core\\Renderer.h",
-              "RelativeDocumentMoniker": "cmEngine\\6. Renderer\\Core\\Renderer.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Core\\Renderer.h",
-              "RelativeToolTip": "cmEngine\\6. Renderer\\Core\\Renderer.h",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwC0AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:01:21.618Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "RenderStatePool.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\RenderState\\RenderStatePool.h",
-              "RelativeDocumentMoniker": "cmEngine\\6. Renderer\\RenderState\\RenderStatePool.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\RenderState\\RenderStatePool.h",
-              "RelativeToolTip": "cmEngine\\6. Renderer\\RenderState\\RenderStatePool.h",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAYwGgAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:02:07.705Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "GuiRenderer.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\7. Gui\\GuiRenderer.cpp",
-              "RelativeDocumentMoniker": "cmEngine\\7. Gui\\GuiRenderer.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\7. Gui\\GuiRenderer.cpp",
-              "RelativeToolTip": "cmEngine\\7. Gui\\GuiRenderer.cpp",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAACkAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T14:34:40.766Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ResourceManager.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\9. Resource\\Core\\ResourceManager.cpp",
-              "RelativeDocumentMoniker": "cmEngine\\9. Resource\\Core\\ResourceManager.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\9. Resource\\Core\\ResourceManager.cpp",
-              "RelativeToolTip": "cmEngine\\9. Resource\\Core\\ResourceManager.cpp",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAiwBYAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T15:04:26.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "SceneManager.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\SceneManager.cpp",
-              "RelativeDocumentMoniker": "cmEngine\\10. Scene\\SceneManager.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\SceneManager.cpp",
-              "RelativeToolTip": "cmEngine\\10. Scene\\SceneManager.cpp",
-              "ViewState": "AgIAACwAAAAAAAAAAAAMwEgAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T14:04:49.461Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Scene.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\Scene.h",
-              "RelativeDocumentMoniker": "cmEngine\\10. Scene\\Scene.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\Scene.h",
-              "RelativeToolTip": "cmEngine\\10. Scene\\Scene.h",
-              "ViewState": "AgIAABkAAAAAAAAAAAAkwDgAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:06:11.705Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Scene.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\Scene.cpp",
-              "RelativeDocumentMoniker": "cmEngine\\10. Scene\\Scene.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\Scene.cpp",
-              "RelativeToolTip": "cmEngine\\10. Scene\\Scene.cpp",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAkwDAAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T14:04:52.735Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "JsonSerializer.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\96. JsonSerializer\\JsonSerializer.h",
-              "RelativeDocumentMoniker": "cmEngine\\96. JsonSerializer\\JsonSerializer.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\96. JsonSerializer\\JsonSerializer.h",
-              "RelativeToolTip": "cmEngine\\96. JsonSerializer\\JsonSerializer.h",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAkwJMAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T13:53:14.028Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "JsonSerializer.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\96. JsonSerializer\\JsonSerializer.cpp",
-              "RelativeDocumentMoniker": "cmEngine\\96. JsonSerializer\\JsonSerializer.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\96. JsonSerializer\\JsonSerializer.cpp",
-              "RelativeToolTip": "cmEngine\\96. JsonSerializer\\JsonSerializer.cpp",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAowCQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T13:52:57.288Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "SystemMonitor.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\97. SystemMonitor\\SystemMonitor.h",
-              "RelativeDocumentMoniker": "cmEngine\\97. SystemMonitor\\SystemMonitor.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\97. SystemMonitor\\SystemMonitor.h",
-              "RelativeToolTip": "cmEngine\\97. SystemMonitor\\SystemMonitor.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:52:18.096Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Log.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\98. Log\\Log.h",
-              "RelativeDocumentMoniker": "cmEngine\\98. Log\\Log.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\98. Log\\Log.h",
-              "RelativeToolTip": "cmEngine\\98. Log\\Log.h",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAABYAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:06:26.693Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "TestConsole.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\TestConsole\\TestConsole.cpp",
-              "RelativeDocumentMoniker": "TestConsole\\TestConsole.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\TestConsole\\TestConsole.cpp",
-              "RelativeToolTip": "TestConsole\\TestConsole.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T15:39:18.513Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Log.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\98. Log\\Log.cpp",
-              "RelativeDocumentMoniker": "cmEngine\\98. Log\\Log.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\98. Log\\Log.cpp",
-              "RelativeToolTip": "cmEngine\\98. Log\\Log.cpp",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAwBoAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T15:07:03.559Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "cmEngine.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\0. cmEngine\\cmEngine.h",
-              "RelativeDocumentMoniker": "cmEngine\\0. cmEngine\\cmEngine.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\0. cmEngine\\cmEngine.h",
-              "RelativeToolTip": "cmEngine\\0. cmEngine\\cmEngine.h",
-              "ViewState": "AgIAABUAAAAAAAAAAAA5wCQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:29:55.767Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "cmEditor.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\0. cmEditor\\cmEditor.h",
-              "RelativeDocumentMoniker": "cmEditor\\0. cmEditor\\cmEditor.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\0. cmEditor\\cmEditor.h",
-              "RelativeToolTip": "cmEditor\\0. cmEditor\\cmEditor.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T14:23:57.726Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "cmEditor.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\0. cmEditor\\cmEditor.cpp",
-              "RelativeDocumentMoniker": "cmEditor\\0. cmEditor\\cmEditor.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\0. cmEditor\\cmEditor.cpp",
-              "RelativeToolTip": "cmEditor\\0. cmEditor\\cmEditor.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T14:31:00.461Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "vld.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\Libraries\\VisualLeakDetector\\vld.h",
-              "RelativeDocumentMoniker": "Libraries\\VisualLeakDetector\\vld.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\Libraries\\VisualLeakDetector\\vld.h",
-              "RelativeToolTip": "Libraries\\VisualLeakDetector\\vld.h",
-              "ViewState": "AgIAAOgAAAAAAAAAAAAIwLsAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:32:25.885Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "EngineMacro.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\99. Base\\EngineMacro.h",
-              "RelativeDocumentMoniker": "cmEngine\\99. Base\\EngineMacro.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\99. Base\\EngineMacro.h",
-              "RelativeToolTip": "cmEngine\\99. Base\\EngineMacro.h",
-              "ViewState": "AgIAABQAAAAAAAAAAAAnwCgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T14:36:55.938Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "xmemory",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\xmemory",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\xmemory",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\xmemory",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\xmemory",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAtwGUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-25T14:39:30.213Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "new_scalar.cpp",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\crt\\src\\vcruntime\\new_scalar.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\crt\\src\\vcruntime\\new_scalar.cpp",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\crt\\src\\vcruntime\\new_scalar.cpp",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\crt\\src\\vcruntime\\new_scalar.cpp",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T14:39:21.065Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "EngineCore.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\2. Engine\\EngineCore.cpp",
-              "RelativeDocumentMoniker": "cmEngine\\2. Engine\\EngineCore.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\2. Engine\\EngineCore.cpp",
-              "RelativeToolTip": "cmEngine\\2. Engine\\EngineCore.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T14:57:33.623Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "ConstantBufferData.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\ContantBuffer\\ConstantBufferData.h",
-              "RelativeDocumentMoniker": "cmEngine\\6. Renderer\\ContantBuffer\\ConstantBufferData.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\ContantBuffer\\ConstantBufferData.h",
-              "RelativeToolTip": "cmEngine\\6. Renderer\\ContantBuffer\\ConstantBufferData.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:00:17.53Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "Pipeline.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Pipeline\\Pipeline.h",
-              "RelativeDocumentMoniker": "cmEngine\\6. Renderer\\Pipeline\\Pipeline.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Pipeline\\Pipeline.h",
-              "RelativeToolTip": "cmEngine\\6. Renderer\\Pipeline\\Pipeline.h",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAwAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T13:56:30.808Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "ConstantBuffer.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\ContantBuffer\\ConstantBuffer.h",
-              "RelativeDocumentMoniker": "cmEngine\\6. Renderer\\ContantBuffer\\ConstantBuffer.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\ContantBuffer\\ConstantBuffer.h",
-              "RelativeToolTip": "cmEngine\\6. Renderer\\ContantBuffer\\ConstantBuffer.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T14:58:14.737Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Input.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\4. Input\\Input.h",
-              "RelativeDocumentMoniker": "cmEngine\\4. Input\\Input.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\4. Input\\Input.h",
-              "RelativeToolTip": "cmEngine\\4. Input\\Input.h",
-              "ViewState": "AgIAAGwAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T14:59:55.194Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "vector",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "ViewState": "AgIAACoDAAAAAAAAAAAEwDgDAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-25T14:04:17.897Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "EventDispatcher.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Event\\EventDispatcher.h",
-              "RelativeDocumentMoniker": "cmEngine\\3. Event\\EventDispatcher.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Event\\EventDispatcher.h",
-              "RelativeToolTip": "cmEngine\\3. Event\\EventDispatcher.h",
-              "ViewState": "AgIAABAAAAAAAAAAAAAcwBIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T13:54:41.514Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "WindowProc.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\WindowProc.h",
-              "RelativeDocumentMoniker": "cmEngine\\3. Window\\WindowProc.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\WindowProc.h",
-              "RelativeToolTip": "cmEngine\\3. Window\\WindowProc.h",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAcwBoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T14:40:26.126Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "EngineCore.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\2. Engine\\EngineCore.h",
-              "RelativeDocumentMoniker": "cmEngine\\2. Engine\\EngineCore.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\2. Engine\\EngineCore.h",
-              "RelativeToolTip": "cmEngine\\2. Engine\\EngineCore.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T13:54:39.961Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "GameWindow.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\GameWindow.h",
-              "RelativeDocumentMoniker": "cmEngine\\3. Window\\GameWindow.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\GameWindow.h",
-              "RelativeToolTip": "cmEngine\\3. Window\\GameWindow.h",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAnwCkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T14:06:01.301Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "imgui.ini",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\imgui.ini",
-              "RelativeDocumentMoniker": "cmEditor\\imgui.ini",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\imgui.ini",
-              "RelativeToolTip": "cmEditor\\imgui.ini",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002768|",
-              "WhenOpened": "2024-11-25T14:22:35.362Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "Editor.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\2. Editor\\Editor.h",
-              "RelativeDocumentMoniker": "cmEditor\\2. Editor\\Editor.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\2. Editor\\Editor.h",
-              "RelativeToolTip": "cmEditor\\2. Editor\\Editor.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T14:24:37.395Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "Texture.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\9. Resource\\Texture\\Texture.h",
-              "RelativeDocumentMoniker": "cmEngine\\9. Resource\\Texture\\Texture.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\9. Resource\\Texture\\Texture.h",
-              "RelativeToolTip": "cmEngine\\9. Resource\\Texture\\Texture.h",
-              "ViewState": "AgIAABIAAAAAAAAAAAAawCIAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T14:30:43.46Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "GameWindow.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\GameWindow.cpp",
-              "RelativeDocumentMoniker": "cmEngine\\3. Window\\GameWindow.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\GameWindow.cpp",
-              "RelativeToolTip": "cmEngine\\3. Window\\GameWindow.cpp",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAgwE0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T14:06:02.199Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "imgui.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\Libraries\\Imgui\\imgui.cpp",
-              "RelativeDocumentMoniker": "Libraries\\Imgui\\imgui.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\Libraries\\Imgui\\imgui.cpp",
-              "RelativeToolTip": "Libraries\\Imgui\\imgui.cpp",
-              "ViewState": "AgIAAGQQAAAAAAAAAAAlwHIQAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T14:34:06.209Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "imgui.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\Libraries\\Imgui\\imgui.h",
-              "RelativeDocumentMoniker": "Libraries\\Imgui\\imgui.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\Libraries\\Imgui\\imgui.h",
-              "RelativeToolTip": "Libraries\\Imgui\\imgui.h",
-              "ViewState": "AgIAAIAIAAAAAAAAAAAWwI0IAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T14:34:16.267Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "JsonHelper.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\96. JsonSerializer\\JsonHelper.h",
-              "RelativeDocumentMoniker": "cmEngine\\96. JsonSerializer\\JsonHelper.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\96. JsonSerializer\\JsonHelper.h",
-              "RelativeToolTip": "cmEngine\\96. JsonSerializer\\JsonHelper.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T14:00:59.177Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "json.hpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\Libraries\\json\\json.hpp",
-              "RelativeDocumentMoniker": "Libraries\\json\\json.hpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\Libraries\\json\\json.hpp",
-              "RelativeToolTip": "Libraries\\json\\json.hpp",
-              "ViewState": "AgIAABsbAAAAAAAAAAD4vyobAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T14:00:44.104Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "ScriptStack.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\ScriptStack.h",
-              "RelativeDocumentMoniker": "cmEngine\\10. Scene\\ScriptStack.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\ScriptStack.h",
-              "RelativeToolTip": "cmEngine\\10. Scene\\ScriptStack.h",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAewFYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T14:04:21.28Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "GameEvent.cpp",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Event\\GameEvent.cpp",
-              "RelativeDocumentMoniker": "cmEngine\\3. Event\\GameEvent.cpp",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Event\\GameEvent.cpp",
-              "RelativeToolTip": "cmEngine\\3. Event\\GameEvent.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T13:54:40.89Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 270,
-          "SelectedChildIndex": 3,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
               "Title": "ResourceManager.h",
               "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\9. Resource\\Core\\ResourceManager.h",
               "RelativeDocumentMoniker": "cmEngine\\9. Resource\\Core\\ResourceManager.h",
               "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\9. Resource\\Core\\ResourceManager.h",
               "RelativeToolTip": "cmEngine\\9. Resource\\Core\\ResourceManager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAmwDkAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAQwF4AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:04:14.367Z",
+              "WhenOpened": "2024-11-27T06:50:15.538Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "GuiRenderer.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\7. Gui\\GuiRenderer.h",
-              "RelativeDocumentMoniker": "cmEngine\\7. Gui\\GuiRenderer.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\7. Gui\\GuiRenderer.h",
-              "RelativeToolTip": "cmEngine\\7. Gui\\GuiRenderer.h",
-              "ViewState": "AgIAABYAAAAAAAAAAAAmwCgAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:03:42.741Z",
+              "DocumentIndex": 0,
+              "Title": "EditViewport.cpp",
+              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\4. EditorPanel\\EditViewport.cpp",
+              "RelativeDocumentMoniker": "cmEditor\\4. EditorPanel\\EditViewport.cpp",
+              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEditor\\4. EditorPanel\\EditViewport.cpp",
+              "RelativeToolTip": "cmEditor\\4. EditorPanel\\EditViewport.cpp",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAkwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-27T06:41:46.201Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Gui.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\7. Gui\\Gui.h",
-              "RelativeDocumentMoniker": "cmEngine\\7. Gui\\Gui.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\7. Gui\\Gui.h",
-              "RelativeToolTip": "cmEngine\\7. Gui\\Gui.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Viewport.cpp",
+              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\RenderTarget\\Viewport.cpp",
+              "RelativeDocumentMoniker": "cmEngine\\6. Renderer\\RenderTarget\\Viewport.cpp",
+              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\RenderTarget\\Viewport.cpp",
+              "RelativeToolTip": "cmEngine\\6. Renderer\\RenderTarget\\Viewport.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-27T06:41:42.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RenderTarget.h",
+              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\RenderTarget\\RenderTarget.h",
+              "RelativeDocumentMoniker": "cmEngine\\6. Renderer\\RenderTarget\\RenderTarget.h",
+              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\RenderTarget\\RenderTarget.h",
+              "RelativeToolTip": "cmEngine\\6. Renderer\\RenderTarget\\RenderTarget.h",
+              "ViewState": "AgIAABUAAAAAAAAAAAAiwCQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:03:41.498Z",
+              "WhenOpened": "2024-11-27T06:41:40.515Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "GuiRenderer.h",
+              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\7. Gui\\GuiRenderer.h",
+              "RelativeDocumentMoniker": "cmEngine\\7. Gui\\GuiRenderer.h",
+              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\7. Gui\\GuiRenderer.h",
+              "RelativeToolTip": "cmEngine\\7. Gui\\GuiRenderer.h",
+              "ViewState": "AgIAABUAAAAAAAAAAAAqwCIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-27T06:32:56.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GuiRenderer.cpp",
+              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\7. Gui\\GuiRenderer.cpp",
+              "RelativeDocumentMoniker": "cmEngine\\7. Gui\\GuiRenderer.cpp",
+              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\7. Gui\\GuiRenderer.cpp",
+              "RelativeToolTip": "cmEngine\\7. Gui\\GuiRenderer.cpp",
+              "ViewState": "AgIAAGkAAAAAAAAAAAApwHkAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-27T06:32:51.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Renderer.cpp",
               "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Core\\Renderer.cpp",
               "RelativeDocumentMoniker": "cmEngine\\6. Renderer\\Core\\Renderer.cpp",
               "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Core\\Renderer.cpp",
               "RelativeToolTip": "cmEngine\\6. Renderer\\Core\\Renderer.cpp",
-              "ViewState": "AgIAAN0AAAAAAAAAAAAgwAMBAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAcwDcAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T15:01:31.986Z",
+              "WhenOpened": "2024-11-27T06:27:56.014Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "SceneManager.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\SceneManager.h",
-              "RelativeDocumentMoniker": "cmEngine\\10. Scene\\SceneManager.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\10. Scene\\SceneManager.h",
-              "RelativeToolTip": "cmEngine\\10. Scene\\SceneManager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAQAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Renderer.h",
+              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Core\\Renderer.h",
+              "RelativeDocumentMoniker": "cmEngine\\6. Renderer\\Core\\Renderer.h",
+              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Core\\Renderer.h",
+              "RelativeToolTip": "cmEngine\\6. Renderer\\Core\\Renderer.h",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAewBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:06:00.601Z",
+              "WhenOpened": "2024-11-27T06:27:55.325Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "ShaderAnalyzer.h",
-              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Shader\\ShaderAnalyzer.h",
-              "RelativeDocumentMoniker": "cmEngine\\6. Renderer\\Shader\\ShaderAnalyzer.h",
-              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\Shader\\ShaderAnalyzer.h",
-              "RelativeToolTip": "cmEngine\\6. Renderer\\Shader\\ShaderAnalyzer.h",
+              "DocumentIndex": 9,
+              "Title": "EngineCore.cpp",
+              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\2. Engine\\EngineCore.cpp",
+              "RelativeDocumentMoniker": "cmEngine\\2. Engine\\EngineCore.cpp",
+              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\2. Engine\\EngineCore.cpp",
+              "RelativeToolTip": "cmEngine\\2. Engine\\EngineCore.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-27T06:26:39.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Application.cpp",
+              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\1. Application\\Application.cpp",
+              "RelativeDocumentMoniker": "cmEngine\\1. Application\\Application.cpp",
+              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\1. Application\\Application.cpp",
+              "RelativeToolTip": "cmEngine\\1. Application\\Application.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-27T06:26:36.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GameWindow.cpp",
+              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\GameWindow.cpp",
+              "RelativeDocumentMoniker": "cmEngine\\3. Window\\GameWindow.cpp",
+              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\GameWindow.cpp",
+              "RelativeToolTip": "cmEngine\\3. Window\\GameWindow.cpp",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-27T06:26:22.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "WindowProc.cpp",
+              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\WindowProc.cpp",
+              "RelativeDocumentMoniker": "cmEngine\\3. Window\\WindowProc.cpp",
+              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\WindowProc.cpp",
+              "RelativeToolTip": "cmEngine\\3. Window\\WindowProc.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-27T06:26:21.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "GameWindow.h",
+              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\GameWindow.h",
+              "RelativeDocumentMoniker": "cmEngine\\3. Window\\GameWindow.h",
+              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\GameWindow.h",
+              "RelativeToolTip": "cmEngine\\3. Window\\GameWindow.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T15:03:32.472Z"
+              "WhenOpened": "2024-11-27T06:26:19.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "WindowProc.h",
+              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\WindowProc.h",
+              "RelativeDocumentMoniker": "cmEngine\\3. Window\\WindowProc.h",
+              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\3. Window\\WindowProc.h",
+              "RelativeToolTip": "cmEngine\\3. Window\\WindowProc.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-27T06:26:18.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Viewport.h",
+              "DocumentMoniker": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\RenderTarget\\Viewport.h",
+              "RelativeDocumentMoniker": "cmEngine\\6. Renderer\\RenderTarget\\Viewport.h",
+              "ToolTip": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\cmEngine\\6. Renderer\\RenderTarget\\Viewport.h",
+              "RelativeToolTip": "cmEngine\\6. Renderer\\RenderTarget\\Viewport.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-27T06:26:05.945Z",
+              "EditorCaption": ""
             }
           ]
         }

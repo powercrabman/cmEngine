@@ -244,7 +244,7 @@
     <ClInclude Include="6. Renderer\Shader\Shader.h">
       <Filter>Renderer\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="6. Renderer\Viewport\Viewport.h">
+    <ClInclude Include="6. Renderer\RenderTarget\Viewport.h">
       <Filter>Renderer\Viewport</Filter>
     </ClInclude>
     <ClInclude Include="7. Gui\GuiRenderer.h">
@@ -328,6 +328,9 @@
     <ClInclude Include="3. Event\GameEvent.h" />
     <ClInclude Include="3. Event\EventDispatcher.h" />
     <ClInclude Include="10. Scene\ScriptStack.h" />
+    <ClInclude Include="6. Renderer\RenderTarget\RenderTarget.h" />
+    <ClInclude Include="6. Renderer\RenderTarget\SubRenderTarget.h" />
+    <ClInclude Include="6. Renderer\RenderTarget\MasterRenderTarget.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="99. Base\EngineAssertion.cpp">
@@ -420,7 +423,7 @@
     <ClCompile Include="6. Renderer\Shader\Shader.cpp">
       <Filter>Renderer\Shader</Filter>
     </ClCompile>
-    <ClCompile Include="6. Renderer\Viewport\Viewport.cpp">
+    <ClCompile Include="6. Renderer\RenderTarget\Viewport.cpp">
       <Filter>Renderer\Viewport</Filter>
     </ClCompile>
     <ClCompile Include="7. Gui\GuiRenderer.cpp">
@@ -504,6 +507,9 @@
     <ClCompile Include="3. Event\GameEvent.cpp" />
     <ClCompile Include="3. Event\EventDispatcher.cpp" />
     <ClCompile Include="10. Scene\ScriptStack.cpp" />
+    <ClCompile Include="6. Renderer\RenderTarget\RenderTarget.cpp" />
+    <ClCompile Include="6. Renderer\RenderTarget\SubRenderTarget.cpp" />
+    <ClCompile Include="6. Renderer\RenderTarget\MasterRenderTarget.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\CommonResource\Shader\1. SimpleColorShader.hlsli">

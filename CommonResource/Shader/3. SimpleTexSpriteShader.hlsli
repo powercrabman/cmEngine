@@ -48,11 +48,9 @@ VSOutput VS(VSInput input)
 float4 PS(VSOutput input) : SV_Target
 {
     float4 finalColor = texDiffuse.Sample(samLinear, input.UV);
-
     if (finalColor.w < 0.01f)
     {
         discard;
     }
-
     return finalColor;
 }
