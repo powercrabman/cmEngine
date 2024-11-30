@@ -1,0 +1,19 @@
+{
+    "EntityInspectorPanel": {
+        "CameraFixRatio": true,
+        "PositionDragSpeed": 0.005100000184029341,
+        "RotateDragSpeed": 0.20000000298023224,
+        "ScaleDragSpeed": 0.004999999888241291,
+        "visible": true
+    },
+    "PerformancePanel": {
+        "visible": false
+    },
+    "ResourceBrowser": {
+        "visible": true,
+        "zoom": 1.0
+    },
+    "SceneHierarchyPanel": {
+        "visible": true
+    }
+}

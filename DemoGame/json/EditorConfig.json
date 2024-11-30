@@ -1,0 +1,62 @@
+{
+    "EditorDebugViewer": {
+        "visible": false
+    },
+    "EditorLogViewer": {
+        "autoScrollBit": false,
+        "textColor": [
+            {
+                "w": 1.0,
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            {
+                "w": 1.0,
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            {
+                "w": 1.0,
+                "x": 0.49019041657447815,
+                "y": 0.8872548937797546,
+                "z": 0.4653738737106323
+            },
+            {
+                "w": 1.0,
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            {
+                "w": 1.0,
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            {
+                "w": 1.0,
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        ],
+        "visible": false
+    },
+    "EditorOverlay": {
+        "frameViewBit": true,
+        "memoryViewBit": false,
+        "noMoveBit": true,
+        "transparency": 0.5,
+        "visible": true
+    },
+    "EditorResourceViewer": {
+        "showDetailBit": false,
+        "visible": true
+    },
+    "EditorSceneViewer": {
+        "entityEditView": false,
+        "visible": false
+    }
+}

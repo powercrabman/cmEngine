@@ -1,0 +1,103 @@
+{
+"0": {
+"Name": {
+"name": "Ray jo"
+},
+"RenderProfile": {
+"renderState": {
+"blendState": "Alpha",
+"depthStencilState": "Depth",
+"rasterizerState": "Solid_CCWCull",
+"samplerState": "Point_Wrap"
+},
+"shaders": "Shader"
+},
+"SpriteRender": {
+"sprite": "sp"
+},
+"Transform": {
+"position": {
+"x": 0.050999999046325684,
+"y": 0.0,
+"z": 0.0
+},
+"rotation": {
+"x": 0.0,
+"y": 0.0,
+"z": 0.0
+},
+"scaling": {
+"x": 1.2549998760223389,
+"y": 1.2549998760223389,
+"z": 1.2549998760223389
+}
+}
+},
+"1": {
+"Camera": {
+"farPlane": 100.0,
+"fov": 1.0279465913772583,
+"height": 1.0,
+"mode": "Perspective",
+"nearPlane": 0.10000000149011612,
+"width": 1.0
+},
+"Name": {
+"name": "Main Camera"
+},
+"Transform": {
+"position": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.002999782562256
+},
+"rotation": {
+"x": 0.0,
+"y": 0.0,
+"z": 0.0
+},
+"scaling": {
+"x": 1.0,
+"y": 1.0,
+"z": 1.0
+}
+}
+},
+"2": {
+"FlipbookRender": {
+"flipbook": "AlianFlipbook",
+"playbackSpeed": 1.0
+},
+"Name": {
+"name": "Alian"
+},
+"RenderProfile": {
+"renderState": {
+"blendState": "Alpha",
+"depthStencilState": "Depth",
+"rasterizerState": "Solid_CCWCull",
+"samplerState": "Point_Wrap"
+},
+"shaders": "Shader"
+},
+"Transform": {
+"position": {
+"x": -0.5960000157356262,
+"y": 0.0,
+"z": -2.749000072479248
+},
+"rotation": {
+"x": 0.0,
+"y": 0.0,
+"z": 0.0
+},
+"scaling": {
+"x": 1.0,
+"y": 1.0,
+"z": 1.0
+}
+}
+},
+"SceneCamera": 1,
+"SceneName": "EditorScene"
+}

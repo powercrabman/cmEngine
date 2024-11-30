@@ -45,7 +45,7 @@ void DemoScene::EnterScene()
 		);
 		entity.CreateComponent<RenderProfile>(RenderProfile{
 			.shaders           = ResourceManager::Ref().TryFindResource<ShaderSet>("TestShaders"),
-			.rendererState     = RenderState{
+			.renderState     = RenderState{
 			.samplerState      = eSamplerState::Point_Wrap,
 			.depthStencilState = eDepthStencilState::Depth,
 			.rasterizerState   = eRasterizerState::Default,
@@ -70,7 +70,7 @@ void DemoScene::EnterScene()
 
 		entity.CreateComponent<RenderProfile>(RenderProfile{
 			.shaders = ResourceManager::Ref().TryFindResource<ShaderSet>("TestShaders"),
-			.rendererState = RenderState{
+			.renderState = RenderState{
 			.samplerState = eSamplerState::Point_Wrap,
 			.depthStencilState = eDepthStencilState::Depth,
 			.rasterizerState = eRasterizerState::Default,

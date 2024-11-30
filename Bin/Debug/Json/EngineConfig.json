@@ -1,0 +1,16 @@
+{
+    "GameWindowConfig": {
+        "windowPositionX": 100,
+        "windowPositionY": 50,
+        "windowResolutionHeight": 720,
+        "windowResolutionWidth": 1280
+    },
+    "RendererConfig": {
+        "clearColor": {
+            "w": 1.0,
+            "x": 1.0,
+            "y": 0.38823533058166504,
+            "z": 0.27843138575553894
+        }
+    }
+}

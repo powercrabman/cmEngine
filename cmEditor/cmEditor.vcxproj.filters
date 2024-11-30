@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="1. EditorApp\EditorApp.h" />
+    <ClInclude Include="0. cmEditor\cmEditor.h" />
+    <ClInclude Include="4. EditorPanel\Base\MainMenuPanel.h" />
+    <ClInclude Include="4. EditorPanel\Base\DockSpacePanel.h" />
+    <ClInclude Include="4. EditorPanel\Viewport\EditViewport.h" />
+    <ClInclude Include="4. EditorPanel\Debug\PerformancePanel.h" />
+    <ClInclude Include="1. EditorApp\EditorAppConfig.h" />
+    <ClInclude Include="4. EditorPanel\Base\ControlPanel.h" />
+    <ClInclude Include="4. EditorPanel\SceneHierarchy\SceneHierarchyPanel.h" />
+    <ClInclude Include="2. Editor\EditorCore.h" />
+    <ClInclude Include="5. GuiHelper\ImFlag.h" />
+    <ClInclude Include="4. EditorPanel\EntityInspector\EntityInspectorPanel.h" />
+    <ClInclude Include="5. GuiHelper\ImModal.h" />
+    <ClInclude Include="5. GuiHelper\ImHelper.h" />
+    <ClInclude Include="5. GuiHelper\ImText.h" />
+    <ClInclude Include="5. GuiHelper\ImFileDialog.h" />
+    <ClInclude Include="4. EditorPanel\ResourceBrowser\ResourceBrowser.h" />
+    <ClInclude Include="5. GuiHelper\ImOp.h" />
+    <ClInclude Include="5. GuiHelper\ImPayload.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="1. EditorApp\EditorApp.cpp" />
+    <ClCompile Include="0. cmEditor\cmEditor.cpp" />
+    <ClCompile Include="1. EditorApp\EntryPoint.cpp" />
+    <ClCompile Include="4. EditorPanel\Base\MainMenuPanel.cpp" />
+    <ClCompile Include="4. EditorPanel\Base\DockSpacePanel.cpp" />
+    <ClCompile Include="4. EditorPanel\Viewport\EditViewport.cpp" />
+    <ClCompile Include="4. EditorPanel\Debug\PerformancePanel.cpp" />
+    <ClCompile Include="4. EditorPanel\Base\ControlPanel.cpp" />
+    <ClCompile Include="4. EditorPanel\SceneHierarchy\SceneHierarchyPanel.cpp" />
+    <ClCompile Include="2. Editor\EditorCore.cpp" />
+    <ClCompile Include="4. EditorPanel\EntityInspector\EntityInspectorPanel.cpp" />
+    <ClCompile Include="4. EditorPanel\ResourceBrowser\ResourceBrowser.cpp" />
+  </ItemGroup>
+</Project>

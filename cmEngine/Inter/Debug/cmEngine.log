@@ -22,9 +22,6 @@ C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\Libraries\entt\entt.hpp(89745,1): wa
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\99. Base\EngineMath.h(12,28): warning C4305: '초기화 중': 'double'에서 'const float'(으)로 잘립니다.
   (소스 파일 '0.%20cmEngine/cmEngine.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\3. Window\GameWindow.h(61,70): warning C4244: 'return': 'uint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '0.%20cmEngine/cmEngine.cpp'을(를) 컴파일하는 중)
-  
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\Viewport.h(76,10): warning C4244: '초기화 중': 'const uint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '0.%20cmEngine/cmEngine.cpp'을(를) 컴파일하는 중)
   
@@ -40,99 +37,111 @@ C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\Vi
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Shader\VertexShader.h(57,5): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '0.%20cmEngine/cmEngine.cpp'을(를) 컴파일하는 중)
   
-  unity_WN24JC9J42GA99RA.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\12. Component\RenderComponent.h(23,3): warning C4002: 함수 같은 매크로 호출 'CUSTOM_SERIALIZABLE_COMPONENT_BODY'에 대해 인수가 너무 많습니다.
+  (소스 파일 '0.%20cmEngine/cmEngine.cpp'을(를) 컴파일하는 중)
+  
+  unity_6S1YJ5ELXIM497L7.cpp
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Flipbook\Flipbook.cpp(12,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Geometry\IndexBuffer.cpp(20,25): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Sprite\Sprite.cpp(11,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Sprite\Sprite.cpp(15,53): warning C4244: '=': 'unsigned __int64'에서 'uint32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Sprite\Sprite.cpp(16,55): warning C4244: '=': 'unsigned __int64'에서 'uint32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Sprite\Sprite.cpp(20,24): warning C4244: '초기화 중': 'uint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Sprite\Sprite.cpp(21,24): warning C4244: '초기화 중': 'uint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Texture\Texture.cpp(51,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Texture\Texture.cpp(67,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Texture\Texture.cpp(76,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Texture\Texture.cpp(91,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(43,6): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(67,6): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(64,6): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(88,6): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(116,5): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(144,5): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(125,5): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(153,5): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(131,5): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(159,5): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(139,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(167,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderState\RenderStatePool.cpp(43,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderState\RenderStatePool.cpp(116,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderState\RenderStatePool.cpp(191,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderState\RenderStatePool.cpp(293,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Shader\Shader.cpp(36,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Shader\Shader.cpp(91,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Shader\Shader.cpp(97,3): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\98. Log\Log.cpp(42,17): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\RenderTarget.cpp(13,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\10. Scene\SceneManager.cpp(127,18): warning C4267: '초기화 중': 'size_t'에서 'uint32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\RenderTarget.cpp(19,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\SubRenderTarget.cpp(61,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\RenderTarget.cpp(32,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\SubRenderTarget.cpp(65,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\RenderTarget.cpp(50,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\MasterRenderTarget.cpp(16,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\RenderTarget.cpp(54,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\MasterRenderTarget.cpp(22,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\MasterRenderTarget.cpp(35,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\MasterRenderTarget.cpp(53,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\MasterRenderTarget.cpp(57,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(392,75): warning C4267: '초기화 중': 'size_t'에서 'uint32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(392,75):
       템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
           C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\98. Log\Log.cpp(44,14):
@@ -163,10 +172,10 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.3443
           ]
   
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(406,82): warning C4267: '초기화 중': 'size_t'에서 'uint32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
   
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(393,90): warning C4267: '초기화 중': 'size_t'에서 'uint32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_WN24JC9J42GA99RA.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(393,90):
       템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
           C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(791,18):

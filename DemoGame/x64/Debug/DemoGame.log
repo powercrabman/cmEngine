@@ -1,3 +1,82 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate 디렉터리가 슬래시로 끝나지 않습니다. Intermediate 디렉터리의 적절한 평가를 허용하는 데 필요하므로 이 빌드 인스턴스에서 슬래시를 추가합니다.
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 디렉터리가 슬래시로 끝나지 않습니다. Output 디렉터리의 적절한 평가를 허용하는 데 필요하므로 이 빌드 인스턴스에서 슬래시를 추가합니다.
-  DemoGame.vcxproj -> C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\x64\Debug\DemoGame.exe
+  pch.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\Libraries\entt\entt.hpp(5766,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'pch.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\Libraries\entt\entt.hpp(8326,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'pch.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\Libraries\entt\entt.hpp(13521,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'pch.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\Libraries\entt\entt.hpp(57963,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'pch.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\Libraries\entt\entt.hpp(70343,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'pch.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\Libraries\entt\entt.hpp(89745,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'pch.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\99. Base\EngineMath.h(12,28): warning C4305: '초기화 중': 'double'에서 'const float'(으)로 잘립니다.
+  (소스 파일 'pch.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\3. Window\GameWindow.h(61,70): warning C4244: 'return': 'uint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 'pch.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\Viewport.h(76,10): warning C4244: '초기화 중': 'const uint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 'pch.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\Viewport.h(77,11): warning C4244: '초기화 중': 'const uint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 'pch.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\Viewport.h(87,23): warning C4244: '=': 'const uint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 'pch.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\Viewport.h(88,24): warning C4244: '=': 'const uint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 'pch.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Shader\VertexShader.h(57,5): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 'pch.cpp'을(를) 컴파일하는 중)
+  
+  DemoScene.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\DemoGame\DemoScene.h(6,2): error C3668: 'DemoScene::ToString': 재정의 지정자 'override'가 있는 메서드가 기본 클래스 메서드를 재정의하지 않았습니다.
+  (소스 파일 '/DemoScene.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\DemoGame\DemoScene.h(8,7): error C3668: 'DemoScene::EnterScene': 재정의 지정자 'override'가 있는 메서드가 기본 클래스 메서드를 재정의하지 않았습니다.
+  (소스 파일 '/DemoScene.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\DemoGame\DemoScene.h(9,7): error C3668: 'DemoScene::ExitScene': 재정의 지정자 'override'가 있는 메서드가 기본 클래스 메서드를 재정의하지 않았습니다.
+  (소스 파일 '/DemoScene.cpp'을(를) 컴파일하는 중)
+  
+  EntryPoint.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\DemoGame\Game.h(8,7): error C3668: 'Game::Shutdown': 재정의 지정자 'override'가 있는 메서드가 기본 클래스 메서드를 재정의하지 않았습니다.
+  (소스 파일 '/EntryPoint.cpp'을(를) 컴파일하는 중)
+  
+  Game.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\DemoGame\Game.h(8,7): error C3668: 'Game::Shutdown': 재정의 지정자 'override'가 있는 메서드가 기본 클래스 메서드를 재정의하지 않았습니다.
+  (소스 파일 '/Game.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\DemoGame\DemoScene.h(6,2): error C3668: 'DemoScene::ToString': 재정의 지정자 'override'가 있는 메서드가 기본 클래스 메서드를 재정의하지 않았습니다.
+  (소스 파일 '/Game.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\DemoGame\DemoScene.h(8,7): error C3668: 'DemoScene::EnterScene': 재정의 지정자 'override'가 있는 메서드가 기본 클래스 메서드를 재정의하지 않았습니다.
+  (소스 파일 '/Game.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\DemoGame\DemoScene.h(9,7): error C3668: 'DemoScene::ExitScene': 재정의 지정자 'override'가 있는 메서드가 기본 클래스 메서드를 재정의하지 않았습니다.
+  (소스 파일 '/Game.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\DemoGame\Game.cpp(14,34): error C2275: 'DemoScene': 형식 대신 식이 필요합니다.
+  (소스 파일 '/Game.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\DemoGame\Game.cpp(14,45): error C2059: 구문 오류: ')'
+  (소스 파일 '/Game.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\DemoGame\Game.cpp(15,34): error C2275: 'DemoScene': 형식 대신 식이 필요합니다.
+  (소스 파일 '/Game.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\DemoGame\Game.cpp(15,45): error C2059: 구문 오류: ')'
+  (소스 파일 '/Game.cpp'을(를) 컴파일하는 중)
+  
+  코드를 생성하고 있습니다...

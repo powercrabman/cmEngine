@@ -22,7 +22,7 @@
     <ClInclude Include="10. Scene\ScriptStack.h" />
     <ClInclude Include="12. Component\Behavior.h" />
     <ClInclude Include="13. Script\UserScript.h" />
-    <ClInclude Include="12. Component\Component.h" />
+    <ClInclude Include="12. Component\Name.h" />
     <ClInclude Include="9. Resource\EngineResource.h" />
     <ClInclude Include="7. Gui\Helper\FileDialog.h" />
     <ClInclude Include="96. JsonSerializer\JsonSerializer.h" />
@@ -84,12 +84,15 @@
     <ClInclude Include="6. Renderer\RenderTarget\RenderTarget.h" />
     <ClInclude Include="6. Renderer\RenderTarget\SubRenderTarget.h" />
     <ClInclude Include="6. Renderer\RenderTarget\MasterRenderTarget.h" />
+    <ClInclude Include="10. Scene\SceneSerializer.h" />
+    <ClInclude Include="99. Base\Hasher.h" />
+    <ClInclude Include="12. Component\Factory\ComponentSerializer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="10. Scene\ScriptStack.cpp" />
     <ClCompile Include="12. Component\Behavior.cpp" />
     <ClCompile Include="13. Script\UserScript.cpp" />
-    <ClCompile Include="12. Component\Component.cpp" />
+    <ClCompile Include="12. Component\Name.cpp" />
     <ClCompile Include="7. Gui\Helper\FileDialog.cpp" />
     <ClCompile Include="96. JsonSerializer\JsonSerializer.cpp" />
     <ClCompile Include="12. Component\InputController.cpp" />
@@ -152,6 +155,9 @@
     <ClCompile Include="6. Renderer\RenderTarget\RenderTarget.cpp" />
     <ClCompile Include="6. Renderer\RenderTarget\SubRenderTarget.cpp" />
     <ClCompile Include="6. Renderer\RenderTarget\MasterRenderTarget.cpp" />
+    <ClCompile Include="10. Scene\SceneSerializer.cpp" />
+    <ClCompile Include="99. Base\Hasher.cpp" />
+    <ClCompile Include="12. Component\Factory\ComponentSerializer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\CommonResource\Shader\1. SimpleColorShader.hlsli" />

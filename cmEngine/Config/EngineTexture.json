@@ -1,0 +1,32 @@
+{
+    "Engine_Icon_Audio_Texture": {
+        "imagePath": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\CommonResource\\Audio.png",
+        "resourceType": "Texture",
+        "textureName": "Engine_Icon_Audio"
+    },
+    "Engine_Icon_Code_Texture": {
+        "imagePath": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\CommonResource\\Code.png",
+        "resourceType": "Texture",
+        "textureName": "Engine_Icon_Code"
+    },
+    "Engine_Icon_File_Texture": {
+        "imagePath": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\CommonResource\\File.png",
+        "resourceType": "Texture",
+        "textureName": "Engine_Icon_File"
+    },
+    "Engine_Icon_Image_Texture": {
+        "imagePath": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\CommonResource\\Image.png",
+        "resourceType": "Texture",
+        "textureName": "Engine_Icon_Image"
+    },
+    "Engine_Icon_Text_Texture": {
+        "imagePath": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\CommonResource\\Media-Text.png",
+        "resourceType": "Texture",
+        "textureName": "Engine_Icon_Text"
+    },
+    "Engine_Icon_Video_Texture": {
+        "imagePath": "C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\CommonResource\\Video.png",
+        "resourceType": "Texture",
+        "textureName": "Engine_Icon_Video"
+    }
+}
