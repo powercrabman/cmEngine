@@ -183,7 +183,10 @@ void SceneHierarchyPanel::DrawSceneHierarchy() const
 	// Create
 	if (ImGui::Button("Add Entity"))
 	{
-		EDITOR_CORE.SetEditEntity(SCENE_MANAGER.TryGetCurrentScene()->CreateGameEntity());
+		if (SCENE_MANAGER.TryGetCurrentScene())
+		{
+			EDITOR_CORE.SetEditEntity(SCENE_MANAGER.TryGetCurrentScene()->CreateGameEntity());
+		}
 	}
 	ImGui::SameLine();
 

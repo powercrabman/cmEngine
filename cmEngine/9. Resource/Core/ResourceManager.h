@@ -27,12 +27,15 @@ namespace cmEngine
 
 		template<ResourceConstraint ResourceType>
 		ResourceMapIterator GetBegin() { return mResourceRepo[static_cast<uint32>(ResourceType::sResourceType)].begin(); }
+		ResourceMapIterator GetBegin(eResourceType inType) { return mResourceRepo[static_cast<uint32>(inType)].begin(); }
 
 		template<ResourceConstraint ResourceType>
 		ResourceMapIterator GetEnd() { return mResourceRepo[static_cast<uint32>(ResourceType::sResourceType)].end(); }
+		ResourceMapIterator GetEnd(eResourceType inType) { return mResourceRepo[static_cast<uint32>(inType)].end(); }
 
 		template<ResourceConstraint ResourceType>
 		size_t				GetResourceListSize() { return mResourceRepo[static_cast<uint32>(ResourceType::sResourceType)].size(); }
+		size_t				GetResourceListSize(eResourceType inType) { return mResourceRepo[static_cast<uint32>(inType)].size(); }
 
 		const std::filesystem::path& GetLocalDirectoryPath() const { return mLocalDirectory; }
 		const std::filesystem::path& GetLocalResourceDirectoryPath() const { return mLocalResourcesDirectory; }
@@ -145,22 +148,6 @@ namespace cmEngine
 			assert(false);
 			ENGINE_LOG_ERROR("{}::{} is already exist resource!", ToString(ResourceType::sResourceType), ptr->GetName());
 			return ptr;
-		}
-	}
-
-	//===================================================
-	//                    ToString
-	//===================================================
-
-	inline constexpr const char* ToString(eResourceType inType)
-	{
-		switch (inType)
-		{
-		case cmEngine::eResourceType::Texture:		return "Texture";
-		case cmEngine::eResourceType::Sprite:		return "Sprite";
-		case cmEngine::eResourceType::Flipbook:		return "Flipbook";
-		case cmEngine::eResourceType::ShaderSet:	return "ShaderSet";
-		default: assert(false);						return "Undefined";
 		}
 	}
 }

@@ -7,7 +7,7 @@
 "renderState": {
 "blendState": "Alpha",
 "depthStencilState": "Depth",
-"rasterizerState": "Solid_CCWCull",
+"rasterizerState": "Solid_NoCull",
 "samplerState": "Point_Wrap"
 },
 "shaders": "Shader"
@@ -17,9 +17,9 @@
 },
 "Transform": {
 "position": {
-"x": 0.050999999046325684,
-"y": 0.0,
-"z": 0.0
+"x": 0.6629999876022339,
+"y": -0.0560000017285347,
+"z": -0.5410000085830688
 },
 "rotation": {
 "x": 0.0,
@@ -27,9 +27,9 @@
 "z": 0.0
 },
 "scaling": {
-"x": 1.2549998760223389,
-"y": 1.2549998760223389,
-"z": 1.2549998760223389
+"x": 1.0099999904632568,
+"y": 1.0099999904632568,
+"z": 1.0099999904632568
 }
 }
 },

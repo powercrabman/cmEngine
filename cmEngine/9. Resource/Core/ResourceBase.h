@@ -12,6 +12,19 @@ namespace cmEngine
 		Count
 	};
 
+	inline constexpr const char* ToString(eResourceType e)
+	{
+		switch (e)
+		{
+		case eResourceType::Texture: return "Texture";
+		case eResourceType::Sprite: return "Sprite";
+		case eResourceType::Flipbook: return "Flipbook";
+		case eResourceType::ShaderSet: return "ShaderSet";
+		case eResourceType::Count: return "Count";
+		default: return "unknown";
+		}
+	}
+
 	JSON_SERIALIZE_ENUM(
 		eResourceType,
 		ENUM_ENTRY(eResourceType::Texture, "Texture"),

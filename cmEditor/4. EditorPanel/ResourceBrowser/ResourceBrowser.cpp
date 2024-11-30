@@ -7,6 +7,10 @@ ResourceBrowser::ResourceBrowser()
 	{
 		SetVisible(mJson.visible);
 	}
+
+	// 기본 아이콘 텍스처 로드
+	mDefaultIconTexture = RESOURCE_MANAGER.CreateEmptyResource<Texture>("DefaultIcon");
+	mDefaultIconTexture->LoadTextureImage(L"EditorInnerResources\\DocIcon.png");
 }
 
 ResourceBrowser::~ResourceBrowser()
@@ -20,95 +24,198 @@ void ResourceBrowser::RenderGui()
 	ImGui::SetNextWindowSize({ 500, 300 }, ImGuiCond_FirstUseEver);
 	ImGui::Begin("Resource Browser", GetVisiblePtr(), ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse);
 
-	static float ResourceTypeWindowWidth = 200.f;
-	ImGui::BeginGroup();
-	ImGui::TextWrapped("Resource Type");
+	// 리소스 타입 선택기
+	DrawResourceTypeSelector();
 
-	static const float buttonHeight = 20.f;
-	if (ImGui::BeginChild("Resource Type", { ResourceTypeWindowWidth, ImGui::GetContentRegionAvail().y - buttonHeight }, ImGuiChildFlags_Border))
-	{
-		if (ImGui::BeginChild("Resource Type"))
-		{
-			DrawSelectableResource<Texture>();
-			DrawSelectableResource<Sprite>();
-			DrawSelectableResource<Flipbook>();
-			DrawSelectableResource<ShaderSet>();
-			ImGui::EndChild();
-		}
-		ImGui::EndChild();
-
-		float pad = GImGui->Style.FramePadding.x * 2;
-		float buttonWidth = (ResourceTypeWindowWidth - pad) * 0.5f;
-		ImGui::Button("Import Res", ImVec2{ buttonWidth, 0.f });
-		ImGui::SameLine();
-		ImGui::Button("Export Res", ImVec2{ buttonWidth, 0.f });
-
-		ImGui::EndGroup();
-	}
 	ImGui::SameLine();
-	ImGui::BeginGroup();
-	ImGui::TextWrapped("Resource Browser");
-	ImGui::SetNextItemWidth(300);
-	ImGui::SameLine(0, ImGui::GetContentRegionAvail().x - 500);
-	ImGui::SliderFloat("Browser Zoom", &mJson.zoom, 0.5f, 2.f, "%.2f", ImGuiSliderFlags_AlwaysClamp);
 
-	if (ImGui::BeginChild("Resource Browser", { ImGui::GetContentRegionAvail().x , 0.f }, ImGuiChildFlags_Border))
-	{
-		DrawTextureBrowser();
-		ImGui::EndChild();
-	}
-	ImGui::EndGroup();
+	// 리소스 브라우저
+	DrawResourceBrowser();
 
 	ImGui::End();
 }
 
-void ResourceBrowser::DrawTextureBrowser()
+void ResourceBrowser::DrawResourceTypeSelector()
 {
-	uint32 availX        = static_cast<uint32>(ImGui::GetContentRegionAvail().x);
-	float thumbNailWidth = 160 * mJson.zoom;
-	int32 thumbNailCount = max(1, availX / thumbNailWidth);
-	int32 gab            = thumbNailCount == 1 ? 0 : (availX % static_cast<uint32>(thumbNailWidth)) / (thumbNailCount - 1);
+	static float resourceTypeWidth = 200.f;
+	ImGui::BeginGroup();
+	ImGui::TextWrapped("Resource Type");
 
-	auto begin              = RESOURCE_MANAGER.GetBegin<Texture>();
-	const size_t totalItems = RESOURCE_MANAGER.GetResourceListSize<Texture>();
-
-	int totalRows    = (totalItems + thumbNailCount - 1) / thumbNailCount;
-
-	ImGuiListClipper clipper;
-	clipper.Begin(totalRows, thumbNailWidth);
-
-	while (clipper.Step())
+	if (ImGui::BeginChild("Resource Type", { resourceTypeWidth, 0 }, ImGuiChildFlags_Border))
 	{
-		for (int row = clipper.DisplayStart; row < clipper.DisplayEnd; ++row)
+		for (int type = static_cast<int32>(eResourceType::Texture); type < static_cast<uint32>(eResourceType::Count); ++type)
 		{
-			for (int col = 0; col < thumbNailCount; ++col)
+			const char* typeName = cmEngine::ToString(static_cast<eResourceType>(type));
+			if (ImGui::Selectable(typeName, static_cast<uint32>(mTargetType) == type))
 			{
-				int itemIndex = row * thumbNailCount + col;
-				if (itemIndex >= totalItems)
-					break;
+				mTargetType = static_cast<eResourceType>(type);
+			}
+		}
+		ImGui::EndChild();
+	}
+	ImGui::EndGroup();
+}
 
-				auto iter = std::next(begin, itemIndex);
-				Texture* tex = static_cast<Texture*>(iter->second.get());
-				AssetButton(tex->GetName(), tex, { thumbNailWidth, thumbNailWidth }, ImVec4{ 1, 1, 1, 0 });
-				// Drag Drop
-				if (ImGui::BeginDragDropSource())
+void ResourceBrowser::DrawResourceBrowser()
+{
+	ImGui::BeginGroup();
+	ImGui::TextWrapped("Resource Browser");
+
+	static const float	zoomSliderWidth = 300;
+	float				zoomTextWidth   = ImGui::CalcTextSize("Zoom").x;
+
+	ImGui::SetNextItemWidth(zoomSliderWidth);
+	ImGui::SameLine(ImGui::GetContentRegionAvail().x - zoomTextWidth - zoomSliderWidth - GImGui->Style.FramePadding.x);
+	ImGui::SliderFloat("Zoom", &mJson.zoom, 0.5f, 2.f, "%.2f", ImGuiSliderFlags_AlwaysClamp);
+
+	if (ImGui::BeginChild("Resource Browser", { ImGui::GetContentRegionAvail().x, 0 }, ImGuiChildFlags_Border))
+	{
+		const auto& resources = RESOURCE_MANAGER.GetBegin(mTargetType);
+		size_t      resourceSize = RESOURCE_MANAGER.GetResourceListSize(mTargetType);
+
+		uint32_t availX        = static_cast<uint32_t>(ImGui::GetContentRegionAvail().x);
+		float thumbnailWidth   = 160 * mJson.zoom;
+		int32_t thumbnailCount = max(1, static_cast<int32_t>(availX / thumbnailWidth));
+		int32_t gap            = thumbnailCount == 1 ? 0 : (availX % static_cast<uint32_t>(thumbnailWidth)) / (thumbnailCount - 1);
+
+		int totalRows = (resourceSize + thumbnailCount - 1) / thumbnailCount;
+
+		ImGuiListClipper clipper;
+		clipper.Begin(totalRows, thumbnailWidth);
+
+		while (clipper.Step())
+		{
+			for (int row = clipper.DisplayStart; row < clipper.DisplayEnd; ++row)
+			{
+				for (int col = 0; col < thumbnailCount; ++col)
 				{
-					ImGui::SetDragDropPayload(
-						ImPayload::sTexturePayload,
-						reinterpret_cast<const void*>(tex->GetName()),
-						::strlen(tex->GetName())
-					);
-					static float previewLen = 32.f;
-					ImGui::TextUnformatted(tex->GetName());
+					int itemIndex = row * thumbnailCount + col;
+					if (itemIndex >= resourceSize)
+						break;
 
-					ImGui::EndDragDropSource();
-				}
+					ResourceBase* resource = std::next(resources, itemIndex)->second.get();
+					AssetButton(resource->GetName(), resource, { thumbnailWidth, thumbnailWidth });
+					DrawResourceItemPopup();
 
-				if ((col + 1) < thumbNailCount)
-				{
-					ImGui::SameLine(0.f, gab);
+					// 드래그 & 드롭 지원
+					if (ImGui::BeginDragDropSource())
+					{
+						ImGui::SetDragDropPayload(
+							ImPayload::GetResourcePayload(mTargetType),
+							resource->GetName(),
+							strlen(resource->GetName()) + 1
+						);
+						ImGui::TextUnformatted(resource->GetName());
+						ImGui::EndDragDropSource();
+					}
+
+					if ((col + 1) < thumbnailCount)
+					{
+						ImGui::SameLine(0.f, gap);
+					}
 				}
 			}
 		}
+		ImGui::EndChild();
 	}
+	ImGui::EndGroup();
 }
+
+bool ResourceBrowser::AssetButton(
+	const char* stringID,
+	ResourceBase* resource,
+	const ImVec2& buttonSize,
+	const ImVec4& bgColor) const
+{
+	ImGuiContext& g = *GImGui;
+	ImGuiWindow* window = g.CurrentWindow;
+	if (window->SkipItems)
+		return false;
+
+	ImVec2 padding = g.Style.FramePadding;
+	ImRect bb(window->DC.CursorPos, window->DC.CursorPos + buttonSize);
+	ImGui::ItemSize(bb);
+	ImGuiID id = window->GetID(stringID);
+	if (!ImGui::ItemAdd(bb, id))
+		return false;
+
+	bool hovered, held;
+	bool pressed = ImGui::ButtonBehavior(bb, id, &hovered, &held, ImGuiButtonFlags_MouseButtonLeft);
+
+	ImGuiCol buttonColorIdx = (held && hovered) ? ImGuiCol_ButtonActive
+		: hovered ? ImGuiCol_ButtonHovered
+		: ImGuiCol_Button;
+	ImU32 col = ImGui::GetColorU32(buttonColorIdx);
+	ImGui::RenderFrame(bb.Min, bb.Max, col, true, g.Style.FrameRounding);
+
+	if (bgColor.w > 0.0f)
+	{
+		window->DrawList->AddRectFilled(bb.Min + padding, bb.Max - padding, ImGui::GetColorU32(bgColor));
+	}
+
+	float textPad       = ImGui::GetTextLineHeightWithSpacing();
+	ImVec2 imageAreaMin = bb.Min + padding;
+	ImVec2 imageAreaMax = bb.Max - padding;
+	imageAreaMax.y     -= textPad;
+
+	Texture* displayTexture = nullptr;
+
+	switch (resource->GetResourceType())
+	{
+	case eResourceType::Texture:	displayTexture = static_cast<Texture*>(resource); break;
+	case eResourceType::Sprite:		displayTexture = static_cast<Sprite*>(resource)->GetSpriteData().texture; break;
+	case eResourceType::Flipbook:	displayTexture = static_cast<Flipbook*>(resource)->GetFlipbookData().texture; break;
+	case eResourceType::ShaderSet:	displayTexture = mDefaultIconTexture; break;
+	default:						displayTexture = mDefaultIconTexture; assert(false); break;
+	}
+
+	const auto& [textureWidth, textureHeight] = displayTexture->GetSize();
+	float textureAspect                       = textureWidth / static_cast<float>(textureHeight);
+	ImVec2 imageSize                          = imageAreaMax - imageAreaMin;
+	float areaAspect                          = imageSize.x / imageSize.y;
+
+	if (textureAspect > areaAspect)
+	{
+		const float adjustedHeight = imageSize.x / textureAspect;
+		const float offsetY        = (imageSize.y - adjustedHeight) * 0.5f;
+		imageAreaMin.y            += offsetY;
+		imageAreaMax.y            -= offsetY;
+	}
+	else
+	{
+		const float adjustedWidth = imageSize.y * textureAspect;
+		const float offsetX       = (imageSize.x - adjustedWidth) * 0.5f;
+		imageAreaMin.x           += offsetX;
+		imageAreaMax.x           -= offsetX;
+	}
+
+	ImTextureID texID = reinterpret_cast<ImTextureID>(displayTexture->GetShaderResourceView().Get());
+	window->DrawList->AddImage(texID, imageAreaMin, imageAreaMax);
+
+	const float maxTextWidth = buttonSize.x - padding.x * 2;
+	std::string fullText     = resource->GetName();
+	ImVec2 textSize          = ImGui::CalcTextSize(fullText.c_str());
+
+	if (textSize.x > maxTextWidth)
+	{
+		size_t visibleString = maxTextWidth / ImGui::CalcTextSize("C").x;
+		fullText             = fullText.substr(0, visibleString - 2) + "..";
+		textSize             = ImGui::CalcTextSize(fullText.c_str());
+	}
+
+	const ImVec2 textPos = {
+		bb.Min.x + (buttonSize.x - textSize.x) * 0.5f,
+		bb.Max.y - padding.y - textSize.y
+	};
+	window->DrawList->AddText(textPos, ImGui::GetColorU32(ImGuiCol_Text), fullText.c_str());
+
+	// 툴팁
+	if (ImGui::IsItemHovered() && ImGui::BeginTooltip())
+	{
+		ImGui::TextUnformatted(resource->GetName());
+		ImGui::EndTooltip();
+	}
+
+	return pressed;
+}
+

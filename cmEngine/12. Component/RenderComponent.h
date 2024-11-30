@@ -70,7 +70,7 @@ namespace cmEngine
 	struct RenderProfile
 	{
 		ShaderSet*	shaders        = nullptr;
-		RenderState renderState  = RenderState::DefaultState;
+		RenderState renderState		= RenderState::DefaultState;
 
 		CUSTOM_SERIALIZABLE_COMPONENT_BODY(RenderProfile);
 

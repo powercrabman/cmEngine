@@ -17,61 +17,73 @@ EntityInspectorPanel::~EntityInspectorPanel()
 
 void EntityInspectorPanel::RenderGui()
 {
-	ImGui::Begin("EntityInspectorPanel");
+	ImGui::Begin("Entity Inspector", GetVisiblePtr());
 
 	mEntity = EDITOR_CORE.TryGetEditEntity();
 
 	if (mEntity.IsValid())
 	{
-		DrawDefaultPanel();
-		PanelLayout<Name>(&EntityInspectorPanel::DrawNamePanel);
-		PanelLayout<Transform>(&EntityInspectorPanel::DrawTransformPanel);
-		PanelLayout<Camera>(&EntityInspectorPanel::DrawCameraPanel);
-		PanelLayout<FlipbookRender>(&EntityInspectorPanel::DrawFlipbookRenderPanel);
-		PanelLayout<SpriteRender>(&EntityInspectorPanel::DrawSpriteRenderPanel);
+		ImGui::Text("Entity ID: %d", mEntity.GetID());
+
+		ImGui::Separator();
+
+		// Component Menu
+		if (ImGui::Button("Add Component"))
+		{
+			ImGui::OpenPopup("AddComponentPopup");
+			if (ImGui::BeginPopup("AddComponentPopup"))
+			{
+				DrawCreateComponentMenu();
+				ImGui::EndPopup();
+			}
+		}
+		ImGui::SameLine();
+		if (ImGui::Button("Remove Component"))
+		{
+			ImGui::OpenPopup("RemoveComponentPopup");
+			if (ImGui::BeginPopup("RemoveComponentPopup"))
+			{
+				DrawRemoveComponentMenu();
+				ImGui::EndPopup();
+			}
+		}
+
+		// Popup Window
+		if (ImGui::BeginPopupContextWindow())
+		{
+			if (ImGui::BeginMenu("Add Component"))
+			{
+				DrawCreateComponentMenu();
+				ImGui::EndMenu();
+			}
+
+			if (ImGui::BeginMenu("Remove Component"))
+			{
+				DrawRemoveComponentMenu();
+				ImGui::EndMenu();
+			}
+			ImGui::EndPopup();
+		}
+
+
+		ImGui::Spacing();
+		
+		// Draw Component Panel
+		DrawComponentPanel<Name>("Name", &EntityInspectorPanel::DrawNamePanel);
+		DrawComponentPanel<Transform>("Transform", &EntityInspectorPanel::DrawTransformPanel);
+		DrawComponentPanel<Camera>("Camera", &EntityInspectorPanel::DrawCameraPanel);
+		DrawComponentPanel<SpriteRender>("Sprite Render", &EntityInspectorPanel::DrawSpriteRenderPanel);
+		DrawComponentPanel<FlipbookRender>("Flipbook Render", &EntityInspectorPanel::DrawFlipbookRenderPanel);
+		DrawComponentPanel<RenderProfile>("Render Profile", &EntityInspectorPanel::DrawRenderProfilePanel);
 	}
 	else
 	{
 		mEntity = GameEntity::NullEntity;
-		ImTextAlign(ToImVec4(Colors::Gray), "Game entity is not selected.",eImTextAlignHorizon::Center, eImTextAlignVertical::Center);
+		ImTextAlign(ToImVec4(Colors::Gray), "Game entity is not selected.", eImTextAlignHorizon::Center, eImTextAlignVertical::Center);
 	}
+
 
 	ImGui::End();
-}
-
-void EntityInspectorPanel::DrawDefaultPanel()
-{
-	Name* name = mEntity.TryFindComponent<Name>();
-	ImGui::Text("Entity ID : %d", mEntity.GetID());
-
-	ImGui::Separator();
-	if (ImGui::Button("Create Component")) { ImGui::OpenPopup("CreateComp"); }
-	ImGui::SameLine();
-	if (ImGui::Button("Delete Component")) { ImGui::OpenPopup("DeleteComp"); }
-
-	if (ImGui::BeginPopup("CreateComp"))
-	{
-		CreateComponentMenuItem<Name>("Name");
-		CreateComponentMenuItem<Transform>("Transform");
-		CreateComponentMenuItem<Camera>("Camera");
-		CreateComponentMenuItem<FlipbookRender>("FlipbookRender");
-		CreateComponentMenuItem<SpriteRender>("SpriteRender");
-		CreateComponentMenuItem<RenderProfile>("RenderProfile");
-
-		ImGui::EndPopup();
-	}
-
-	if (ImGui::BeginPopup("DeleteComp"))
-	{
-		DeleteComponentMenuItem<Name>("Name");
-		DeleteComponentMenuItem<Transform>("Transform");
-		DeleteComponentMenuItem<Camera>("Camera");
-		DeleteComponentMenuItem<FlipbookRender>("FlipbookRender");
-		DeleteComponentMenuItem<SpriteRender>("SpriteRender");
-		DeleteComponentMenuItem<RenderProfile>("RenderProfile");
-
-		ImGui::EndPopup();
-	}
 }
 
 void EntityInspectorPanel::DrawNamePanel(Name* inName)
@@ -113,7 +125,7 @@ void EntityInspectorPanel::DrawTransformPanel(Transform* inTransform)
 		ImGui::TextUnformatted("Position Adj Speed");
 		ImGui::DragFloat(
 			"##PositionDrag",
-			&mConfig.PositionDragSpeed,
+			&mConfig.positionDragSpeed,
 			0.0001f,
 			0.0001f,
 			10.f,
@@ -122,7 +134,7 @@ void EntityInspectorPanel::DrawTransformPanel(Transform* inTransform)
 		ImGui::TextUnformatted("Rotation Adj Speed");
 		ImGui::DragFloat(
 			"##RotationDrag",
-			&mConfig.RotateDragSpeed,
+			&mConfig.rotationDragSpeed,
 			0.0001f,
 			0.0001f,
 			10.f,
@@ -132,7 +144,7 @@ void EntityInspectorPanel::DrawTransformPanel(Transform* inTransform)
 		ImGui::TextUnformatted("Scale Adj Speed");
 		ImGui::DragFloat(
 			"##ScaleDrag",
-			&mConfig.ScaleDragSpeed,
+			&mConfig.scaleDragSpeed,
 			0.0001f,
 			0.0001f,
 			10.f,
@@ -144,9 +156,9 @@ void EntityInspectorPanel::DrawTransformPanel(Transform* inTransform)
 	// Position
 	{
 		ImGui::BulletText("Position");
-		ImGui::DragFloat("X##Pos", &inTransform->position.x, mConfig.PositionDragSpeed, -10000, 10000, "%.3f");
-		ImGui::DragFloat("Y##Pos", &inTransform->position.y, mConfig.PositionDragSpeed, -10000, 10000, "%.3f");
-		ImGui::DragFloat("Z##Pos", &inTransform->position.z, mConfig.PositionDragSpeed, -10000, 10000, "%.3f");
+		ImGui::DragFloat("X##Pos", &inTransform->position.x, mConfig.positionDragSpeed, -10000, 10000, "%.3f");
+		ImGui::DragFloat("Y##Pos", &inTransform->position.y, mConfig.positionDragSpeed, -10000, 10000, "%.3f");
+		ImGui::DragFloat("Z##Pos", &inTransform->position.z, mConfig.positionDragSpeed, -10000, 10000, "%.3f");
 
 		if (ImGui::Button("Reset##Pos")) { inTransform->position = Vector3::Zero; }
 	}
@@ -160,9 +172,9 @@ void EntityInspectorPanel::DrawTransformPanel(Transform* inTransform)
 		yaw = Math::RadToDeg(inTransform->rotation.y);
 		roll = Math::RadToDeg(inTransform->rotation.z);
 
-		if (ImGui::DragFloat("Pitch##Rot", &pitch, mConfig.RotateDragSpeed, 0.f, 360.f, "%.3f", ImGuiSliderFlags_WrapAround)) { inTransform->rotation.x = Math::DegToRad(pitch); }
-		if (ImGui::DragFloat("Yaw##Rot", &yaw, mConfig.RotateDragSpeed, 0.f, 360.f, "%.3f", ImGuiSliderFlags_WrapAround)) { inTransform->rotation.y = Math::DegToRad(yaw); }
-		if (ImGui::DragFloat("Roll##Rot", &roll, mConfig.RotateDragSpeed, 0.f, 360.f, "%.3f", ImGuiSliderFlags_WrapAround)) { inTransform->rotation.z = Math::DegToRad(roll); }
+		if (ImGui::DragFloat("Pitch##Rot", &pitch, mConfig.rotationDragSpeed, 0.f, 360.f, "%.3f", ImGuiSliderFlags_WrapAround)) { inTransform->rotation.x = Math::DegToRad(pitch); }
+		if (ImGui::DragFloat("Yaw##Rot", &yaw, mConfig.rotationDragSpeed, 0.f, 360.f, "%.3f", ImGuiSliderFlags_WrapAround)) { inTransform->rotation.y = Math::DegToRad(yaw); }
+		if (ImGui::DragFloat("Roll##Rot", &roll, mConfig.rotationDragSpeed, 0.f, 360.f, "%.3f", ImGuiSliderFlags_WrapAround)) { inTransform->rotation.z = Math::DegToRad(roll); }
 
 		if (ImGui::Button("Reset##Rot")) { inTransform->rotation = Vector3::Zero; }
 	}
@@ -174,14 +186,14 @@ void EntityInspectorPanel::DrawTransformPanel(Transform* inTransform)
 		Vector3 previousScaling = inTransform->scaling;
 		bool updated = false;
 
-		updated |= ImGui::DragFloat("X##Sc", &inTransform->scaling.x, mConfig.ScaleDragSpeed, -10000, 10000, "%.3f");
-		updated |= ImGui::DragFloat("Y##Sc", &inTransform->scaling.y, mConfig.ScaleDragSpeed, -10000, 10000, "%.3f");
-		updated |= ImGui::DragFloat("Z##Sc", &inTransform->scaling.z, mConfig.ScaleDragSpeed, -10000, 10000, "%.3f");
+		updated |= ImGui::DragFloat("X##Sc", &inTransform->scaling.x, mConfig.scaleDragSpeed, -10000, 10000, "%.3f");
+		updated |= ImGui::DragFloat("Y##Sc", &inTransform->scaling.y, mConfig.scaleDragSpeed, -10000, 10000, "%.3f");
+		updated |= ImGui::DragFloat("Z##Sc", &inTransform->scaling.z, mConfig.scaleDragSpeed, -10000, 10000, "%.3f");
 
-		ImGui::Checkbox("Fix Ratio#Trans", &mConfig.ScaleFixRatio);
+		ImGui::Checkbox("Fix Ratio##Trans", &mConfig.scaleFixRatio);
 		if (ImGui::Button("Reset##Sc")) { inTransform->scaling = Vector3::One; }
 
-		if (mConfig.ScaleFixRatio && updated)
+		if (mConfig.scaleFixRatio && updated)
 		{
 			float scaleFactor = 1.0f;
 			if (fabs(previousScaling.x) > Math::SMALL_NUM &&
@@ -237,10 +249,10 @@ void EntityInspectorPanel::DrawCameraPanel(Camera* inCamera)
 
 	if (inCamera->mode == eCameraProjectionMode::Orthographic)
 	{
-		bool fixRatio = mConfig.CameraFixRatio;
+		bool fixRatio = mConfig.cameraFixRatio;
 		float aspectRatio = (fixRatio) ? inCamera->width / inCamera->height : 0.0f;
 
-		ImGui::Checkbox("Fix Ratio#Cmr", &mConfig.CameraFixRatio);
+		ImGui::Checkbox("Fix Ratio##Cmr", &mConfig.cameraFixRatio);
 
 		bool updated = false;
 		float previousWidth = inCamera->width;
@@ -282,69 +294,83 @@ void EntityInspectorPanel::DrawFlipbookRenderPanel(FlipbookRender* inFlipbookRen
 		ImGui::EndTooltip();
 	}
 
-	const FlipbookData& fbData = inFlipbookRender->flipbook->GetFlipbookData();
-
-	ImGui::BulletText("Resource Data");
-	ImGui::Text(std::format(
-		"Flipbook Name : {}\n"
-		"Source Texture : {}\n"
-		"Width : {}\n"
-		"Height : {}\n"
-		"Pivot Row : {}\n"
-		"Pivot Col : {}\n"
-		"Total Frame : {}\n"
-		"Flip Speed : {} sec\n"
-		"Loop : {}",
-		inFlipbookRender->flipbook->GetName(),
-		fbData.texture->GetName(),
-		fbData.width,
-		fbData.height,
-		fbData.pivotRow,
-		fbData.pivotCol,
-		fbData.frameCount,
-		fbData.frameDuration,
-		fbData.loop ? "On" : "Off"
-	).c_str());
-
-	ImGui::Spacing();
-	ImGui::BulletText("Component Data");
-
-	ImGui::Text("Current Frame : %d", inFlipbookRender->curFrame);
-	if (ImGui::Button("Prev"))
+	if (ImGui::BeginDragDropTarget())
 	{
-		inFlipbookRender->play = false;
-		inFlipbookRender->curFrame = (inFlipbookRender->curFrame - 1 + fbData.frameCount) % fbData.frameCount;
+		if (const auto* data = ImGui::AcceptDragDropPayload(ImPayload::GetResourcePayload(eResourceType::Flipbook)))
+		{
+			const char* name = static_cast<const char*>(data->Data);
+			inFlipbookRender->flipbook = RESOURCE_MANAGER.TryFindResource<Flipbook>(name);
+		}
+		ImGui::EndDragDropTarget();
 	}
-	ImGui::SameLine();
-	if (ImGui::Button("Next"))
-	{
-		inFlipbookRender->play = false;
-		inFlipbookRender->curFrame = (inFlipbookRender->curFrame + 1) % fbData.frameCount;
-	}
-	static float step = 0.01f;
-	ImGui::TextUnformatted("Playback Speed");
-	ImGui::InputScalar("##Playback Speed", ImGuiDataType_Float, (void*)&inFlipbookRender->playbackSpeed, (void*)&step, NULL);
-	ImGui::Text(std::format(
-		"Finish : {}\n"
-		"Play : {}",
-		inFlipbookRender->finish ? "Yes" : "No",
-		inFlipbookRender->play ? "Yes" : "No"
-	).c_str());
 
-	if (ImGui::Button("Reset"))
+	if (inFlipbookRender->flipbook)
 	{
-		inFlipbookRender->finish = false;
-		inFlipbookRender->curFrame = 0;
-	}
-	ImGui::SameLine();
-	if (ImGui::Button(inFlipbookRender->play ?"Stop" : "Play"))
-	{
-		inFlipbookRender->play = !inFlipbookRender->play;
+		const FlipbookData& fbData = inFlipbookRender->flipbook->GetFlipbookData();
+
+		ImGui::BulletText("Resource Data");
+		ImGui::Text(std::format(
+			"Flipbook Name : {}\n"
+			"Source Texture : {}\n"
+			"Width : {}\n"
+			"Height : {}\n"
+			"Pivot Row : {}\n"
+			"Pivot Col : {}\n"
+			"Total Frame : {}\n"
+			"Flip Speed : {} sec\n"
+			"Loop : {}",
+			inFlipbookRender->flipbook->GetName(),
+			fbData.texture->GetName(),
+			fbData.width,
+			fbData.height,
+			fbData.pivotRow,
+			fbData.pivotCol,
+			fbData.frameCount,
+			fbData.frameDuration,
+			fbData.loop ? "On" : "Off"
+		).c_str());
+
+		ImGui::Spacing();
+		ImGui::BulletText("Component Data");
+
+		ImGui::Text("Current Frame : %d", inFlipbookRender->curFrame);
+		if (ImGui::Button("Prev"))
+		{
+			inFlipbookRender->play = false;
+			inFlipbookRender->curFrame = (inFlipbookRender->curFrame - 1 + fbData.frameCount) % fbData.frameCount;
+		}
+		ImGui::SameLine();
+		if (ImGui::Button("Next"))
+		{
+			inFlipbookRender->play = false;
+			inFlipbookRender->curFrame = (inFlipbookRender->curFrame + 1) % fbData.frameCount;
+		}
+		static float step = 0.01f;
+		ImGui::TextUnformatted("Playback Speed");
+		ImGui::InputScalar("##Playback Speed", ImGuiDataType_Float, (void*)&inFlipbookRender->playbackSpeed, (void*)&step, NULL);
+		ImGui::Text(std::format(
+			"Finish : {}\n"
+			"Play : {}",
+			inFlipbookRender->finish ? "Yes" : "No",
+			inFlipbookRender->play ? "Yes" : "No"
+		).c_str());
+
+		if (ImGui::Button("Reset"))
+		{
+			inFlipbookRender->finish = false;
+			inFlipbookRender->curFrame = 0;
+		}
+		ImGui::SameLine();
+		if (ImGui::Button(inFlipbookRender->play ? "Stop" : "Play"))
+		{
+			inFlipbookRender->play = !inFlipbookRender->play;
+		}
 	}
 }
 
 void EntityInspectorPanel::DrawSpriteRenderPanel(SpriteRender* inSpriteRender)
 {
+
 	ImGui::Button("Load Sprite");
 	if (ImGui::BeginItemTooltip())
 	{
@@ -352,19 +378,95 @@ void EntityInspectorPanel::DrawSpriteRenderPanel(SpriteRender* inSpriteRender)
 		ImGui::EndTooltip();
 	}
 
-	const SpriteData& spd = inSpriteRender->sprite->GetSpriteData();
-	ImGui::Text(std::format(
-		"Sprite Name : {}\n"
-		"Source Texture : {}\n"
-		"Width : {}\n"
-		"Height : {}\n"
-		"Pivot Row : {}\n"
-		"Pivot Col : {}",
-		inSpriteRender->sprite->GetName(),
-		spd.texture->GetName(),
-		spd.width,
-		spd.height,
-		spd.pivotCol,
-		spd.pivotRow
-	).c_str());
+	if (ImGui::BeginDragDropTarget())
+	{
+		if (const auto* data = ImGui::AcceptDragDropPayload(ImPayload::GetResourcePayload(eResourceType::Sprite)))
+		{
+			const char* name = static_cast<const char*>(data->Data);
+			inSpriteRender->sprite = RESOURCE_MANAGER.TryFindResource<Sprite>(name);
+		}
+		ImGui::EndDragDropTarget();
+	}
+
+	if (inSpriteRender->sprite)
+	{
+		const SpriteData& spd = inSpriteRender->sprite->GetSpriteData();
+		ImGui::Text(std::format(
+			"Sprite Name : {}\n"
+			"Source Texture : {}\n"
+			"Width : {}\n"
+			"Height : {}\n"
+			"Pivot Row : {}\n"
+			"Pivot Col : {}",
+			inSpriteRender->sprite->GetName(),
+			spd.texture->GetName(),
+			spd.width,
+			spd.height,
+			spd.pivotCol,
+			spd.pivotRow
+		).c_str());
+	}
+}
+
+void EntityInspectorPanel::DrawRenderProfilePanel(RenderProfile* inRenderProfile)
+{
+	ImGui::BulletText("Shader set");
+
+	ImGui::Button("Load Shader set");
+	if (ImGui::BeginItemTooltip())
+	{
+		ImGui::TextUnformatted("Drop here");
+		ImGui::EndTooltip();
+	}
+
+	if (ImGui::BeginDragDropTarget())
+	{
+		if (const auto* data = ImGui::AcceptDragDropPayload(ImPayload::GetResourcePayload(eResourceType::ShaderSet)))
+		{
+			const char* name = static_cast<const char*>(data->Data);
+			inRenderProfile->shaders = RESOURCE_MANAGER.TryFindResource<ShaderSet>(name);
+		}
+		ImGui::EndDragDropTarget();
+	}
+
+	if (inRenderProfile->shaders)
+	{
+		ImGui::Text("Shader Name : %s", inRenderProfile->shaders->GetName());
+	}
+
+	ImGui::Spacing();
+	ImGui::BulletText("Render State");
+	
+	RenderState& state = inRenderProfile->renderState;
+
+	ImGui::Combo("Blend State", (int*)&state.blendState, RenderStatePool::sBlendStateString.data(), RenderStatePool::sBlendStateString.size());
+	ImGui::Combo("Sampler State", (int*)&state.samplerState, RenderStatePool::sSamplerStateString.data(), RenderStatePool::sSamplerStateString.size());
+	ImGui::Combo("Depth Stencil State", (int*)&state.depthStencilState, RenderStatePool::sDepthStencilStateString.data(), RenderStatePool::sDepthStencilStateString.size());
+	ImGui::Combo("Rasterizer State", (int*)&state.rasterizerState, RenderStatePool::sRasterizerStateString.data(), RenderStatePool::sRasterizerStateString.size());
+}
+
+void EntityInspectorPanel::DrawCreateComponentMenu()
+{
+	if (!mEntity.IsNull())
+	{
+		if (!mEntity.HasComponent<Name>()) { if (ImGui::MenuItem("Name")) { mEntity.TryCreateComponent<Name>(); } }
+		if (!mEntity.HasComponent<Transform>()) { if (ImGui::MenuItem("Transform")) { mEntity.TryCreateComponent<Transform>(); } }
+		if (!mEntity.HasComponent<Camera>()) { if (ImGui::MenuItem("Camera")) { mEntity.TryCreateComponent<Camera>(); } }
+		if (!mEntity.HasComponent<SpriteRender>()) { if (ImGui::MenuItem("SpriteRender")) { mEntity.TryCreateComponent<SpriteRender>(); } }
+		if (!mEntity.HasComponent<FlipbookRender>()) { if (ImGui::MenuItem("FlipbookRender")) { mEntity.TryCreateComponent<FlipbookRender>(); } }
+		if (!mEntity.HasComponent<RenderProfile>()) { if (ImGui::MenuItem("RenderProfile")) { mEntity.TryCreateComponent<RenderProfile>(); } }
+	}
+}
+
+void EntityInspectorPanel::DrawRemoveComponentMenu()
+{
+	if (!mEntity.IsNull())
+	{
+		if (mEntity.HasComponent<Name>()) { if (ImGui::MenuItem("Name")) { mEntity.TryRemoveComponent<Name>(); } }
+		if (mEntity.HasComponent<Transform>()) { if (ImGui::MenuItem("Transform")) { mEntity.TryRemoveComponent<Transform>(); } }
+		if (mEntity.HasComponent<Camera>()) { if (ImGui::MenuItem("Camera")) { mEntity.TryRemoveComponent<Camera>(); } }
+		if (mEntity.HasComponent<SpriteRender>()) { if (ImGui::MenuItem("SpriteRender")) { mEntity.TryRemoveComponent<SpriteRender>(); } }
+		if (mEntity.HasComponent<FlipbookRender>()) { if (ImGui::MenuItem("FlipbookRender")) { mEntity.TryRemoveComponent<FlipbookRender>(); } }
+		if (mEntity.HasComponent<RenderProfile>()) { if (ImGui::MenuItem("RenderProfile")) { mEntity.TryRemoveComponent<RenderProfile>(); } }
+	}
 }

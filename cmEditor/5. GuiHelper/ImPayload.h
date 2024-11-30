@@ -2,8 +2,16 @@
 
 namespace ImPayload
 {
-	inline static const char* sTexturePayload   = "TexturePayLoad";
-	inline static const char* sShaderSetPayload = "ShaderSetPayLoad";
-	inline static const char* sFlipbookPayload  = "FlipbookPayLoad";
-	inline static const char* sSpritePayload    = "SpritePayLoad";
+	inline const char* GetResourcePayload(eResourceType inType)
+	{
+		static const char* sPayloadList[static_cast<uint32>(eResourceType::Count)] =
+		{
+			"TEXTURE_PAYLOAD",
+			"SPRITE_PAYLOAD",
+			"FLIPBOOK_PAYLOAD",
+			"SHADERSET_PAYLOAD"
+		};
+
+		return sPayloadList[static_cast<uint32>(inType)];
+	}
 }

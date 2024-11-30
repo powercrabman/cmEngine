@@ -5,19 +5,20 @@ struct EntityInspectorPanelJson
 	bool visible = false;
 
 	// Transform
-	float PositionDragSpeed = 0.1f;
-	float RotateDragSpeed = 0.1f;
-	float ScaleDragSpeed = 0.1;
-	bool ScaleFixRatio = false;
+	float positionDragSpeed = 0.1f;
+	float rotationDragSpeed = 0.1f;
+	float scaleDragSpeed = 0.1f;
+	bool scaleFixRatio = false;
 
 	// Camera
-	bool CameraFixRatio = false;
+	bool cameraFixRatio = false;
 
 	JSON_STRUCT_BODY(
 		EntityInspectorPanelJson,
 		visible,
-		PositionDragSpeed, RotateDragSpeed, ScaleDragSpeed,
-		CameraFixRatio
+		positionDragSpeed, rotationDragSpeed, scaleDragSpeed,
+		scaleFixRatio,
+		cameraFixRatio
 	);
 };
 
@@ -28,54 +29,35 @@ public:
 	~EntityInspectorPanel() override;
 	void RenderGui() override;
 
-	void DrawDefaultPanel();
-	void DrawNamePanel(Name* inName);
-	void DrawTransformPanel(Transform* inTransform);
-	void DrawCameraPanel(Camera* inCamera);
-	void DrawFlipbookRenderPanel(FlipbookRender* inFlipbookRender);
-	void DrawSpriteRenderPanel(SpriteRender* inSpriteRender);
+private:
+	void DrawNamePanel(Name* name);
+	void DrawTransformPanel(Transform* transform);
+	void DrawCameraPanel(Camera* camera);
+	void DrawFlipbookRenderPanel(FlipbookRender* flipbookRender);
+	void DrawSpriteRenderPanel(SpriteRender* spriteRender);
+	void DrawRenderProfilePanel(RenderProfile* inRenderProfile);
 
-	template <typename CompType, typename Callback>
-	void PanelLayout(Callback callback)
-	{
-		CompType* comp = mEntity.TryFindComponent<CompType>();
-		if (comp)
-		{
-			if (ImGui::CollapsingHeader(CompType::sComponentName, ImGuiTreeNodeFlags_DefaultOpen))
-			{
-				(this->*callback)(comp);
-			}
-		}
-	}
+	template <typename ComponentType>
+	void DrawComponentPanel(const char* panelName, void (EntityInspectorPanel::* drawFunc)(ComponentType*));
 
-	template <typename Ty>
-	void CreateComponentMenuItem(std::string_view str)
-	{
-		if (ImGui::Selectable(str.data()))
-		{
-			if (!mEntity.IsNull())
-			{
-				mEntity.TryCreateComponent<Ty>();
-			}
-		}
-	}
-
-	template <typename Ty>
-	void DeleteComponentMenuItem(std::string_view str)
-	{
-		if (ImGui::Selectable(str.data()))
-		{
-			if (!mEntity.IsNull())
-			{
-				mEntity.TryRemoveComponent<Ty>();
-			}
-		}
-	}
+	void DrawCreateComponentMenu();
+	void DrawRemoveComponentMenu();
 
 	TO_STRING(EntityInspectorPanel);
 
 private:
 	EntityInspectorPanelJson mConfig = {};
-	GameEntity mEntity               = GameEntity::NullEntity;
+	GameEntity mEntity = GameEntity::NullEntity;
 };
 
+template <typename ComponentType>
+void EntityInspectorPanel::DrawComponentPanel(const char* panelName, void (EntityInspectorPanel::* drawFunc)(ComponentType*))
+{
+	if (ComponentType* component = mEntity.TryFindComponent<ComponentType>())
+	{
+		if (ImGui::CollapsingHeader(panelName, ImGuiTreeNodeFlags_DefaultOpen))
+		{
+			(this->*drawFunc)(component);
+		}
+	}
+}

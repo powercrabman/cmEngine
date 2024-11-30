@@ -33,38 +33,40 @@ namespace cmEngine
 		for (auto entity : view)
 		{
 			auto& fbRender = view.get<FlipbookRender>(entity);
-
-			// Flipbook Update
-			const FlipbookData& data = fbRender.flipbook->GetFlipbookData();
-
-			if (!fbRender.play)
+			if (fbRender.flipbook)
 			{
-				continue;
-			}
+				// Flipbook Update
+				const FlipbookData& data = fbRender.flipbook->GetFlipbookData();
 
-			if (!fbRender.finish)
-			{
-				float duration = data.frameDuration * (1.f / fbRender.playbackSpeed);
-
-				fbRender.timeAcc += Timer::Ref().GetDeltaTime();
-
-				if (fbRender.timeAcc >= duration)
+				if (!fbRender.play)
 				{
-					fbRender.timeAcc -= duration;
+					continue;
+				}
 
-					if (fbRender.curFrame < data.frameCount - 1)
+				if (!fbRender.finish)
+				{
+					float duration = data.frameDuration * (1.f / fbRender.playbackSpeed);
+
+					fbRender.timeAcc += Timer::Ref().GetDeltaTime();
+
+					if (fbRender.timeAcc >= duration)
 					{
-						++fbRender.curFrame;
-					}
-					else
-					{
-						if (data.loop)
+						fbRender.timeAcc -= duration;
+
+						if (fbRender.curFrame < data.frameCount - 1)
 						{
-							fbRender.curFrame = 0;
+							++fbRender.curFrame;
 						}
 						else
 						{
-							fbRender.finish = true;
+							if (data.loop)
+							{
+								fbRender.curFrame = 0;
+							}
+							else
+							{
+								fbRender.finish = true;
+							}
 						}
 					}
 				}
@@ -80,21 +82,24 @@ namespace cmEngine
 		{
 			auto [trans, fbRender, profile] = view.get<Transform, FlipbookRender, RenderProfile>(entity);
 
-			const FlipbookData& fbData = fbRender.flipbook->GetFlipbookData();
-			auto [width, height] = fbData.texture->GetSize();
+			if (fbRender.flipbook && profile.shaders)
+			{
+				const FlipbookData& fbData = fbRender.flipbook->GetFlipbookData();
+				auto [width, height] = fbData.texture->GetSize();
 
-			float offsetX = (fbData.pivotCol + fbRender.curFrame) * fbData.width / static_cast<float>(width);
-			float offsetY = fbData.pivotRow * fbData.height / static_cast<float>(height);
+				float offsetX = (fbData.pivotCol + fbRender.curFrame) * fbData.width / static_cast<float>(width);
+				float offsetY = fbData.pivotRow * fbData.height / static_cast<float>(height);
 
-			Renderer::Ref().GetPipeline()->DrawTexture(
-				fbRender.flipbook->GetGeometry(),
-				trans.GetWorldMatrix(),
-				profile.shaders,
-				profile.renderState,
-				fbData.texture,
-				offsetX,
-				offsetY
-			);
+				Renderer::Ref().GetPipeline()->DrawTexture(
+					fbRender.flipbook->GetGeometry(),
+					trans.GetWorldMatrix(),
+					profile.shaders,
+					profile.renderState,
+					fbData.texture,
+					offsetX,
+					offsetY
+				);
+			}
 		}
 	}
 
@@ -110,22 +115,25 @@ namespace cmEngine
 		{
 			auto [trans, spRender, profile] = view.get<Transform, SpriteRender, RenderProfile>(entity);
 
-			const SpriteData& spData = spRender.sprite->GetSpriteData();
+			if (spRender.sprite && profile.shaders)
+			{
+				const SpriteData& spData = spRender.sprite->GetSpriteData();
 
-			auto [width, height] = spData.texture->GetSize();
+				auto [width, height] = spData.texture->GetSize();
 
-			float offsetX = spData.pivotCol * spData.width / static_cast<float>(width);
-			float offsetY =  spData.pivotRow * spData.height / static_cast<float>(height);
+				float offsetX = spData.pivotCol * spData.width / static_cast<float>(width);
+				float offsetY = spData.pivotRow * spData.height / static_cast<float>(height);
 
-			Renderer::Ref().GetPipeline()->DrawTexture(
-				spRender.sprite->GetGeometry(),
-				trans.GetWorldMatrix(),
-				profile.shaders,
-				profile.renderState,
-				spData.texture,
-				offsetX,
-				offsetY
-			);
+				Renderer::Ref().GetPipeline()->DrawTexture(
+					spRender.sprite->GetGeometry(),
+					trans.GetWorldMatrix(),
+					profile.shaders,
+					profile.renderState,
+					spData.texture,
+					offsetX,
+					offsetY
+				);
+			}
 		}
 	}
 

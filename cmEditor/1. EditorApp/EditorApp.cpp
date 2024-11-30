@@ -31,12 +31,23 @@ namespace cmEngine
 		ss->CreateByHLSL(L"C:\\Users\\Ahnjiwoo\\Desktop\\Projects\\cmEngine\\CommonResource\\Shader\\3. SimpleTexSpriteShader.hlsli", VertexPosTex::sInputElements, VertexPosTex::sInputElementsSize);
 
 		// Sprite
-		Sprite* s = ResourceManager::Ref().CreateEmptyResource<Sprite>("sp");
-		SpriteData sd = {};
-		sd.width = 0; sd.height = 0;
-		sd.pivotCol = 0; sd.pivotRow = 0;
-		sd.texture = RESOURCE_MANAGER.TryFindResource<Texture>("ray");
-		s->Create(sd);
+		{
+			Sprite* s     = ResourceManager::Ref().CreateEmptyResource<Sprite>("sp");
+			SpriteData sd = {};
+			sd.width      = 0; sd.height = 0;
+			sd.pivotCol   = 0; sd.pivotRow = 0;
+			sd.texture    = RESOURCE_MANAGER.TryFindResource<Texture>("ray");
+			s->Create(sd);
+		}
+
+		{
+			Sprite* s = ResourceManager::Ref().CreateEmptyResource<Sprite>("Player_Lookdown_Jump_Upper");
+			SpriteData sd = {};
+			sd.width = 0; sd.height = 0;
+			sd.pivotCol = 0; sd.pivotRow = 0;
+			sd.texture = RESOURCE_MANAGER.TryFindResource<Texture>("Player_Lookdown_Jump_Upper");
+			s->Create(sd);
+		}
 
 		{
 			Flipbook* fb = RESOURCE_MANAGER.CreateEmptyResource<Flipbook>("AlianFlipbook");
