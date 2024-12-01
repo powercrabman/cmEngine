@@ -19,10 +19,10 @@ C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEditor\4. EditorPanel\EntityInspec
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEditor\4. EditorPanel\ResourceBrowser\ResourceBrowser.cpp(81,17): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '../Inter/Debug/unity_JJGKJ86UI67CZL5Y.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEditor\4. EditorPanel\ResourceBrowser\ResourceBrowser.cpp(113,28): warning C4244: '인수': 'int32_t'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEditor\4. EditorPanel\ResourceBrowser\ResourceBrowser.cpp(114,28): warning C4244: '인수': 'int32_t'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '../Inter/Debug/unity_JJGKJ86UI67CZL5Y.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEditor\4. EditorPanel\ResourceBrowser\ResourceBrowser.cpp(200,24): warning C4244: '초기화 중': 'float'에서 'size_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEditor\4. EditorPanel\ResourceBrowser\ResourceBrowser.cpp(201,24): warning C4244: '초기화 중': 'float'에서 'size_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '../Inter/Debug/unity_JJGKJ86UI67CZL5Y.cpp'을(를) 컴파일하는 중)
   
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\10. Scene\SceneSerializer.h(118,1): warning C4715: 'cmEngine::SceneSerializer::DeserializeSceneFromFile': 모든 제어 경로에서 값을 반환하지는 않습니다.
