@@ -18,18 +18,19 @@ namespace cmEngine
 
 	struct SpriteRender
 	{
-		Sprite* sprite = nullptr;
+		AssetHandle<Sprite> spriteHandle;
 
-		CUSTOM_SERIALIZABLE_COMPONENT_BODY(SpriteRender, sprite);
+		CUSTOM_SERIALIZABLE_COMPONENT_BODY(SpriteRender);
 
-		CUSTOM_COMPONENT_TO_JSON(SpriteRender)
+		CUSTOM_TO_JSON(SpriteRender)
 		{
-			inOutJson["sprite"] = inData.sprite->GetName();
+			inOutJson["spriteName"] = ASSET_MANAGER.TryGetAsset<Sprite>(inData.spriteHandle)->GetName();
 		}
 
-		CUSTOM_COMPONENT_FROM_JSON(SpriteRender)
+		CUSTOM_FROM_JSON(SpriteRender)
 		{
-			inOutData.sprite = RESOURCE_MANAGER.TryFindResource<Sprite>(inJson["sprite"]);
+			std::string name       = inJson["spriteName"];
+			inOutData.spriteHandle = ASSET_MANAGER.TryFindHandle<Sprite>(name);
 		}
 	};
 
@@ -39,7 +40,7 @@ namespace cmEngine
 
 	struct FlipbookRender
 	{
-		Flipbook*	flipbook = nullptr;
+		AssetHandle<Flipbook>	flipbookHandle;
 
 		uint32		curFrame      = 0;
 		float		playbackSpeed = 1.f;
@@ -49,17 +50,17 @@ namespace cmEngine
 
 		CUSTOM_SERIALIZABLE_COMPONENT_BODY(FlipbookRender);
 
-		CUSTOM_COMPONENT_TO_JSON(FlipbookRender)
+		CUSTOM_TO_JSON(FlipbookRender)
 		{
-			inOutJson["flipbook"]     = inData.flipbook->GetName();
+			inOutJson["flipbookName"]  = ASSET_MANAGER.TryGetAsset<Flipbook>(inData.flipbookHandle)->GetName();
 			inOutJson["playbackSpeed"] = inData.playbackSpeed;
 		}
 
-		CUSTOM_COMPONENT_FROM_JSON(FlipbookRender)
+		CUSTOM_FROM_JSON(FlipbookRender)
 		{
-			inOutData.flipbook = RESOURCE_MANAGER.TryFindResource<Flipbook>(inJson["flipbook"]);
-			inOutData.playbackSpeed = inJson["playbackSpeed"];
-
+			std::string name         = inJson["flipbookName"];
+			inOutData.flipbookHandle = ASSET_MANAGER.TryFindHandle<Flipbook>(name);
+			inOutData.playbackSpeed  = inJson["playbackSpeed"];
 		}
 	};
 
@@ -69,21 +70,22 @@ namespace cmEngine
 
 	struct RenderProfile
 	{
-		ShaderSet*	shaders        = nullptr;
-		RenderState renderState		= RenderState::DefaultState;
+		AssetHandle<ShaderSet>	shaderSetHandle;
+		RenderState				renderState		= RenderState::DefaultState;
 
 		CUSTOM_SERIALIZABLE_COMPONENT_BODY(RenderProfile);
 
-		CUSTOM_COMPONENT_TO_JSON(RenderProfile)
+		CUSTOM_TO_JSON(RenderProfile)
 		{
-			inOutJson["shaders"]     = inData.shaders->GetName();
-			inOutJson["renderState"] = inData.renderState;
+			inOutJson["ShaderSetName"]     = ASSET_MANAGER.TryGetAsset<ShaderSet>(inData.shaderSetHandle)->GetName();
+			inOutJson["renderState"]       = inData.renderState;
 		}
 
-		CUSTOM_COMPONENT_FROM_JSON(RenderProfile)
+		CUSTOM_FROM_JSON(RenderProfile)
 		{
-			inOutData.shaders     = RESOURCE_MANAGER.TryFindResource<ShaderSet>(inJson["shaders"]);
-			inOutData.renderState = inJson["renderState"];
+			std::string name = inJson["ShaderSetName"];
+			inOutData.shaderSetHandle = ASSET_MANAGER.TryFindHandle<ShaderSet>(name);
+			inOutData.renderState     = inJson["renderState"];
 		}
 	};
 }

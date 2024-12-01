@@ -1,7 +1,7 @@
 #pragma once
+
 namespace cmEngine
 {
-	// 만약 컴포넌트에 포인터를 사용해야만 한다면 해당 매크로를 사용하면 안됩니다.
 #define SERIALIZABLE_COMPONENT_BODY(ClassName, ...)										\
 	inline static const char* sComponentName = #ClassName;								\
 	NLOHMANN_DEFINE_TYPE_INTRUSIVE(ClassName, __VA_ARGS__);								\
@@ -16,12 +16,6 @@ namespace cmEngine
 		ComponentSerializer::Ref().RegistSerializer<ClassName>();						\
 		return true;																	\
 	}()
-
-#define CUSTOM_COMPONENT_TO_JSON(ClassName)\
-	friend void to_json(nlohmann::json& inOutJson, const ClassName& inData)
-
-#define CUSTOM_COMPONENT_FROM_JSON(ClassName)\
-	friend void from_json(const nlohmann::json& inJson, ClassName& inOutData)
 
 	class ComponentSerializer
 	{

@@ -9,6 +9,13 @@ namespace cmEngine
 		Binary
 	};
 
+	JSON_SERIALIZE_ENUM(
+		eShaderLoadType,
+		ENUM_ENTRY(eShaderLoadType::None, "None"),
+		ENUM_ENTRY(eShaderLoadType::HLSL, "HLSL"),
+		ENUM_ENTRY(eShaderLoadType::Binary, "Binary")
+	);
+
 	constexpr const char* ToString(eShaderLoadType e)
 	{
 		switch (e)

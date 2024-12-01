@@ -9,14 +9,14 @@ namespace cmEngine
 		virtual ~Pipeline() = default;
 
 		void Draw(
-			Geometry* inGeometry, 
-			const Matrix& inWorld, 
-			ShaderSet* inShaders, 
-			const RenderState& inRenderState
+			Geometry*				inGeometry, 
+			const Matrix&			inWorld, 
+			AssetHandle<ShaderSet>	inShaderSet,
+			const RenderState&		inRenderState
 		)
 		{
 			SetWorld(inWorld);
-			SetShaders(inShaders);
+			SetShaders(inShaderSet);
 			SetRenderState(inRenderState);
 			SetGeometry(inGeometry);
 
@@ -24,17 +24,17 @@ namespace cmEngine
 		}
 
 		void DrawTexture(
-			Geometry* inGeometry, 
-			const Matrix& inWorld, 
-			ShaderSet* inShaders, 
-			const RenderState& inRenderState,
-			Texture* inTexture,
-			float inOffsetX,
-			float inOffsetY
+			Geometry*				inGeometry, 
+			const Matrix&			inWorld, 
+			AssetHandle<ShaderSet>	inShaderSet,
+			const RenderState&		inRenderState,
+			AssetHandle<Texture>	inTexture,
+			float					inOffsetX,
+			float					inOffsetY
 		)
 		{
 			SetWorld(inWorld);
-			SetShaders(inShaders);
+			SetShaders(inShaderSet);
 			SetRenderState(inRenderState);
 			SetTexture(inTexture, inOffsetX, inOffsetY);
 			SetGeometry(inGeometry);
@@ -67,14 +67,15 @@ namespace cmEngine
 
 	private:
 		void SetRenderState(const RenderState& inRenderState);
-		void SetShaders(ShaderSet* inShaders)
+		void SetShaders(AssetHandle<ShaderSet> inShaders)
 		{
 			if (mShaders != inShaders)
 			{
 				mShaders = inShaders;
-				Renderer::Ref().GetContext()->VSSetShader(mShaders->GetVertexShader()->GetShader().Get(), nullptr, 0);
-				Renderer::Ref().GetContext()->IASetInputLayout(mShaders->GetVertexShader()->GetInputLayout().Get());
-				Renderer::Ref().GetContext()->PSSetShader(mShaders->GetPixelShader()->GetShader().Get(), nullptr, 0);
+				ShaderSet* shaderSet = ASSET_MANAGER.TryGetAsset(mShaders);
+				Renderer::Ref().GetContext()->VSSetShader(shaderSet->GetVertexShader()->GetShader().Get(), nullptr, 0);
+				Renderer::Ref().GetContext()->IASetInputLayout(shaderSet->GetVertexShader()->GetInputLayout().Get());
+				Renderer::Ref().GetContext()->PSSetShader(shaderSet->GetPixelShader()->GetShader().Get(), nullptr, 0);
 			}
 		}
 
@@ -83,12 +84,12 @@ namespace cmEngine
 			mTransformCB->UpdateBuffer(CBTransform{ .World = inWorld });
 		}
 
-		void SetTexture(Texture* inTextrue, float offsetX = 0.f, float offsetY = 0.f)
+		void SetTexture(AssetHandle<Texture> inTexHandle, float offsetX = 0.f, float offsetY = 0.f)
 		{
-			if (mTexture != inTextrue)
+			if (mTexture != inTexHandle)
 			{
-				mTexture = inTextrue;
-				Renderer::Ref().GetContext()->PSSetShaderResources(0, 1, mTexture->GetShaderResourceView().GetAddressOf());
+				mTexture = inTexHandle;
+				Renderer::Ref().GetContext()->PSSetShaderResources(0, 1, ASSET_MANAGER.TryGetAsset(mTexture)->GetShaderResourceView().GetAddressOf());
 			}
 
 			mSpriteCB->UpdateBuffer(CBSprite{
@@ -107,7 +108,7 @@ namespace cmEngine
 		ConstantBuffer<CBCamera>*	mCameraCB = nullptr;
 
 		// texture
-		Texture*					mTexture    = nullptr;
+		AssetHandle<Texture>		mTexture    = AssetHandle<Texture>::sNullHandle;
 		ConstantBuffer<CBSprite>*	mSpriteCB   = nullptr;
 
 		// RenderState
@@ -116,6 +117,6 @@ namespace cmEngine
 		inline static UINT sSampleMask      = 0xFFFFFFFF;
 
 		// Shader
-		ShaderSet* mShaders = {};
+		AssetHandle<ShaderSet>		mShaders	= AssetHandle<ShaderSet>::sNullHandle;
 	};
 };

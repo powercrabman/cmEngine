@@ -13,7 +13,7 @@ namespace cmEngine
 		Timer::Ref();
 		Renderer::Ref().Init(GameWindow::Ref().GetWindowResolution());
 		GuiRenderer::Ref();
-		ResourceManager::Ref();
+		AssetManager::Ref();
 		SceneManager::Ref();
 
 		mRunning = true;

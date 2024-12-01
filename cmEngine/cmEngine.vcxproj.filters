@@ -190,9 +190,6 @@
     <ClInclude Include="10. Scene\SceneManager.h">
       <Filter>09. Scene\Core</Filter>
     </ClInclude>
-    <ClInclude Include="9. Resource\Core\ResourceManager.h">
-      <Filter>Resource\Core</Filter>
-    </ClInclude>
     <ClInclude Include="1. Application\Application.h">
       <Filter>Application</Filter>
     </ClInclude>
@@ -316,9 +313,6 @@
     <ClInclude Include="13. Script\RenderScript.h">
       <Filter>12. System</Filter>
     </ClInclude>
-    <ClInclude Include="7. Gui\Helper\FileDialog.h">
-      <Filter>GUI\GuiHelper</Filter>
-    </ClInclude>
     <ClInclude Include="96. JsonSerializer\JsonHelper.h">
       <Filter>94. JsonSerializer</Filter>
     </ClInclude>
@@ -334,6 +328,15 @@
     <ClInclude Include="10. Scene\SceneSerializer.h" />
     <ClInclude Include="99. Base\Hasher.h" />
     <ClInclude Include="12. Component\Factory\ComponentSerializer.h" />
+    <ClInclude Include="9. Resource\Core\AssetContainer.h" />
+    <ClInclude Include="9. Resource\Core\AssetManager.h" />
+    <ClInclude Include="9. Asset\Core\AssetBase.h" />
+    <ClInclude Include="9. Asset\Core\AssetContainer.h" />
+    <ClInclude Include="9. Asset\Core\AssetManager.h" />
+    <ClInclude Include="9. Asset\Flipbook\Flipbook.h" />
+    <ClInclude Include="9. Asset\ShaderSet\ShaderSet.h" />
+    <ClInclude Include="9. Asset\Sprite\Sprite.h" />
+    <ClInclude Include="9. Asset\Texture\Texture.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="99. Base\EngineAssertion.cpp">
@@ -374,9 +377,6 @@
     </ClCompile>
     <ClCompile Include="10. Scene\SceneManager.cpp">
       <Filter>09. Scene\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="9. Resource\Core\ResourceManager.cpp">
-      <Filter>Resource\Core</Filter>
     </ClCompile>
     <ClCompile Include="98. Log\Log.cpp">
       <Filter>97. Log</Filter>
@@ -501,9 +501,6 @@
     <ClCompile Include="13. Script\RenderScript.cpp">
       <Filter>12. System</Filter>
     </ClCompile>
-    <ClCompile Include="7. Gui\Helper\FileDialog.cpp">
-      <Filter>GUI\GuiHelper</Filter>
-    </ClCompile>
     <ClCompile Include="96. JsonSerializer\JsonHelper.cpp">
       <Filter>94. JsonSerializer</Filter>
     </ClCompile>
@@ -516,6 +513,15 @@
     <ClCompile Include="10. Scene\SceneSerializer.cpp" />
     <ClCompile Include="99. Base\Hasher.cpp" />
     <ClCompile Include="12. Component\Factory\ComponentSerializer.cpp" />
+    <ClCompile Include="9. Resource\Core\AssetContainer.cpp" />
+    <ClCompile Include="9. Resource\Core\AssetManager.cpp" />
+    <ClCompile Include="9. Asset\Core\AssetContainer.cpp" />
+    <ClCompile Include="9. Asset\Core\AssetManager.cpp" />
+    <ClCompile Include="9. Asset\Core\AssetBase.cpp" />
+    <ClCompile Include="9. Asset\Flipbook\Flipbook.cpp" />
+    <ClCompile Include="9. Asset\ShaderSet\ShaderSet.cpp" />
+    <ClCompile Include="9. Asset\Sprite\Sprite.cpp" />
+    <ClCompile Include="9. Asset\Texture\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\CommonResource\Shader\1. SimpleColorShader.hlsli">
@@ -527,5 +533,6 @@
     <None Include="..\CommonResource\Shader\3. SimpleTexSpriteShader.hlsli">
       <Filter>Resource\CommonShader</Filter>
     </None>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

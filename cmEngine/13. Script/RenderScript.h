@@ -17,7 +17,7 @@ namespace cmEngine
 			Renderer::Ref().GetPipeline()->Draw(
 				&geo.geometry,
 				trans.GetWorldMatrix(),
-				profile.shaders,
+				profile.shaderSetHandle,
 				profile.renderState
 			);
 		}
@@ -33,10 +33,11 @@ namespace cmEngine
 		for (auto entity : view)
 		{
 			auto& fbRender = view.get<FlipbookRender>(entity);
-			if (fbRender.flipbook)
+			Flipbook* fb = ASSET_MANAGER.TryGetAsset(fbRender.flipbookHandle);
+			if (fb)
 			{
 				// Flipbook Update
-				const FlipbookData& data = fbRender.flipbook->GetFlipbookData();
+				const FlipbookData& data = fb->GetFlipbookData();
 
 				if (!fbRender.play)
 				{
@@ -82,16 +83,18 @@ namespace cmEngine
 		{
 			auto [trans, fbRender, profile] = view.get<Transform, FlipbookRender, RenderProfile>(entity);
 
-			if (fbRender.flipbook && profile.shaders)
+			Flipbook*	fb = ASSET_MANAGER.TryGetAsset(fbRender.flipbookHandle);
+			ShaderSet*	ss = ASSET_MANAGER.TryGetAsset(profile.shaderSetHandle);
+			if (fb && ss)
 			{
-				const FlipbookData& fbData = fbRender.flipbook->GetFlipbookData();
+				const FlipbookData& fbData = fb->GetFlipbookData();
 				auto [width, height] = fbData.texture->GetSize();
 
 				float offsetX = (fbData.pivotCol + fbRender.curFrame) * fbData.width / static_cast<float>(width);
 				float offsetY = fbData.pivotRow * fbData.height / static_cast<float>(height);
 
 				Renderer::Ref().GetPipeline()->DrawTexture(
-					fbRender.flipbook->GetGeometry(),
+					fbRender.flipbookHandle->GetGeometry(),
 					trans.GetWorldMatrix(),
 					profile.shaders,
 					profile.renderState,

@@ -1,5 +1,11 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate 디렉터리가 슬래시로 끝나지 않습니다. Intermediate 디렉터리의 적절한 평가를 허용하는 데 필요하므로 이 빌드 인스턴스에서 슬래시를 추가합니다.
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 디렉터리가 슬래시로 끝나지 않습니다. Output 디렉터리의 적절한 평가를 허용하는 데 필요하므로 이 빌드 인스턴스에서 슬래시를 추가합니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1119,5): warning MSB8027: 이름이 AssetContainer.cpp인 둘 이상의 파일이 같은 위치에 출력을 생성합니다. 이로 인해 잘못된 빌드 결과가 나타날 수 있습니다.  관련된 파일은 9. Asset\Core\AssetContainer.cpp, 9. Resource\Core\AssetContainer.cpp입니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1119,5): warning MSB8027: 이름이 AssetManager.cpp인 둘 이상의 파일이 같은 위치에 출력을 생성합니다. 이로 인해 잘못된 빌드 결과가 나타날 수 있습니다.  관련된 파일은 9. Asset\Core\AssetManager.cpp, 9. Resource\Core\AssetManager.cpp입니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1119,5): warning MSB8027: 이름이 Flipbook.cpp인 둘 이상의 파일이 같은 위치에 출력을 생성합니다. 이로 인해 잘못된 빌드 결과가 나타날 수 있습니다.  관련된 파일은 9. Asset\Flipbook\Flipbook.cpp, 9. Resource\Flipbook\Flipbook.cpp입니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1119,5): warning MSB8027: 이름이 ShaderSet.cpp인 둘 이상의 파일이 같은 위치에 출력을 생성합니다. 이로 인해 잘못된 빌드 결과가 나타날 수 있습니다.  관련된 파일은 9. Asset\ShaderSet\ShaderSet.cpp, 9. Resource\ShaderSet\ShaderSet.cpp입니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1119,5): warning MSB8027: 이름이 Sprite.cpp인 둘 이상의 파일이 같은 위치에 출력을 생성합니다. 이로 인해 잘못된 빌드 결과가 나타날 수 있습니다.  관련된 파일은 9. Asset\Sprite\Sprite.cpp, 9. Resource\Sprite\Sprite.cpp입니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1119,5): warning MSB8027: 이름이 Texture.cpp인 둘 이상의 파일이 같은 위치에 출력을 생성합니다. 이로 인해 잘못된 빌드 결과가 나타날 수 있습니다.  관련된 파일은 9. Asset\Texture\Texture.cpp, 9. Resource\Texture\Texture.cpp입니다.
   cmEngine.cpp
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\Libraries\entt\entt.hpp(5766,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
   (소스 파일 '0.%20cmEngine/cmEngine.cpp'을(를) 컴파일하는 중)
@@ -40,158 +46,231 @@ C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\Vi
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Shader\VertexShader.h(57,5): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '0.%20cmEngine/cmEngine.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\12. Component\RenderComponent.h(23,3): warning C4002: 함수 같은 매크로 호출 'CUSTOM_SERIALIZABLE_COMPONENT_BODY'에 대해 인수가 너무 많습니다.
-  (소스 파일 '0.%20cmEngine/cmEngine.cpp'을(를) 컴파일하는 중)
+  unity_9G0ILNF0MQPMU23O.cpp
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Sprite\Sprite.cpp(33,53): warning C4244: '=': 'unsigned __int64'에서 'uint32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
   
-  unity_6S1YJ5ELXIM497L7.cpp
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Flipbook\Flipbook.cpp(12,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Sprite\Sprite.cpp(34,55): warning C4244: '=': 'unsigned __int64'에서 'uint32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Geometry\IndexBuffer.cpp(20,25): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Sprite\Sprite.cpp(38,24): warning C4244: '초기화 중': 'uint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Sprite\Sprite.cpp(11,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Sprite\Sprite.cpp(39,24): warning C4244: '초기화 중': 'uint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Sprite\Sprite.cpp(15,53): warning C4244: '=': 'unsigned __int64'에서 'uint32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Texture\Texture.cpp(75,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Sprite\Sprite.cpp(16,55): warning C4244: '=': 'unsigned __int64'에서 'uint32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Texture\Texture.cpp(91,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Sprite\Sprite.cpp(20,24): warning C4244: '초기화 중': 'uint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Texture\Texture.cpp(100,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Sprite\Sprite.cpp(21,24): warning C4244: '초기화 중': 'uint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Texture\Texture.cpp(115,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Texture\Texture.cpp(51,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Flipbook\Flipbook.cpp(7,17): error C2084: 'void cmEngine::Flipbook::Create(const cmEngine::FlipbookData &)' 함수에 이미 본문이 있습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Flipbook\Flipbook.cpp(7,17):
+      'cmEngine::Flipbook::Create'의 이전 정의를 참조하십시오.
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Texture\Texture.cpp(67,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(20,13): error C2039: 'shaders': 'cmEngine::RenderProfile'의 멤버가 아닙니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\12. Component\RenderComponent.h(71,9):
+      'cmEngine::RenderProfile' 선언을 참조하십시오.
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Texture\Texture.cpp(76,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(17,35): error C2660: 'cmEngine::Pipeline::Draw': 함수는 3개의 인수를 사용하지 않습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Pipeline\Pipeline.h(11,8):
+      'cmEngine::Pipeline::Draw' 선언을 참조하십시오.
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(17,35):
+      인수 목록 '(cmEngine::Geometry *, Matrix, cmEngine::RenderState)'을(를) 일치시키는 동안
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Texture\Texture.cpp(91,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(36,16): error C2451: 'cmEngine::AssetHandle<AssetType>' 형식의 조건식은 유효하지 않습니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(36,16): error C2451:         with
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(36,16): error C2451:         [
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(36,16): error C2451:             AssetType=cmEngine::Flipbook
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(36,16): error C2451:         ]
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(36,16):
+      이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
   
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(67,6): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(88,6): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(144,5): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(153,5): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(159,5): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Core\Renderer.cpp(167,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderState\RenderStatePool.cpp(43,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderState\RenderStatePool.cpp(116,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderState\RenderStatePool.cpp(191,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderState\RenderStatePool.cpp(293,5): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Shader\Shader.cpp(36,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Shader\Shader.cpp(91,4): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Shader\Shader.cpp(97,3): warning C4002: 함수 같은 매크로 호출 'DX_ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\98. Log\Log.cpp(42,17): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\10. Scene\SceneManager.cpp(127,18): warning C4267: '초기화 중': 'size_t'에서 'uint32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\SubRenderTarget.cpp(61,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\SubRenderTarget.cpp(65,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\MasterRenderTarget.cpp(16,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\MasterRenderTarget.cpp(22,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\MasterRenderTarget.cpp(35,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\MasterRenderTarget.cpp(53,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\RenderTarget\MasterRenderTarget.cpp(57,3): warning C4002: 함수 같은 매크로 호출 'ASSERT'에 대해 인수가 너무 많습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-  
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(392,75): warning C4267: '초기화 중': 'size_t'에서 'uint32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(392,75):
-      템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
-          C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\98. Log\Log.cpp(44,14):
-          컴파일되는 함수 템플릿 인스턴스화 'cmEngine::LogInfo &std::vector<cmEngine::LogInfo,std::allocator<cmEngine::LogInfo>>::emplace_back<float,cmEngine::eLogCaller&,cmEngine::eLogLevel&,size_t>(float &&,cmEngine::eLogCaller &,cmEngine::eLogLevel &,size_t &&)'에 대한 참조를 확인하세요.
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(858,24):
-          컴파일되는 함수 템플릿 인스턴스화 '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_one_at_back<float,cmEngine::eLogCaller&,cmEngine::eLogLevel&,unsigned __int64>(float &&,cmEngine::eLogCaller &,cmEngine::eLogLevel &,unsigned __int64 &&)'에 대한 참조를 확인하세요.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(39,40): error C2819: 'cmEngine::AssetHandle<AssetType>' 형식에 오버로드된 멤버 'operator ->'가 없습니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(39,40): error C2819:         with
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(39,40): error C2819:         [
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(39,40): error C2819:             AssetType=cmEngine::Flipbook
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(39,40): error C2819:         ]
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Core\AssetContainer.h(7,9):
+      'cmEngine::AssetHandle<AssetType>' 선언을 참조하십시오.
           with
           [
-              _Ty=cmEngine::LogInfo
+              AssetType=cmEngine::Flipbook
           ]
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(776,20):
-          컴파일되는 함수 템플릿 인스턴스화 '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<float,cmEngine::eLogCaller&,cmEngine::eLogLevel&,unsigned __int64>(float &&,cmEngine::eLogCaller &,cmEngine::eLogLevel &,unsigned __int64 &&)'에 대한 참조를 확인하세요.
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(39,40):
+      대신 '.'을(를) 사용하려고 했습니까?
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(39,57): error C2039: 'GetFlipbookData': 'cmEngine::AssetHandle<AssetType>'의 멤버가 아닙니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(39,57): error C2039:         with
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(39,57): error C2039:         [
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(39,57): error C2039:             AssetType=cmEngine::Flipbook
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(39,57): error C2039:         ]
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Core\AssetContainer.h(7,9):
+      'cmEngine::AssetHandle<AssetType>' 선언을 참조하십시오.
           with
           [
-              _Ty=cmEngine::LogInfo
-          ]
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(791,18):
-          컴파일되는 함수 템플릿 인스턴스화 'void std::_Construct_in_place<cmEngine::LogInfo,_Ty,cmEngine::eLogCaller&,cmEngine::eLogLevel&,unsigned __int64>(cmEngine::LogInfo &,_Ty &&,cmEngine::eLogCaller &,cmEngine::eLogLevel &,unsigned __int64 &&) noexcept'에 대한 참조를 확인하세요.
-          with
-          [
-              _Ty=float
-          ]
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(402,14):
-          컴파일되는 함수 템플릿 인스턴스화 '_Ty *std::construct_at<_Ty,float,cmEngine::eLogCaller&,cmEngine::eLogLevel&,unsigned __int64>(_Ty *const ,float &&,cmEngine::eLogCaller &,cmEngine::eLogLevel &,unsigned __int64 &&) noexcept(<expr>)'에 대한 참조를 확인하세요.
-          with
-          [
-              _Ty=cmEngine::LogInfo
+              AssetType=cmEngine::Flipbook
           ]
   
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(406,82): warning C4267: '초기화 중': 'size_t'에서 'uint32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(39,30): error C2530: 'data': 참조를 초기화해야 합니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
   
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(393,90): warning C4267: '초기화 중': 'size_t'에서 'uint32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Inter/Debug/unity_6S1YJ5ELXIM497L7.cpp'을(를) 컴파일하는 중)
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(393,90):
-      템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(791,18):
-          컴파일되는 함수 템플릿 인스턴스화 'void std::_Construct_in_place<cmEngine::LogInfo,_Ty,cmEngine::eLogCaller&,cmEngine::eLogLevel&,unsigned __int64>(cmEngine::LogInfo &,_Ty &&,cmEngine::eLogCaller &,cmEngine::eLogLevel &,unsigned __int64 &&) noexcept'에 대한 참조를 확인하세요.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(85,43): error C2039: 'shaders': 'cmEngine::RenderProfile'의 멤버가 아닙니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\12. Component\RenderComponent.h(71,9):
+      'cmEngine::RenderProfile' 선언을 참조하십시오.
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(87,42): error C2819: 'cmEngine::AssetHandle<AssetType>' 형식에 오버로드된 멤버 'operator ->'가 없습니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(87,42): error C2819:         with
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(87,42): error C2819:         [
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(87,42): error C2819:             AssetType=cmEngine::Flipbook
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(87,42): error C2819:         ]
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Core\AssetContainer.h(7,9):
+      'cmEngine::AssetHandle<AssetType>' 선언을 참조하십시오.
           with
           [
-              _Ty=float
+              AssetType=cmEngine::Flipbook
           ]
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xutility(402,14):
-          컴파일되는 함수 템플릿 인스턴스화 '_Ty *std::construct_at<_Ty,float,cmEngine::eLogCaller&,cmEngine::eLogLevel&,unsigned __int64>(_Ty *const ,float &&,cmEngine::eLogCaller &,cmEngine::eLogLevel &,unsigned __int64 &&) noexcept'에 대한 참조를 확인하세요.
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(87,42):
+      대신 '.'을(를) 사용하려고 했습니까?
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(87,59): error C2039: 'GetFlipbookData': 'cmEngine::AssetHandle<AssetType>'의 멤버가 아닙니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(87,59): error C2039:         with
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(87,59): error C2039:         [
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(87,59): error C2039:             AssetType=cmEngine::Flipbook
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(87,59): error C2039:         ]
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Core\AssetContainer.h(7,9):
+      'cmEngine::AssetHandle<AssetType>' 선언을 참조하십시오.
           with
           [
-              _Ty=cmEngine::LogInfo
+              AssetType=cmEngine::Flipbook
           ]
   
-  cmEngine.vcxproj -> C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\Libraries\cmEngine\Debug\cmEngine.lib
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(87,32): error C2530: 'fbData': 참조를 초기화해야 합니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(88,35): error C2039: 'texture': 'cmEngine::FlipbookData'의 멤버가 아닙니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Flipbook\Flipbook.h(5,9):
+      'cmEngine::FlipbookData' 선언을 참조하십시오.
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(88,28): error C2119: '<structured binding>': 'auto'에 대한 형식은 비어 있는 이니셜라이저에서 추론할 수 없습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(88,28): error C3617: 구조적 바인딩의 이니셜라이저는 배열 또는 비 공용 구조체 클래스 형식이어야 합니다. 'int' 형식은 허용되지 않습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(94,14): error C2819: 'cmEngine::AssetHandle<AssetType>' 형식에 오버로드된 멤버 'operator ->'가 없습니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(94,14): error C2819:         with
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(94,14): error C2819:         [
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(94,14): error C2819:             AssetType=cmEngine::Flipbook
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(94,14): error C2819:         ]
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Core\AssetContainer.h(7,9):
+      'cmEngine::AssetHandle<AssetType>' 선언을 참조하십시오.
+          with
+          [
+              AssetType=cmEngine::Flipbook
+          ]
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(94,14):
+      대신 '.'을(를) 사용하려고 했습니까?
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(94,31): error C2039: 'GetGeometry': 'cmEngine::AssetHandle<AssetType>'의 멤버가 아닙니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(94,31): error C2039:         with
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(94,31): error C2039:         [
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(94,31): error C2039:             AssetType=cmEngine::Flipbook
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(94,31): error C2039:         ]
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Core\AssetContainer.h(7,9):
+      'cmEngine::AssetHandle<AssetType>' 선언을 참조하십시오.
+          with
+          [
+              AssetType=cmEngine::Flipbook
+          ]
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(96,14): error C2039: 'shaders': 'cmEngine::RenderProfile'의 멤버가 아닙니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\12. Component\RenderComponent.h(71,9):
+      'cmEngine::RenderProfile' 선언을 참조하십시오.
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(98,13): error C2039: 'texture': 'cmEngine::FlipbookData'의 멤버가 아닙니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Flipbook\Flipbook.h(5,9):
+      'cmEngine::FlipbookData' 선언을 참조하십시오.
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(93,36): error C2660: 'cmEngine::Pipeline::DrawTexture': 함수는 5개의 인수를 사용하지 않습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Pipeline\Pipeline.h(26,8):
+      'cmEngine::Pipeline::DrawTexture' 선언을 참조하십시오.
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(93,36):
+      인수 목록 '()'을(를) 일치시키는 동안
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(118,17): error C2039: 'sprite': 'cmEngine::SpriteRender'의 멤버가 아닙니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\12. Component\RenderComponent.h(19,9):
+      'cmEngine::SpriteRender' 선언을 참조하십시오.
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(118,35): error C2039: 'shaders': 'cmEngine::RenderProfile'의 멤버가 아닙니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\12. Component\RenderComponent.h(71,9):
+      'cmEngine::RenderProfile' 선언을 참조하십시오.
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(120,41): error C2039: 'sprite': 'cmEngine::SpriteRender'의 멤버가 아닙니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\12. Component\RenderComponent.h(19,9):
+      'cmEngine::SpriteRender' 선언을 참조하십시오.
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(120,30): error C2530: 'spData': 참조를 초기화해야 합니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(122,35): error C2039: 'texture': 'cmEngine::SpriteData'의 멤버가 아닙니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Sprite\Sprite.h(9,9):
+      'cmEngine::SpriteData' 선언을 참조하십시오.
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(122,28): error C2119: '<structured binding>': 'auto'에 대한 형식은 비어 있는 이니셜라이저에서 추론할 수 없습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(122,28): error C3617: 구조적 바인딩의 이니셜라이저는 배열 또는 비 공용 구조체 클래스 형식이어야 합니다. 'int' 형식은 허용되지 않습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(128,15): error C2039: 'sprite': 'cmEngine::SpriteRender'의 멤버가 아닙니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\12. Component\RenderComponent.h(19,9):
+      'cmEngine::SpriteRender' 선언을 참조하십시오.
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(130,14): error C2039: 'shaders': 'cmEngine::RenderProfile'의 멤버가 아닙니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\12. Component\RenderComponent.h(71,9):
+      'cmEngine::RenderProfile' 선언을 참조하십시오.
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(132,13): error C2039: 'texture': 'cmEngine::SpriteData'의 멤버가 아닙니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Asset\Sprite\Sprite.h(9,9):
+      'cmEngine::SpriteData' 선언을 참조하십시오.
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(127,36): error C2660: 'cmEngine::Pipeline::DrawTexture': 함수는 5개의 인수를 사용하지 않습니다.
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\6. Renderer\Pipeline\Pipeline.h(26,8):
+      'cmEngine::Pipeline::DrawTexture' 선언을 참조하십시오.
+      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\13. Script\RenderScript.h(127,36):
+      인수 목록 '()'을(를) 일치시키는 동안
+  
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\Inter\Debug\unity_9G0ILNF0MQPMU23O.cpp(81,10): error C1083: 포함 파일을 열 수 없습니다. 'C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\cmEngine\9. Resource\Core\ResourceBase.cpp': No such file or directory
+  (소스 파일 'Inter/Debug/unity_9G0ILNF0MQPMU23O.cpp'을(를) 컴파일하는 중)
+  
