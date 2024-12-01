@@ -21,7 +21,7 @@ namespace cmEngine
 	public:
 		float	GetTotalTime() const { return mTimerProp.TotalTime; }
 		float	GetDeltaTime() const { return mTimerProp.DeltaTime; }
-		float	GetFPS() const { return 1.f / GetDeltaTime(); }
+		float	GetFPS() const { return mTimerProp.FPS; }
 
 	private:
 		Timer();

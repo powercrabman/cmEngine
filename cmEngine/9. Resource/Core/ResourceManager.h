@@ -4,7 +4,7 @@ namespace cmEngine
 	class ResourceBase;
 
 	template <typename ResourceType>
-	concept ResourceConstraint = std::is_base_of_v<ResourceBase, ResourceType>&& requires { ResourceType::sResourceType; };
+	concept AssetConstraint = std::is_base_of_v<ResourceBase, ResourceType>&& requires { ResourceType::sResourceType; };
 
 	class ResourceManager
 	{
@@ -13,27 +13,27 @@ namespace cmEngine
 		using ResourceMapIterator = std::unordered_map<std::string, Scope<ResourceBase>>::iterator;
 
 	public:
-		template<ResourceConstraint ResourceType>
+		template<AssetConstraint ResourceType>
 		ResourceType* TryFindResource(std::string_view inString);
 
-		template<ResourceConstraint ResourceType>
+		template<AssetConstraint ResourceType>
 		ResourceType* LoadResourceFromFile(std::wstring_view inFilePath);
 
-		template<ResourceConstraint ResourceType>
+		template<AssetConstraint ResourceType>
 		ResourceType* LoadResourceFromSection(std::wstring_view inFilePath, std::string_view inSection);
 
-		template<ResourceConstraint ResourceType>
+		template<AssetConstraint ResourceType>
 		ResourceType* CreateEmptyResource(std::string_view inName);
 
-		template<ResourceConstraint ResourceType>
+		template<AssetConstraint ResourceType>
 		ResourceMapIterator GetBegin() { return mResourceRepo[static_cast<uint32>(ResourceType::sResourceType)].begin(); }
 		ResourceMapIterator GetBegin(eResourceType inType) { return mResourceRepo[static_cast<uint32>(inType)].begin(); }
 
-		template<ResourceConstraint ResourceType>
+		template<AssetConstraint ResourceType>
 		ResourceMapIterator GetEnd() { return mResourceRepo[static_cast<uint32>(ResourceType::sResourceType)].end(); }
 		ResourceMapIterator GetEnd(eResourceType inType) { return mResourceRepo[static_cast<uint32>(inType)].end(); }
 
-		template<ResourceConstraint ResourceType>
+		template<AssetConstraint ResourceType>
 		size_t				GetResourceListSize() { return mResourceRepo[static_cast<uint32>(ResourceType::sResourceType)].size(); }
 		size_t				GetResourceListSize(eResourceType inType) { return mResourceRepo[static_cast<uint32>(inType)].size(); }
 
@@ -44,7 +44,7 @@ namespace cmEngine
 		ResourceManager();
 		~ResourceManager() = default;
 
-		template <ResourceConstraint ResourceType>
+		template <AssetConstraint ResourceType>
 		ResourceType* LoadResourceEx(Scope<ResourceType>& inLoadedResource);
 
 		Scope<ResourceBase> CreateResourceByTypeEx(eResourceType inType);
@@ -59,7 +59,7 @@ namespace cmEngine
 	//			          Inline
 	//===================================================
 
-	template <ResourceConstraint ResourceType>
+	template <AssetConstraint ResourceType>
 	ResourceType* ResourceManager::TryFindResource(std::string_view inString)
 	{
 		ResourceMap& repo = mResourceRepo[static_cast<uint32>(ResourceType::sResourceType)];
@@ -77,7 +77,7 @@ namespace cmEngine
 		}
 	}
 
-	template <ResourceConstraint ResourceType>
+	template <AssetConstraint ResourceType>
 	ResourceType* ResourceManager::LoadResourceFromFile(std::wstring_view inFilePath)
 	{
 		Scope<ResourceType> resource{ new ResourceType };
@@ -93,7 +93,7 @@ namespace cmEngine
 		}
 	}
 
-	template <ResourceConstraint ResourceType>
+	template <AssetConstraint ResourceType>
 	ResourceType* ResourceManager::LoadResourceFromSection(std::wstring_view inFilePath, std::string_view inSection)
 	{
 		Scope<ResourceType> resource{ new ResourceType };
@@ -109,7 +109,7 @@ namespace cmEngine
 		}
 	}
 
-	template <ResourceConstraint ResourceType>
+	template <AssetConstraint ResourceType>
 	ResourceType* ResourceManager::CreateEmptyResource(std::string_view inName)
 	{
 		ResourceMap& repo = mResourceRepo[static_cast<uint32>(ResourceType::sResourceType)];
@@ -131,7 +131,7 @@ namespace cmEngine
 		}
 	}
 
-	template <ResourceConstraint ResourceType>
+	template <AssetConstraint ResourceType>
 	ResourceType* ResourceManager::LoadResourceEx(Scope<ResourceType>& inLoadedResource)
 	{
 		ResourceMap& repo = mResourceRepo[static_cast<uint32>(ResourceType::sResourceType)];

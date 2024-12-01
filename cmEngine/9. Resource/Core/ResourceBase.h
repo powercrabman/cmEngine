@@ -2,9 +2,9 @@
 
 namespace cmEngine
 {
-	enum class eResourceType
+	enum class eResourceType : uint8
 	{
-		Texture,
+		Texture = 0,
 		Sprite,
 		Flipbook,
 		ShaderSet,

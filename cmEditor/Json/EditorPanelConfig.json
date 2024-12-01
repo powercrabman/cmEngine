@@ -8,7 +8,7 @@
         "visible": true
     },
     "PerformancePanel": {
-        "visible": false
+        "visible": true
     },
     "ResourceBrowser": {
         "visible": true,

@@ -1,30 +1,15 @@
 ﻿  TestConsole.cpp
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(33,26): warning C4244: '초기화 중': 'int64_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(55,26): warning C4244: '초기화 중': 'int64_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(59,70): warning C4267: '인수': 'size_t'에서 '_Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(59,70): warning C4267:         with
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(59,70): warning C4267:         [
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(59,70): warning C4267:             _Ty=int
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(59,70): warning C4267:         ]
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(28,26): warning C4244: '초기화 중': 'int64_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(46,26): warning C4244: '초기화 중': 'int64_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\test.h(36,13): warning C4267: '초기화 중': 'size_t'에서 'uint32_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 'TestConsole.cpp'을(를) 컴파일하는 중)
       C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\test.h(36,13):
       템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
-          C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(12,16):
+          C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(14,16):
           컴파일되는 클래스 템플릿 인스턴스화 'Store<Texture>'에 대한 참조를 확인하세요.
           C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\test.h(35,2):
           클래스 템플릿 멤버 함수 'Store<Texture>::Store(size_t)'을(를) 컴파일하는 중입니다.
-              C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(12,16):
+              C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(14,16):
               'void __cdecl `dynamic initializer for 'store''(void)'에서 'Store<Texture>::Store'에 대한 첫 번째 참조를 확인하세요.
-  
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(20,62): warning C4267: '인수': 'size_t'에서 '_Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(20,62): warning C4267:         with
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(20,62): warning C4267:         [
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(20,62): warning C4267:             _Ty=int
-C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(20,62): warning C4267:         ]
-      C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(20,62):
-      템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
-          C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\TestConsole\TestConsole.cpp(34,33):
-          컴파일되는 함수 템플릿 인스턴스화 'std::vector<std::shared_ptr<Texture>,std::allocator<std::shared_ptr<Texture>>> GetRandomTextures<std::shared_ptr<Texture>>(const std::unordered_map<std::string,std::shared_ptr<Texture>,std::hash<std::string>,std::equal_to<std::string>,std::allocator<std::pair<const std::string,std::shared_ptr<Texture>>>> &,int)'에 대한 참조를 확인하세요.
   
   TestConsole.vcxproj -> C:\Users\Ahnjiwoo\Desktop\Projects\cmEngine\x64\Debug\TestConsole.exe
