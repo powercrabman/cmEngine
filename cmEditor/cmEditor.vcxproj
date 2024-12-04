@@ -155,6 +155,11 @@
     <ClInclude Include="4. EditorPanel\ResourceBrowser\ResourceBrowser.h" />
     <ClInclude Include="5. GuiHelper\ImOp.h" />
     <ClInclude Include="5. GuiHelper\ImPayload.h" />
+    <ClInclude Include="5. GuiHelper\ImWindow.h" />
+    <ClInclude Include="4. EditorPanel\ResourceEditorPanel\Flipbook\FlipbookEditorPanel.h" />
+    <ClInclude Include="5. GuiHelper\ImDraw.h" />
+    <ClInclude Include="5. GuiHelper\ImFlipbook.h" />
+    <ClInclude Include="6. EditorResource\EditorResourceManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1. EditorApp\EditorApp.cpp" />
@@ -163,7 +168,8 @@
     <ClCompile Include="2. Editor\EditorCore.cpp" />
     <ClCompile Include="4. EditorPanel\EntityInspector\EntityInspectorPanel.cpp" />
     <ClCompile Include="4. EditorPanel\ResourceBrowser\ResourceBrowser.cpp" />
-    <ClInclude Include="5. GuiHelper\ImModal.h" />
+    <ClCompile Include="4. EditorPanel\ResourceEditorPanel\Flipbook\FlipbookEditorPanel.cpp" />
+    <ClCompile Include="6. EditorResource\EditorResourceManager.cpp" />
     <ClInclude Include="1. EditorApp\EditorAppConfig.h" />
     <ClCompile Include="1. EditorApp\EntryPoint.cpp" />
     <ClCompile Include="0. cmEditor\cmEditor.cpp">

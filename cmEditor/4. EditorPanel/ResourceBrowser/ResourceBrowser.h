@@ -24,51 +24,7 @@ public:
 private:
 	void DrawResourceBrowser();
 	void DrawResourceTypeSelector();
-	void DrawResourceItemPopup()
-	{
-		switch (mTargetType)
-		{
-		case cmEngine::eResourceType::Texture:
-		{
-			if (ImGui::BeginPopupContextItem())
-			{
-				ImGui::Selectable("Import image");
-				ImGui::Selectable("Create sprite");
-				ImGui::Selectable("Create flipbook");
-				ImGui::Separator();
-				ImGui::Selectable("Refresh");
-				ImGui::Selectable("Delete");
-				ImGui::EndPopup();
-			}
-			break;
-		}
-		case cmEngine::eResourceType::Sprite:
-		{
-			if (ImGui::BeginPopupContextItem())
-			{
-				ImGui::EndPopup();
-			}
-			break;
-		}
-		case cmEngine::eResourceType::Flipbook:
-		{
-			if (ImGui::BeginPopupContextItem())
-			{
-				ImGui::EndPopup();
-			}
-			break;
-		}
-		case cmEngine::eResourceType::ShaderSet:
-		{
-			if (ImGui::BeginPopupContextItem())
-			{
-				ImGui::EndPopup();
-			}
-			break;
-		}
-		default: assert(false); break;
-		}
-	}
+	void DrawResourceItemPopup();
 
 	bool AssetButton(
 		const char* stringID,
@@ -79,5 +35,4 @@ private:
 
 	ResourceBrowserJson mJson = {};
 	eResourceType mTargetType = eResourceType::Texture;
-	Texture* mDefaultIconTexture = nullptr;
 };

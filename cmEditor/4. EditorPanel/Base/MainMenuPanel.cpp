@@ -6,6 +6,7 @@
 #include "4. EditorPanel/SceneHierarchy/SceneHierarchyPanel.h"
 #include "4. EditorPanel/Viewport/EditViewport.h"
 #include "4. EditorPanel/ResourceBrowser/ResourceBrowser.h"
+#include "../ResourceEditorPanel/Flipbook/FlipbookEditorPanel.h"
 
 void MainMenuPanel::RenderGui()
 {
@@ -27,12 +28,14 @@ void MainMenuPanel::RenderGui()
 			static Gui* sceneHie = GuiRenderer::Ref().FindConcreteGuiOrNull<SceneHierarchyPanel>();
 			static Gui* entityIns = GuiRenderer::Ref().FindConcreteGuiOrNull<EntityInspectorPanel>();
 			static Gui* resBws = GuiRenderer::Ref().FindConcreteGuiOrNull<ResourceBrowser>();
+			static Gui* fbEdt = GuiRenderer::Ref().FindConcreteGuiOrNull<FlipbookEditorPanel>();
 
 			ImGui::MenuItem("Viewport", ToString(vp->GetHotKey()), vp->GetVisiblePtr());
 			ImGui::MenuItem("Performance", ToString(perform->GetHotKey()), perform->GetVisiblePtr());
 			ImGui::MenuItem("Scene Hierarchy", ToString(sceneHie->GetHotKey()), sceneHie->GetVisiblePtr());
 			ImGui::MenuItem("Entity Inspector", ToString(entityIns->GetHotKey()), entityIns->GetVisiblePtr());
 			ImGui::MenuItem("Resource Browser", ToString(resBws->GetHotKey()), resBws->GetVisiblePtr());
+			ImGui::MenuItem("Flipbook Editor", ToString(fbEdt->GetHotKey()), fbEdt->GetVisiblePtr());
 			ImGui::EndMenu();
 		}
 

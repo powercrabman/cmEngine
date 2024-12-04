@@ -1,6 +1,6 @@
 {
     "EditorDebugViewer": {
-        "visible": false
+        "visible": true
     },
     "EditorLogViewer": {
         "autoScrollBit": false,
@@ -42,7 +42,7 @@
                 "z": 1.0
             }
         ],
-        "visible": false
+        "visible": true
     },
     "EditorOverlay": {
         "frameViewBit": true,
@@ -57,6 +57,6 @@
     },
     "EditorSceneViewer": {
         "entityEditView": false,
-        "visible": false
+        "visible": true
     }
 }

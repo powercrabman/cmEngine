@@ -17,7 +17,7 @@ EntityInspectorPanel::~EntityInspectorPanel()
 
 void EntityInspectorPanel::RenderGui()
 {
-	ImGui::Begin("Entity Inspector", GetVisiblePtr());
+	ImWindow window = { "Entity Inspector", GetVisiblePtr() };
 
 	mEntity = EDITOR_CORE.TryGetEditEntity();
 
@@ -28,46 +28,22 @@ void EntityInspectorPanel::RenderGui()
 		ImGui::Separator();
 
 		// Component Menu
-		if (ImGui::Button("Add Component"))
-		{
-			ImGui::OpenPopup("AddComponentPopup");
-			if (ImGui::BeginPopup("AddComponentPopup"))
-			{
-				DrawCreateComponentMenu();
-				ImGui::EndPopup();
-			}
-		}
+		ImGui::Button("Add Component");
+		if (ImPopupItem popup{ nullptr , ImGuiPopupFlags_MouseButtonLeft }) { DrawCreateComponentMenu(); }
+
 		ImGui::SameLine();
-		if (ImGui::Button("Remove Component"))
+		if (ImGui::Button("Remove Component")) { ImGui::OpenPopup("RemoveComponentPopup"); }
+		if (ImPopupItem popup{ nullptr , ImGuiPopupFlags_MouseButtonLeft }) { DrawRemoveComponentMenu(); }
+
+		// Context Window
+		if (ImPopupWindow window = {})
 		{
-			ImGui::OpenPopup("RemoveComponentPopup");
-			if (ImGui::BeginPopup("RemoveComponentPopup"))
-			{
-				DrawRemoveComponentMenu();
-				ImGui::EndPopup();
-			}
+			if (ImMenu menu = { "Add Component" }) { DrawCreateComponentMenu(); }
+			if (ImMenu menu = { "Remove Component" }) { DrawRemoveComponentMenu(); }
 		}
-
-		// Popup Window
-		if (ImGui::BeginPopupContextWindow())
-		{
-			if (ImGui::BeginMenu("Add Component"))
-			{
-				DrawCreateComponentMenu();
-				ImGui::EndMenu();
-			}
-
-			if (ImGui::BeginMenu("Remove Component"))
-			{
-				DrawRemoveComponentMenu();
-				ImGui::EndMenu();
-			}
-			ImGui::EndPopup();
-		}
-
 
 		ImGui::Spacing();
-		
+
 		// Draw Component Panel
 		DrawComponentPanel<Name>("Name", &EntityInspectorPanel::DrawNamePanel);
 		DrawComponentPanel<Transform>("Transform", &EntityInspectorPanel::DrawTransformPanel);
@@ -81,9 +57,6 @@ void EntityInspectorPanel::RenderGui()
 		mEntity = GameEntity::NullEntity;
 		ImTextAlign(ToImVec4(Colors::Gray), "Game entity is not selected.", eImTextAlignHorizon::Center, eImTextAlignVertical::Center);
 	}
-
-
-	ImGui::End();
 }
 
 void EntityInspectorPanel::DrawNamePanel(Name* inName)
@@ -119,8 +92,8 @@ void EntityInspectorPanel::DrawNamePanel(Name* inName)
 void EntityInspectorPanel::DrawTransformPanel(Transform* inTransform)
 {
 	// 조절옵션
-	if (ImGui::Button("Value Speed")) { ImGui::OpenPopup("Value Speed"); }
-	if (ImGui::BeginPopup("Value Speed"))
+	ImGui::Button("Value Speed");
+	if (ImPopupItem item = { "Value Speed" , ImGuiPopupFlags_MouseButtonLeft })
 	{
 		ImGui::TextUnformatted("Position Adj Speed");
 		ImGui::DragFloat(
@@ -150,7 +123,6 @@ void EntityInspectorPanel::DrawTransformPanel(Transform* inTransform)
 			10.f,
 			"%.4f"
 		);
-		ImGui::EndPopup();
 	}
 
 	// Position
@@ -288,20 +260,15 @@ void EntityInspectorPanel::DrawCameraPanel(Camera* inCamera)
 void EntityInspectorPanel::DrawFlipbookRenderPanel(FlipbookRender* inFlipbookRender)
 {
 	ImGui::Button("Load Flipbook");
-	if (ImGui::BeginItemTooltip())
-	{
-		ImGui::TextUnformatted("Drop here");
-		ImGui::EndTooltip();
-	}
+	ImItemTooltip("Drop here");
 
-	if (ImGui::BeginDragDropTarget())
+	if (ImDragDropTarget target = {})
 	{
 		if (const auto* data = ImGui::AcceptDragDropPayload(ImPayload::GetResourcePayload(eResourceType::Flipbook)))
 		{
 			const char* name = static_cast<const char*>(data->Data);
 			inFlipbookRender->flipbook = RESOURCE_MANAGER.TryFindResource<Flipbook>(name);
 		}
-		ImGui::EndDragDropTarget();
 	}
 
 	if (inFlipbookRender->flipbook)
@@ -372,20 +339,15 @@ void EntityInspectorPanel::DrawSpriteRenderPanel(SpriteRender* inSpriteRender)
 {
 
 	ImGui::Button("Load Sprite");
-	if (ImGui::BeginItemTooltip())
-	{
-		ImGui::TextUnformatted("Drop here");
-		ImGui::EndTooltip();
-	}
+	ImItemTooltip("Drag here");
 
-	if (ImGui::BeginDragDropTarget())
+	if(ImDragDropTarget target = {})
 	{
 		if (const auto* data = ImGui::AcceptDragDropPayload(ImPayload::GetResourcePayload(eResourceType::Sprite)))
 		{
 			const char* name = static_cast<const char*>(data->Data);
 			inSpriteRender->sprite = RESOURCE_MANAGER.TryFindResource<Sprite>(name);
 		}
-		ImGui::EndDragDropTarget();
 	}
 
 	if (inSpriteRender->sprite)
@@ -413,20 +375,15 @@ void EntityInspectorPanel::DrawRenderProfilePanel(RenderProfile* inRenderProfile
 	ImGui::BulletText("Shader set");
 
 	ImGui::Button("Load Shader set");
-	if (ImGui::BeginItemTooltip())
-	{
-		ImGui::TextUnformatted("Drop here");
-		ImGui::EndTooltip();
-	}
+	ImItemTooltip("Drag here");
 
-	if (ImGui::BeginDragDropTarget())
+	if(ImDragDropTarget target = {})
 	{
 		if (const auto* data = ImGui::AcceptDragDropPayload(ImPayload::GetResourcePayload(eResourceType::ShaderSet)))
 		{
 			const char* name = static_cast<const char*>(data->Data);
 			inRenderProfile->shaders = RESOURCE_MANAGER.TryFindResource<ShaderSet>(name);
 		}
-		ImGui::EndDragDropTarget();
 	}
 
 	if (inRenderProfile->shaders)
@@ -436,7 +393,7 @@ void EntityInspectorPanel::DrawRenderProfilePanel(RenderProfile* inRenderProfile
 
 	ImGui::Spacing();
 	ImGui::BulletText("Render State");
-	
+
 	RenderState& state = inRenderProfile->renderState;
 
 	ImGui::Combo("Blend State", (int*)&state.blendState, RenderStatePool::sBlendStateString.data(), RenderStatePool::sBlendStateString.size());

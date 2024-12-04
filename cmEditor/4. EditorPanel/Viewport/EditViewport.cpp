@@ -11,10 +11,10 @@ EditViewport::EditViewport()
 
 void EditViewport::RenderGui()
 {
-	ImGui::Begin("Viewport", GetVisiblePtr());
+	ImWindow window = { "Viewport", GetVisiblePtr() };
 
 	ImVec2 availableSize = ImGui::GetContentRegionAvail();
-	float aspectRatio = mSubRenderTarget->GetAspectRatio();
+	float aspectRatio    = mSubRenderTarget->GetAspectRatio();
 
 	ImVec2 viewportSize = {};
 	if (availableSize.x / aspectRatio <= availableSize.y)
@@ -28,7 +28,7 @@ void EditViewport::RenderGui()
 		viewportSize.y = availableSize.y;
 	}
 
-	ImVec2 cursorPos = ImGui::GetCursorScreenPos();
+	ImVec2 cursorPos   = ImGui::GetCursorScreenPos();
 	ImVec2 centeredPos = ImVec2(
 		cursorPos.x + (availableSize.x - viewportSize.x) * 0.5f,
 		cursorPos.y + (availableSize.y - viewportSize.y) * 0.5f
@@ -36,6 +36,4 @@ void EditViewport::RenderGui()
 
 	ImGui::SetCursorScreenPos(centeredPos);
 	ImGui::Image(reinterpret_cast<ImTextureID>(mSubRenderTarget->GetShaderResourceView().Get()), viewportSize);
-
-	ImGui::End();
 }

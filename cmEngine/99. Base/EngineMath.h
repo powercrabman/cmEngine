@@ -45,4 +45,12 @@ namespace cmEngine::Math
 	{
 		GetSinCos(inOutSin, inOutCos, DegToRad(inDeg));
 	}
+
+	inline float Wrap(float num, float low, float high)
+	{
+		float range = high - low;
+		num = std::fmod(num - low, range);
+		if (num < 0.f) num += range;
+		return num + low;
+	}
 }

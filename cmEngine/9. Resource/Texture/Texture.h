@@ -33,6 +33,9 @@ namespace cmEngine
 	{
 	public:
 		RESOURCE_BODY(Texture);
+
+		Texture() = default;
+		Texture(std::string_view inName) { mName = inName; }
 		~Texture() override = default;
 
 		void LoadTextureImage(std::wstring_view inFilePath);
@@ -46,7 +49,6 @@ namespace cmEngine
 		const wchar_t* GetTextureImagePath() const { return mImagePath.c_str(); }
 
 	private:
-		Texture() = default;
 		void Create();
 
 		void SaveJsonToFile(const std::filesystem::path& inFileName, const std::filesystem::path& inDirectory = "") override;

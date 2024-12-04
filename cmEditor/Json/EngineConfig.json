@@ -1,9 +1,9 @@
 {
     "GameWindowConfig": {
-        "windowPositionX": 208,
-        "windowPositionY": 125,
-        "windowResolutionHeight": 995,
-        "windowResolutionWidth": 1847
+        "windowPositionX": 248,
+        "windowPositionY": 62,
+        "windowResolutionHeight": 971,
+        "windowResolutionWidth": 1799
     },
     "RendererConfig": {
         "clearColor": {

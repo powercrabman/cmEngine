@@ -1,5 +1,11 @@
 #pragma once
 
+enum class eImFileDialogResult
+{
+	None = 0,
+	Ok,
+};
+
 class ImFileDialog
 {
 public:
@@ -9,12 +15,12 @@ public:
 	{
 	}
 
-	void Draw()
+	eImFileDialogResult Draw()
 	{
-		if (!mVisible) { return; }
+		if (!mVisible) { return eImFileDialogResult::None; }
 
 		ImGui::SetNextWindowSize(ImVec2{ 600, 400 }, ImGuiCond_FirstUseEver);
-		ImGui::Begin("File Dialog", &mVisible, ImGuiWindowFlags_NoCollapse);
+		ImWindow window = { "File Dialog", &mVisible, ImGuiWindowFlags_NoCollapse };
 
 		if (ImGui::ArrowButton("cd", ImGuiDir_Left))
 		{
@@ -118,11 +124,20 @@ public:
 		ImGui::InputText("##selected", selectedFile.data(), selectedFile.size(), ImGuiInputTextFlags_ReadOnly);
 
 		ImGui::Spacing();
-		if (ImGui::Button("OK")) { mVisible = false; }
-		ImGui::SameLine();
-		if (ImGui::Button("Cancel")) { mSelectedFile.clear(); mVisible = false; }
+		if (ImGui::Button("OK")) 
+		{
+			mVisible = false; 
+			return eImFileDialogResult::Ok;
+		}
 
-		ImGui::End();
+		ImGui::SameLine();
+		if (ImGui::Button("Cancel")) 
+		{
+			mSelectedFile.clear();
+			mVisible = false; 
+		}
+
+		return eImFileDialogResult::None;
 	}
 
 	void	SetVisible(bool inVisible) { mVisible = inVisible; }

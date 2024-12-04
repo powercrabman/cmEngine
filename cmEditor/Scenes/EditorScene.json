@@ -13,13 +13,13 @@
 "shaders": "Shader"
 },
 "SpriteRender": {
-"sprite": "sp"
+"sprite": "Player_Lookdown_Jump_Upper"
 },
 "Transform": {
 "position": {
-"x": 0.6629999876022339,
+"x": 0.19599999487400055,
 "y": -0.0560000017285347,
-"z": -0.5410000085830688
+"z": -2.9040000438690186
 },
 "rotation": {
 "x": 0.0,
@@ -27,9 +27,9 @@
 "z": 0.0
 },
 "scaling": {
-"x": 1.0099999904632568,
-"y": 1.0099999904632568,
-"z": 1.0099999904632568
+"x": 1.809999942779541,
+"y": 1.809999942779541,
+"z": 1.809999942779541
 }
 }
 },
@@ -49,7 +49,7 @@
 "position": {
 "x": 0.0,
 "y": 0.0,
-"z": -4.002999782562256
+"z": -4.5320000648498535
 },
 "rotation": {
 "x": 0.0,
@@ -82,9 +82,9 @@
 },
 "Transform": {
 "position": {
-"x": -0.5960000157356262,
+"x": -0.36800000071525574,
 "y": 0.0,
-"z": -2.749000072479248
+"z": -3.0
 },
 "rotation": {
 "x": 0.0,
@@ -94,6 +94,68 @@
 "scaling": {
 "x": 1.0,
 "y": 1.0,
+"z": -11.699999809265137
+}
+}
+},
+"3": {
+"RenderProfile": {
+"renderState": {
+"blendState": "Alpha",
+"depthStencilState": "Depth",
+"rasterizerState": "Solid_NoCull",
+"samplerState": "Point_Wrap"
+},
+"shaders": "Shader"
+},
+"SpriteRender": {
+"sprite": "sp"
+},
+"Transform": {
+"position": {
+"x": 0.5370000004768372,
+"y": 0.0,
+"z": -2.555999994277954
+},
+"rotation": {
+"x": 0.0,
+"y": 0.0,
+"z": 5.651358604431152
+},
+"scaling": {
+"x": 1.0,
+"y": 2.5,
+"z": 1.0
+}
+}
+},
+"4": {
+"RenderProfile": {
+"renderState": {
+"blendState": "Alpha",
+"depthStencilState": "Depth",
+"rasterizerState": "Solid_NoCull",
+"samplerState": "Point_Wrap"
+},
+"shaders": "Shader"
+},
+"SpriteRender": {
+"sprite": "sp"
+},
+"Transform": {
+"position": {
+"x": -1.25,
+"y": 0.0,
+"z": -1.6269999742507935
+},
+"rotation": {
+"x": 0.0,
+"y": 2.963412046432495,
+"z": 0.0
+},
+"scaling": {
+"x": 1.0,
+"y": 2.5,
 "z": 1.0
 }
 }

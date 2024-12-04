@@ -16,15 +16,18 @@ public:
 	void RenderGui() override;
 	void HandleCreateScenePopup();
 	void HandleDeleteScenePopup();
+
 	void DrawSceneHierarchy() const;
+	void DrawSceneSelector() const;
 
 	void HandleSceneSerialize();
 	void HandleSceneDeserialize();
 
 	TO_STRING(SceneHierarchyPanel);
 private:
-	SceneHierarchyPanelJson		mConfig = {};
-	ImModalOK					mModal{"Alert"};
-	ImModalYesOrNo				mModalYN{"YesOrNo"};
+	SceneHierarchyPanelJson		mConfig   = {};
+
+	std::string					mAlertMsg = {};
+	inline static const const char*	const mSignal = "Alert";
 };
 

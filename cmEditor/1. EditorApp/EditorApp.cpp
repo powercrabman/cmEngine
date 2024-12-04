@@ -12,7 +12,6 @@ namespace cmEngine
 		EDITOR_CORE;
 
 		// Texture
-
 		std::filesystem::directory_iterator iter{ std::filesystem::current_path() / "Resources\\Texture" };
 		for (auto entry : iter)
 		{
